@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "test": "npm-run-all -p lint prettier:check jest depcruise",
+    "test": "npm-run-all -p lint prettier:check jest depcruise component:headless",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,12 +13,17 @@
     "prettier": "prettier --write --ignore-path .prettierignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "prettier:check": "prettier --check --ignore-path .prettierignore './**/*.{ts,tsx,json,css}'",
     "format": "yarn lint:fix && yarn prettier",
+    "depcruise": "depcruise -v .dependency-cruiser.js './src'",
     "jest": "jest",
     "jest:watch": "jest --watchAll",
-    "depcruise": "depcruise -v .dependency-cruiser.js './src'"
+    "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
+    "e2e:headless": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
+    "component": "cypress open --component",
+    "component:headless": "cypress run --component"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "cypress": "^12.10.0",
     "dependency-cruiser": "^12.11.1",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
@@ -32,6 +37,7 @@
     "postcss-color-function": "^4.1.0",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7",
+    "start-server-and-test": "^2.0.0",
     "ts-jest": "^29.1.0"
   },
   "dependencies": {
