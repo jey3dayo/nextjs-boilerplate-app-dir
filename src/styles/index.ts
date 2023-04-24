@@ -1,4 +1,4 @@
-const colors = require('src/app/styles/colors');
+const colors = require('src/styles/colors');
 
 type Palette = {
   primary: string;

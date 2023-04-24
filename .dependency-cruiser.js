@@ -102,7 +102,7 @@ module.exports = {
         'module: add it to your package.json. In all other cases you likely already know what to do.',
       severity: 'error',
       from: {
-        pathNot: ['src/app/styles/*'],
+        pathNot: ['src/styles/*'],
       },
       to: {
         couldNotResolve: true,

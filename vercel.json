@@ -1,9 +1,4 @@
 {
-  "functions": {
-    "package.json": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "build": {
     "env": {
       "YARN_FLAGS": "--immutable"
