@@ -5,4 +5,5 @@ type ReactProps = Required<{
 type User = {
   name: string | undefined | null;
   email: string | undefined | null;
+  hash?: string;
 };

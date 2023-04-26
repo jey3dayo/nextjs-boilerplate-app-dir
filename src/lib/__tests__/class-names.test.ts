@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals';
-import classNames from '@/lib/classNames';
+import classNames from '@/lib/class-names';
 
 test('classNames', async () => {
   const classes = ['aaa', 'bbb ccc'];

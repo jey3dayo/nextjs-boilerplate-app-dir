@@ -2,6 +2,7 @@
 const { resolve } = require('path');
 const colorsPath = resolve(__dirname, 'src/styles/colors.ts');
 const colors = require(colorsPath);
+const containerQueries = require('@tailwindcss/container-queries');
 
 module.exports = {
   content: [
@@ -24,5 +25,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [containerQueries],
 };

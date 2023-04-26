@@ -8,6 +8,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   publicRuntimeConfig: {
+    baseUrl: process.env.NEXT_PUBLIC_BASE_URL,
     env: NODE_ENV,
     appName: APP_NAME,
   },
