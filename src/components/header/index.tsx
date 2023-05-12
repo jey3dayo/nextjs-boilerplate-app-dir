@@ -36,8 +36,9 @@ export default async function Header(): Promise<JSX.Element> {
             </Link>
           ))}
         </div>
-        <Suspense fallback={<div />}>
-          <Greeting promise={userData} />
+        <Suspense>
+          {/* @ts-expect-error Server Component */}
+          <Greeting />
         </Suspense>
         <Menu />
       </div>

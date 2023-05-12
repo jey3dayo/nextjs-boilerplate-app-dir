@@ -11,7 +11,7 @@ export default function CustomPopover(): JSX.Element {
   return (
     <Popover>
       {({ open }) => (
-      <div className="@md:hidden">
+        <div className="@md:hidden">
           <Popover.Button
             className={classNames(
               open ? 'bg-teal-400' : '',
