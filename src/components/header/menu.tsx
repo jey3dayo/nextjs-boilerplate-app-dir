@@ -9,7 +9,7 @@ import classNames from '@/lib/class-names';
 export default function CustomMenu(): JSX.Element {
   return (
     <Menu as="div" className="relative ml-3">
-      <Menu.Button className="flex rounded-full bg-teal-400 text-sm focus:outline-none focus:ring-2 focus:ring-teal-300 focus:ring-offset-2 focus:ring-offset-teal-800">
+      <Menu.Button className="flex rounded-full bg-neutral-400 text-sm focus:outline-none focus:ring-2 focus:ring-neutral-300 focus:ring-offset-2 focus:ring-offset-neutral-800">
         <span className="sr-only">ユーザメニュー</span>
         <UserIcon className="h-8 w-8" />
       </Menu.Button>

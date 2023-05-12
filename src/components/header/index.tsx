@@ -27,7 +27,7 @@ export default function Header(): React.JSX.Element {
             <Link
               key={v.href}
               href={v.href}
-              className="mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium text-teal-200 hover:bg-teal-400 hover:text-white"
+              className="mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium text-neutral-200 hover:bg-neutral-400 hover:text-white"
               aria-current="page"
             >
               {v.name}
