@@ -7,9 +7,7 @@ import { Logo } from '@/components/svg';
 import { appName } from '@/constants';
 import { fetcher } from '@/lib/fetcher';
 
-export default async function Header(): Promise<JSX.Element> {
-  const userData: Promise<User> = fetcher('/api/user', { cache: 'no-store' });
-
+export default function Header(): React.JSX.Element {
   return (
     <nav className="flex flex-wrap items-center justify-between bg-primary p-3 @container">
       <Link href="/">
@@ -46,11 +44,8 @@ export default async function Header(): Promise<JSX.Element> {
   );
 }
 
-interface GreetingProps {
-  promise: Promise<User>;
-}
-
-async function Greeting({ promise }: GreetingProps): Promise<JSX.Element> {
-  const user = await promise;
+async function Greeting() {
+  const user: User = await fetcher('/api/user', { cache: 'no-store' });
   return <div>{`こんにちは${user.name}さん`}</div>;
 }
+
