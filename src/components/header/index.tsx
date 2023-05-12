@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import React, { Suspense } from 'react';
 import { navigation } from '@/components/header/constants';
+import { Greeting } from '@/components/header/greeting';
 import Menu from '@/components/header/menu';
 import Popover from '@/components/header/popover';
 import { Logo } from '@/components/svg';
 import { appName } from '@/constants';
-import { fetcher } from '@/lib/fetcher';
 
 export default function Header(): React.JSX.Element {
   return (
@@ -43,9 +43,3 @@ export default function Header(): React.JSX.Element {
     </nav>
   );
 }
-
-async function Greeting() {
-  const user: User = await fetcher('/api/user', { cache: 'no-store' });
-  return <div>{`こんにちは${user.name}さん`}</div>;
-}
-
