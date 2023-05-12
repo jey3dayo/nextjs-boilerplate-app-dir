@@ -1,6 +1,4 @@
-import getConfig from 'next/config';
-
-const baseUrl = getConfig()?.publicRuntimeConfig?.baseUrl ?? process.env.NEXT_PUBLIC_BASE_URL;
+import { baseUrl } from '@/constants';
 
 export const forge = (url: string) => (/^http/.test(url) ? url : `${baseUrl}${url}`);
 
