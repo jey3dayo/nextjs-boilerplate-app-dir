@@ -9,7 +9,7 @@ import { appName } from '@/constants';
 
 export default function Header(): React.JSX.Element {
   return (
-    <nav className="flex flex-wrap items-center justify-between bg-primary p-3 @container">
+    <nav className="flex flex-wrap items-center justify-between bg-primary p-2 @container">
       <Link href="/">
         <div className="mr-6 flex shrink-0 items-center text-white">
           <span className="fill-current">
