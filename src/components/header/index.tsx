@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React, { Suspense } from 'react';
+import UserIcon from '@/components/common/user-icon';
 import { navigation } from '@/components/header/constants';
-import { Greeting } from '@/components/header/greeting';
 import Menu from '@/components/header/menu';
 import Popover from '@/components/header/popover';
 import { Logo } from '@/components/svg';
@@ -34,11 +34,12 @@ export default function Header(): React.JSX.Element {
             </Link>
           ))}
         </div>
-        <Suspense>
-          {/* @ts-expect-error Server Component */}
-          <Greeting />
-        </Suspense>
-        <Menu />
+        <Menu>
+          <Suspense fallback={<>loading</>}>
+            {/* @ts-expect-error Server Component */}
+            <UserIcon className="h-8 w-8" />
+          </Suspense>
+        </Menu>
       </div>
     </nav>
   );

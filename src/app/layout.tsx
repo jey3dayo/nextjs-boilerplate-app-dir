@@ -1,3 +1,4 @@
+import SessionProvider from '@/components/provider/session-provider';
 import TrackProvider from '@/components/provider/track-provider';
 import { appName } from '@/constants';
 import { nextFont } from '@/lib/next-font';
@@ -10,10 +11,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja" className={nextFont.className}>
-      <body>
-        <TrackProvider>{children}</TrackProvider>
-      </body>
-    </html>
+    <SessionProvider>
+      <html lang="ja" className={nextFont.className}>
+        <body>
+          <TrackProvider>{children}</TrackProvider>
+        </body>
+      </html>
+    </SessionProvider>
   );
 }

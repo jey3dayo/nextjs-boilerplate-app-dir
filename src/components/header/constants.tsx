@@ -12,6 +12,6 @@ export const navigation: Navigation[] = [
 ];
 
 export const profileNavigation: Navigation[] = [
-  { name: '設定', href: '#' },
-  { name: 'サインアウト', href: '#' },
+  { name: 'サインイン', href: '/api/auth/signin' },
+  { name: 'サインアウト', href: '/api/auth/signout' },
 ];
