@@ -1,5 +1,4 @@
 /** @type {import('next').NextConfig} */
-const { NODE_ENV, APP_NAME, APP_SECRET } = process.env;
 
 const nextConfig = {
   experimental: {
