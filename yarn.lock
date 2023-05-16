@@ -1159,6 +1159,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@t3-oss/env-core@npm:0.3.1":
+  version: 0.3.1
+  resolution: "@t3-oss/env-core@npm:0.3.1"
+  peerDependencies:
+    typescript: ">=4.7.2"
+    zod: ^3.0.0
+  checksum: 054f76e11522f6c6e07aa558f2fb325e9b05f83d13c8963ca3bb0cf3a398d54aec46c38c9ff7be9d08c8d05a11c5b221406f3908bf5c95517fe45756fc7df818
+  languageName: node
+  linkType: hard
+
+"@t3-oss/env-nextjs@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "@t3-oss/env-nextjs@npm:0.3.1"
+  dependencies:
+    "@t3-oss/env-core": 0.3.1
+  peerDependencies:
+    typescript: ">=4.7.2"
+    zod: ^3.0.0
+  checksum: 3df43671191390b282e358e49c8d1722bd26defacefa3a50e5e17945d7cf29671bba478662edf03749bf5b17119f3228c57c5a18c4c483bb0906dbe1a7e105ba
+  languageName: node
+  linkType: hard
+
 "@tailwindcss/container-queries@npm:^0.1.1":
   version: 0.1.1
   resolution: "@tailwindcss/container-queries@npm:0.1.1"
@@ -6106,6 +6128,7 @@ __metadata:
   dependencies:
     "@headlessui/react": ^1.7.14
     "@heroicons/react": ^2.0.18
+    "@t3-oss/env-nextjs": ^0.3.1
     "@tailwindcss/container-queries": ^0.1.1
     "@types/node": 20.1.5
     "@types/react": 18.2.6
@@ -6139,6 +6162,7 @@ __metadata:
     tailwindcss: 3.3.2
     ts-jest: ^29.1.0
     typescript: 5.0.4
+    zod: ^3.21.4
   languageName: unknown
   linkType: soft
 
@@ -8718,7 +8742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:3.21.4":
+"zod@npm:3.21.4, zod@npm:^3.21.4":
   version: 3.21.4
   resolution: "zod@npm:3.21.4"
   checksum: f185ba87342ff16f7a06686767c2b2a7af41110c7edf7c1974095d8db7a73792696bcb4a00853de0d2edeb34a5b2ea6a55871bc864227dace682a0a28de33e1f

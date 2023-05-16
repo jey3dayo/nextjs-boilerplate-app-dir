@@ -45,6 +45,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
+    "@t3-oss/env-nextjs": "^0.3.1",
     "@tailwindcss/container-queries": "^0.1.1",
     "@types/node": "20.1.5",
     "@types/react": "18.2.6",
@@ -58,6 +59,7 @@
     "server-only": "^0.0.1",
     "swr": "^2.1.5",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "zod": "^3.21.4"
   }
 }

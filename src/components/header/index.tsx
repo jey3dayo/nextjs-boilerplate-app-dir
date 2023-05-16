@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { Suspense } from 'react';
 import UserIcon from '@/components/common/user-icon';
@@ -5,7 +6,7 @@ import { navigation } from '@/components/header/constants';
 import Menu from '@/components/header/menu';
 import Popover from '@/components/header/popover';
 import { Logo } from '@/components/svg';
-import { appName } from '@/constants';
+import { env } from '@/env.mjs';
 
 export default function Header(): React.JSX.Element {
   return (
