@@ -10,7 +10,4 @@ export const navigation: Navigation[] = [
   { name: 'example3', href: '#example3', current: false },
 ];
 
-export const profileNavigation: Navigation[] = [
-  { name: 'サインイン', href: '/api/auth/signin' },
-  { name: 'サインアウト', href: '/api/auth/signout' },
-];
+export const profileNavigation: Navigation[] = [{ name: 'ダッシュボード', href: '/dashboard' }];

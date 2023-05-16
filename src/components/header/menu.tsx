@@ -1,17 +1,11 @@
 'use client';
 import { Menu, Transition } from '@headlessui/react';
 import Link from 'next/link';
-import { useSession } from 'next-auth/react';
-import { Fragment, ReactNode } from 'react';
+import { signIn, signOut, useSession } from 'next-auth/react';
+import { Fragment } from 'react';
 import { profileNavigation } from '@/components/header/constants';
 import classNames from '@/lib/class-names';
 
-// type ReactProps = {
-//    children: JSX.Element;
-// };
-// interface CustomMenuProps {
-//   children?: React.ReactNode;
-// }
 export default function CustomMenu({ children }: ReactProps) {
   const { data } = useSession();
   const user = data?.user;
@@ -38,6 +32,8 @@ export default function CustomMenu({ children }: ReactProps) {
                 <div className={classNames('', 'block px-4 py-1 text-sm text-gray-700')}>{user?.name}</div>
               </Menu.Item>
             ) : null}
+
+            <hr />
             {profileNavigation.map((v, i) => (
               <Menu.Item key={i}>
                 {({ active }) => (
@@ -50,6 +46,25 @@ export default function CustomMenu({ children }: ReactProps) {
                 )}
               </Menu.Item>
             ))}
+            <Menu.Item>
+              {({ active }) =>
+                user ? (
+                  <div
+                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                    onClick={() => signOut()}
+                  >
+                    サインアウト
+                  </div>
+                ) : (
+                  <div
+                    className={classNames(active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700')}
+                    onClick={() => signIn()}
+                  >
+                    サインイン
+                  </div>
+                )
+              }
+            </Menu.Item>
           </div>
         </Menu.Items>
       </Transition>
