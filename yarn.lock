@@ -941,6 +941,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@next-auth/prisma-adapter@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@next-auth/prisma-adapter@npm:1.0.6"
+  peerDependencies:
+    "@prisma/client": ">=2.26.0 || >=3"
+    next-auth: ^4
+  checksum: 353036805c60be595a83f7fcced49298c7efee41b38f75c0f691c4982c920f49d3e42a9d85d83dd8ceda8a3609b9fa89fcf0435d60bcf6a73161528edfebcdd7
+  languageName: node
+  linkType: hard
+
 "@next/env@npm:13.4.2":
   version: 13.4.2
   resolution: "@next/env@npm:13.4.2"
@@ -1092,6 +1102,27 @@ __metadata:
     tiny-glob: ^0.2.9
     tslib: ^2.4.0
   checksum: 118a1971120253740121a1db0a6658c21195b7da962acf9c124b507a3df707cfc97b0b84a16edcbd4352853b182e8337da9fc6e8e3d06c60d75ae4fb42321c75
+  languageName: node
+  linkType: hard
+
+"@prisma/client@npm:^4.14.0":
+  version: 4.14.0
+  resolution: "@prisma/client@npm:4.14.0"
+  dependencies:
+    "@prisma/engines-version": 4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c
+  peerDependencies:
+    prisma: "*"
+  peerDependenciesMeta:
+    prisma:
+      optional: true
+  checksum: d0254f0858653d6ae3366704af0296fc739a06917c8d96b4dade293e2195b9a0633782714339d7d8813bc669aa92105151632b395d5c6b1fa226ca685aeee47d
+  languageName: node
+  linkType: hard
+
+"@prisma/engines-version@npm:4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c":
+  version: 4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c
+  resolution: "@prisma/engines-version@npm:4.14.0-67.d9a4c5988f480fa576d43970d5a23641aa77bc9c"
+  checksum: 0df2c9e7434ced708a202cb572e5cf433aae55332819700edb394b7d9c29742a6d2fd65abb778e80f9b1cc1f90daae5e331f4acd070bed395982856ff5ceccee
   languageName: node
   linkType: hard
 
@@ -1293,10 +1324,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.1.5":
-  version: 20.1.5
-  resolution: "@types/node@npm:20.1.5"
-  checksum: 0d073ed7b9cc51e2354dcf3a8ccca84d08c7d513fa8fac9462cabc164435b30f2ad296e9f2f911e6ce72da837b704f1075379be84a93bb24f76d328a2d9e8561
+"@types/node@npm:20.1.7":
+  version: 20.1.7
+  resolution: "@types/node@npm:20.1.7"
+  checksum: b722794290d22db1741e739c256876ca774b76ea2d647d9ec9d52c49b1b01049cc6f6332499a01ac81d641e8d078b33e4c5c59e409db80390ac6b8d7ef0c08a7
   languageName: node
   linkType: hard
 
@@ -2803,9 +2834,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dependency-cruiser@npm:^13.0.0":
-  version: 13.0.0
-  resolution: "dependency-cruiser@npm:13.0.0"
+"dependency-cruiser@npm:^13.0.1":
+  version: 13.0.1
+  resolution: "dependency-cruiser@npm:13.0.1"
   dependencies:
     acorn: 8.8.2
     acorn-jsx: 5.3.2
@@ -2818,7 +2849,7 @@ __metadata:
     enhanced-resolve: 5.14.0
     figures: 5.0.0
     get-stream: ^6.0.1
-    glob: 10.2.3
+    glob: 10.2.4
     handlebars: 4.7.7
     ignore: 5.2.4
     indent-string: 5.0.0
@@ -2833,7 +2864,7 @@ __metadata:
     semver-try-require: 6.2.2
     teamcity-service-messages: 0.1.14
     tsconfig-paths-webpack-plugin: 4.0.1
-    watskeburt: 0.11.1
+    watskeburt: 0.11.2
     wrap-ansi: 8.1.0
   bin:
     depcruise: bin/dependency-cruise.mjs
@@ -2842,7 +2873,7 @@ __metadata:
     depcruise-wrap-stream-in-html: bin/wrap-stream-in-html.mjs
     dependency-cruise: bin/dependency-cruise.mjs
     dependency-cruiser: bin/dependency-cruise.mjs
-  checksum: e1da134ad5a830d3ef6208aa00e99cafbd55656a5aaf5021f4131b5a9eece4b1943229be8d097406301f5692724dcbae3bf4e9a434ce772b4b2a5dd7917bf10d
+  checksum: 6c07b82411a38d7457d522c634b48b107e02d72178757c73e91dc024bed23f499dc1fd10ece0b216e856ca678fca02420e60630e8dc914b44ba008b34843576e
   languageName: node
   linkType: hard
 
@@ -4016,18 +4047,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:10.2.3":
-  version: 10.2.3
-  resolution: "glob@npm:10.2.3"
+"glob@npm:10.2.4":
+  version: 10.2.4
+  resolution: "glob@npm:10.2.4"
   dependencies:
     foreground-child: ^3.1.0
     jackspeak: ^2.0.3
     minimatch: ^9.0.0
-    minipass: ^5.0.0
+    minipass: ^5.0.0 || ^6.0.0
     path-scurry: ^1.7.0
   bin:
     glob: dist/cjs/src/bin.js
-  checksum: 338c7522a60728397faa26a1197d6d1348444042d47de1456bbeae50228b32cd6c7423485f8f4e8eec577c6162b592a6098239752f8d4d03b8d2d2580c932666
+  checksum: 29845faaa1a8bd2d1f2f26e0c4e5040898c7b4ccfb42e0a558319f6229d124dbc7ccf0ff214402505c5b62c1a39d9d2a1de9c582a74ad415591b96fa53cef466
   languageName: node
   linkType: hard
 
@@ -5948,13 +5979,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minipass@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "minipass@npm:5.0.0"
-  checksum: 425dab288738853fded43da3314a0b5c035844d6f3097a8e3b5b29b328da8f3c1af6fc70618b32c29ff906284cf6406b6841376f21caaadd0793c1d5a6a620ea
-  languageName: node
-  linkType: hard
-
 "minipass@npm:^5.0.0 || ^6.0.0":
   version: 6.0.0
   resolution: "minipass@npm:6.0.0"
@@ -6128,14 +6152,16 @@ __metadata:
   dependencies:
     "@headlessui/react": ^1.7.14
     "@heroicons/react": ^2.0.18
+    "@next-auth/prisma-adapter": ^1.0.6
+    "@prisma/client": ^4.14.0
     "@t3-oss/env-nextjs": ^0.3.1
     "@tailwindcss/container-queries": ^0.1.1
-    "@types/node": 20.1.5
+    "@types/node": 20.1.7
     "@types/react": 18.2.6
     "@types/react-dom": 18.2.4
     autoprefixer: ^10.4.14
     cypress: ^12.12.0
-    dependency-cruiser: ^13.0.0
+    dependency-cruiser: ^13.0.1
     eslint: 8.40.0
     eslint-config-next: 13.4.2
     eslint-config-prettier: ^8.8.0
@@ -8530,14 +8556,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"watskeburt@npm:0.11.1":
-  version: 0.11.1
-  resolution: "watskeburt@npm:0.11.1"
+"watskeburt@npm:0.11.2":
+  version: 0.11.2
+  resolution: "watskeburt@npm:0.11.2"
   dependencies:
     commander: 10.0.1
   bin:
     watskeburt: bin/cli.js
-  checksum: 1a27eef5cfae8bf340e69b054e5a7035aad3ec254f11ef5a69d26d4a26cedf0bcc2c193ab54422ccf803379c95c67150292a54bf51d855398ec37b6e57065b44
+  checksum: 0d8f1552f8468308d64a1e2d7133852fb96fb709fd42de795cf27abd787738d2e5ebf3ca8ff6cb5cf1daf8f9e4299d01ebe209321b901f0e9fd7447341e74d8e
   languageName: node
   linkType: hard
 

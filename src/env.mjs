@@ -10,9 +10,9 @@ export const env = createEnv({
     NEXTAUTH_URL: z.string().url().optional(),
     NEXTAUTH_SECRET: z.string().min(1),
     DATABASE_URL: z.string().min(1),
-    CASSO_CLIENT_ID: z.string().min(1),
-    CASSO_CLIENT_SECRET: z.string().min(1),
-    CASSO_REDIRECT_URI: z.string().url(),
+    CASSO_CLIENT_ID: z.string().min(1).optional(),
+    CASSO_CLIENT_SECRET: z.string().min(1).optional(),
+    CASSO_REDIRECT_URI: z.string().url().optional(),
   },
   client: {
     NEXT_PUBLIC_APP_NAME: z.string().min(1),
