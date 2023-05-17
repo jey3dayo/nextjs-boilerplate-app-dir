@@ -1,12 +1,15 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { Suspense } from 'react';
+import Logo from '@/../public/dalle-cap.svg';
 import UserIcon from '@/components/common/user-icon';
 import { navigation } from '@/components/header/constants';
 import Menu from '@/components/header/menu';
 import Popover from '@/components/header/popover';
-import { Logo } from '@/components/svg';
+import { subTitle } from '@/config';
 import { env } from '@/env.mjs';
+
+const appName = env.NEXT_PUBLIC_APP_NAME;
 
 export default function Header(): React.JSX.Element {
   return (
@@ -14,9 +17,19 @@ export default function Header(): React.JSX.Element {
       <Link href="/">
         <div className="mr-6 flex shrink-0 items-center text-white">
           <span className="fill-current">
-            <Logo size={8} />
+            <Image
+              className="mx-auto h-12 w-12 rounded-full md:h-auto md:w-20 md:rounded-none"
+              src={Logo}
+              alt="Logo"
+              width="50"
+              height="32"
+              priority
+            />
           </span>
-          <span className="text-xl font-semibold tracking-tight">{appName}</span>
+          <div className="pb-2 pl-2">
+            <div className="pt-0 text-xl font-semibold tracking-wide">{appName}</div>
+            <div className="text-xs font-semibold tracking-tighter">{subTitle}</div>
+          </div>
         </div>
       </Link>
 
