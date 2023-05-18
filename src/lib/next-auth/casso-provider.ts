@@ -1,5 +1,4 @@
 import { OAuthConfig, OAuthUserConfig } from 'next-auth/providers/oauth';
-// import CassoLogo from '@/src/lib/next-auth/casso-favicon.ico';
 import CassoLogo from '../../../public/casso-favicon.ico';
 import { env } from '@/env.mjs';
 
