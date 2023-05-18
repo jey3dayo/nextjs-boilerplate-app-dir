@@ -7,9 +7,12 @@ export const env = createEnv({
     VERCEL_URL: z.string().url().optional(),
     GITHUB_ID: z.string().min(1),
     GITHUB_SECRET: z.string().min(1),
-    NEXTAUTH_URL: z.string().url().optional(),
     NEXTAUTH_SECRET: z.string().min(1),
+
+    // Not needed on VERCEL
+    NEXTAUTH_URL: z.string().url().optional(),
     DATABASE_URL: z.string().min(1),
+
     CASSO_CLIENT_ID: z.string().min(1).optional(),
     CASSO_CLIENT_SECRET: z.string().min(1).optional(),
     CASSO_REDIRECT_URI: z.string().url().optional(),
@@ -21,6 +24,7 @@ export const env = createEnv({
     BASE_URL: process.env.BASE_URL,
     GITHUB_ID: process.env.GITHUB_ID,
     GITHUB_SECRET: process.env.GITHUB_SECRET,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXT_PUBLIC_APP_NAME: process.env?.NEXT_PUBLIC_APP_NAME,
     DATABASE_URL: process.env.DATABASE_URL,
