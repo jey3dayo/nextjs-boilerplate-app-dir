@@ -1,7 +1,6 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React, { Suspense } from 'react';
-import Logo from '@/../public/dalle-cap.svg';
+import Logo from '@/components/common/logo';
 import UserIcon from '@/components/common/user-icon';
 import { navigation } from '@/components/header/constants';
 import Menu from '@/components/header/menu';
@@ -16,16 +15,9 @@ export default function Header(): React.JSX.Element {
     <nav className="flex flex-wrap items-center justify-between bg-primary p-2 @container">
       <Link href="/">
         <div className="mr-6 flex shrink-0 items-center text-white">
-          <span className="fill-current">
-            <Image
-              className="mx-auto h-12 w-12 rounded-full md:h-auto md:w-20 md:rounded-none"
-              src={Logo}
-              alt="Logo"
-              width="50"
-              height="32"
-              priority
-            />
-          </span>
+          <div className="mx-auto h-auto w-10 md:h-auto md:w-16">
+            <Logo />
+          </div>
           <div className="pb-2 pl-2">
             <div className="pt-0 text-xl font-semibold tracking-wide">{appName}</div>
             <div className="text-xs font-semibold tracking-tighter">{subTitle}</div>
