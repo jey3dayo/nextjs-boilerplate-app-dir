@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { withAuth } from 'next-auth/middleware';
-
-const accessWhitelist = ['/dashboard'];
+import { accessWhitelist } from '@/config';
+import checkPath from '@/lib/check-path';
 
 export default withAuth(
   async function middleware(req) {
@@ -10,7 +10,8 @@ export default withAuth(
   {
     callbacks: {
       authorized({ req, token }) {
-        return accessWhitelist.includes(req.nextUrl.pathname) || !!token;
+        // /api は通す
+        return checkPath(req.nextUrl.pathname, accessWhitelist) || !!token;
       },
     },
   },
