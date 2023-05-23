@@ -15,19 +15,29 @@ async function main() {
   });
 
   const user = await prisma.user.upsert({
-    where: { id: 'oauth2|CASSO|A00000' },
+    where: { id: '1' },
     update: {},
     create: {
-      id: 'oauth2|CASSO|A00000',
-      provider: 'CASSO',
-      cynumber: 'A00000',
+      id: '1',
       name: '斎場 太郎',
       email: 'example@example.com',
-      picture: '',
       roleId: 1,
     },
   });
   console.log('Created user:', user);
+
+  const account = await prisma.account.upsert({
+    where: { id: '1' },
+    update: {},
+    create: {
+      id: '1',
+      userId: '1',
+      type: 'oauth',
+      provider: 'dummy',
+      providerAccountId: 'A00000',
+    },
+  });
+  console.log('Created user:', account);
 }
 
 main()
