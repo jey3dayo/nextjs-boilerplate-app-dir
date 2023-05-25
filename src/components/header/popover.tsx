@@ -47,7 +47,7 @@ export default function CustomPopover(): JSX.Element {
                   </div>
                   <div className="mt-6">
                     <nav className="grid gap-y-8">
-                      {navigation.map(item => (
+                      {navigation.map((item) => (
                         <Link
                           key={item.name}
                           href={item.href}

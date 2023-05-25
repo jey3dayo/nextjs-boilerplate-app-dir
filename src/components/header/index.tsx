@@ -29,7 +29,7 @@ export default function Header(): React.JSX.Element {
 
       <div className="hidden w-full grow @md:flex @md:w-auto @md:items-center">
         <div className="grow text-lg">
-          {navigation.map(v => (
+          {navigation.map((v) => (
             <Link
               key={v.href}
               href={v.href}
