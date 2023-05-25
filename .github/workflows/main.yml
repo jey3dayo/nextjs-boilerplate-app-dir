@@ -1,0 +1,41 @@
+name: Build Test
+
+on:
+  pull_request:
+    branches:
+      - main
+      - 'feature/*'
+    paths-ignore:
+      - '**.md'
+  push:
+    branches:
+      - main
+      - 'feature/*'
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set Node.js 18.x
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: 'package.json'
+
+      - name: Install Yarn v3
+        run: |
+          yarn set version berry
+          echo "nodeLinker: node-modules" >> .yarnrc.yml
+
+      - name: Intall packages.
+        run: yarn install
+
+      - name: Test
+        run: yarn test
+
+      - name: Rebuild the .next/ directory
+        run: yarn build
