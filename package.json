@@ -16,7 +16,7 @@
     "prisma:db:push": "prisma db push",
     "prisma:db:seed": "prisma db seed",
     "dev": "next dev",
-    "dev:proxy": "next dev -p 3001 & local-ssl-proxy --key /etc/letsencrypt/live/localhost.ca-adv.dev/privkey.pem --cert /etc/letsencrypt/live/localhost.ca-adv.dev/cert.pem --source 3000 --target 3001",
+    "dev:proxy": "next dev -p 3001 & local-ssl-proxy --key ./certs/private.key --cert ./certs/certificate.crt --source 3000 --target 3001",
     "test": "npm-run-all -p lint prettier:check jest depcruise component:headless",
     "test:quick": "npm-run-all -p lint prettier:check",
     "build": "prisma generate && next build",
