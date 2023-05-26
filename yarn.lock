@@ -3134,6 +3134,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"env-cmd@npm:^10.1.0":
+  version: 10.1.0
+  resolution: "env-cmd@npm:10.1.0"
+  dependencies:
+    commander: ^4.0.0
+    cross-spawn: ^7.0.0
+  bin:
+    env-cmd: bin/env-cmd.js
+  checksum: efef55074250f14cfc0b80c98dd98f1f056a80e1f3c7db14097ceefdd2d56c766bbb83b54c22932112707f41b36ce2e923f8015d69e62a75c12d98640b972e75
+  languageName: node
+  linkType: hard
+
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -6328,6 +6340,7 @@ __metadata:
     autoprefixer: ^10.4.14
     cypress: ^12.13.0
     dependency-cruiser: ^13.0.2
+    env-cmd: ^10.1.0
     eslint: 8.41.0
     eslint-config-next: 13.4.3
     eslint-config-prettier: ^8.8.0

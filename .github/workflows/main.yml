@@ -29,7 +29,6 @@ jobs:
       - name: Install Yarn v3
         run: |
           yarn set version berry
-          echo "nodeLinker: node-modules" >> .yarnrc.yml
 
       - name: Intall packages.
         run: yarn install
@@ -38,4 +37,4 @@ jobs:
         run: yarn test
 
       - name: Rebuild the .next/ directory
-        run: yarn build
+        run: env-cmd -f ./.env.test yarn build
