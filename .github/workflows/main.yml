@@ -30,7 +30,21 @@ jobs:
         run: |
           yarn set version berry
 
-      - name: Intall packages.
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+
+      - uses: actions/cache@v3
+        id: cache-yarn
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-cache-folder-${{ hashFiles('**/yarn.lock', '.yarnrc.yml') }}
+
+      - name: List the state of dependencies.
+        if: steps.cache-yarn.outputs.cache-hit != 'true'
+        run: yarn info
+
+      - name: Intall dependencies.
         run: yarn install
 
       - name: Test
