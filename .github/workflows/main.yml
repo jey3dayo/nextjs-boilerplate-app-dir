@@ -37,4 +37,4 @@ jobs:
         run: yarn test
 
       - name: Rebuild the .next/ directory
-        run: env-cmd -f ./.env.test yarn build
+        run: yarn build:test
