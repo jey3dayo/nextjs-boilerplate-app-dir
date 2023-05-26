@@ -10,6 +10,9 @@ export default withAuth(
   {
     callbacks: {
       authorized({ req, token }) {
+        // imageは通す
+        if (/image/.test(req.headers?.get('accept') ?? '')) return true;
+
         // /api は通す
         return checkPath(req.nextUrl.pathname, accessWhitelist) || !!token;
       },
