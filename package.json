@@ -23,7 +23,7 @@
     "test": "env-cmd -f ./.env.test npm-run-all -p lint prettier:check depcruise jest component:headless",
     "test:quick": "npm-run-all -p lint prettier:check",
     "build": "prisma generate && next build",
-    "build:test": "env-cmd -f ./.env.test build",
+    "build:test": "env-cmd -f ./.env.test yarn build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
