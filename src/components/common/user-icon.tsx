@@ -3,6 +3,7 @@ import { getServerSession } from 'next-auth/next';
 import { UserIcon } from '@heroicons/react/20/solid';
 import classNames from '@/lib/class-names';
 
+// TODO: ログアウトしてもserverSessionが生きてるので、revokeできるようにする
 export default async function CustomUserIcon({ className }: { className: string }) {
   const session = await getServerSession();
   return session?.user?.image ? (
@@ -14,6 +15,6 @@ export default async function CustomUserIcon({ className }: { className: string 
       height={32}
     />
   ) : (
-    <UserIcon className={className} />
+    <UserIcon fill="currentColor" className={classNames('text-white', className)} />
   );
 }

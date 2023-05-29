@@ -8,8 +8,8 @@ import classNames from '@/lib/class-names';
 
 const generateButtonStyle = (active: boolean) => {
   return classNames(
-    active ? 'bg-primary-400 text-white' : 'text-primary-700',
-    'block px-2 py-2 text-sm rounded-md group w-full items-center text-sm',
+    active ? 'bg-dark text-light' : 'text-dark',
+    'block p-2 rounded-md group w-full items-center text-sm',
   );
 };
 
@@ -37,7 +37,7 @@ export default function CustomMenu({ children }: ReactProps) {
             {user ? (
               <>
                 <Menu.Item>
-                  <div className={classNames('', 'block px-2 py-2 text-sm text-dark')}>{user?.name}</div>
+                  <div className="pointer-events-none block p-2 text-sm text-dark">{user?.name}</div>
                 </Menu.Item>
                 <hr className="py-1" />
                 {navigation.map((v, i) => (

@@ -975,12 +975,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:13.4.3":
-  version: 13.4.3
-  resolution: "@next/eslint-plugin-next@npm:13.4.3"
+"@next/eslint-plugin-next@npm:13.4.4":
+  version: 13.4.4
+  resolution: "@next/eslint-plugin-next@npm:13.4.4"
   dependencies:
     glob: 7.1.7
-  checksum: 3d49270e79ab4d3fcd67bad3b56a1810816db7dc73edc3442e2f2d5b17b05bea59308f96c442a42be2e7a98c4d29bc4707a718659ba17bb5b1aca9516513c87f
+  checksum: 0a14780aed31d5faa6fa4b0a28f1ee7852d5ed5ed2dad166f05b2ed614bd1802fa033d7b313bcfb053b523f708c379052081069802b087f8ce22c787f361621a
   languageName: node
   linkType: hard
 
@@ -1369,10 +1369,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:20.2.3":
+"@types/node@npm:*":
   version: 20.2.3
   resolution: "@types/node@npm:20.2.3"
   checksum: 576065e8fc1fa45798c8f59a6bf809169582d04abc2e25fab1a048ffc734975b9992ae31be0d960cf705a21fb37112f7fcde11aa322beddf7491e73d5a5a988c
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:20.2.5":
+  version: 20.2.5
+  resolution: "@types/node@npm:20.2.5"
+  checksum: 38ce7c7e9d76880dc632f71d71e0d5914fcda9d5e9a7095d6c339abda55ca4affb0f2a882aeb29398f8e09d2c5151f0b6586c81c8ccdfe529c34b1ea3337425e
   languageName: node
   linkType: hard
 
@@ -3294,11 +3301,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:13.4.3":
-  version: 13.4.3
-  resolution: "eslint-config-next@npm:13.4.3"
+"eslint-config-next@npm:13.4.4":
+  version: 13.4.4
+  resolution: "eslint-config-next@npm:13.4.4"
   dependencies:
-    "@next/eslint-plugin-next": 13.4.3
+    "@next/eslint-plugin-next": 13.4.4
     "@rushstack/eslint-patch": ^1.1.3
     "@typescript-eslint/parser": ^5.42.0
     eslint-import-resolver-node: ^0.3.6
@@ -3313,7 +3320,7 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 618313f0bc23d3600734b6abbd6a8469c64084ddc365a9ba77d662f40e044d28ab3c205718028d2dc197a5771f8178be92542826e5ae20f240ac978c727f905a
+  checksum: 8f35474e3222d7c83966a716ed9bc5973643677da790596939c9c5a36216d01aae55027d0c14a6a4ba88e632f0e48129a9f05370540c6b9e07d4737a49b02d8c
   languageName: node
   linkType: hard
 
@@ -6334,7 +6341,7 @@ __metadata:
     "@prisma/client": ^4.14.1
     "@t3-oss/env-nextjs": ^0.3.1
     "@tailwindcss/container-queries": ^0.1.1
-    "@types/node": 20.2.3
+    "@types/node": 20.2.5
     "@types/react": 18.2.7
     "@types/react-dom": 18.2.4
     autoprefixer: ^10.4.14
@@ -6342,7 +6349,7 @@ __metadata:
     dependency-cruiser: ^13.0.2
     env-cmd: ^10.1.0
     eslint: 8.41.0
-    eslint-config-next: 13.4.3
+    eslint-config-next: 13.4.4
     eslint-config-prettier: ^8.8.0
     eslint-plugin-filenames: ^1.3.2
     eslint-plugin-import: ^2.27.5
@@ -6355,7 +6362,7 @@ __metadata:
     next-auth: ^4.22.1
     nock: ^13.3.1
     npm-run-all: ^4.1.5
-    postcss: ^8.4.23
+    postcss: ^8.4.24
     postcss-color-function: ^4.1.0
     prettier: ^2.8.8
     prettier-plugin-tailwindcss: ^0.3.0
@@ -7054,6 +7061,17 @@ __metadata:
     picocolors: ^1.0.0
     source-map-js: ^1.0.2
   checksum: 8bb9d1b2ea6e694f8987d4f18c94617971b2b8d141602725fedcc2222fdc413b776a6e1b969a25d627d7b2681ca5aabb56f59e727ef94072e1b6ac8412105a2f
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.24":
+  version: 8.4.24
+  resolution: "postcss@npm:8.4.24"
+  dependencies:
+    nanoid: ^3.3.6
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 814e2126dacfea313588eda09cc99a9b4c26ec55c059188aa7a916d20d26d483483106dc5ff9e560731b59f45c5bb91b945dfadc670aed875cc90ddbbf4e787d
   languageName: node
   linkType: hard
 
