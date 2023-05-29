@@ -1,23 +1,13 @@
 'use client';
-import { useState } from 'react';
 import Image from 'next/image';
+import { useState } from 'react';
+import Label from '@/components/label';
 import classNames from '@/lib/class-names';
 import styles from '@/styles/dashboard.module.css';
 
 const DEFAULT_VOL = 50;
 const DEFAULT_DESCRIPTION =
   "Tailwind CSS is the only framework that I've seen scale on large teams.It’s easy to customize, adapts to any design, and the build size is tiny.";
-
-function Label(props: { className?: string; htmlFor: string; children: string }) {
-  return (
-    <label
-      className={classNames('mb-2 block text-sm font-bold text-dark dark:text-light', props.className ?? '')}
-      htmlFor={props.htmlFor}
-    >
-      {props.children}
-    </label>
-  );
-}
 
 function Dashboard() {
   const [action, setAction] = useState('');
