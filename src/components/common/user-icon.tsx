@@ -1,6 +1,6 @@
-import { UserIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import { getServerSession } from 'next-auth/next';
+import { UserIcon } from '@heroicons/react/20/solid';
 import classNames from '@/lib/class-names';
 
 export default async function CustomUserIcon({ className }: { className: string }) {

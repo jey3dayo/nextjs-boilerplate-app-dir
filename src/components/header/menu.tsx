@@ -1,8 +1,8 @@
 'use client';
-import { Menu, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
 import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import { Fragment } from 'react';
+import { Menu, Transition } from '@headlessui/react';
 import { profileNavigation as navigation } from '@/components/header/constants';
 import classNames from '@/lib/class-names';
 

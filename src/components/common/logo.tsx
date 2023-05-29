@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import React from 'react';
+import Image from 'next/image';
 import logo from 'public/dalle-cap.svg';
 
 export default function Logo({ width, height }: { width?: string; height?: string }) {

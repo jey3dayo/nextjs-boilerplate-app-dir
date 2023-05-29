@@ -1,9 +1,9 @@
 'use client';
-import { Transition, Popover } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
+import { Fragment } from 'react';
 import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/react';
-import { Fragment } from 'react';
+import { Transition, Popover } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import { navigation } from '@/components/header/constants';
 import { Logo } from '@/components/svg';
 import classNames from '@/lib/class-names';

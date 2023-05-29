@@ -1,5 +1,5 @@
-import { getServerSession } from 'next-auth/next';
 import React from 'react';
+import { getServerSession } from 'next-auth/next';
 
 export async function Greeting() {
   const session = await getServerSession();

@@ -1,6 +1,6 @@
 'use client';
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
 import classNames from '@/lib/class-names';
 import styles from '@/styles/dashboard.module.css';
 
