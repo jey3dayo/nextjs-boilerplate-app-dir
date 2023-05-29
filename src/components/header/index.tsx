@@ -2,7 +2,7 @@ import React, { Suspense } from 'react';
 import Link from 'next/link';
 import Logo from '@/components/common/logo';
 import UserIcon from '@/components/common/user-icon';
-import { navigation } from '@/components/header/constants';
+import { navigation } from '@/constants';
 import Menu from '@/components/header/menu';
 import Popover from '@/components/header/popover';
 import { subTitle } from '@/config';

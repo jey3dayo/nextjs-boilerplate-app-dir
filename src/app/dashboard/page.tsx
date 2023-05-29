@@ -1,5 +1,5 @@
 import Content from '@/app/dashboard/content';
-import styles from '@/styles/dashboard.module.css';
+import styles from '@/styles/common.module.css';
 
 async function Page(): Promise<JSX.Element> {
   return (
