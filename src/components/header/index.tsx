@@ -16,7 +16,7 @@ export default function Header(): React.JSX.Element {
       <nav className="flex flex-wrap items-center justify-between bg-dark/90 px-2 @container md:fixed md:left-0 md:top-0 md:h-14 md:w-full">
         <Link href="/">
           <div className="mr-6 flex shrink-0 items-center text-white">
-            <div className="mx-auto h-auto w-10 md:h-auto md:w-16">
+            <div className="mx-auto h-auto w-10 @md:h-auto @md:w-16">
               <Logo />
             </div>
             <div className="pb-2 pl-2">
