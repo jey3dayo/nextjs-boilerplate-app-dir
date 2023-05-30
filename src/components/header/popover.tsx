@@ -36,7 +36,7 @@ export default function CustomPopover(): JSX.Element {
             leaveTo="opacity-0 scale-95"
           >
             <Popover.Panel focus className="absolute left-0 top-0 w-full origin-top-right p-2 transition">
-              <div className="divide-y-2 divide-primary-100 rounded-lg bg-light/90 shadow-lg ring-1 ring-black/5">
+              <div className="divide-y-2 divide-primary-100 rounded-lg bg-light/95 shadow-lg ring-1 ring-black/5">
                 <div className="px-5 pb-6 pt-5">
                   <div className="flex items-center justify-between">
                     <div className="fill-dark">
@@ -59,7 +59,7 @@ export default function CustomPopover(): JSX.Element {
                         <Link
                           key={item.name}
                           href={item.href}
-                          className="-my-3 flex items-center rounded-md p-3 text-dark hover:bg-dark/5"
+                          className="-my-3 flex items-center rounded-md p-3 text-dark hover:bg-dark/50 hover:text-light"
                         >
                           <span className="ml-3 text-base font-medium">{item.name}</span>
                         </Link>
