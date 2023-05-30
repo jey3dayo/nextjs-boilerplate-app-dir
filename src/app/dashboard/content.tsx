@@ -1,6 +1,6 @@
 'use client';
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
 import Label from '@/components/label';
 import classNames from '@/lib/class-names';
 import styles from '@/styles/dashboard.module.css';
@@ -83,7 +83,7 @@ function Dashboard() {
       <figure className="bg-primary-100 p-8 dark:bg-dark md:flex md:rounded-xl md:p-0">
         <Image
           className="mx-auto h-auto w-24 rounded-full md:w-48 md:rounded-none"
-          src="/sarah-dayan.jpg"
+          src="/image/sarah-dayan.jpg"
           alt=""
           width="384"
           height="512"

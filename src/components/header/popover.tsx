@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Transition, Popover } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
-import { navigation } from '@/constants';
 import { Logo } from '@/components/svg';
+import { navigation } from '@/constants';
 import classNames from '@/lib/class-names';
 
 export default function CustomPopover(): JSX.Element {

@@ -2,10 +2,10 @@ import React, { Suspense } from 'react';
 import Link from 'next/link';
 import Logo from '@/components/common/logo';
 import UserIcon from '@/components/common/user-icon';
-import { navigation } from '@/constants';
 import Menu from '@/components/header/menu';
 import Popover from '@/components/header/popover';
 import { subTitle } from '@/config';
+import { navigation } from '@/constants';
 import { env } from '@/env.mjs';
 
 const appName = env.NEXT_PUBLIC_APP_NAME;
