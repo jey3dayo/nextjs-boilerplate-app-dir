@@ -37,9 +37,9 @@ function Dashboard() {
             <Label htmlFor="text">Description</Label>
             <input
               className="w-full appearance-none rounded border px-3 py-2 leading-tight text-dark shadow focus:outline-none"
-              id="text"
+              id="description"
               type="text"
-              placeholder="Text"
+              placeholder="description"
               value={description}
               onChange={({ target: { value } }) => setDescription(value)}
             />
