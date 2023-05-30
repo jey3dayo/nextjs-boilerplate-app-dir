@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { getServerSession } from 'next-auth/next';
 import { UserIcon } from '@heroicons/react/20/solid';
 import classNames from '@/lib/class-names';
+import { getServerSession } from '@/lib/next-auth/server-utils';
 
 // TODO: ログアウトしてもserverSessionが生きてるので、revokeできるようにする
 export default async function CustomUserIcon({ className }: { className: string }) {

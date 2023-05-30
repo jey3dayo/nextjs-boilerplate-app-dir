@@ -1,8 +1,16 @@
 import { NextResponse } from 'next/server';
-import { generateShortHash } from '@/lib/hash';
+import { getServerSession } from '@/lib/next-auth/server-utils';
 
-// TODO: authで書き換える
-export async function GET(_request: Request) {
-  const input = `${Math.random()}`;
-  return NextResponse.json({ name: '最場', email: 'john@example.com', hash: generateShortHash(input) });
+export async function GET(_req: Request, _res: Response) {
+  const session = await getServerSession();
+  const user = session?.user;
+
+  if (!user) NextResponse.json({ error: 'User session not found.' });
+
+  return NextResponse.json({
+    id: user?.id,
+    name: user?.name,
+    email: user?.email,
+    image: user?.image,
+  });
 }

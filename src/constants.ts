@@ -16,3 +16,6 @@ export const navigation: Navigation[] = [
 ];
 
 export const profileNavigation: Navigation[] = [{ name: 'ダッシュボード', href: '/dashboard', requiredAdmin: false }];
+
+export const ROLE_USER = 1;
+export const ROLE_ADMIN = 2;

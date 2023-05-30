@@ -1,9 +1,7 @@
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-import { AuthOptions, User } from 'next-auth';
-import { JWT } from 'next-auth/jwt';
+import type { NextAuthOptions } from 'next-auth';
 import GithubProvider from 'next-auth/providers/github';
 import { OAuthConfig } from 'next-auth/providers/oauth';
-import { SessionWithUser } from '@/@types/next-auth';
 import { env } from '@/env.mjs';
 import CassoProvider from '@/lib/next-auth/casso-provider';
 import { prismaClient } from '@/lib/prisma';
@@ -24,7 +22,7 @@ const githubProvider = GithubProvider({
 let providers: OAuthConfig<any>[] = [githubProvider];
 if (env?.CASSO_CLIENT_ID) providers.push(cassoProvider);
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prismaClient),
   session: { strategy: 'jwt' },
   providers,
@@ -33,28 +31,34 @@ export const authOptions: AuthOptions = {
     // async redirect({ baseUrl }: { baseUrl: string }): Promise<string> {
     //   return baseUrl;
     // },
-    async session({ session, token }: { session: SessionWithUser; token: JWT }): Promise<SessionWithUser> {
+    async session({ session, token }) {
       if (token) {
         if (session?.user) {
-          session.user.id = (token?.id as string) ?? null;
-          session.user.name = token?.name ?? null;
-          session.user.email = token?.email ?? null;
-          session.user.image = token?.picture ?? null;
+          session.user.id = token.id;
+          session.user.name = token.name;
+          session.user.email = token.email;
+          session.user.image = token.picture;
+          session.user.role = token.role;
         } else {
           session.user = {
-            id: (token?.id as string) ?? null,
-            name: token?.name ?? null,
-            email: token?.email ?? null,
-            image: token?.picture ?? null,
+            id: token.id,
+            name: token.name,
+            email: token.email,
+            image: token.picture,
+            role: token.role,
           };
         }
+      } else {
+        console.log('nothing token!!!!!!!!!!!');
       }
 
       return session;
     },
-    async jwt({ token, user }: { token: JWT; user: User }): Promise<JWT> {
+    async jwt({ token, user }) {
       // jwt.emailでUserを特定する
-      if (!token?.email) return token;
+      if (!token?.email) {
+        return token;
+      }
 
       const dbUser: any = await prismaClient.user.findFirst({
         where: { email: token.email },

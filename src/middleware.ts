@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { withAuth } from 'next-auth/middleware';
-import { accessWhitelist } from '@/config';
+import { accessWhitelist, adminPages } from '@/config';
 import checkPath from '@/lib/check-path';
+import { checkAdmin } from './lib/next-auth/utils';
 
 export default withAuth(
   async function middleware(req) {
@@ -11,11 +12,20 @@ export default withAuth(
   {
     callbacks: {
       authorized({ req, token }) {
-        // FIXME: imageは通す
         if (/.png|.jpg|.svg/.test(req.nextUrl.pathname)) return true;
 
-        // /api は通す
-        return checkPath(req.nextUrl.pathname, accessWhitelist) || !!token;
+        // 公開ページと/apiは通す
+        if (checkPath(req.nextUrl.pathname, accessWhitelist)) return true;
+
+        // 認証
+        const isAuth = !!token;
+
+        // 管理者ページ
+        const isAdmin = isAuth ? checkAdmin(token?.role ?? 0) : false;
+        if (checkPath(req.nextUrl.pathname, adminPages)) return isAdmin;
+
+        // 管理者もしくは認証済み
+        return isAdmin || isAuth;
       },
     },
   },
