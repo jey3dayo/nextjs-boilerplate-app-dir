@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { withAuth } from 'next-auth/middleware';
+import { checkAdmin } from './lib/next-auth/utils';
 import { accessWhitelist, adminPages } from '@/config';
 import checkPath from '@/lib/check-path';
-import { checkAdmin } from './lib/next-auth/utils';
 
 export default withAuth(
   async function middleware(req) {

@@ -1,10 +1,8 @@
 import { NextResponse } from 'next/server';
-import { getServerSession } from '@/lib/next-auth/server-utils';
+import { getCurrentUser } from '@/lib/next-auth/session';
 
 export async function GET(_req: Request, _res: Response) {
-  const session = await getServerSession();
-  const user = session?.user;
-
+  const user = await getCurrentUser();
   if (!user) NextResponse.json({ error: 'User session not found.' });
 
   return NextResponse.json({
