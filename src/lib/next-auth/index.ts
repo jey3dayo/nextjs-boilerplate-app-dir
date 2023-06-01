@@ -25,7 +25,10 @@ if (env?.CASSO_CLIENT_ID) providers.push(cassoProvider);
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prismaClient),
-  session: { strategy: 'jwt' },
+  session: {
+    strategy: 'jwt',
+    maxAge: 60 * 60 * 24 * 30,
+  },
   providers,
   useSecureCookies: isProduction,
   callbacks: {
