@@ -7,13 +7,21 @@ import Popover from '@/components/header/popover';
 import { subTitle } from '@/config';
 import { navigation } from '@/constants';
 import { env } from '@/env.mjs';
+import classNames from '@/lib/class-names';
 
 const appName = env.NEXT_PUBLIC_APP_NAME;
+const height = 'h-[8vh] md:h-[6vh]';
 
 export default function Header(): React.JSX.Element {
   return (
     <div>
-      <nav className="flex flex-wrap items-center justify-between bg-dark/90 px-2 @container md:fixed md:left-0 md:top-0 md:h-14 md:w-full">
+      <nav
+        className={classNames(
+          'flex flex-wrap items-center justify-between bg-dark/90 px-2 @container',
+          'md:fixed md:left-0 md:top-0 md:w-full',
+          height,
+        )}
+      >
         <Link href="/">
           <div className="mr-6 flex shrink-0 items-center text-white">
             <div className="mx-auto h-auto w-10 @md:h-auto @md:w-16">
@@ -50,7 +58,7 @@ export default function Header(): React.JSX.Element {
         </div>
       </nav>
       {/* FIXME: height固定*/}
-      <div className="md:h-14" />
+      <div className={classNames('hidden md:flex', height)} />
     </div>
   );
 }
