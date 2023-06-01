@@ -1,9 +1,8 @@
-import 'server-only';
 import { getServerSession as _getServerSession } from 'next-auth/next';
+import { authOptions } from '@/lib/next-auth';
 
-// TODO: authOptionsが必要なら渡す
 export function getServerSession() {
-  return _getServerSession();
+  return _getServerSession(authOptions);
 }
 
 export async function getCurrentUser() {

@@ -1,16 +1,16 @@
 'use client';
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signIn, signOut } from 'next-auth/react';
 import { Transition, Popover } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid';
 import { Logo } from '@/components/svg';
 import { navigation } from '@/constants';
 import classNames from '@/lib/class-names';
+import { useCurrentUser } from '@/lib/next-auth/hooks';
 
 export default function CustomPopover(): JSX.Element {
-  const { data } = useSession();
-  const user = data?.user;
+  const user = useCurrentUser();
 
   return (
     <Popover>

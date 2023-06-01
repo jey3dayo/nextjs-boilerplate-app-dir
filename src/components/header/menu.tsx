@@ -1,10 +1,11 @@
 'use client';
 import { Fragment } from 'react';
 import Link from 'next/link';
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { signIn, signOut } from 'next-auth/react';
 import { Menu, Transition } from '@headlessui/react';
 import { profileNavigation as navigation } from '@/constants';
 import classNames from '@/lib/class-names';
+import { useCurrentUser } from '@/lib/next-auth/hooks';
 
 const buttonStyle = (active: boolean) => {
   return classNames(
@@ -14,8 +15,7 @@ const buttonStyle = (active: boolean) => {
 };
 
 export default function CustomMenu({ children }: ReactProps) {
-  const { data } = useSession();
-  const user = data?.user;
+  const user = useCurrentUser();
 
   return (
     <Menu as="div" className="relative ml-3 inline-block text-left">
