@@ -6,7 +6,6 @@ import { OAuthConfig } from 'next-auth/providers/oauth';
 import { env } from '@/env.mjs';
 import CassoProvider from '@/lib/next-auth/casso-provider';
 import { prismaClient } from '@/lib/prisma';
-import { isProduction } from '@/lib/utils';
 
 // api/auth/callback/casso
 const cassoProvider = CassoProvider({
@@ -30,34 +29,7 @@ export const authOptions: NextAuthOptions = {
     maxAge: 60 * 60 * 24 * 30,
   },
   providers,
-  useSecureCookies: isProduction,
   callbacks: {
-    // async redirect({ baseUrl }: { baseUrl: string }): Promise<string> {
-    //   return baseUrl;
-    // },
-    async session({ session, token }) {
-      if (token) {
-        if (session?.user) {
-          session.user.id = token.id;
-          session.user.name = token.name;
-          session.user.email = token.email;
-          session.user.image = token.picture;
-          session.user.role = token.role;
-        } else {
-          session.user = {
-            id: token.id,
-            name: token.name,
-            email: token.email,
-            image: token.picture,
-            role: token.role,
-          };
-        }
-      } else {
-        console.log('nothing token!!!!!!!!!!!');
-      }
-
-      return session;
-    },
     async jwt({ token, user }) {
       // jwt.emailでUserを特定する
       if (!token?.email) {
@@ -82,6 +54,27 @@ export const authOptions: NextAuthOptions = {
         picture: dbUser.image,
         role: dbUser.roleId,
       };
+    },
+    async session({ session, token }) {
+      if (token) {
+        if (session?.user) {
+          session.user.id = token.id;
+          session.user.name = token.name;
+          session.user.email = token.email;
+          session.user.image = token.picture;
+          session.user.role = token.role;
+        } else {
+          session.user = {
+            id: token.id,
+            name: token.name,
+            email: token.email,
+            image: token.picture,
+            role: token.role,
+          };
+        }
+      }
+
+      return session;
     },
   },
 };
