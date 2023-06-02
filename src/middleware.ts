@@ -7,10 +7,14 @@ import checkPath from '@/lib/check-path';
 
 export default withAuth(
   async function middleware(req) {
+    // redirect
+    // if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
+
     // 認証がいらないページか確認
     if (checkPath(req.nextUrl.pathname, accessWhitelist)) return null;
 
     // 認証
+    // XXX: tokenが取れなくなる時がある
     const token = await getToken({ req });
     const isAuth = !!token;
 
@@ -23,13 +27,10 @@ export default withAuth(
     }
 
     // admin管理ページの場合、権限確認
-    const isAdmin = isAuth ? checkAdmin(token?.role ?? 0) : false;
     if (checkPath(req.nextUrl.pathname, adminPages)) {
+      const isAdmin = isAuth ? checkAdmin(token?.role ?? 0) : false;
       return isAdmin ? null : NextResponse.rewrite(new URL('/error?code=403', req.url));
     }
-
-    // redirect
-    // if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
   },
   {
     callbacks: {
