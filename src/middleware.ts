@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { withAuth } from 'next-auth/middleware';
-import { checkAdmin } from './lib/next-auth/utils';
 import { accessWhitelist, adminPages, loginPage } from '@/config';
 import checkPath from '@/lib/check-path';
+import { checkAdmin, isTokenExpired } from '@/lib/next-auth/utils';
 
 export default withAuth(
   async function middleware(req) {
@@ -19,7 +19,7 @@ export default withAuth(
     const isAuth = !!token;
 
     // token.expが切れていたらリダイレクト
-    const isExpired = token?.exp && token.exp < Date.now() / 1000;
+    const isExpired = isTokenExpired(token?.exp);
     if (!isAuth || isExpired) {
       let from = req.nextUrl.pathname;
       if (req.nextUrl.search) from += req.nextUrl.search;
