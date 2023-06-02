@@ -1,6 +1,6 @@
 import palette from 'tailwindcss/colors';
 
-const colors = {
+export const colors = {
   primary: palette['neutral'],
   secondary: palette['gray'],
   tertiary: palette['teal'],
