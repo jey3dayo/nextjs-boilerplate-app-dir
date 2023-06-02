@@ -31,9 +31,14 @@
             "position": "before"
           },
           {
-            "pattern": "@src/**",
+            "pattern": "@/**",
             "group": "parent",
             "position": "before"
+          },
+          {
+            "pattern": "@/styles/**",
+            "group": "parent",
+            "position": "after"
           },
           {
             "pattern": "./**.module.css",
