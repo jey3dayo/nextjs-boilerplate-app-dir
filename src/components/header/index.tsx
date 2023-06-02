@@ -43,7 +43,6 @@ export default function Header(): React.JSX.Element {
           </div>
           <Menu>
             <Suspense fallback={<>loading</>}>
-              {/* @ts-expect-error Server Component */}
               <UserIcon className="h-8 w-8" />
             </Suspense>
           </Menu>
