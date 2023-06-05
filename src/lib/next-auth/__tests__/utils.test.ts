@@ -18,15 +18,3 @@ describe('checkAdmin', () => {
     expect(result).toBe(false);
   });
 });
-
-describe('isTokenExpired', () => {
-  it('有効期限切れの場合', () => {
-    const expired = 1629453600; // 2021/08/20
-    expect(isTokenExpired(expired)).toBeTruthy();
-  });
-
-  it('有効期限切れでない場合', () => {
-    const notExpired = 4120917422; // 2100/08/03
-    expect(isTokenExpired(notExpired)).toBeFalsy();
-  });
-});
