@@ -6,16 +6,19 @@ type Navigation = {
 };
 
 const links = {
-  '/admin/users': 'ユーザ管理',
+  '/admin': 'ユーザ管理',
 };
 
 export const navigation: Navigation[] = [
   { name: 'example1', href: '#example1', requiredAdmin: false, current: false },
   { name: 'example2', href: '#example2', requiredAdmin: false, current: false },
-  { name: links['/admin/users'], href: '/admin/users', requiredAdmin: true, current: false },
+  { name: links['/admin'], href: '/admin', requiredAdmin: true, current: false },
 ];
 
-export const profileNavigation: Navigation[] = [{ name: 'ダッシュボード', href: '/dashboard', requiredAdmin: false }];
+export const profileNavigation: Navigation[] = [
+  { name: 'ダッシュボード', href: '/dashboard', requiredAdmin: false },
+  { name: 'ユーザ管理', href: '/admin', requiredAdmin: true },
+];
 
 export const ROLE_USER = 1;
 export const ROLE_ADMIN = 2;

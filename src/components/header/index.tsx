@@ -1,12 +1,13 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import Logo from '@/components/common/logo';
-import UserIcon from '@/components/common/user-icon';
-import Menu from '@/components/header/menu';
 import Popover from '@/components/header/popover';
+import Menu from '@/components/user-menu';
 import { subTitle } from '@/config';
 import { navigation } from '@/constants';
 import { env } from '@/env.mjs';
+import classNames from '@/lib/class-names';
+import { getCurrentUser } from '@/lib/next-auth/session';
 
 const appName = env.NEXT_PUBLIC_APP_NAME;
 const height = 'h-[8vh] md:h-[7vh]';
@@ -18,19 +19,17 @@ export default async function Header() {
     <div>
       <nav
         className={classNames(
-          'flex flex-wrap items-center justify-between bg-dark/90 px-2 @container md:fixed md:left-0 md:top-0 md:w-full ',
+          'flex flex-wrap items-center justify-between bg-dark/90 px-2 @container md:fixed md:left-0 md:top-0 md:w-full',
           height,
         )}
       >
-        <Link href="/">
-          <div className="mr-6 flex shrink-0 items-center text-white">
-            <div className="mx-auto h-auto w-10 @md:h-auto @md:w-16">
-              <Logo />
-            </div>
-            <div className="pb-2 pl-2">
-              <div className="pt-0 text-xl font-semibold tracking-wide">{appName}</div>
-              <div className="text-xs font-semibold tracking-tighter">{subTitle}</div>
-            </div>
+        <Link href="/" className="mr-6 flex shrink-0 items-center text-white">
+          <div className="mx-auto h-auto w-10 @md:h-auto @md:w-16">
+            <Logo />
+          </div>
+          <div className="pb-2 pl-2">
+            <div className="pt-0 text-xl font-semibold tracking-wide">{appName}</div>
+            <div className="text-xs font-semibold tracking-tighter">{subTitle}</div>
           </div>
         </Link>
 

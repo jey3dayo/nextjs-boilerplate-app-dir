@@ -1,6 +1,6 @@
 import { expect, test } from '@jest/globals';
-import { isProduction } from '@/lib/utils';
 import { isExpired } from '@/lib/date';
+import { isProduction } from '@/lib/utils';
 
 describe('isExpired', () => {
   it('有効期限切れの場合', () => {
