@@ -22,7 +22,7 @@ export default function UserMenu({ user }: { user: Session['user'] | undefined }
     <DropdownMenuRoot modal={false}>
       <DropdownMenuTrigger asChild>
         <button
-          className="inline-flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white text-dark shadow-[0_2px_10px] shadow-dark outline-none hover:bg-red-300 focus:shadow-[0_0_0_2px] focus:shadow-black"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-dark shadow-[0_2px_10px] shadow-dark outline-none hover:bg-red-300 focus:shadow-[0_0_0_2px] focus:shadow-light"
           aria-label="Customise options"
         >
           <Avatar name={user?.name} src={user?.image} />
@@ -31,7 +31,9 @@ export default function UserMenu({ user }: { user: Session['user'] | undefined }
 
       <DropdownMenuPortal>
         <DropdownMenuContent sideOffset={5}>
-          <DropdownMenuItem className="h-[20px] pl-[25px] text-sm">{user?.name}</DropdownMenuItem>
+          <div className="pointer-events-none flex h-5 select-none items-center justify-center text-sm text-dark/90">
+            {user?.name}
+          </div>
           <DropdownMenuSeparator />
           <DropdownMenuLabel>リンク</DropdownMenuLabel>
           {navigation.map((v) => (

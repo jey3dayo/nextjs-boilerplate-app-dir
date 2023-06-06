@@ -9,7 +9,7 @@ const AvatarRoot = React.forwardRef<
   <Avatar.Root
     ref={ref}
     className={classNames(
-      'inline-flex h-[35px] w-[35px] select-none items-center justify-center overflow-hidden rounded-full bg-dark align-middle',
+      'inline-flex h-9 w-9 select-none items-center justify-center overflow-hidden rounded-full bg-dark align-middle',
       className,
     )}
     {...props}

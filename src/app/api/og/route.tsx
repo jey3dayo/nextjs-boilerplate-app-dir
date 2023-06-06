@@ -24,7 +24,7 @@ export async function GET(req: Request) {
     const { mode } = values;
     const paint = mode === 'dark' ? colors.light : colors.dark;
 
-    const fontSize = heading.length > 100 ? '70px' : '100px';
+    const fontSize = heading.length > 100 ? '18rem' : '25rem';
 
     return new ImageResponse(
       (
@@ -64,11 +64,11 @@ export async function GET(req: Request) {
               {values.type}
             </div>
             <div
-              tw="flex leading-[1.1] text-[80px] font-bold"
+              tw="flex leading-[1.1] text-20 font-bold"
               style={{
                 fontFamily: 'Cal Sans',
                 fontWeight: 'bold',
-                marginLeft: '-3px',
+                marginLeft: '-1rem',
                 fontSize,
               }}
             >

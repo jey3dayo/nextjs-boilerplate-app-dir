@@ -36,7 +36,11 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
-    className={classNames('px-2 pt-1 text-xs font-semibold leading-[20px] text-accent-600', inset && 'pl-8', className)}
+    className={classNames(
+      'select-none px-2 pt-1 text-xs font-semibold leading-5 text-accent-600',
+      inset && 'pl-8',
+      className,
+    )}
     {...props}
   />
 ));
@@ -50,7 +54,7 @@ const DropdownMenuContent = React.forwardRef<
     ref={ref}
     sideOffset={sideOffset}
     className={classNames(
-      'text-popover-foreground z-50 mr-[5px] min-w-[8rem] rounded-md border bg-light p-1 shadow-md',
+      'text-popover-foreground min-w-8 z-50 mr-1 rounded-md border bg-light p-1 shadow-md',
       'will-change-[transform] animate-in data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
       className,
     )}
