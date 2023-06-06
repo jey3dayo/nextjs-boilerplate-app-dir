@@ -1,6 +1,6 @@
 import { expect, describe } from '@jest/globals';
 import { ROLE_ADMIN, ROLE_USER } from '@/constants';
-import { checkAdmin, isTokenExpired } from '@/lib/next-auth/utils';
+import { checkAdmin } from '@/lib/next-auth/utils';
 
 describe('checkAdmin', () => {
   it('アドミン権限の場合', () => {
