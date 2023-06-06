@@ -16,4 +16,4 @@ export const colors = {
   ...radixUiColors,
 };
 
-module.exports = colors;
+export default colors;
