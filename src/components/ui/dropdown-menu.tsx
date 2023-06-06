@@ -18,7 +18,7 @@ const DropdownMenuArrow = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.DropdownMenuArrow ref={ref} className={classNames('fill-white', className)} {...props} />
 ));
-DropdownMenuArrow.displayName = DropdownMenuPrimitive.Separator.displayName;
+DropdownMenuArrow.displayName = DropdownMenuPrimitive.DropdownMenuArrow.displayName;
 
 const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
@@ -50,7 +50,7 @@ const DropdownMenuContent = React.forwardRef<
     ref={ref}
     sideOffset={sideOffset}
     className={classNames(
-      'text-popover-foreground z-50 mr-[5px] min-w-[8rem] overflow-hidden rounded-md border bg-light p-1 shadow-md',
+      'text-popover-foreground z-50 mr-[5px] min-w-[8rem] rounded-md border bg-light p-1 shadow-md',
       'will-change-[transform] animate-in data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
       className,
     )}

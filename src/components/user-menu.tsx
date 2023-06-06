@@ -30,7 +30,7 @@ export default function UserMenu({ user }: { user: Session['user'] | undefined }
       </DropdownMenuTrigger>
 
       <DropdownMenuPortal>
-        <DropdownMenuContent sideOffset={5} arrowPadding={10}>
+        <DropdownMenuContent sideOffset={5}>
           <DropdownMenuItem className="h-[20px] pl-[25px] text-sm">{user?.name}</DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuLabel>リンク</DropdownMenuLabel>
