@@ -1,6 +1,6 @@
 const { resolve } = require('path');
 const colorsPath = resolve(__dirname, 'src/styles/colors.ts');
-const colors = require(colorsPath);
+const { colors } = require(colorsPath);
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

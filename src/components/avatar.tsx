@@ -1,7 +1,7 @@
 import { User } from 'next-auth';
 import { UserIcon } from 'lucide-react';
 import { AvatarRoot, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { palette } from '@/styles';
+import { colors } from '@/styles/colors';
 
 export default function AvatarIcon(props: { name: User['name']; src: User['image'] }) {
   return (

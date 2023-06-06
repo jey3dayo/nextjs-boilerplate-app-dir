@@ -1,7 +1,7 @@
 import { blackA, violet, mauve } from '@radix-ui/colors';
 import tailwindColors from 'tailwindcss/colors';
 
-const radixUiColors = {
+export const radixUiColors = {
   ...blackA,
   ...violet,
   ...mauve,
@@ -16,4 +16,6 @@ export const colors = {
   ...radixUiColors,
 };
 
-module.exports = colors;
+module.exports = {
+  colors,
+};
