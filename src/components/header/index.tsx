@@ -16,7 +16,7 @@ export default async function Header() {
   const user = await getCurrentUser();
 
   return (
-    <div>
+    <>
       <nav
         className={classNames(
           'flex flex-wrap items-center justify-between bg-dark/90 px-2 @container md:fixed md:left-0 md:top-0 md:w-full',
@@ -27,7 +27,7 @@ export default async function Header() {
           <div className="mx-auto h-auto w-10 @md:h-auto @md:w-16">
             <Logo />
           </div>
-          <div className="pb-2 pl-2">
+          <div className="ml-2">
             <div className="pt-0 text-xl font-semibold tracking-wide">{appName}</div>
             <div className="text-xs font-semibold tracking-tighter">{subTitle}</div>
           </div>
@@ -53,6 +53,6 @@ export default async function Header() {
       </nav>
       {/* FIXME: height固定*/}
       <div className={classNames('hidden md:flex', height)} />
-    </div>
+    </>
   );
 }
