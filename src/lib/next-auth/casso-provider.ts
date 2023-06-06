@@ -30,7 +30,7 @@ export default function Casso<P extends CassoProfile>(options: OAuthUserConfig<P
       params: { scope: 'openid email profile' },
     },
     idToken: true,
-    checks: ['pkce', 'state'],
+    checks: ['pkce', 'state', 'nonce'],
     profile(profile: CassoProfile) {
       return {
         id: profile.sub,
