@@ -1,8 +1,7 @@
-import { ReactNode } from 'react';
 import { SWRConfig } from 'swr';
 import { fetcher } from '@/lib/fetcher';
 
-export default function SwrProvider({ children }: { children: ReactNode }) {
+export default function SwrProvider(props: ReactProps) {
   return (
     <SWRConfig
       value={{
@@ -10,7 +9,7 @@ export default function SwrProvider({ children }: { children: ReactNode }) {
         fetcher,
       }}
     >
-      {children}
+      {props.children}
     </SWRConfig>
   );
 }
