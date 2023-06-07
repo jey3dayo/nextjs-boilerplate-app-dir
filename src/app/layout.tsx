@@ -1,5 +1,4 @@
-import SessionProvider from '@/components/provider/session-provider';
-import TrackProvider from '@/components/provider/track-provider';
+import Provider from '@/components/provider';
 import { env } from '@/env.mjs';
 import { nextFont } from '@/lib/next-font';
 import '@/styles/globals.css';
@@ -11,12 +10,12 @@ export const metadata = {
 
 export default function RootLayout(props: ReactProps) {
   return (
-    <SessionProvider>
-      <html lang="ja" className={nextFont.className}>
-        <body>
-          <TrackProvider>{children}</TrackProvider>
-        </body>
-      </html>
-    </SessionProvider>
+    <html lang="ja" className={nextFont.className} suppressHydrationWarning={true}>
+      <body>
+        <Provider>
+          <main>{props.children}</main>
+        </Provider>
+      </body>
+    </html>
   );
 }
