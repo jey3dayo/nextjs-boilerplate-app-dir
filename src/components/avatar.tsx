@@ -1,7 +1,7 @@
 'use client';
 import { User } from 'next-auth';
-import { UserIcon } from 'lucide-react';
 import { AvatarRoot, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Icons } from '@/components/ui/icons';
 import { colors } from '@/styles/colors';
 
 export default function AvatarIcon(props: { name: User['name']; src: User['image'] }) {
@@ -9,7 +9,7 @@ export default function AvatarIcon(props: { name: User['name']; src: User['image
     <AvatarRoot>
       <AvatarImage src={props?.src} alt={props?.name} />
       <AvatarFallback>
-        <UserIcon color={colors.dark} />
+        <Icons.user color={colors.dark} />
       </AvatarFallback>
     </AvatarRoot>
   );
