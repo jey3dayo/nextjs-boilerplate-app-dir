@@ -4,7 +4,14 @@
 /node_modules
 /.pnp
 .pnp.js
-.yarn/cache
+
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
 # testing
 /coverage
@@ -21,9 +28,8 @@
 *.pem
 
 # debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+npm*.log*
+yarn*.log*
 
 # local env files
 .env*
