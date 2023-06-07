@@ -1,4 +1,5 @@
 'use client';
+
 import ErrorPage from 'next/error';
 
 type PageProps = {

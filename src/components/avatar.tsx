@@ -1,4 +1,5 @@
 'use client';
+
 import { User } from 'next-auth';
 import { AvatarRoot, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Icons } from '@/components/ui/icons';

@@ -1,4 +1,5 @@
 'use client';
+
 import { Fragment } from 'react';
 import Link from 'next/link';
 import { signIn, signOut } from 'next-auth/react';
