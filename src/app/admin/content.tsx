@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Label from '@/components/label';
+import Label from '@/components/ui/label';
 
 function Content() {
   const [text, setText] = useState('');

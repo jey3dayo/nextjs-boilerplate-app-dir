@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Label from '@/components/label';
+import Label from '@/components/ui/label';
 import classNames from '@/lib/class-names';
 import styles from '@/styles/dashboard.module.css';
 

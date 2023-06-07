@@ -1,4 +1,5 @@
 'use client';
+
 import { Bars } from 'react-loader-spinner';
 import { colors } from '@/styles/colors';
 import styles from '@/styles/home.module.css';
