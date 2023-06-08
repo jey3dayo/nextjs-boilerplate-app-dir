@@ -45,12 +45,12 @@ export default function CustomPopover(): JSX.Element {
                     </div>
                     <div className="-mr-2">
                       <Popover.Button
-                        className="inline-flex items-center justify-center rounded-md bg-light p-2
-                        text-dark/60
-                        hover:bg-primary-100 hover:text-dark focus:outline-none focus:ring-2 focus:ring-inset focus:ring-dark"
+                        className="focus:ring-dark inline-flex items-center justify-center rounded-md bg-light
+                        p-2
+                        text-dark/60 hover:bg-primary-100 hover:text-dark focus:outline-none focus:ring-2 focus:ring-inset"
                       >
-                        <span className="sr-only">Close menu</span>
-                        <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                        <span className="sr-only">メニューを閉じる</span>
+                        <Icons.close className="h-6 w-6" aria-hidden="true" />
                       </Popover.Button>
                     </div>
                   </div>

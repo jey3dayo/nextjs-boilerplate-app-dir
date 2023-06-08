@@ -5,7 +5,7 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-b from-neutral-100 via-indigo-50 to-neutral-50 text-dark dark:from-neutral-950 dark:via-cyan-950/20 dark:to-neutral-900 dark:text-light;
+    @apply bg-gradient-to-tr from-indigo-50 via-white to-cyan-50/40 text-dark dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950 dark:text-light;
   }
 }
 

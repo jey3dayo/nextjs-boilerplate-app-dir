@@ -8,19 +8,19 @@ export const radixUiColors = {
 };
 
 export const colors = {
-  // palettes
   primary: tailwindColors['neutral'],
   secondary: tailwindColors['gray'],
   accent: tailwindColors['teal'],
+  ...radixUiColors,
+};
 
-  // colors
+export const color = {
   dark: tailwindColors['neutral']['600'],
   medium: tailwindColors['neutral']['400'],
   light: tailwindColors['neutral']['50'],
-
-  ...radixUiColors,
 };
 
 module.exports = {
   colors,
+  color,
 };

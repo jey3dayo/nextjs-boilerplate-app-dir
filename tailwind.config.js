@@ -1,6 +1,6 @@
 const { resolve } = require('path');
 const colorsPath = resolve(__dirname, 'src/styles/colors.ts');
-const { colors } = require(colorsPath);
+const { colors, color } = require(colorsPath);
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -19,10 +19,8 @@ module.exports = {
   theme: {
     extend: {
       colors,
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
+      textColor: color,
+      backgroundColor: color,
     },
   },
   plugins: [require('@tailwindcss/container-queries'), require('tailwindcss-animate')],

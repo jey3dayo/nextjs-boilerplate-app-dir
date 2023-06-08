@@ -23,7 +23,7 @@ function Dashboard() {
           <div className="mb-4">
             <Label htmlFor="text">Text</Label>
             <input
-              className="w-full appearance-none rounded border px-3 py-2 leading-tight  text-dark shadow focus:outline-none"
+              className="w-full appearance-none rounded border px-3 py-2 leading-tight  text-dark shadow focus:outline-none dark:text-light"
               id="text"
               type="text"
               placeholder="Text"
@@ -37,7 +37,7 @@ function Dashboard() {
           <div className="mb-4">
             <Label htmlFor="text">Description</Label>
             <input
-              className="w-full appearance-none rounded border px-3 py-2 leading-tight text-dark shadow focus:outline-none"
+              className="w-full appearance-none rounded border px-3 py-2 leading-tight text-dark shadow focus:outline-none dark:text-light"
               id="description"
               type="text"
               placeholder="description"

@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import { IconButton } from '@/components/ui/icon-button';
 import { Icons } from '@/components/ui/icons';
 import { useTheme } from '@/hooks/use-themes';
-import { colors } from '@/styles/colors';
+import { color } from '@/styles/colors';
 
 const iconSize = 20;
-const iconColor = colors.light;
+const iconColor = color.light;
 
 const defaultTheme = 'dark';
 
