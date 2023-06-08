@@ -2,6 +2,9 @@ const { resolve } = require('path');
 const colorsPath = resolve(__dirname, 'src/styles/colors.ts');
 const { colors, color } = require(colorsPath);
 
+const containerQueries = require('@tailwindcss/container-queries');
+const animate = require('tailwindcss-animate');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -21,7 +24,11 @@ module.exports = {
       colors,
       textColor: color,
       backgroundColor: color,
+      ringColor: color,
+      borderColor: color,
+      fill: color,
+      boxShadowColor: color,
     },
   },
-  plugins: [require('@tailwindcss/container-queries'), require('tailwindcss-animate')],
+  plugins: [containerQueries, animate],
 };

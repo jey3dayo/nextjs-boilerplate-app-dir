@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { signIn, signOut } from 'next-auth/react';
 import { Transition, Popover } from '@headlessui/react';
 import { Logo } from '@/components/svg';
+import { Icons } from '@/components/ui/icons';
 import { navigation } from '@/constants';
 import classNames from '@/lib/class-names';
 import { useCurrentUser } from '@/lib/next-auth/hooks';
-import { Icons } from '@/components/ui/icons';
 
 export default function CustomPopover(): JSX.Element {
   const user = useCurrentUser();

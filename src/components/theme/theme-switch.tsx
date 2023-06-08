@@ -20,7 +20,7 @@ const ThemeSwitch = () => {
   useEffect(() => {
     setMounted(true);
     setTheme(resolvedTheme ?? defaultTheme);
-  }, []);
+  }, [setTheme, resolvedTheme]);
 
   if (!mounted) {
     return (
