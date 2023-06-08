@@ -25,7 +25,7 @@ export default async function Header() {
         )}
       >
         <Link href="/" className="mr-6 flex shrink-0 items-center text-white">
-          <div className="mx-auto h-auto w-10 @md:h-auto @md:w-16">
+          <div className="mx-auto h-auto w-10 md:h-auto md:w-16">
             <Logo />
           </div>
           <div className="ml-2">
@@ -36,7 +36,7 @@ export default async function Header() {
 
         <Popover />
 
-        <div className="hidden w-full @md:flex @md:w-auto @md:items-center @md:justify-between">
+        <div className="hidden w-full md:flex md:w-auto md:items-center md:justify-between">
           <div className="grow text-lg">
             {navigation.map((v) => (
               <Link
