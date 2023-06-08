@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Logo from '@/components/common/logo';
 import Popover from '@/components/header/popover';
+import ThemeSwitch from '@/components/theme/theme-switch';
 import Menu from '@/components/user-menu';
 import { subTitle } from '@/config';
 import { navigation } from '@/constants';
@@ -48,6 +49,7 @@ export default async function Header() {
               </Link>
             ))}
           </div>
+          <ThemeSwitch />
           <Menu user={user} />
         </div>
       </nav>
