@@ -8,7 +8,7 @@ function Content() {
 
   return (
     <div className="space-y-4 md:p-2">
-      <div className="w-full bg-white p-2 dark:bg-dark md:rounded">
+      <div className="w-full p-2 md:rounded">
         <div className="py-4">
           <div className="mb-4">
             <Label htmlFor="text">Text</Label>

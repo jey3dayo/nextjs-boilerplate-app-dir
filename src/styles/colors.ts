@@ -7,12 +7,17 @@ export const radixUiColors = {
   ...mauve,
 };
 
+export const baseColor = 'neutral';
 export const colors = {
-  primary: tailwindColors['neutral'],
+  // palettes
+  primary: tailwindColors[baseColor],
   secondary: tailwindColors['gray'],
   accent: tailwindColors['teal'],
-  dark: tailwindColors['neutral']['600'],
-  light: tailwindColors['neutral']['50'],
+
+  // colors
+  dark: tailwindColors[baseColor]['600'],
+  medium: tailwindColors[baseColor]['400'],
+  light: tailwindColors[baseColor]['50'],
   ...radixUiColors,
 };
 

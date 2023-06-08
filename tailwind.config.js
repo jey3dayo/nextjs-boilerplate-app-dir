@@ -15,6 +15,7 @@ module.exports = {
       standard: [/^bg-/, /^text-/],
     },
   },
+  darkMode: 'class',
   theme: {
     extend: {
       colors,
