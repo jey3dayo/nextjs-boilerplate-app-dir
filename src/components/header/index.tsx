@@ -34,7 +34,10 @@ export default async function Header() {
           </div>
         </Link>
 
-        <Popover />
+        <div className="md:hidden">
+          <ThemeSwitch size="md" />
+          <Popover />
+        </div>
 
         <div className="hidden w-full md:flex md:w-auto md:items-center md:justify-between">
           <div className="grow text-lg">
@@ -49,7 +52,7 @@ export default async function Header() {
               </Link>
             ))}
           </div>
-          <ThemeSwitch />
+          <ThemeSwitch size="sm" />
           <Menu user={user} />
         </div>
       </nav>

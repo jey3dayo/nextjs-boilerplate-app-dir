@@ -14,6 +14,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuGroup,
 } from '@/components/ui/dropdown-menu';
 import { profileNavigation as navigation } from '@/constants';
 
