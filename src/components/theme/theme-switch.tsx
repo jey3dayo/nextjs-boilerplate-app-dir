@@ -13,8 +13,6 @@ const defaultTheme = 'dark';
 const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme, resolvedTheme } = useTheme();
-
-  let iconSize = getIconSize(size);
   const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
 
   // useEffect only runs on the client, so now we can safely show the UI
@@ -23,16 +21,18 @@ const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
     setTheme(resolvedTheme ?? defaultTheme);
   }, [setTheme, resolvedTheme]);
 
+  const iconSize = getIconSize(size);
+
   if (!mounted) {
     return (
-      <IconButton className="mx-1" outline="dark" variant="dark" size={size}>
+      <IconButton className="mx-1" variant="dark" size={size}>
         <Icons.moon color={iconColor} size={iconSize} />
       </IconButton>
     );
   }
 
   return (
-    <IconButton className="mx-1" outline="dark" variant="dark" size={size} onClick={toggleTheme}>
+    <IconButton className="mx-1" variant="dark" size={size} onClick={toggleTheme}>
       {theme === 'light' ? (
         <Icons.sun color={iconColor} size={iconSize} />
       ) : (

@@ -22,6 +22,8 @@ module.exports = {
   theme: {
     extend: {
       colors,
+
+      // TODO: 問題があればcolorsにまとめる
       textColor: color,
       backgroundColor: color,
       ringColor: color,

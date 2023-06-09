@@ -16,18 +16,16 @@ import {
   DropdownMenuItem,
   DropdownMenuGroup,
 } from '@/components/ui/dropdown-menu';
+import { IconButton } from '@/components/ui/icon-button';
 import { profileNavigation as navigation } from '@/constants';
 
 export default function UserMenu({ user }: { user: Session['user'] | undefined }) {
   return (
     <DropdownMenuRoot modal={false}>
       <DropdownMenuTrigger asChild>
-        <button
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-dark shadow-[0_2px_10px] shadow-dark outline-none hover:bg-red-300 focus:shadow-[0_0_0_2px] focus:shadow-light"
-          aria-label="Customise options"
-        >
+        <IconButton variant="avatar" shadow="dark" aria-label="Customise options">
           <Avatar name={user?.name} src={user?.image} />
-        </button>
+        </IconButton>
       </DropdownMenuTrigger>
 
       <DropdownMenuPortal>
