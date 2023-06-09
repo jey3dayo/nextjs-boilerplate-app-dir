@@ -26,3 +26,11 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
 };
+
+export type Size = 'sm' | 'md' | 'lg';
+
+export const iconSizes: Record<Size, number> = {
+  lg: 28,
+  md: 24,
+  sm: 20,
+};

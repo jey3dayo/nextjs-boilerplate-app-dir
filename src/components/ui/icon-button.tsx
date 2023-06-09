@@ -2,8 +2,6 @@ import * as React from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
 import classNames from '@/lib/class-names';
 
-export type Size = 'sm' | 'md' | 'lg';
-
 const layoutStyle = 'relative inline-flex items-center justify-center transition-all';
 const designStyle = 'rounded';
 const focusVisibleStyle =
@@ -38,7 +36,7 @@ const variants = cva([layoutStyle, designStyle, focusVisibleStyle, disabledStyle
   },
 });
 
-export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof variants> { }
+export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof variants> {}
 
 const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, variant, size, shadow, ...props }, ref) => {
@@ -48,15 +46,3 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 IconButton.displayName = 'IconButton';
 
 export { IconButton, variants as iconButtonVariants };
-
-export function getIconSize(size: Size) {
-  switch (size) {
-    case 'lg':
-      return 28;
-    case 'md':
-      return 24;
-    case 'sm':
-    default:
-      return 20;
-  }
-}

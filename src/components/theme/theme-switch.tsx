@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { IconButton, Size, getIconSize } from '@/components/ui/icon-button';
+import { IconButton } from '@/components/ui/icon-button';
+import { iconSizes, Size } from '@/components/ui/icons';
 import { Icons } from '@/components/ui/icons';
 import { useTheme } from '@/hooks/use-themes';
 import { color } from '@/styles/colors';
@@ -21,12 +22,10 @@ const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
     setTheme(resolvedTheme ?? defaultTheme);
   }, [setTheme, resolvedTheme]);
 
-  const iconSize = getIconSize(size);
-
   if (!mounted) {
     return (
       <IconButton className="mx-1" variant="dark" size={size}>
-        <Icons.moon color={iconColor} size={iconSize} />
+        <Icons.moon color={iconColor} size={iconSizes[size]} />
       </IconButton>
     );
   }
@@ -34,9 +33,9 @@ const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
   return (
     <IconButton className="mx-1" variant="dark" size={size} onClick={toggleTheme}>
       {theme === 'light' ? (
-        <Icons.sun color={iconColor} size={iconSize} />
+        <Icons.sun color={iconColor} size={iconSizes[size]} />
       ) : (
-        <Icons.moon color={iconColor} size={iconSize} />
+        <Icons.moon color={iconColor} size={iconSizes[size]} />
       )}
     </IconButton>
   );
