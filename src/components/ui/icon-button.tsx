@@ -1,48 +1,51 @@
-import * as React from 'react';
-import { VariantProps, cva } from 'class-variance-authority';
-import classNames from '@/lib/class-names';
+import React from 'react';
+import { Session } from 'next-auth';
+import Avatar from '@/components/avatar';
+import { Button, ButtonVariants } from '@/components/ui/button';
+import { Icons, iconSizes } from '@/components/ui/icons';
+import { color } from '@/styles/colors';
 
-const layoutStyle = 'relative inline-flex items-center justify-center transition-all';
-const designStyle = 'rounded';
-const focusVisibleStyle =
-  'focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
-// const ringColorStyle = 'ring-offset-red-500 ring-red-500';
-const disabledStyle = 'disabled:pointer-events-none disabled:opacity-50';
+const defaultIconColor = color.light;
 
-const variants = cva([layoutStyle, designStyle, focusVisibleStyle, disabledStyle].join(' '), {
-  variants: {
-    variant: {
-      default: 'bg-light hover:bg-light/90 dark:bg-primary-600 hover:dark:bg-primary-600/90',
-      accent: 'bg-accent-200  hover:bg-accent-200/90',
-      dark: 'bg-primary-500 hover:bg-primary-200/10',
-      inherit: 'bg-inherit',
-      avatar: 'rounded-full bg-inherit outline-none',
-    },
-    size: {
-      default: '',
-      sm: 'p-2',
-      md: 'p-3',
-      lg: 'p-4',
-    },
-    shadow: {
-      default: '',
-      dark: 'shadow-[0_2px_10px] shadow-dark focus:shadow-[0_0_0_2px] focus:shadow-light',
-    },
-  },
-  defaultVariants: {
-    variant: 'default',
-    size: 'default',
-    shadow: 'default',
-  },
-});
+export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariants {
+  iconColor?: 'string';
+}
 
-export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof variants> {}
-
-const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
-  ({ className, variant, size, shadow, ...props }, ref) => {
-    return <button className={classNames(variants({ variant, size, shadow, className }))} ref={ref} {...props} />;
-  },
+const MenuIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ className, size, variant, iconColor, ...props }, ref) => (
+    <Button className={className} variant={variant} size={size} aria-label="メニュー" ref={ref} {...props}>
+      <Icons.menu color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+    </Button>
+  ),
 );
-IconButton.displayName = 'IconButton';
+MenuIconButton.displayName = 'MenuIconButton';
 
-export { IconButton, variants as iconButtonVariants };
+const DarkIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ className, size, variant, iconColor, ...props }, ref) => (
+    <Button className={className} variant={variant} size={size} aria-label="ダークモード" ref={ref} {...props}>
+      <Icons.moon color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+    </Button>
+  ),
+);
+DarkIconButton.displayName = 'DarkIconButton';
+
+const LightIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
+  ({ className, size, variant, iconColor, ...props }, ref) => (
+    <Button className={className} variant={variant} size={size} aria-label="ライトモード" ref={ref} {...props}>
+      <Icons.moon color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+    </Button>
+  ),
+);
+LightIconButton.displayName = 'LightIconButton';
+
+export interface AvatarIconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  user?: Session['user'];
+}
+const AvatarIconButton = React.forwardRef<HTMLButtonElement, AvatarIconButtonProps>((props, ref) => (
+  <Button variant="avatar" shadow="dark" aria-label="Customise options" ref={ref} {...props}>
+    <Avatar name={props.user?.name} src={props.user?.image} />
+  </Button>
+));
+AvatarIconButton.displayName = 'AvatarIconButton';
+
+export { AvatarIconButton, MenuIconButton, DarkIconButton, LightIconButton };

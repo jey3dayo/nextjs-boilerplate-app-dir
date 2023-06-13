@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { IconButton } from '@/components/ui/icon-button';
-import { iconSizes, Size } from '@/components/ui/icons';
-import { Icons } from '@/components/ui/icons';
+import { Button } from '@/components/ui/button';
+import { iconSizes, Size, Icons } from '@/components/ui/icons';
 import { useTheme } from '@/hooks/use-themes';
 import { color } from '@/styles/colors';
+import { DarkIconButton, LightIconButton } from '../ui/icon-button';
 
 const iconColor = color.light;
 
@@ -23,21 +23,13 @@ const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
   }, [setTheme, resolvedTheme]);
 
   if (!mounted) {
-    return (
-      <IconButton className="mx-1" variant="dark" size={size}>
-        <Icons.moon color={iconColor} size={iconSizes[size]} />
-      </IconButton>
-    );
+    return <DarkIconButton className="mx-1" variant="dark" size={size} />;
   }
 
-  return (
-    <IconButton className="mx-1" variant="dark" size={size} onClick={toggleTheme}>
-      {theme === 'light' ? (
-        <Icons.sun color={iconColor} size={iconSizes[size]} />
-      ) : (
-        <Icons.moon color={iconColor} size={iconSizes[size]} />
-      )}
-    </IconButton>
+  return theme === 'light' ? (
+    <LightIconButton className="mx-1" variant="dark" size={size} onClick={toggleTheme} />
+  ) : (
+    <DarkIconButton className="mx-1" variant="dark" size={size} onClick={toggleTheme} />
   );
 };
 

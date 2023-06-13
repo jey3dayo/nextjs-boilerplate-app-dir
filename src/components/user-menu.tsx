@@ -16,16 +16,14 @@ import {
   DropdownMenuItem,
   DropdownMenuGroup,
 } from '@/components/ui/dropdown-menu';
-import { IconButton } from '@/components/ui/icon-button';
+import { AvatarIconButton } from '@/components/ui/icon-button';
 import { profileNavigation as navigation } from '@/constants';
 
 export default function UserMenu({ user }: { user: Session['user'] | undefined }) {
   return (
     <DropdownMenuRoot modal={false}>
       <DropdownMenuTrigger asChild>
-        <IconButton variant="avatar" shadow="dark" aria-label="Customise options">
-          <Avatar name={user?.name} src={user?.image} />
-        </IconButton>
+        <AvatarIconButton user={user} />
       </DropdownMenuTrigger>
 
       <DropdownMenuPortal>
