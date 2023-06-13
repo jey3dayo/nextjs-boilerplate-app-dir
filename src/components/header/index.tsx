@@ -11,7 +11,7 @@ import classNames from '@/lib/class-names';
 import { getCurrentUser } from '@/lib/next-auth/session';
 
 const appName = env.NEXT_PUBLIC_APP_NAME;
-const height = 'h-[8vh] md:h-[7vh]';
+const height = 'h-[8vh] md:h-[7vh] min-h-[52px]';
 
 export default async function Header() {
   const user = await getCurrentUser();
@@ -20,7 +20,7 @@ export default async function Header() {
     <>
       <nav
         className={classNames(
-          'flex flex-wrap items-center justify-between bg-dark/90 px-2 @container md:fixed md:left-0 md:top-0 md:w-full',
+          'flex flex-wrap items-center justify-between bg-dark/90 px-2 md:fixed md:left-0 md:top-0 md:w-full',
           height,
         )}
       >
