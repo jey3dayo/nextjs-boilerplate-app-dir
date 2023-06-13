@@ -21,6 +21,10 @@ function Content() {
               onChange={({ target: { value } }) => setText(value)}
             />
           </div>
+
+          <div className="text-dark">dark</div>
+          <div className="text-medium">medium</div>
+          <div className="text-light">light</div>
         </div>
       </div>
     </div>
