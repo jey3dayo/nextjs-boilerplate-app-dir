@@ -1,6 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 import { ogImageSchema } from '@/lib/validations/og';
-import { colors } from '@/styles/colors';
+import { color } from '@/styles/colors';
 
 export const runtime = 'edge';
 
@@ -22,7 +22,7 @@ export async function GET(req: Request) {
     const heading = values.heading.length > 140 ? `${values.heading.substring(0, 140)}...` : values.heading;
 
     const { mode } = values;
-    const paint = mode === 'dark' ? colors.light : colors.dark;
+    const paint = mode === 'dark' ? color.light : color.dark;
 
     const fontSize = heading.length > 100 ? '18rem' : '25rem';
 
