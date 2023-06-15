@@ -17,28 +17,26 @@ const AvatarRoot = React.forwardRef<
 ));
 AvatarRoot.displayName = Avatar.Root.displayName;
 
-const AvatarImage = React.forwardRef<
-  React.ElementRef<typeof Avatar.Image>,
-  Omit<React.ComponentPropsWithoutRef<typeof Avatar.Image>, 'alt' | 'src'> & {
-    alt: string | null | undefined;
-    src: string | null | undefined;
-  }
->(({ src, alt, className, ...props }, ref) => (
-  <Avatar.Image
-    ref={ref}
-    alt={alt ?? undefined}
-    src={src ?? undefined}
-    className={classNames('h-full w-full rounded-[inherit] object-cover', className)}
-    {...props}
-  />
-));
+interface AvatarImageProps extends Omit<React.ComponentPropsWithoutRef<typeof Avatar.Image>, 'src' | 'alt'> {
+  src: string | null | undefined;
+  alt: string | null | undefined;
+}
+const AvatarImage = React.forwardRef<React.ElementRef<typeof Avatar.Image>, AvatarImageProps>(
+  ({ src, alt, className, ...props }, ref) => (
+    <Avatar.Image
+      ref={ref}
+      alt={alt ?? undefined}
+      src={src ?? undefined}
+      className={classNames('h-full w-full rounded-[inherit] object-cover', className)}
+      {...props}
+    />
+  ),
+);
 AvatarImage.displayName = Avatar.Image.displayName;
 
 const AvatarFallback = React.forwardRef<
   React.ElementRef<typeof Avatar.Fallback>,
-  Omit<React.ComponentPropsWithoutRef<typeof Avatar.Fallback>, 'delayMs'> & {
-    delayMs?: number;
-  }
+  React.ComponentPropsWithoutRef<typeof Avatar.Fallback>
 >(({ delayMs, className, ...props }, ref) => (
   <Avatar.Fallback
     ref={ref}

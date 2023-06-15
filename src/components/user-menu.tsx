@@ -4,7 +4,6 @@ import React from 'react';
 import Link from 'next/link';
 import { Session } from 'next-auth';
 import { signIn, signOut } from 'next-auth/react';
-import Avatar from '@/components/avatar';
 import {
   DropdownMenuRoot,
   DropdownMenuTrigger,
