@@ -8,7 +8,7 @@ import { color } from '@/styles/colors';
 const defaultIconColor = color.light;
 
 export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariants {
-  iconColor?: 'string';
+  iconColor?: string;
 }
 
 const MenuIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(

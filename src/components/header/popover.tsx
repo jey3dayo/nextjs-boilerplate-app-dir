@@ -16,7 +16,6 @@ import {
 import { navigation } from '@/constants';
 import classNames from '@/lib/class-names';
 import { useCurrentUser } from '@/lib/next-auth/hooks';
-import { colors } from '@/styles/colors';
 
 export default function CustomPopover(): JSX.Element {
   const user = useCurrentUser();
@@ -24,7 +23,7 @@ export default function CustomPopover(): JSX.Element {
   return (
     <PopoverRoot modal={false}>
       <PopoverTrigger asChild>
-        <MenuIconButton variant="dark" size="md" color={colors.primary['300']} />
+        <MenuIconButton variant="dark" size="md" />
       </PopoverTrigger>
       <PopoverAnchor asChild>
         <PopoverAnchorChild />
