@@ -1,12 +1,40 @@
+import React from 'react';
+import * as LabelPrimitive from '@radix-ui/react-label';
+import { VariantProps, cva } from 'class-variance-authority';
 import classNames from '@/lib/class-names';
 
-export default function Label(props: { className?: string; htmlFor: string; children: string }) {
-  return (
-    <label
-      className={classNames('mb-2 block text-sm font-bold text-dark dark:text-light', props.className ?? '')}
-      htmlFor={props.htmlFor}
-    >
-      {props.children}
-    </label>
-  );
+const variants = cva('', {
+  variants: {
+    variant: {
+      default: 'block text-sm font-medium',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
+
+type HtmlFor = 'text';
+
+type Variants = VariantProps<typeof variants>;
+
+interface Props extends Omit<React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & Variants, 'htmlFor'> {
+  htmlFor: HtmlFor;
 }
+
+const Label = React.forwardRef<React.ElementRef<typeof LabelPrimitive.Root>, Props>(
+  ({ className, htmlFor, variant, children, ...props }, ref) => (
+    <LabelPrimitive.Root
+      ref={ref}
+      htmlFor={htmlFor}
+      className={classNames(variants({ variant, className }))}
+      {...props}
+    >
+      {children}
+    </LabelPrimitive.Root>
+  ),
+);
+Label.displayName = LabelPrimitive.Root.displayName;
+
+export { Label };
+export type { Props as LabelProps, Variants as LabelVariants };

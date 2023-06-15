@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Label from '@/components/ui/label';
+import { Label } from '@/components/ui/label';
 import classNames from '@/lib/class-names';
 import styles from '@/styles/dashboard.module.css';
 
@@ -12,7 +12,7 @@ const DEFAULT_DESCRIPTION =
 
 function Dashboard() {
   const [action, setAction] = useState('');
-  const [text, setText] = useState('');
+  const [text, setText] = useState('test');
   const [description, setDescription] = useState(DEFAULT_DESCRIPTION);
   const [vol, setVol] = useState(DEFAULT_VOL);
 
