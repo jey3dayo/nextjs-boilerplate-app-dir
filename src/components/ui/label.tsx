@@ -1,6 +1,7 @@
 import React from 'react';
 import * as LabelPrimitive from '@radix-ui/react-label';
 import { VariantProps, cva } from 'class-variance-authority';
+import { InputNames } from '@/@types/ui';
 import classNames from '@/lib/class-names';
 
 const variants = cva('', {
@@ -14,12 +15,10 @@ const variants = cva('', {
   },
 });
 
-type HtmlFor = 'text';
-
 type Variants = VariantProps<typeof variants>;
 
 interface Props extends Omit<React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & Variants, 'htmlFor'> {
-  htmlFor: HtmlFor;
+  htmlFor: InputNames;
 }
 
 const Label = React.forwardRef<React.ElementRef<typeof LabelPrimitive.Root>, Props>(

@@ -48,7 +48,7 @@ function Dashboard() {
         </div>
 
         <div className="py-4">
-          <Label className="space-y-1" htmlFor="default-range">
+          <Label className="space-y-1" htmlFor="volume">
             Volume
           </Label>
           <div className="space-y-4">vol: {vol}</div>
