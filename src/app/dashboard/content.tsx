@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import classNames from '@/lib/class-names';
-import styles from '@/styles/dashboard.module.css';
 
 const DEFAULT_VOL = 50;
 const DEFAULT_DESCRIPTION =
@@ -65,22 +65,13 @@ function Dashboard() {
         </div>
 
         <Label htmlFor="text">{`Action: ${action}`}</Label>
-        <div className="grid grid-cols-2 gap-x-6">
-          <button
-            onClick={() => setAction('Decline')}
-            className={classNames(
-              styles.btn,
-              'bg-theme-neutral hover:bg-theme-neutral-weak text-theme-hover text-light hover:text-white',
-            )}
-          >
+        <div className="grid grid-cols-2 gap-x-6 gap-y-1">
+          <Button variant="default" size="md" onClick={() => setAction('Decline')}>
             Decline
-          </button>
-          <button
-            onClick={() => setAction('Accept')}
-            className={classNames(styles.btn, 'bg-theme-accent hover:bg-theme-accent-weak text-white')}
-          >
+          </Button>
+          <Button variant="accent" size="md" onClick={() => setAction('Accept')}>
             Accept
-          </button>
+          </Button>
         </div>
       </div>
 

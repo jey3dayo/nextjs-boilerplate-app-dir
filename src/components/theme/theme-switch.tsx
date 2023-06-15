@@ -1,13 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { iconSizes, Size, Icons } from '@/components/ui/icons';
+import { DarkIconButton, LightIconButton } from '@/components/ui/icon-button';
+import { Size } from '@/components/ui/icons';
 import { useTheme } from '@/hooks/use-themes';
-import { color } from '@/styles/colors';
-import { DarkIconButton, LightIconButton } from '../ui/icon-button';
-
-const iconColor = color.light;
 
 const defaultTheme = 'dark';
 

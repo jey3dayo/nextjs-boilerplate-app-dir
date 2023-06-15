@@ -27,14 +27,8 @@
   .bg-theme-neutral {
     @apply bg-primary-700 dark:bg-primary-500;
   }
-  .bg-theme-neutral-weak {
-    @apply bg-primary-600 dark:bg-primary-400;
-  }
   .bg-theme-accent {
     @apply bg-accent-500 dark:bg-accent-400;
-  }
-  .bg-theme-accent-weak {
-    @apply bg-accent-400 dark:bg-accent-300;
   }
 
   /* text */
@@ -48,12 +42,18 @@
     @apply text-primary-700 dark:text-primary-500;
   }
   .text-theme-accent {
-    @apply text-accent-500 dark:text-accent-400;
+    @apply text-accent-500;
   }
 
   /* hover */
+  .bg-medium-hover {
+    @apply bg-medium hover:bg-medium/80;
+  }
   .bg-theme-neutral-hover {
-    @apply bg-primary-700 hover:bg-primary-700/80 dark:bg-primary-500 dark:hover:bg-primary-500/80;
+    @apply bg-primary-700 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400;
+  }
+  .bg-theme-accent-hover {
+    @apply bg-accent-500 hover:bg-accent-400;
   }
   .text-theme-hover {
     @apply text-dark hover:text-light dark:text-light dark:hover:text-dark;

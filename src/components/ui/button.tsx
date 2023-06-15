@@ -2,47 +2,57 @@ import * as React from 'react';
 import { VariantProps, cva } from 'class-variance-authority';
 import classNames from '@/lib/class-names';
 
-const layoutStyle = 'relative inline-flex items-center justify-center transition-all';
-const designStyle = 'rounded';
-const focusVisibleStyle =
-  'focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
-// const ringColorStyle = 'ring-offset-red-500 ring-red-500';
+const layoutStyle = 'relative inline-flex items-center justify-center';
+const designStyle = 'rounded-lg text-base font-medium';
 const disabledStyle = 'disabled:pointer-events-none disabled:opacity-50';
+const animationStyle = 'transition will-change-[transform,opacity] ease-in-out';
 
-const variants = cva([layoutStyle, designStyle, focusVisibleStyle, disabledStyle].join(' '), {
+const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].join(' '), {
   variants: {
     variant: {
-      default: 'bg-light hover:bg-light/90 dark:bg-medium hover:dark:bg-medium/90',
-      accent: 'bg-accent-200 hover:bg-accent-200/90',
-      dark: 'bg-medium hover:bg-light/10',
+      default: 'bg-theme-neutral-hover text-light',
+      dark: 'bg-medium-hover',
+      accent: 'bg-theme-accent-hover text-light',
       inherit: 'bg-inherit',
       avatar: 'rounded-full bg-inherit outline-none',
     },
     size: {
-      default: '',
+      none: '',
       sm: 'p-2',
       md: 'p-3',
       lg: 'p-4',
     },
     shadow: {
-      default: '',
+      none: '',
       dark: 'shadow-[0_2px_10px] shadow-dark focus:shadow-[0_0_0_2px] focus:shadow-light',
+    },
+    transition: {
+      '0': 'duration-0',
+      '100': 'duration-100',
+      '200': 'duration-200',
+      '300': 'duration-300',
+      '1000': 'duration-1000',
     },
   },
   defaultVariants: {
     variant: 'default',
-    size: 'default',
-    shadow: 'default',
+    size: 'none',
+    shadow: 'none',
+    transition: '300',
   },
 });
 
 type Variants = VariantProps<typeof variants>;
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>, Variants {}
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>, Variants { }
 
-const Button = React.forwardRef<HTMLButtonElement, Props>(({ className, variant, size, shadow, ...props }, ref) => {
-  return <button className={classNames(variants({ variant, size, shadow, className }))} ref={ref} {...props} />;
-});
+const Button = React.forwardRef<HTMLButtonElement, Props>(
+  ({ className, variant, size, shadow, transition, ...props }, ref) => {
+    return (
+      <button className={classNames(variants({ variant, size, shadow, transition, className }))} ref={ref} {...props} />
+    );
+  },
+);
 Button.displayName = 'Button';
 
 export { Button, variants as buttonVariants };

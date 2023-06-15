@@ -32,7 +32,7 @@ DarkIconButton.displayName = 'DarkIconButton';
 const LightIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, size, variant, iconColor, ...props }, ref) => (
     <Button className={className} variant={variant} size={size} aria-label="ライトモード" ref={ref} {...props}>
-      <Icons.moon color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+      <Icons.sun color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
     </Button>
   ),
 );
