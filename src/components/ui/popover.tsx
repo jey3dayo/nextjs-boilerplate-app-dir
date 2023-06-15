@@ -48,15 +48,12 @@ const PopoverContent = React.forwardRef<
     sticky={sticky ?? 'always'}
     className={classNames(
       className,
+      'theme w-[94vw] rounded px-8 py-4 opacity-95',
       'w-[94vw] rounded px-8 py-4 opacity-95',
-      'bg-light text-dark dark:bg-dark dark:text-light',
+
       'shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)]',
       'focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.violet7)]',
-      'transition will-change-[transform,opacity] animate-in',
-      'data-[state=open]:data-[side=bottom]:slide-in-from-top-1',
-      'data-[state=open]:data-[side=left]:slide-in-from-right-1',
-      'data-[state=open]:data-[side=right]:slide-in-from-left-1',
-      'data-[state=open]:data-[side=top]:slide-in-from-bottom-1',
+      'state-open-slide-in transition will-change-[transform,opacity] animate-in',
     )}
     {...props}
   >
@@ -93,9 +90,9 @@ const popoverCloseVariants = cva('', {
     variant: {
       default: classNames(
         'absolute inline-flex justify-center items-center',
-        'rounded cursor-default',
+        'rounded cursor-default outline-none',
         'right-1 top-1 h-8 w-8',
-        'rounded bg-primary-500 hover:bg-primary-500/80 dark:bg-primary-400 dark:hover:bg-primary-400/80',
+        'bg-theme-neutral-hover',
         'outline-none focus:shadow-[0_0_0_2px]',
       ),
     },

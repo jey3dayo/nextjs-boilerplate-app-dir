@@ -37,7 +37,8 @@ const DropdownMenuLabel = React.forwardRef<
   <DropdownMenuPrimitive.Label
     ref={ref}
     className={classNames(
-      'select-none px-2 pt-1 text-xs font-semibold leading-5 text-accent-600',
+      'px-2 pt-1 leading-5',
+      'select-none text-xs font-semibold text-accent-600',
       inset && 'pl-8',
       className,
     )}
@@ -54,8 +55,10 @@ const DropdownMenuContent = React.forwardRef<
     ref={ref}
     sideOffset={sideOffset}
     className={classNames(
-      'text-popover-foreground min-w-8 z-50 mr-1 rounded-md border bg-light p-1 shadow-md',
-      'will-change-[transform] animate-in data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
+      'min-w-8 z-50 mr-1 p-1',
+      'text-popover-foreground rounded-md border bg-light shadow-md',
+      'will-change-[transform] animate-in',
+      'data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
       className,
     )}
     {...props}
@@ -72,7 +75,9 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={classNames(
-      'focus:bg-accent focus:text-accent-foreground group relative mx-1 flex cursor-default select-none items-center rounded-sm px-2 py-1 text-sm text-dark outline-none transition-colors',
+      'item-center group relative mx-1 flex px-2 py-1',
+      'focus:bg-accent focus:text-accent-foreground text-sm text-dark ',
+      'cursor-default select-none rounded-sm outline-none transition-colors',
       'data-[disabled]:pointer-events-none data-[highlighted]:bg-dark data-[disabled]:text-accent-800 data-[highlighted]:text-light data-[disabled]:opacity-50',
       inset && 'pl-8',
       className,

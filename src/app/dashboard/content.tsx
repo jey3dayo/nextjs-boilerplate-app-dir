@@ -18,12 +18,12 @@ function Dashboard() {
 
   return (
     <div className="space-y-4 md:p-2">
-      <div className="w-full bg-white p-2 shadow dark:bg-dark md:w-96 md:rounded">
+      <div className="theme w-full p-2 shadow md:w-96 md:rounded">
         <div className="py-4">
           <div className="mb-4">
             <Label htmlFor="text">Text</Label>
             <input
-              className="w-full appearance-none rounded border px-3 py-2 leading-tight  text-dark shadow focus:outline-none dark:text-light"
+              className="w-full appearance-none rounded border px-3 py-2 leading-tight shadow focus:outline-none"
               id="text"
               type="text"
               placeholder="Text"
@@ -35,9 +35,9 @@ function Dashboard() {
 
         <div className="py-4">
           <div className="mb-4">
-            <Label htmlFor="text">Description</Label>
+            <Label htmlFor="description">Description</Label>
             <input
-              className="w-full appearance-none rounded border px-3 py-2 leading-tight text-dark shadow focus:outline-none dark:text-light"
+              className="w-full appearance-none rounded border px-3 py-2 leading-tight shadow focus:outline-none"
               id="description"
               type="text"
               placeholder="description"
@@ -51,7 +51,7 @@ function Dashboard() {
           <Label className="space-y-1" htmlFor="default-range">
             Volume
           </Label>
-          <div className="space-y-4 text-dark dark:text-white">vol: {vol}</div>
+          <div className="space-y-4">vol: {vol}</div>
           <input
             id="default-range"
             type="range"
@@ -60,7 +60,7 @@ function Dashboard() {
               const v = Number(target?.value ?? 0);
               setVol(v);
             }}
-            className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-primary-100 dark:bg-primary-500"
+            className="bg-input-range h-2 w-full cursor-pointer appearance-none rounded-lg"
           />
         </div>
 
@@ -68,20 +68,23 @@ function Dashboard() {
         <div className="grid grid-cols-2 gap-x-6">
           <button
             onClick={() => setAction('Decline')}
-            className={classNames(styles.btn, 'bg-slate-500 text-white hover:bg-slate-300 hover:text-dark')}
+            className={classNames(
+              styles.btn,
+              'bg-theme-neutral hover:bg-theme-neutral-weak text-theme-hover text-light hover:text-white',
+            )}
           >
             Decline
           </button>
           <button
             onClick={() => setAction('Accept')}
-            className={classNames(styles.btn, 'bg-sky-500 text-white hover:bg-sky-400')}
+            className={classNames(styles.btn, 'bg-theme-accent hover:bg-theme-accent-weak text-white')}
           >
             Accept
           </button>
         </div>
       </div>
 
-      <figure className="bg-primary-100 p-8 dark:bg-dark md:flex md:rounded-xl md:p-0">
+      <figure className="theme p-8 md:flex md:rounded-xl md:p-0">
         <Image
           className="mx-auto h-auto w-24 rounded-full md:w-48 md:rounded-none"
           src="/image/sarah-dayan.jpg"
@@ -95,8 +98,8 @@ function Dashboard() {
             <p className="text-lg font-medium">{description}</p>
           </blockquote>
           <figcaption className="font-medium">
-            <div className="text-sky-500 dark:text-sky-400">{text}</div>
-            <div className="text-primary-700 dark:text-primary-400">Staff Engineer, Algolia</div>
+            <div className="text-theme-accent">{text}</div>
+            <div className="text-theme-neutral">Staff Engineer, Algolia</div>
           </figcaption>
         </div>
       </figure>

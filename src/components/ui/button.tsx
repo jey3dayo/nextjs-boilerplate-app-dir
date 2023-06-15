@@ -12,9 +12,9 @@ const disabledStyle = 'disabled:pointer-events-none disabled:opacity-50';
 const variants = cva([layoutStyle, designStyle, focusVisibleStyle, disabledStyle].join(' '), {
   variants: {
     variant: {
-      default: 'bg-light hover:bg-light/90 dark:bg-primary-600 hover:dark:bg-primary-600/90',
-      accent: 'bg-accent-200  hover:bg-accent-200/90',
-      dark: 'bg-primary-500 hover:bg-primary-200/10',
+      default: 'bg-light hover:bg-light/90 dark:bg-medium hover:dark:bg-medium/90',
+      accent: 'bg-accent-200 hover:bg-accent-200/90',
+      dark: 'bg-medium hover:bg-light/10',
       inherit: 'bg-inherit',
       avatar: 'rounded-full bg-inherit outline-none',
     },

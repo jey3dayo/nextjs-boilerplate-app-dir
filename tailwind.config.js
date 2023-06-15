@@ -1,7 +1,6 @@
 const { resolve } = require('path');
 const colorsPath = resolve(__dirname, 'src/styles/colors.ts');
 const { colors, color } = require(colorsPath);
-
 const containerQueries = require('@tailwindcss/container-queries');
 const animate = require('tailwindcss-animate');
 

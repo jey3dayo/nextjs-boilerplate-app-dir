@@ -8,17 +8,18 @@ export const radixUiColors = {
 };
 
 const primaryColor = 'neutral';
+const accentColor = 'sky';
 
 export const colors = {
   primary: tailwindColors[primaryColor],
-  accent: tailwindColors['teal'],
+  accent: tailwindColors[accentColor],
   ...radixUiColors,
 };
 
 export const color = {
-  dark: tailwindColors[primaryColor]['600'],
-  medium: tailwindColors[primaryColor]['400'],
-  light: tailwindColors[primaryColor]['50'],
+  dark: tailwindColors[primaryColor]['800'],
+  medium: tailwindColors[primaryColor]['500'],
+  light: tailwindColors[primaryColor]['100'],
 };
 
 module.exports = {
