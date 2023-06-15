@@ -26,7 +26,9 @@ const popoverAnchorChildVariants = cva('', {
   },
 });
 
-export interface PopoverAnchorChildProps
+type PopoverAnchorChildVariants = VariantProps<typeof popoverAnchorChildVariants>;
+
+interface PopoverAnchorChildProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof popoverAnchorChildVariants> {}
 
@@ -73,7 +75,9 @@ const popoverTriggerVariants = cva('', {
   },
 });
 
-export interface PopoverTriggerProps
+type PopoverTriggerVariants = VariantProps<typeof popoverTriggerVariants>;
+
+interface PopoverTriggerProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof popoverTriggerVariants> {}
 
@@ -102,9 +106,9 @@ const popoverCloseVariants = cva('', {
   },
 });
 
-export interface PopoverCloseProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof popoverCloseVariants> {}
+type PopoverCloseVariants = VariantProps<typeof popoverCloseVariants>;
+
+interface PopoverCloseProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof popoverCloseVariants> {}
 
 const PopoverClose = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Close>,
@@ -118,9 +122,17 @@ const PopoverClose = React.forwardRef<
     aria-label="メニューを閉じる"
     {...props}
   >
-    {children ? children : <Icons.close className="text-light dark:text-dark" size={iconSizes['md']} />}
+    {children ? children : <Icons.close className="text-theme-inverse" size={iconSizes['md']} />}
   </PopoverPrimitive.Close>
 ));
 PopoverClose.displayName = 'PopoverClose';
 
 export { PopoverRoot, PopoverTrigger, PopoverAnchor, PopoverPortal, PopoverClose, PopoverAnchorChild, PopoverContent };
+export type {
+  PopoverAnchorChildProps,
+  PopoverTriggerProps,
+  PopoverCloseProps,
+  PopoverAnchorChildVariants,
+  PopoverTriggerVariants,
+  PopoverCloseVariants,
+};

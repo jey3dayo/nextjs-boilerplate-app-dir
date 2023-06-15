@@ -36,16 +36,14 @@ const variants = cva([layoutStyle, designStyle, focusVisibleStyle, disabledStyle
   },
 });
 
-type ButtonVariants = VariantProps<typeof variants>;
+type Variants = VariantProps<typeof variants>;
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariants {}
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>, Variants {}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, shadow, ...props }, ref) => {
-    return <button className={classNames(variants({ variant, size, shadow, className }))} ref={ref} {...props} />;
-  },
-);
+const Button = React.forwardRef<HTMLButtonElement, Props>(({ className, variant, size, shadow, ...props }, ref) => {
+  return <button className={classNames(variants({ variant, size, shadow, className }))} ref={ref} {...props} />;
+});
 Button.displayName = 'Button';
 
 export { Button, variants as buttonVariants };
-export type { ButtonProps, ButtonVariants };
+export type { Props as ButtonProps, Variants as ButtonVariants };
