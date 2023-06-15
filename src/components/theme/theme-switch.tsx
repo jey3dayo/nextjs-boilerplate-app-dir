@@ -9,8 +9,7 @@ const defaultTheme = 'dark';
 
 const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light');
+  const { theme, setTheme, resolvedTheme, toggleTheme } = useTheme();
 
   // useEffect only runs on the client, so now we can safely show the UI
   useEffect(() => {
@@ -18,9 +17,7 @@ const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
     setTheme(resolvedTheme ?? defaultTheme);
   }, [setTheme, resolvedTheme]);
 
-  if (!mounted) {
-    return <DarkIconButton className="mx-1" variant="dark" size={size} />;
-  }
+  if (!mounted) return <div className="pl-11" />;
 
   return theme === 'light' ? (
     <LightIconButton className="mx-1" variant="dark" size={size} onClick={toggleTheme} />

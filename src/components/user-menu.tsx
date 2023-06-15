@@ -17,8 +17,11 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { AvatarIconButton } from '@/components/ui/icon-button';
 import { profileNavigation as navigation } from '@/constants';
+import { useTheme } from '@/hooks/use-themes';
 
 export default function UserMenu({ user }: { user: Session['user'] | undefined }) {
+  const { toggleTheme } = useTheme();
+
   return (
     <DropdownMenuRoot modal={false}>
       <DropdownMenuTrigger asChild>
@@ -38,6 +41,9 @@ export default function UserMenu({ user }: { user: Session['user'] | undefined }
               <DropdownMenuItem>{v.name}</DropdownMenuItem>
             </Link>
           ))}
+          <DropdownMenuGroup>
+            <DropdownMenuItem onClick={toggleTheme}>テーマ切り替え</DropdownMenuItem>
+          </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             {user ? <div onClick={() => signOut()}>サインアウト</div> : <div onClick={() => signIn()}>サインイン</div>}
