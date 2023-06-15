@@ -44,7 +44,7 @@ const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].j
 
 type Variants = VariantProps<typeof variants>;
 
-interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>, Variants { }
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>, Variants {}
 
 const Button = React.forwardRef<HTMLButtonElement, Props>(
   ({ className, variant, size, shadow, transition, ...props }, ref) => {

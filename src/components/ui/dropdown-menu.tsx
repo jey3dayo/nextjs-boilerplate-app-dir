@@ -24,7 +24,11 @@ const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.Separator ref={ref} className={classNames('mx-1 my-1 h-px bg-dark', className)} {...props} />
+  <DropdownMenuPrimitive.Separator
+    ref={ref}
+    className={classNames('bg-theme-inverse mx-1 my-1 h-px', className)}
+    {...props}
+  />
 ));
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
 
@@ -38,7 +42,7 @@ const DropdownMenuLabel = React.forwardRef<
     ref={ref}
     className={classNames(
       'px-2 pt-1 leading-5',
-      'select-none text-xs font-semibold text-accent-600',
+      'text-theme-accent select-none text-xs font-semibold',
       inset && 'pl-8',
       className,
     )}
@@ -56,7 +60,7 @@ const DropdownMenuContent = React.forwardRef<
     sideOffset={sideOffset}
     className={classNames(
       'min-w-8 z-50 mr-1 p-1',
-      'text-popover-foreground rounded-md border bg-light shadow-md',
+      'text-popover-foreground theme rounded-md border shadow-md',
       'will-change-[transform] animate-in',
       'data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
       className,
@@ -75,10 +79,10 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={classNames(
-      'item-center group relative mx-1 flex px-2 py-1',
-      'focus:bg-accent focus:text-accent-foreground text-sm text-dark ',
+      'item-center group relative mx-1 flex px-2 py-1 text-sm',
       'cursor-default select-none rounded-sm outline-none transition-colors',
-      'data-[disabled]:pointer-events-none data-[highlighted]:bg-dark data-[disabled]:text-accent-800 data-[highlighted]:text-light data-[disabled]:opacity-50',
+      'data-[highlighted]:bg-theme-neutral data-[highlighted]:text-light',
+      'data-[disabled]:pointer-events-none data-[disabled]:text-accent-800 data-[disabled]:opacity-50',
       inset && 'pl-8',
       className,
     )}

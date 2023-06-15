@@ -27,10 +27,10 @@ export const Icons = {
   moon: Moon,
 };
 
-export type Size = 'default' | 'sm' | 'md' | 'lg';
+export type Size = 'none' | 'sm' | 'md' | 'lg';
 
-export const iconSizes: Record<Size, number> = {
-  default: 24,
+export const iconSizes: Record<Size, number | undefined> = {
+  none: undefined,
   lg: 28,
   md: 24,
   sm: 20,

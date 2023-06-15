@@ -96,7 +96,7 @@ const popoverCloseVariants = cva('', {
         'absolute inline-flex justify-center items-center',
         'rounded cursor-default outline-none',
         'right-1 top-1 h-8 w-8',
-        'bg-theme-neutral-hover',
+        'bg-medium-hover',
         'outline-none focus:shadow-[0_0_0_2px]',
       ),
     },

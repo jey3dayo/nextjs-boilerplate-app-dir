@@ -28,7 +28,7 @@ export default function UserMenu({ user }: { user: Session['user'] | undefined }
       <DropdownMenuPortal>
         <DropdownMenuContent sideOffset={5}>
           <span className="sr-only">ユーザメニュー</span>
-          <div className="pointer-events-none flex h-5 select-none items-center justify-center text-sm text-dark/90">
+          <div className="pointer-events-none flex h-5 select-none items-center justify-center text-sm">
             {user?.name}
           </div>
           <DropdownMenuSeparator />
