@@ -1,16 +1,12 @@
 const { resolve } = require('path');
-const colorsPath = resolve(__dirname, 'src/styles/colors.ts');
+const colorsPath = resolve(__dirname, 'styles/colors.ts');
 const { colors, color } = require(colorsPath);
 const containerQueries = require('@tailwindcss/container-queries');
 const animate = require('tailwindcss-animate');
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.{js,ts,jsx,tsx}',
-    './src/app/**/*.{js,ts,jsx,tsx}',
-  ],
+  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
   options: {
     // https://purgecss.com/safelisting.html#patterns
     safelist: {

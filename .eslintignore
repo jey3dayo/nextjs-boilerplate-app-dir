@@ -1,3 +1,3 @@
 public
 node_modules
-./src/components/Svg.tsx
+components/svg.tsx

@@ -30,7 +30,9 @@ module.exports = {
           '(^|/)tsconfig\\.json$', // TypeScript config
           '(^|/)(babel|webpack)\\.config\\.(js|cjs|mjs|ts|json)$', // other configs
           '(^|/)(babel|webpack)\\.config\\.(js|cjs|mjs|ts)$', // other configs
-          'src/app/api/*',
+          'components/svg.tsx',
+          'app/api/*',
+          'app/.*/loading.tsx',
         ],
       },
       to: {},
@@ -88,7 +90,6 @@ module.exports = {
         'available on live with an non-guaranteed version. Fix it by adding the package to the dependencies ' +
         'in your package.json.',
       from: {
-        path: '^(src)',
         pathNot: '\\.(spec|test)\\.(js|mjs|cjs|ts|ls|coffee|litcoffee|coffee\\.md)$',
       },
       to: {
@@ -102,7 +103,7 @@ module.exports = {
         'module: add it to your package.json. In all other cases you likely already know what to do.',
       severity: 'error',
       from: {
-        pathNot: ['src/styles/*'],
+        pathNot: ['styles/*'],
       },
       to: {
         couldNotResolve: true,
@@ -148,7 +149,6 @@ module.exports = {
         'section of your package.json. If this module is development only - add it to the ' +
         'from.pathNot re of the not-to-dev-dep rule in the dependency-cruiser configuration',
       from: {
-        path: '^(src)',
         pathNot: '\\.(spec|test)\\.(js|mjs|cjs|ts|ls|coffee|litcoffee|coffee\\.md)$',
       },
       to: {
