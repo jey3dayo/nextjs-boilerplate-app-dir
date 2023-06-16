@@ -39,11 +39,12 @@ const LightIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 LightIconButton.displayName = 'LightIconButton';
 
 interface AvatarIconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  user?: Session['user'];
+  name: string | undefined;
+  src: string | undefined;
 }
 const AvatarIconButton = React.forwardRef<HTMLButtonElement, AvatarIconButtonProps>((props, ref) => (
   <Button variant="avatar" shadow="dark" aria-label="Customise options" ref={ref} {...props}>
-    <Avatar name={props.user?.name} src={props.user?.image} />
+    <Avatar name={props.name} src={props.src} />
   </Button>
 ));
 AvatarIconButton.displayName = 'AvatarIconButton';

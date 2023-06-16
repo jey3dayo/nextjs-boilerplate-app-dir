@@ -8,14 +8,11 @@ import { subTitle } from '@/config';
 import { navigation } from '@/constants';
 import { env } from '@/env.mjs';
 import classNames from '@/lib/class-names';
-import { getCurrentUser } from '@/lib/next-auth/session';
 
 const appName = env.NEXT_PUBLIC_APP_NAME;
 const height = 'h-[8vh] md:h-[7vh] min-h-[52px]';
 
-export default async function Header() {
-  const user = await getCurrentUser();
-
+export default function Header() {
   return (
     <>
       <nav
@@ -53,7 +50,7 @@ export default async function Header() {
             ))}
           </div>
           <ThemeSwitch size="sm" />
-          <Menu user={user} />
+          <Menu />
         </div>
       </nav>
       {/* FIXME: height固定*/}

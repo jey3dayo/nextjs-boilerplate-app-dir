@@ -1,9 +1,5 @@
-'use client';
-
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
-import { Session } from 'next-auth';
-import { signIn, signOut } from 'next-auth/react';
 import {
   DropdownMenuRoot,
   DropdownMenuTrigger,
@@ -16,16 +12,18 @@ import {
   DropdownMenuGroup,
 } from '@/components/ui/dropdown-menu';
 import { AvatarIconButton } from '@/components/ui/icon-button';
+import SignInout from '@/components/user-menu/sign-in-out';
+import SwitchTheme from '@/components/user-menu/switch-theme';
 import { profileNavigation as navigation } from '@/constants';
-import { useTheme } from '@/hooks/use-themes';
+import { getCurrentUser } from '@/lib/next-auth/session';
 
-export default function UserMenu({ user }: { user: Session['user'] | undefined }) {
-  const { toggleTheme } = useTheme();
+export default async function UserMenu() {
+  const user = await getCurrentUser();
 
   return (
     <DropdownMenuRoot modal={false}>
       <DropdownMenuTrigger asChild>
-        <AvatarIconButton user={user} />
+        <AvatarIconButton name={user?.name ?? undefined} src={user?.image ?? undefined} />
       </DropdownMenuTrigger>
 
       <DropdownMenuPortal>
@@ -42,11 +40,11 @@ export default function UserMenu({ user }: { user: Session['user'] | undefined }
             </Link>
           ))}
           <DropdownMenuGroup>
-            <DropdownMenuItem onClick={toggleTheme}>テーマ切り替え</DropdownMenuItem>
+            <SwitchTheme />
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            {user ? <div onClick={() => signOut()}>サインアウト</div> : <div onClick={() => signIn()}>サインイン</div>}
+            <SignInout isLogin={!!user?.name} />
           </DropdownMenuItem>
           <DropdownMenuArrow />
         </DropdownMenuContent>
