@@ -6,6 +6,8 @@ import styles from '@/styles/home.module.css';
 
 const size = 80;
 
-export default function Loader() {
+function Loader() {
   return <Bars height={size} width={size} color={color.dark} ariaLabel="読込中" wrapperClass={styles.main} />;
 }
+
+export default Loader;

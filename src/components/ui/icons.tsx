@@ -1,7 +1,7 @@
 import {
   User,
   X,
-  type Icon as LucideIcon,
+  type Icon,
   Menu,
   SunMedium,
   Loader2,
@@ -12,9 +12,7 @@ import {
   Moon,
 } from 'lucide-react';
 
-export type Icon = LucideIcon;
-
-export const Icons = {
+const Icons = {
   user: User,
   close: X,
   menu: Menu,
@@ -27,11 +25,14 @@ export const Icons = {
   moon: Moon,
 };
 
-export type Size = 'none' | 'sm' | 'md' | 'lg';
+type Size = 'none' | 'sm' | 'md' | 'lg';
 
-export const iconSizes: Record<Size, number | undefined> = {
+const iconSizes: Record<Size, number | undefined> = {
   none: undefined,
   lg: 28,
   md: 24,
   sm: 20,
 };
+
+export { Icons, iconSizes };
+export type { Icon as LucideIcon, Size };

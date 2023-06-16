@@ -7,7 +7,7 @@ import { color } from '@/styles/colors';
 
 const defaultIconColor = color.light;
 
-export interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariants {
+interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ButtonVariants {
   iconColor?: string;
 }
 
@@ -38,7 +38,7 @@ const LightIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
 );
 LightIconButton.displayName = 'LightIconButton';
 
-export interface AvatarIconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface AvatarIconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   user?: Session['user'];
 }
 const AvatarIconButton = React.forwardRef<HTMLButtonElement, AvatarIconButtonProps>((props, ref) => (
@@ -49,3 +49,4 @@ const AvatarIconButton = React.forwardRef<HTMLButtonElement, AvatarIconButtonPro
 AvatarIconButton.displayName = 'AvatarIconButton';
 
 export { AvatarIconButton, MenuIconButton, DarkIconButton, LightIconButton };
+export type { IconButtonProps, AvatarIconButtonProps };
