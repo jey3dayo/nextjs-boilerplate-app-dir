@@ -29,8 +29,10 @@ export default withAuth(
     // admin管理ページの場合、権限確認
     if (checkPath(req.nextUrl.pathname, adminPages)) {
       const isAdmin = isAuth ? checkAdmin(token?.role ?? 0) : false;
-      return isAdmin ? null : NextResponse.rewrite(new URL('/error?code=403', req.url));
+      return isAdmin ? null : NextResponse.redirect(new URL('/error?code=403', req.url));
     }
+
+    return null;
   },
   {
     callbacks: {
