@@ -9,7 +9,7 @@ import { checkAdmin } from '@/lib/next-auth/utils';
 export default withAuth(
   async function middleware(req) {
     // redirect
-    // if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
+    if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
 
     // 認証がいらないページか確認
     if (checkPath(req.nextUrl.pathname, accessWhitelist)) return null;
