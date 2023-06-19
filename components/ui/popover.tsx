@@ -50,11 +50,7 @@ const PopoverContent = React.forwardRef<
     sticky={sticky ?? 'always'}
     className={classNames(
       className,
-      'theme w-[94vw] rounded px-8 py-4 opacity-95',
-      'w-[94vw] rounded px-8 py-4 opacity-95',
-
-      'shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)]',
-      'focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.violet7)]',
+      'theme focus shadow-focus w-[94vw] rounded px-8 py-4 opacity-95',
       'state-open-slide-in transition will-change-[transform,opacity] animate-in',
     )}
     {...props}
@@ -94,10 +90,9 @@ const popoverCloseVariants = cva('', {
     variant: {
       default: classNames(
         'absolute inline-flex justify-center items-center',
-        'rounded cursor-default outline-none',
+        'rounded cursor-default shadow-focus',
         'right-1 top-1 h-8 w-8',
         'bg-medium-hover',
-        'outline-none focus:shadow-[0_0_0_2px]',
       ),
     },
   },

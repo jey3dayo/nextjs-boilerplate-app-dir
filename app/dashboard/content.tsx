@@ -18,12 +18,12 @@ function Dashboard() {
 
   return (
     <div className="space-y-4 md:p-2">
-      <div className="theme w-full p-2 shadow md:w-96 md:rounded">
+      <div className="theme shadow-focus w-full p-2 shadow md:w-96 md:rounded">
         <div className="py-4">
           <div className="mb-4">
             <Label htmlFor="text">Text</Label>
             <input
-              className="w-full appearance-none rounded border px-3 py-2 leading-tight shadow focus:outline-none"
+              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight shadow focus:outline-none"
               id="text"
               type="text"
               placeholder="Text"
@@ -37,7 +37,7 @@ function Dashboard() {
           <div className="mb-4">
             <Label htmlFor="description">Description</Label>
             <input
-              className="w-full appearance-none rounded border px-3 py-2 leading-tight shadow focus:outline-none"
+              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight shadow focus:outline-none"
               id="description"
               type="text"
               placeholder="description"
