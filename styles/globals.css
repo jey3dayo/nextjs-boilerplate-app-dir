@@ -45,6 +45,10 @@
     @apply text-accent-500;
   }
 
+  .theme-border {
+    @apply border-t border-dark/20 dark:border-light/10;
+  }
+
   /* hover */
   .bg-medium-hover {
     @apply bg-medium hover:bg-medium/80;
