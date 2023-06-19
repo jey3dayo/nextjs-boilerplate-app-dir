@@ -5,9 +5,12 @@ import { accessWhitelist, adminPages, loginPage } from '@/config';
 import checkPath from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { checkAdmin } from '@/lib/next-auth/utils';
+import { debug } from '@/lib/log';
 
 export default withAuth(
   async function middleware(req) {
+    debug('called', req.nextUrl.pathname);
+
     // redirect
     if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
 
