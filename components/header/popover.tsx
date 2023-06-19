@@ -15,10 +15,10 @@ import {
 } from '@/components/ui/popover';
 import { navigation } from '@/constants';
 import classNames from '@/lib/class-names';
-import { useCurrentUser } from '@/lib/next-auth/hooks';
+import { useCurrentUser } from '@/hooks/use-next-auth';
 
 export default function CustomPopover(): JSX.Element {
-  const user = useCurrentUser();
+  const { status } = useCurrentUser();
 
   return (
     <PopoverRoot modal={false}>
@@ -56,7 +56,7 @@ export default function CustomPopover(): JSX.Element {
               )}
             >
               <span className="font-medium text-light dark:text-dark">
-                {user ? (
+                {status === 'authenticated' ? (
                   <span onClick={() => signOut()}>サインアウト</span>
                 ) : (
                   <span onClick={() => signIn()}>サインイン</span>
