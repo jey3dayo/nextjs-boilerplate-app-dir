@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Logo from '@/components/common/logo';
+import Logo from '@/components/logo';
 import Popover from '@/components/header/popover';
 import ThemeSwitch from '@/components/theme/theme-switch';
 import Menu from '@/components/user-menu';
