@@ -42,11 +42,9 @@ interface AvatarIconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEle
   name: string | undefined;
   src: string | undefined;
 }
-const AvatarIconButton = React.forwardRef<HTMLButtonElement, AvatarIconButtonProps>((props, ref) => (
-  <Button variant="avatar" aria-label="Customise options" ref={ref} {...props}>
-    <Avatar name={props.name} src={props.src} />
-  </Button>
-));
+const AvatarIconButton = React.forwardRef<HTMLButtonElement, AvatarIconButtonProps>(({ name, src, ...props }, ref) => {
+  return <Avatar name={name} src={src} aria-label="Customise options" className="inline-block" {...props} ref={ref} />;
+});
 AvatarIconButton.displayName = 'AvatarIconButton';
 
 export { AvatarIconButton, MenuIconButton, DarkIconButton, LightIconButton };

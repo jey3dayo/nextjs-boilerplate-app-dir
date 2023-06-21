@@ -1,16 +1,26 @@
 'use client';
+import React from 'react';
 
 import { AvatarRoot, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Icons } from '@/components/ui/icons';
 import { color } from '@/styles/colors';
 
-export default function Avatar(props: { name: string | undefined; src: string | undefined }) {
+const Avatar = React.forwardRef<
+  React.ElementRef<typeof AvatarRoot>,
+  React.ComponentPropsWithoutRef<typeof AvatarRoot> & {
+    name: string | undefined;
+    src: string | undefined;
+  }
+>(({ name, src, ...props }, ref) => {
   return (
-    <AvatarRoot>
-      <AvatarImage src={props.src} alt={props.name} />
+    <AvatarRoot ref={ref} {...props}>
+      <AvatarImage alt={name} src={src} />
       <AvatarFallback>
         <Icons.user color={color.dark} />
       </AvatarFallback>
     </AvatarRoot>
   );
-}
+});
+Avatar.displayName = 'Avatar';
+
+export default Avatar;

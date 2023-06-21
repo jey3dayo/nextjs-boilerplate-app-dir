@@ -14,7 +14,6 @@ const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].j
       dark: 'bg-medium-hover',
       accent: 'bg-theme-accent-hover text-light',
       inherit: 'bg-inherit',
-      avatar: 'rounded-full bg-inherit outline-none',
     },
     size: {
       none: '',
