@@ -1,24 +1,21 @@
 'use client';
 
 import * as React from 'react';
-import { AvatarRoot, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { User } from '@prisma/client';
+import { AvatarRoot, AvatarFallback, AvatarImage, AvatarProps } from '@/components/ui/avatar';
 import { Icons } from '@/components/ui/icons';
 import { color } from '@/styles/colors';
 
-export const Avatar = React.forwardRef<
-  React.ElementRef<typeof AvatarRoot>,
-  React.ComponentPropsWithoutRef<typeof AvatarRoot> & {
-    name: string | undefined;
-    src: string | undefined;
-  }
->(({ name, src, ...props }, ref) => {
-  return (
-    <AvatarRoot ref={ref} {...props}>
-      <AvatarImage alt={name} src={src} />
-      <AvatarFallback>
-        <Icons.user color={color.dark} />
-      </AvatarFallback>
-    </AvatarRoot>
-  );
-});
+export const Avatar = React.forwardRef<React.ElementRef<typeof AvatarRoot>, AvatarProps & Pick<User, 'name' | 'image'>>(
+  ({ name, image, ...props }, ref) => {
+    return (
+      <AvatarRoot ref={ref} {...props}>
+        <AvatarImage alt={name ?? undefined} src={image ?? undefined} />
+        <AvatarFallback>
+          <Icons.user color={color.dark} />
+        </AvatarFallback>
+      </AvatarRoot>
+    );
+  },
+);
 Avatar.displayName = 'Avatar';

@@ -14,7 +14,7 @@ const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
 
 const DropdownMenuArrow = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.DropdownMenuArrow>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.DropdownMenuArrow>
+  DropdownMenuPrimitive.DropdownMenuArrowProps
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.DropdownMenuArrow ref={ref} className={classNames('fill-white', className)} {...props} />
 ));
@@ -22,7 +22,7 @@ DropdownMenuArrow.displayName = DropdownMenuPrimitive.DropdownMenuArrow.displayN
 
 const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
+  DropdownMenuPrimitive.DropdownMenuSeparatorProps
 >(({ className, ...props }, ref) => (
   <DropdownMenuPrimitive.Separator
     ref={ref}
@@ -34,7 +34,7 @@ DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
 
 const DropdownMenuLabel = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Label>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> & {
+  DropdownMenuPrimitive.DropdownMenuLabelProps & {
     inset?: boolean;
   }
 >(({ className, inset, ...props }, ref) => (
@@ -53,7 +53,7 @@ DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
 
 const DropdownMenuContent = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
+  DropdownMenuPrimitive.DropdownMenuContentProps
 >(({ className, sideOffset = 4, ...props }, ref) => (
   <DropdownMenuPrimitive.Content
     ref={ref}
@@ -72,7 +72,7 @@ DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;
 
 const DropdownMenuItem = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
+  DropdownMenuPrimitive.DropdownMenuItemProps & {
     inset?: boolean;
   }
 >(({ className, inset, ...props }, ref) => (

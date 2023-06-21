@@ -17,11 +17,11 @@ const variants = cva('', {
 
 type Variants = VariantProps<typeof variants>;
 
-interface Props extends Omit<React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> & Variants, 'htmlFor'> {
+interface LabelProps extends Omit<LabelPrimitive.LabelProps & Variants, 'htmlFor'> {
   htmlFor: InputNames;
 }
 
-const Label = React.forwardRef<React.ElementRef<typeof LabelPrimitive.Root>, Props>(
+const Label = React.forwardRef<React.ElementRef<typeof LabelPrimitive.Root>, LabelProps>(
   ({ className, htmlFor, variant, children, ...props }, ref) => (
     <LabelPrimitive.Root
       ref={ref}
@@ -36,4 +36,4 @@ const Label = React.forwardRef<React.ElementRef<typeof LabelPrimitive.Root>, Pro
 Label.displayName = LabelPrimitive.Root.displayName;
 
 export { Label };
-export type { Props as LabelProps, Variants as LabelVariants };
+export type { LabelProps, Variants as LabelVariants };

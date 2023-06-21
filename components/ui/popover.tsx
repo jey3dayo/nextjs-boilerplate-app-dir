@@ -11,7 +11,7 @@ const PopoverPortal = PopoverPrimitive.Portal;
 
 const PopoverAnchor = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Anchor>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Anchor>
+  PopoverPrimitive.PopoverAnchorProps
 >(({ ...props }, ref) => <PopoverPrimitive.Anchor ref={ref} {...props} />);
 PopoverAnchor.displayName = PopoverPrimitive.Anchor.displayName;
 
@@ -41,7 +41,7 @@ PopoverAnchorChild.displayName = 'PopoverAnchorChild';
 
 const PopoverContent = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Content> & {
+  PopoverPrimitive.PopoverContentProps & {
     sticky?: 'always';
   }
 >(({ className, sticky, children, ...props }, ref) => (
@@ -73,13 +73,9 @@ const popoverTriggerVariants = cva('', {
 
 type PopoverTriggerVariants = VariantProps<typeof popoverTriggerVariants>;
 
-interface PopoverTriggerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof popoverTriggerVariants> {}
-
 const PopoverTrigger = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Trigger>
+  PopoverPrimitive.PopoverTriggerProps
 >(({ className, ...props }, ref) => (
   <PopoverPrimitive.Trigger className={classNames(popoverTriggerVariants({ className }))} ref={ref} {...props} />
 ));
@@ -103,11 +99,9 @@ const popoverCloseVariants = cva('', {
 
 type PopoverCloseVariants = VariantProps<typeof popoverCloseVariants>;
 
-interface PopoverCloseProps extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof popoverCloseVariants> {}
-
 const PopoverClose = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Close>,
-  React.ComponentPropsWithoutRef<typeof PopoverPrimitive.Close> & {
+  PopoverPrimitive.PopoverCloseProps & {
     variant?: 'default';
   }
 >(({ className, variant, children, ...props }, ref) => (
@@ -123,11 +117,4 @@ const PopoverClose = React.forwardRef<
 PopoverClose.displayName = 'PopoverClose';
 
 export { PopoverRoot, PopoverTrigger, PopoverAnchor, PopoverPortal, PopoverClose, PopoverAnchorChild, PopoverContent };
-export type {
-  PopoverAnchorChildProps,
-  PopoverTriggerProps,
-  PopoverCloseProps,
-  PopoverAnchorChildVariants,
-  PopoverTriggerVariants,
-  PopoverCloseVariants,
-};
+export type { PopoverAnchorChildProps, PopoverAnchorChildVariants, PopoverTriggerVariants, PopoverCloseVariants };

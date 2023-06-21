@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Avatar } from '@/components/avatar';
 import {
   DropdownMenuRoot,
   DropdownMenuTrigger,
@@ -10,7 +11,6 @@ import {
   DropdownMenuItem,
   DropdownMenuGroup,
 } from '@/components/ui/dropdown-menu';
-import { AvatarIconButton } from '@/components/ui/icon-button';
 import { SignInOut } from '@/components/user-menu/sign-in-out';
 import { SwitchTheme } from '@/components/user-menu/switch-theme';
 import { profileNavigation as navigation } from '@/constants';
@@ -22,7 +22,12 @@ export async function UserMenu() {
   return (
     <DropdownMenuRoot modal={false}>
       <DropdownMenuTrigger className="shadow-focus rounded-full">
-        <AvatarIconButton name={user?.name ?? undefined} src={user?.image ?? undefined} />
+        <Avatar
+          name={user?.name ?? null}
+          image={user?.image ?? null}
+          aria-label="Customise options"
+          className="inline-block"
+        />
       </DropdownMenuTrigger>
 
       <DropdownMenuPortal>

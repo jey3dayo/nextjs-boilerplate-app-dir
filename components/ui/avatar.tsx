@@ -1,26 +1,22 @@
 import * as React from 'react';
 import * as Avatar from '@radix-ui/react-avatar';
 import { classNames } from '@/lib/class-names';
+import type { AvatarProps, AvatarImageProps, AvatarFallbackProps } from '@radix-ui/react-avatar';
 
-const AvatarRoot = React.forwardRef<
-  React.ElementRef<typeof Avatar.Root>,
-  React.ComponentPropsWithoutRef<typeof Avatar.Root>
->(({ className, ...props }, ref) => (
-  <Avatar.Root
-    ref={ref}
-    className={classNames(
-      'inline-flex h-9 w-9 select-none items-center justify-center overflow-hidden rounded-full bg-dark align-middle',
-      className,
-    )}
-    {...props}
-  />
-));
+const AvatarRoot = React.forwardRef<React.ElementRef<typeof Avatar.Root>, AvatarProps>(
+  ({ className, ...props }, ref) => (
+    <Avatar.Root
+      ref={ref}
+      className={classNames(
+        'inline-flex h-9 w-9 select-none items-center justify-center overflow-hidden rounded-full bg-dark align-middle',
+        className,
+      )}
+      {...props}
+    />
+  ),
+);
 AvatarRoot.displayName = Avatar.Root.displayName;
 
-interface AvatarImageProps extends Omit<React.ComponentPropsWithoutRef<typeof Avatar.Image>, 'src' | 'alt'> {
-  src: string | null | undefined;
-  alt: string | null | undefined;
-}
 const AvatarImage = React.forwardRef<React.ElementRef<typeof Avatar.Image>, AvatarImageProps>(
   ({ src, alt, className, ...props }, ref) => (
     <Avatar.Image
@@ -34,17 +30,17 @@ const AvatarImage = React.forwardRef<React.ElementRef<typeof Avatar.Image>, Avat
 );
 AvatarImage.displayName = Avatar.Image.displayName;
 
-const AvatarFallback = React.forwardRef<
-  React.ElementRef<typeof Avatar.Fallback>,
-  React.ComponentPropsWithoutRef<typeof Avatar.Fallback>
->(({ delayMs, className, ...props }, ref) => (
-  <Avatar.Fallback
-    ref={ref}
-    delayMs={delayMs ?? 600}
-    className={classNames('flex h-full w-full items-center justify-center bg-light', className)}
-    {...props}
-  />
-));
+const AvatarFallback = React.forwardRef<React.ElementRef<typeof Avatar.Fallback>, AvatarFallbackProps>(
+  ({ delayMs, className, ...props }, ref) => (
+    <Avatar.Fallback
+      ref={ref}
+      delayMs={delayMs ?? 600}
+      className={classNames('flex h-full w-full items-center justify-center bg-light', className)}
+      {...props}
+    />
+  ),
+);
 AvatarFallback.displayName = Avatar.Fallback.displayName;
 
 export { AvatarRoot, AvatarImage, AvatarFallback };
+export type { AvatarProps };
