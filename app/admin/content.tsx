@@ -13,7 +13,7 @@ function Content() {
           <div className="mb-4">
             <Label htmlFor="text">Text</Label>
             <input
-              className="w-full appearance-none rounded border px-3 py-2 leading-tight text-dark shadow focus:outline-none"
+              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight text-dark shadow"
               id="text"
               type="text"
               placeholder="Text"

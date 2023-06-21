@@ -22,7 +22,7 @@ export default async function UserMenu() {
 
   return (
     <DropdownMenuRoot modal={false}>
-      <DropdownMenuTrigger asChild>
+      <DropdownMenuTrigger className="shadow-focus rounded-full">
         <AvatarIconButton name={user?.name ?? undefined} src={user?.image ?? undefined} />
       </DropdownMenuTrigger>
 

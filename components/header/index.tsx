@@ -21,7 +21,7 @@ export default function Header() {
           height,
         )}
       >
-        <Link href="/" className="shadow-focus mr-6 flex shrink-0 items-center text-white">
+        <Link href="/" className="shadow-focus mr-6 flex shrink-0 items-center rounded-md px-1 text-white">
           <div className="mx-auto h-auto w-10 md:h-auto md:w-16">
             <Logo />
           </div>
@@ -42,7 +42,7 @@ export default function Header() {
               <Link
                 key={v.href}
                 href={v.href}
-                className="mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium text-light hover:bg-dark hover:text-white"
+                className="shadow-focus mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium text-light hover:bg-dark"
                 aria-current="page"
               >
                 {v.name}

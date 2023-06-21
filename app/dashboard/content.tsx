@@ -4,7 +4,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
-import classNames from '@/lib/class-names';
 
 const DEFAULT_VOL = 50;
 const DEFAULT_DESCRIPTION =
@@ -23,7 +22,7 @@ function Dashboard() {
           <div className="mb-4">
             <Label htmlFor="text">Text</Label>
             <input
-              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight shadow focus:outline-none"
+              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight shadow"
               id="text"
               type="text"
               placeholder="Text"
@@ -37,7 +36,7 @@ function Dashboard() {
           <div className="mb-4">
             <Label htmlFor="description">Description</Label>
             <input
-              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight shadow focus:outline-none"
+              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight shadow"
               id="description"
               type="text"
               placeholder="description"

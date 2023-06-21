@@ -14,8 +14,8 @@ import {
   PopoverAnchorChild,
 } from '@/components/ui/popover';
 import { navigation } from '@/constants';
-import classNames from '@/lib/class-names';
 import { useCurrentUser } from '@/hooks/use-next-auth';
+import classNames from '@/lib/class-names';
 
 export default function CustomPopover(): JSX.Element {
   const { status } = useCurrentUser();
