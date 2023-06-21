@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { VariantProps, cva } from 'class-variance-authority';
 import { Icons, iconSizes } from '@/components/ui/icons';
-import classNames from '@/lib/class-names';
+import { classNames } from '@/lib/class-names';
 
 const PopoverRoot = PopoverPrimitive.Root;
 const PopoverPortal = PopoverPrimitive.Portal;

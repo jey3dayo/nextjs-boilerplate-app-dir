@@ -1,6 +1,6 @@
 import { env } from '@/env.mjs';
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="theme-border flex h-[4vh] min-h-[1.5rem] items-center justify-center">
       <span className="text-sm text-dark dark:text-medium">

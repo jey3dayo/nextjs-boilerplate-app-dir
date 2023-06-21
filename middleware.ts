@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { withAuth } from 'next-auth/middleware';
 import { accessWhitelist, adminPages, loginPage } from '@/config';
-import checkPath from '@/lib/check-path';
+import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { checkAdmin } from '@/lib/next-auth/utils';
 import { debug } from '@/lib/log';

@@ -1,4 +1,3 @@
-import React from 'react';
 import Link from 'next/link';
 import {
   DropdownMenuRoot,
@@ -12,12 +11,12 @@ import {
   DropdownMenuGroup,
 } from '@/components/ui/dropdown-menu';
 import { AvatarIconButton } from '@/components/ui/icon-button';
-import SignInout from '@/components/user-menu/sign-in-out';
-import SwitchTheme from '@/components/user-menu/switch-theme';
+import { SignInOut } from '@/components/user-menu/sign-in-out';
+import { SwitchTheme } from '@/components/user-menu/switch-theme';
 import { profileNavigation as navigation } from '@/constants';
 import { getCurrentUser } from '@/lib/next-auth/session';
 
-export default async function UserMenu() {
+export async function UserMenu() {
   const user = await getCurrentUser();
 
   return (
@@ -44,7 +43,7 @@ export default async function UserMenu() {
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <SignInout isLogin={!!user?.name} />
+            <SignInOut isLogin={!!user?.name} />
           </DropdownMenuItem>
           <DropdownMenuArrow />
         </DropdownMenuContent>

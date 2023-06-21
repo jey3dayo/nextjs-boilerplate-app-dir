@@ -1,5 +1,5 @@
-import Layout from '@/components/layout';
-import Provider from '@/components/provider';
+import { Layout } from '@/components/layout';
+import { Provider } from '@/components/provider';
 
 export const metadata = {
   title: '管理画面',

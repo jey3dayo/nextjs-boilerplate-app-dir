@@ -5,7 +5,7 @@ import { Size } from '@/components/ui/icons';
 import { useMounted } from '@/hooks/use-mounted';
 import { useTheme } from '@/hooks/use-themes';
 
-const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
+export function ThemeSwitch({ size = 'sm' }: { size?: Size }) {
   const mounted = useMounted();
   const { resolvedTheme, toggleTheme } = useTheme();
 
@@ -16,6 +16,4 @@ const ThemeSwitch = ({ size = 'sm' }: { size?: Size }) => {
   ) : (
     <DarkIconButton className="mx-1" variant="dark" size={size} onClick={toggleTheme} />
   );
-};
-
-export default ThemeSwitch;
+}

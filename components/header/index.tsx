@@ -1,18 +1,17 @@
-import React from 'react';
 import Link from 'next/link';
-import Popover from '@/components/header/popover';
-import Logo from '@/components/logo';
-import ThemeSwitch from '@/components/theme/theme-switch';
-import Menu from '@/components/user-menu';
+import { Popover } from '@/components/header/popover';
+import { Logo } from '@/components/logo';
+import { ThemeSwitch } from '@/components/theme/theme-switch';
+import { UserMenu } from '@/components/user-menu';
 import { subTitle } from '@/config';
 import { navigation } from '@/constants';
 import { env } from '@/env.mjs';
-import classNames from '@/lib/class-names';
+import { classNames } from '@/lib/class-names';
 
 const appName = env.NEXT_PUBLIC_APP_NAME;
 const height = 'h-[8vh] md:h-[7vh] min-h-[52px]';
 
-export default function Header() {
+export function Header() {
   return (
     <>
       <nav
@@ -50,7 +49,7 @@ export default function Header() {
             ))}
           </div>
           <ThemeSwitch size="sm" />
-          <Menu />
+          <UserMenu />
         </div>
       </nav>
       {/* FIXME: height固定*/}

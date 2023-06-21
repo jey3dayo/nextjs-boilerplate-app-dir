@@ -1,6 +1,5 @@
-import React from 'react';
-import { Session } from 'next-auth';
-import Avatar from '@/components/avatar';
+import * as React from 'react';
+import { Avatar } from '@/components/avatar';
 import { Button, ButtonVariants } from '@/components/ui/button';
 import { Icons, iconSizes } from '@/components/ui/icons';
 import { color } from '@/styles/colors';

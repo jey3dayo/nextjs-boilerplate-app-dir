@@ -1,11 +1,11 @@
 'use client';
-import React from 'react';
 
+import * as React from 'react';
 import { AvatarRoot, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Icons } from '@/components/ui/icons';
 import { color } from '@/styles/colors';
 
-const Avatar = React.forwardRef<
+export const Avatar = React.forwardRef<
   React.ElementRef<typeof AvatarRoot>,
   React.ComponentPropsWithoutRef<typeof AvatarRoot> & {
     name: string | undefined;
@@ -22,5 +22,3 @@ const Avatar = React.forwardRef<
   );
 });
 Avatar.displayName = 'Avatar';
-
-export default Avatar;

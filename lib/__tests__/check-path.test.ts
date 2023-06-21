@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals';
-import checkPath from '@/lib/check-path';
+import { checkPath } from '@/lib/check-path';
 
 // whiteListに乗ってたらtrue
 test('checkPath', async () => {

@@ -20,7 +20,7 @@ export interface CassoProfile extends Record<string, any> {
   sub: string;
 }
 
-export default function Casso<P extends CassoProfile>(options: OAuthUserConfig<P>): OAuthConfig<P> {
+export function CassoProvider<P extends CassoProfile>(options: OAuthUserConfig<P>): OAuthConfig<P> {
   return {
     id: 'casso',
     name: 'CASSO',

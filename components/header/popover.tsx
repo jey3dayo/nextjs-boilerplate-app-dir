@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
 import { signIn, signOut } from 'next-auth/react';
 import { MenuIconButton } from '@/components/ui/icon-button';
@@ -15,9 +14,9 @@ import {
 } from '@/components/ui/popover';
 import { navigation } from '@/constants';
 import { useCurrentUser } from '@/hooks/use-next-auth';
-import classNames from '@/lib/class-names';
+import { classNames } from '@/lib/class-names';
 
-export default function CustomPopover(): JSX.Element {
+export function Popover(): JSX.Element {
   const { status } = useCurrentUser();
 
   return (

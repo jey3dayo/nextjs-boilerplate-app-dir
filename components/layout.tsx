@@ -1,8 +1,7 @@
-import React from 'react';
-import Footer from '@/components/footer';
-import Header from '@/components/header';
+import { Footer } from '@/components/footer';
+import { Header } from '@/components/header';
 
-export default function Layout(props: ReactProps) {
+export function Layout(props: ReactProps) {
   return (
     <>
       <Header />

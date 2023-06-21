@@ -5,7 +5,7 @@ import Auth0Provider from 'next-auth/providers/auth0';
 import GithubProvider from 'next-auth/providers/github';
 import { OAuthConfig } from 'next-auth/providers/oauth';
 import { env } from '@/env.mjs';
-import CassoProvider from '@/lib/next-auth/casso-provider';
+import { CassoProvider } from '@/lib/next-auth/casso-provider';
 import { prismaClient } from '@/lib/prisma';
 
 let providers: OAuthConfig<any>[] = [];

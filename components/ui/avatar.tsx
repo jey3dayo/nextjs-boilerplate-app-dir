@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as Avatar from '@radix-ui/react-avatar';
-import classNames from '@/lib/class-names';
+import { classNames } from '@/lib/class-names';
 
 const AvatarRoot = React.forwardRef<
   React.ElementRef<typeof Avatar.Root>,

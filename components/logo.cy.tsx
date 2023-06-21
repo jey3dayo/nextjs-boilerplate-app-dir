@@ -1,5 +1,5 @@
 /* eslint-disable */
-import Logo from './logo';
+import { Logo } from './logo';
 
 describe('<Logo />', () => {
   beforeEach(() => {
