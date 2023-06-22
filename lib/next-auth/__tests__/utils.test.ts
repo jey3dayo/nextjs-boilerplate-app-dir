@@ -1,4 +1,4 @@
-import { expect, describe } from '@jest/globals';
+import { describe, expect } from '@jest/globals';
 import { ROLE_ADMIN, ROLE_USER } from '@/constants';
 import { checkAdmin } from '@/lib/next-auth/utils';
 

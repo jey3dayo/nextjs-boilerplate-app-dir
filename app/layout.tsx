@@ -1,5 +1,5 @@
-import { Provider } from '@/components/provider';
 import { env } from '@/env.mjs';
+import { Provider } from '@/components/provider';
 import { nextFont } from '@/lib/next-font';
 import '@/styles/globals.css';
 

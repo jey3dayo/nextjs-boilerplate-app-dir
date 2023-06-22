@@ -1,15 +1,15 @@
 import {
+  AlertTriangle,
+  HelpCircle,
+  Loader2,
+  Menu,
+  Moon,
+  Plus,
+  Settings,
+  SunMedium,
   User,
   X,
   type Icon,
-  Menu,
-  SunMedium,
-  Loader2,
-  Settings,
-  Plus,
-  AlertTriangle,
-  HelpCircle,
-  Moon,
 } from 'lucide-react';
 
 const Icons = {

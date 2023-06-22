@@ -5,8 +5,6 @@ export interface Color {
   [key: string]: string | object;
 }
 
-export const RadixUiColors: Color;
-
 export interface Colors {
   primary: Color;
   accent: Color;

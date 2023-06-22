@@ -4,13 +4,13 @@ import Link from 'next/link';
 import { signIn, signOut } from 'next-auth/react';
 import { MenuIconButton } from '@/components/ui/icon-button';
 import {
+  PopoverAnchor,
+  PopoverAnchorChild,
+  PopoverClose,
+  PopoverContent,
+  PopoverPortal,
   PopoverRoot,
   PopoverTrigger,
-  PopoverAnchor,
-  PopoverPortal,
-  PopoverContent,
-  PopoverClose,
-  PopoverAnchorChild,
 } from '@/components/ui/popover';
 import { navigation } from '@/constants';
 import { useCurrentUser } from '@/hooks/use-next-auth';

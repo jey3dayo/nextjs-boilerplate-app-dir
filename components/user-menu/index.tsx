@@ -1,15 +1,15 @@
 import Link from 'next/link';
 import { Avatar } from '@/components/avatar';
 import {
-  DropdownMenuRoot,
-  DropdownMenuTrigger,
-  DropdownMenuPortal,
   DropdownMenuArrow,
-  DropdownMenuSeparator,
-  DropdownMenuLabel,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuRoot,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { SignInOut } from '@/components/user-menu/sign-in-out';
 import { SwitchTheme } from '@/components/user-menu/switch-theme';

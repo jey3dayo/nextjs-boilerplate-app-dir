@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as Avatar from '@radix-ui/react-avatar';
+import type { AvatarFallbackProps, AvatarImageProps, AvatarProps } from '@radix-ui/react-avatar';
 import { classNames } from '@/lib/class-names';
-import type { AvatarProps, AvatarImageProps, AvatarFallbackProps } from '@radix-ui/react-avatar';
 
 const AvatarRoot = React.forwardRef<React.ElementRef<typeof Avatar.Root>, AvatarProps>(
   ({ className, ...props }, ref) => (

@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { User } from '@prisma/client';
-import { AvatarRoot, AvatarFallback, AvatarImage, AvatarProps } from '@/components/ui/avatar';
+import { AvatarFallback, AvatarImage, AvatarProps, AvatarRoot } from '@/components/ui/avatar';
 import { Icons } from '@/components/ui/icons';
 import { color } from '@/styles/colors';
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useTheme as useNextTheme } from 'next-themes';
-import { Theme } from '@/@types/next-themes';
+import { Theme } from '@/types/next-themes';
 
 const defaultTheme = 'dark';
 

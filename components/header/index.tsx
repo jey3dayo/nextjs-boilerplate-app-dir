@@ -1,11 +1,11 @@
 import Link from 'next/link';
+import { env } from '@/env.mjs';
 import { Popover } from '@/components/header/popover';
 import { Logo } from '@/components/logo';
 import { ThemeSwitch } from '@/components/theme/theme-switch';
 import { UserMenu } from '@/components/user-menu';
 import { subTitle } from '@/config';
 import { navigation } from '@/constants';
-import { env } from '@/env.mjs';
 import { classNames } from '@/lib/class-names';
 
 const appName = env.NEXT_PUBLIC_APP_NAME;

@@ -4,8 +4,8 @@ import { withAuth } from 'next-auth/middleware';
 import { accessWhitelist, adminPages, loginPage } from '@/config';
 import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
-import { checkAdmin } from '@/lib/next-auth/utils';
 import { debug } from '@/lib/log';
+import { checkAdmin } from '@/lib/next-auth/utils';
 
 export default withAuth(
   async function middleware(req) {

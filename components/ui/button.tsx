@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { VariantProps, cva } from 'class-variance-authority';
+import { cva, VariantProps } from 'class-variance-authority';
 import { classNames } from '@/lib/class-names';
 
 const layoutStyle = 'relative inline-flex items-center justify-center';
