@@ -26,7 +26,7 @@ const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].j
       default: 'shadow-focus',
       dark: 'shadow-simple',
     },
-    transition: {
+    duration: {
       '0': 'duration-0',
       '100': 'duration-100',
       '200': 'duration-200',
@@ -38,7 +38,7 @@ const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].j
     variant: 'default',
     size: 'none',
     shadow: 'default',
-    transition: '300',
+    duration: '300',
   },
 });
 
@@ -47,9 +47,9 @@ type Variants = VariantProps<typeof variants>;
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>, Variants {}
 
 const Button = React.forwardRef<HTMLButtonElement, Props>(
-  ({ className, variant, size, shadow, transition, ...props }, ref) => {
+  ({ className, variant, size, shadow, duration, ...props }, ref) => {
     return (
-      <button className={classNames(variants({ variant, size, shadow, transition, className }))} ref={ref} {...props} />
+      <button className={classNames(variants({ variant, size, shadow, duration, className }))} ref={ref} {...props} />
     );
   },
 );
