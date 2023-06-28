@@ -1,13 +1,13 @@
 import { expect, test } from '@jest/globals';
 import { checkPath } from '@/lib/check-path';
 
-// whiteListに乗ってたらtrue
+// allowListに乗ってたらtrue
 test('checkPath', async () => {
-  const whitelist = ['/api', '/dashboard'];
-  expect(checkPath('/api', whitelist)).toEqual(true);
-  expect(checkPath('/api/xxx', whitelist)).toEqual(true);
-  expect(checkPath('/dashboard?query=test', whitelist)).toEqual(true);
+  const allowList = ['/api', '/dashboard'];
+  expect(checkPath('/api', allowList)).toEqual(true);
+  expect(checkPath('/api/xxx', allowList)).toEqual(true);
+  expect(checkPath('/dashboard?query=test', allowList)).toEqual(true);
 
-  expect(checkPath('/', whitelist)).toEqual(false);
-  expect(checkPath('/aaa', whitelist)).toEqual(false);
+  expect(checkPath('/', allowList)).toEqual(false);
+  expect(checkPath('/aaa', allowList)).toEqual(false);
 });

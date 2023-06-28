@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { withAuth } from 'next-auth/middleware';
-import { accessWhitelist, adminPages, loginPage } from '@/config';
+import { accessAllowList, adminPages, loginPage } from '@/config';
 import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { debug } from '@/lib/log';
@@ -9,13 +9,13 @@ import { checkAdmin } from '@/lib/next-auth/utils';
 
 export default withAuth(
   async function middleware(req) {
-    debug('called', req.nextUrl.pathname);
+    debug(`[middleware][${req.method}] ${req.nextUrl.pathname}`);
 
     // redirect
     if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
 
     // 認証がいらないページか確認
-    if (checkPath(req.nextUrl.pathname, accessWhitelist)) return null;
+    if (checkPath(req.nextUrl.pathname, accessAllowList)) return null;
 
     // 認証
     // XXX: tokenが取れなくなる時がある
