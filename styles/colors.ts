@@ -21,8 +21,3 @@ export const color = {
   medium: tailwindColors[primaryColor]['500'],
   light: tailwindColors[primaryColor]['100'],
 };
-
-module.exports = {
-  colors,
-  color,
-};

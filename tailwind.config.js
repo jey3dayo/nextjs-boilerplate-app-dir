@@ -1,8 +1,6 @@
-const { resolve } = require('path');
-const colorsPath = resolve(__dirname, 'styles/colors.ts');
-const { colors, color } = require(colorsPath);
-const containerQueries = require('@tailwindcss/container-queries');
-const animate = require('tailwindcss-animate');
+import containerQueries from '@tailwindcss/container-queries';
+import animate from 'tailwindcss-animate';
+import { color, colors } from './styles/colors';
 
 /** @type {import('tailwindcss').Config} */
 export default {

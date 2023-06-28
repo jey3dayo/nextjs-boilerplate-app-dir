@@ -44,6 +44,8 @@ export default withAuth(
   },
 );
 
-export const config = {
+const config = {
   matcher: ['/', `/((?!${accessAllowPages.join('|')}).*)`],
 };
+
+export { config };
