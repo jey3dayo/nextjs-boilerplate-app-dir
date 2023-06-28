@@ -16,7 +16,7 @@ export function Header() {
     <>
       <nav
         className={classNames(
-          'flex flex-wrap items-center justify-between bg-dark/90 px-2 md:fixed md:left-0 md:top-0 md:w-full',
+          'z-20 flex flex-wrap items-center justify-between bg-dark/90 px-2 md:fixed md:left-0 md:top-0 md:w-full',
           height,
         )}
       >
