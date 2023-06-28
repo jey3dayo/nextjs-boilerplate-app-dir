@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
+import { InView } from '@/components/ui/in-view';
 import { Label } from '@/components/ui/label';
 
 const DEFAULT_VOL = 50;
@@ -74,25 +75,27 @@ function Dashboard() {
         </div>
       </div>
 
-      <figure className="theme p-8 md:flex md:rounded-xl md:p-0">
-        <Image
-          className="mx-auto h-auto w-24 rounded-full md:w-48 md:rounded-none"
-          src="/image/sarah-dayan.jpg"
-          alt=""
-          width="384"
-          height="512"
-          priority
-        />
-        <div className="space-y-4 pt-6 text-center md:p-8 md:text-left">
-          <blockquote>
-            <p className="text-lg font-medium">{description}</p>
-          </blockquote>
-          <figcaption className="font-medium">
-            <div className="text-theme-accent">{text}</div>
-            <div className="text-theme-neutral">Staff Engineer, Algolia</div>
-          </figcaption>
-        </div>
-      </figure>
+      <InView>
+        <figure className="theme p-8 md:flex md:rounded-xl md:p-0">
+          <Image
+            className="mx-auto h-auto w-24 rounded-full md:w-48 md:rounded-none"
+            src="/image/sarah-dayan.jpg"
+            alt=""
+            width="384"
+            height="512"
+            priority
+          />
+          <div className="space-y-4 pt-6 text-center md:p-8 md:text-left">
+            <blockquote>
+              <p className="text-lg font-medium">{description}</p>
+            </blockquote>
+            <figcaption className="font-medium">
+              <div className="text-theme-accent">{text}</div>
+              <div className="text-theme-neutral">Staff Engineer, Algolia</div>
+            </figcaption>
+          </div>
+        </figure>
+      </InView>
     </div>
   );
 }
