@@ -6,11 +6,6 @@
   "engines": {
     "node": ">=16.0.0 <=18.x.x"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn test:quick"
-    }
-  },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
   },
@@ -40,6 +35,8 @@
     "component:headless": "cypress run --component"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
     "@ianvs/prettier-plugin-sort-imports": "^4.0.2",
     "autoprefixer": "^10.4.14",
     "cypress": "^12.13.0",
