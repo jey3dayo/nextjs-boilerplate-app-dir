@@ -3,7 +3,7 @@ import { checkPath } from '@/lib/check-path';
 
 // allowListに乗ってたらtrue
 test('checkPath', async () => {
-  const allowList = ['/api', '/dashboard'];
+  const allowList = ['api', 'dashboard'];
   expect(checkPath('/api', allowList)).toEqual(true);
   expect(checkPath('/api/xxx', allowList)).toEqual(true);
   expect(checkPath('/dashboard?query=test', allowList)).toEqual(true);

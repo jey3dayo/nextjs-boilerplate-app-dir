@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { withAuth } from 'next-auth/middleware';
-import { accessAllowList, adminPages, loginPage } from '@/config';
+import { accessAllowPages, adminPages, loginPage } from '@/config';
 import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { debug } from '@/lib/log';
@@ -13,9 +13,6 @@ export default withAuth(
 
     // redirect
     if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
-
-    // 認証がいらないページか確認
-    if (checkPath(req.nextUrl.pathname, accessAllowList)) return null;
 
     // 認証
     // XXX: tokenが取れなくなる時がある
@@ -48,5 +45,5 @@ export default withAuth(
 );
 
 export const config = {
-  matcher: ['/', '/((?!non-protected).*)'],
+  matcher: ['/', `/((?!${accessAllowPages.join('|')}).*)`],
 };
