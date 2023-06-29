@@ -22,12 +22,3 @@ export const profileNavigation: Navigation[] = [
 
 export const ROLE_USER = 1;
 export const ROLE_ADMIN = 2;
-
-export const messages = {
-  invalidAccess: '不正なアクセスです',
-  invalidToken: 'トークンの検証に失敗しました',
-  userNotFound: '不正が見つかりません',
-  needLogin: 'ログインしてください',
-  cantAccess: 'アクセス権がありません',
-  notFound: 'イベントがありません',
-};
