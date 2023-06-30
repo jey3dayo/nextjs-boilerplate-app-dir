@@ -21,6 +21,14 @@ export async function getPayload(req: NextApiRequest) {
   return verifyJwt(token);
 }
 
+export async function getUserId(req: NextApiRequest) {
+  const session = await getCurrentUser();
+  if (session) return session.id;
+
+  const payload = await getPayload(req);
+  if (payload) return payload.id;
+}
+
 // ヘッダーのチェック
 // TODO: throwしたほうがいいかあとで考える
 export function checkVulnerabilities() {
