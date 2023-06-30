@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
+import { createResponseWithError } from '@/lib/api-utils';
+import { getPayload, restrictAccess } from '@/lib/auth';
 import { getCurrentUser } from '@/lib/next-auth/session';
-import { createResponseWithError } from '@/lib/server/api-utils';
-import { getPayload, restrictAccess } from '@/lib/server/auth';
 
 export async function GET(req: NextApiRequest, _res: NextApiResponse) {
   const accessError = await restrictAccess(req);
