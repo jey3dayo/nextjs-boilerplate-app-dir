@@ -5,7 +5,7 @@ import { env } from '@/env.mjs';
 import { HttpCodes, messages } from '@/constants/api';
 import { ApiRequestError } from '@/lib/error';
 import { getCurrentUser } from '@/lib/next-auth/session';
-import { verifyJwt } from '@/lib/token';
+import { getOptions, verifyJwt } from '@/lib/token';
 
 const host = env.BASE_URL;
 
@@ -18,7 +18,8 @@ export function getJwt() {
 // TODO: profileのマージを検討
 export async function getPayload(req: NextApiRequest) {
   const token = await getToken({ req, raw: true });
-  return verifyJwt(token);
+  const options = getOptions(env.NEXTAUTH_SECRET, env.NEXT_PUBLIC_APP_NAME);
+  return verifyJwt(token, options);
 }
 
 export async function getUserId(req: NextApiRequest) {

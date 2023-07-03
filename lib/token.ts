@@ -1,31 +1,45 @@
 import * as jose from 'jose';
-import { env } from '@/env.mjs';
 import { Payload } from '@/types/jose';
 
-const secret: Uint8Array = new TextEncoder().encode(env.NEXTAUTH_SECRET);
-const alg = 'HS256';
-export const options = {
-  claim: `urn:${env.NEXT_PUBLIC_APP_NAME}:claim`,
-  issuer: `urn:${env.NEXT_PUBLIC_APP_NAME}:issuer`,
-  audience: `urn:${env.NEXT_PUBLIC_APP_NAME}:client_id`,
-  expiresIn: '720 hour',
+type Options = {
+  secret: Uint8Array;
+  alg: string;
+  claim: string;
+  issuer: string;
+  audience: string;
+  expiresIn: string;
 };
 
-export async function signJwt(payload: Payload) {
+export function getOptions(authSecret: string, appName: string): Options {
+  const secret: Uint8Array = new TextEncoder().encode(authSecret);
+  return {
+    secret,
+    alg: 'HS256',
+    claim: `urn:${appName}:claim`,
+    issuer: `urn:${appName}:issuer`,
+    audience: `urn:${appName}:client_id`,
+    expiresIn: '720 hour',
+  };
+}
+
+export async function signJwt(payload: Payload, options: Options) {
+  const { secret, alg, ...opts } = options;
   const jwt = await new jose.SignJWT(payload)
-    .setProtectedHeader({ alg })
+    .setProtectedHeader({ alg: alg })
     .setIssuedAt()
-    .setIssuer(options.issuer as string)
-    .setAudience(options.audience as string)
-    .setExpirationTime(options.expiresIn)
+    .setIssuer(opts.issuer as string)
+    .setAudience(opts.audience as string)
+    .setExpirationTime(opts.expiresIn)
     .sign(secret);
 
   return jwt;
 }
 
-export async function verifyJwt(jwt: string): Promise<jose.JWTPayload | undefined> {
+// Optionsからsecret, algを除外
+export async function verifyJwt(jwt: string, options: Options): Promise<jose.JWTPayload | undefined> {
+  const { secret, alg, ...opts } = options;
   try {
-    const { payload, protectedHeader } = await jose.jwtVerify(jwt, secret, options);
+    const { payload, protectedHeader } = await jose.jwtVerify(jwt, secret, opts);
     if (protectedHeader.alg !== alg) throw new Error('invalid protectedHeader');
 
     return payload as jose.JWTPayload;
