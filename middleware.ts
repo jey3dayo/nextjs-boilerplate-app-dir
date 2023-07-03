@@ -1,18 +1,21 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { withAuth } from 'next-auth/middleware';
 import { accessAllowPages, adminPages, loginPage } from '@/config';
+import { ROLE_USER } from '@/constants';
 import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { debug } from '@/lib/log';
 import { checkAdmin } from '@/lib/next-auth/utils';
+import { getRequestHeaders } from '@/lib/request-headers';
 
 export default withAuth(
-  async function middleware(req) {
-    // 認証がいらないページか確認
-    if (checkPath(req.nextUrl.pathname, accessAllowPages)) return null;
-
+  async function middleware(req: NextRequest) {
     debug(`[middleware][${req.method}] ${req.nextUrl.pathname}`);
+    const responseInit = { request: { headers: getRequestHeaders(req) } };
+
+    // 認証がいらないページか確認
+    if (checkPath(req.nextUrl.pathname, accessAllowPages)) return NextResponse.next(responseInit);
 
     // redirect
     if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
@@ -31,11 +34,11 @@ export default withAuth(
 
     // admin管理ページの場合、権限確認
     if (checkPath(req.nextUrl.pathname, adminPages)) {
-      const isAdmin = isAuth ? checkAdmin(token?.role ?? 0) : false;
+      const isAdmin = isAuth ? checkAdmin(token?.role ?? ROLE_USER) : false;
       return isAdmin ? null : NextResponse.redirect(new URL('/error?code=403', req.url));
     }
 
-    return null;
+    return NextResponse.next(responseInit);
   },
   {
     callbacks: {
