@@ -1,4 +1,3 @@
-import 'server-only';
 import { Session } from 'next-auth';
 import { getServerSession as _getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/next-auth';

@@ -1,14 +1,24 @@
-import { NextResponse } from 'next/server';
-import { getCurrentUser } from '@/lib/next-auth/session';
+import { NextRequest, NextResponse } from 'next/server';
+import { createResponseWithError } from '@/lib/api-utils';
+import { getUserId, restrictAccess } from '@/lib/auth';
+import { prismaClient } from '@/lib/prisma';
 
-export async function GET(_req: Request, _res: Response) {
-  const user = await getCurrentUser();
-  if (!user) NextResponse.json({ error: 'User session not found.' });
+export async function GET(req: NextRequest) {
+  const accessError = await restrictAccess(req);
+  if (accessError) return createResponseWithError(accessError);
+  const userId = await getUserId(req);
+  if (!userId) return NextResponse.json({ error: 'User session not found.' });
 
-  return NextResponse.json({
-    id: user?.id,
-    name: user?.name,
-    email: user?.email,
-    image: user?.image,
-  });
+  const user = await prismaClient.user.findUnique({ where: { id: userId } });
+  if (user) {
+    return NextResponse.json({
+      id: user?.id,
+      name: user?.name,
+      email: user?.email,
+      image: user?.image,
+      role: user?.roleId,
+    });
+  }
+
+  return NextResponse.json({ error: 'User session not found.' });
 }

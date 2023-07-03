@@ -9,6 +9,9 @@ import { checkAdmin } from '@/lib/next-auth/utils';
 
 export default withAuth(
   async function middleware(req) {
+    // 認証がいらないページか確認
+    if (checkPath(req.nextUrl.pathname, accessAllowPages)) return null;
+
     debug(`[middleware][${req.method}] ${req.nextUrl.pathname}`);
 
     // redirect

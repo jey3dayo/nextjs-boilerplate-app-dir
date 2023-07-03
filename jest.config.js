@@ -7,7 +7,8 @@ module.exports = {
   moduleFileExtensions: ['js', 'ts'],
   testMatch: ['**/*.test.ts'],
   transform: {
-    '^.+\\.ts$': 'ts-jest',
+    '^.+\\.(js|jsx|ts|tsx|)$': 'ts-jest',
+    '^.+\\.mjs$': 'ts-jest',
   },
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',

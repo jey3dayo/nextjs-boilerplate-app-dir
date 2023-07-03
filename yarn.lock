@@ -7040,7 +7040,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jose@npm:^4.11.4, jose@npm:^4.14.1":
+"jose@npm:^4.11.4, jose@npm:^4.14.1, jose@npm:^4.14.4":
   version: 4.14.4
   resolution: "jose@npm:4.14.4"
   checksum: 2d820a91a8fd97c05d8bc8eedc373b944a0cd7f5fe41063086da233d0473c73fb523912a9f026ea870782bd221f4a515f441a2d3af4de48c6f2c76dac5082377
@@ -7995,6 +7995,7 @@ __metadata:
     eslint-plugin-tailwindcss: ^3.12.1
     husky: ^8.0.3
     jest: ^29.5.0
+    jose: ^4.14.4
     local-ssl-proxy: ^2.0.5
     lucide-react: ^0.236.0
     next: 13.4.5
