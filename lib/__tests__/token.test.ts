@@ -12,10 +12,10 @@ describe('getOptions', () => {
     expect(options.secret).toBeInstanceOf(Uint8Array);
     expect(options).toMatchObject({
       alg: 'HS256',
-      audience: 'urn:CAP:client_id',
-      claim: 'urn:CAP:claim',
+      audience: 'urn:Awesome App:client_id',
+      claim: 'urn:Awesome App:claim',
       expiresIn: '720 hour',
-      issuer: 'urn:CAP:issuer',
+      issuer: 'urn:Awesome App:issuer',
     });
   });
 });
@@ -35,9 +35,15 @@ describe('verifyJwt', () => {
 
   it('should return payload', async () => {
     const input =
-      'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNsajN1dG9hYzAwMDBoOWc2MXYwb3c0Z3UiLCJpYXQiOjE2ODgwNjAyNDcsImlzcyI6InVybjpDQVA6aXNzdWVyIiwiYXVkIjoidXJuOkNBUDpjbGllbnRfaWQiLCJleHAiOjE2OTA2NTIyNDd9.xC4ELXJDDF1v-FY4HmKYyfRQzkUd_InWxMNYXF1lCrc';
+      'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNsajN1dG9hYzAwMDBoOWc2MXYwb3c0Z3UiLCJpYXQiOjE2ODgzNjg1MDYsImlzcyI6InVybjpBd2Vzb21lIEFwcDppc3N1ZXIiLCJhdWQiOiJ1cm46QXdlc29tZSBBcHA6Y2xpZW50X2lkIiwiZXhwIjoxNjkwOTYwNTA2fQ.1c99_p9a2Tsf4ZihsZopO529-j0fLWyctcocVLpxKuI';
     const payload = await verifyJwt(input, options);
-    expect(payload?.id).toEqual(userId);
+    expect(payload).toMatchObject({
+      id: userId,
+      iat: 1688368506,
+      iss: 'urn:Awesome App:issuer',
+      aud: 'urn:Awesome App:client_id',
+      exp: 1690960506,
+    });
   });
 
   it('failed return payload', async () => {
