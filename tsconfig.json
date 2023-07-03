@@ -1,14 +1,20 @@
 {
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "transpileOnly": true,
+    "transpiler": "ts-node/transpilers/swc-experimental"
+  },
   "compilerOptions": {
-    "target": "es2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -26,6 +32,6 @@
       "prisma/*": ["./prisma/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.mts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

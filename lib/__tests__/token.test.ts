@@ -1,28 +1,54 @@
 import { describe, expect } from '@jest/globals';
+import { env } from '@/env.mjs';
 import { Payload } from '@/types/jose';
-import { signJwt, verifyJwt } from '@/lib/token';
+import { getOptions, signJwt, verifyJwt } from '@/lib/token';
 
 const userId = 'clj3utoac0000h9g61v0ow4gu';
 
+describe('getOptions', () => {
+  it('should return options', async () => {
+    const options = getOptions(env.NEXTAUTH_SECRET, env.NEXT_PUBLIC_APP_NAME);
+    expect(options).toHaveProperty('secret');
+    expect(options.secret).toBeInstanceOf(Uint8Array);
+    expect(options).toMatchObject({
+      alg: 'HS256',
+      audience: 'urn:Awesome App:client_id',
+      claim: 'urn:Awesome App:claim',
+      expiresIn: '720 hour',
+      issuer: 'urn:Awesome App:issuer',
+    });
+  });
+});
+
 describe('signJwt', () => {
+  const options = getOptions(env.NEXTAUTH_SECRET, env.NEXT_PUBLIC_APP_NAME);
+
   it('should return jwt', async () => {
     const input: Payload = { id: userId };
-    const jwt = await signJwt(input);
+    const jwt = await signJwt(input, options);
     expect(typeof jwt).toEqual('string');
   });
 });
 
 describe('verifyJwt', () => {
+  const options = getOptions(env.NEXTAUTH_SECRET, env.NEXT_PUBLIC_APP_NAME);
+
   it('should return payload', async () => {
     const input =
-      'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNsajN1dG9hYzAwMDBoOWc2MXYwb3c0Z3UiLCJpYXQiOjE2ODgwNjAyNDcsImlzcyI6InVybjpDQVA6aXNzdWVyIiwiYXVkIjoidXJuOkNBUDpjbGllbnRfaWQiLCJleHAiOjE2OTA2NTIyNDd9.xC4ELXJDDF1v-FY4HmKYyfRQzkUd_InWxMNYXF1lCrc';
-    const payload = await verifyJwt(input);
-    expect(payload?.id).toEqual(userId);
+      'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNsajN1dG9hYzAwMDBoOWc2MXYwb3c0Z3UiLCJpYXQiOjE2ODgzNjg1MDYsImlzcyI6InVybjpBd2Vzb21lIEFwcDppc3N1ZXIiLCJhdWQiOiJ1cm46QXdlc29tZSBBcHA6Y2xpZW50X2lkIiwiZXhwIjoxNjkwOTYwNTA2fQ.1c99_p9a2Tsf4ZihsZopO529-j0fLWyctcocVLpxKuI';
+    const payload = await verifyJwt(input, options);
+    expect(payload).toMatchObject({
+      id: userId,
+      iat: 1688368506,
+      iss: 'urn:Awesome App:issuer',
+      aud: 'urn:Awesome App:client_id',
+      exp: 1690960506,
+    });
   });
 
   it('failed return payload', async () => {
     const input = 'invalid token';
-    const payload = await verifyJwt(input);
+    const payload = await verifyJwt(input, options);
     expect(payload).toBeUndefined();
   });
 });

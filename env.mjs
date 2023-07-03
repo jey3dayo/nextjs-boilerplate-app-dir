@@ -1,7 +1,7 @@
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
-export const env = createEnv({
+const env = createEnv({
   server: {
     BASE_URL: z.string().url().optional(),
     VERCEL_URL: z.string().url().optional(),
@@ -39,3 +39,5 @@ export const env = createEnv({
     CASSO_REDIRECT_URI: process.env.CASSO_REDIRECT_URI,
   },
 });
+
+export { env };
