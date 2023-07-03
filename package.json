@@ -16,7 +16,7 @@
     "prisma:db:seed": "prisma db seed",
     "dev": "next dev",
     "dev:proxy": "next dev --turbo -p 3001 & local-ssl-proxy --key ./certs/private.key --cert ./certs/certificate.crt --source 3000 --target 3001",
-    "test": "env-cmd -f ./.env.test rn-p lint prettier:check depcruise jest component:headless",
+    "test": "env-cmd -f ./.env.test run-p lint prettier:check depcruise jest component:headless",
     "test:quick": "run-p lint prettier:check",
     "pre-build": "run-s format build",
     "build": "prisma generate && next build",

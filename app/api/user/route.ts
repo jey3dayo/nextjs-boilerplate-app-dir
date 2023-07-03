@@ -1,10 +1,9 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { createResponseWithError } from '@/lib/api-utils';
 import { getUserId, restrictAccess } from '@/lib/auth';
 import { prismaClient } from '@/lib/prisma';
 
-export async function GET(req: NextApiRequest, _res: NextApiResponse) {
+export async function GET(req: NextRequest) {
   const accessError = await restrictAccess(req);
   if (accessError) return createResponseWithError(accessError);
   const userId = await getUserId(req);

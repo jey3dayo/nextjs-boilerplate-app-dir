@@ -1,5 +1,5 @@
-import { NextApiRequest } from 'next';
 import { headers } from 'next/headers';
+import { NextRequest } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { env } from '@/env.mjs';
 import { HttpCodes, messages } from '@/constants/api';
@@ -16,13 +16,13 @@ export function getJwt() {
 }
 
 // TODO: profileのマージを検討
-export async function getPayload(req: NextApiRequest) {
+export async function getPayload(req: NextRequest) {
   const token = await getToken({ req, raw: true });
   const options = getOptions(env.NEXTAUTH_SECRET, env.NEXT_PUBLIC_APP_NAME);
   return verifyJwt(token, options);
 }
 
-export async function getUserId(req: NextApiRequest) {
+export async function getUserId(req: NextRequest) {
   const session = await getCurrentUser();
   if (session) return session.id;
 
@@ -51,7 +51,7 @@ export async function restrictUserAccess() {
 }
 
 // トークンによるアクセス制限
-export async function restrictTokenAccess(req: NextApiRequest) {
+export async function restrictTokenAccess(req: NextRequest) {
   const payload = await getPayload(req);
   if (!payload) {
     return new ApiRequestError(messages.invalidToken, HttpCodes.Unauthorized);
@@ -59,7 +59,7 @@ export async function restrictTokenAccess(req: NextApiRequest) {
 }
 
 // APIアクセス制限
-export async function restrictAccess(req: NextApiRequest): Promise<ApiRequestError | undefined> {
+export async function restrictAccess(req: NextRequest): Promise<ApiRequestError | undefined> {
   const headerError = checkVulnerabilities();
   if (headerError) return headerError;
 
