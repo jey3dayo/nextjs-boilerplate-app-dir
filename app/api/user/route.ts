@@ -1,30 +1,41 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { messages } from '@/constants/api';
 import { createResponseWithError } from '@/lib/api-utils';
-import { getUserId, restrictAccess } from '@/lib/auth';
+import { ApiRequestError } from '@/lib/error';
+import { getUserIdAndCheckAccess } from '@/lib/next-auth/utils';
 import { prismaClient } from '@/lib/prisma';
 import { headers } from '@/lib/request-headers';
 
 export async function GET(req: NextRequest) {
   const responseInit = { headers };
-  const accessError = await restrictAccess(req);
-  if (accessError) return createResponseWithError(accessError);
 
-  const userId = await getUserId(req);
-  if (!userId) return NextResponse.json({ error: 'User session not found.' }, responseInit);
+  try {
+    const userId = await getUserIdAndCheckAccess(req);
+    if (!userId) throw new Error(messages.failedSession);
 
-  const user = await prismaClient.user.findUnique({ where: { id: userId } });
-  if (user) {
+    const user = await prismaClient.user.findUnique({
+      select: {
+        id: true,
+        name: true,
+        email: true,
+        image: true,
+        role: { select: { name: true } },
+      },
+      where: { id: userId },
+    });
+    if (!user) throw new Error(messages.userNotFound);
+
     return NextResponse.json(
       {
         id: user?.id,
         name: user?.name,
         email: user?.email,
         image: user?.image,
-        role: user?.roleId,
+        role: user?.role?.name,
       },
       responseInit,
     );
+  } catch (error: unknown) {
+    return createResponseWithError(error instanceof Error ? error : new ApiRequestError('unknown error'));
   }
-
-  return NextResponse.json({ error: 'User session not found.' }, responseInit);
 }

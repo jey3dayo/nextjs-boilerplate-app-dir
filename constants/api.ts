@@ -32,7 +32,10 @@ export const messages = {
   invalidAccess: '不正なアクセスです',
   invalidToken: 'トークンの検証に失敗しました',
   userNotFound: 'ユーザが見つかりません',
+  sessionNotFound: 'セッションが見つかりません',
+  failedSession: 'セッションが不正です',
   needLogin: 'ログインしてください',
+  needAdminRole: '管理者権限が必要です',
   cantAccess: 'アクセス権がありません',
   notFound: 'イベントがありません',
 };

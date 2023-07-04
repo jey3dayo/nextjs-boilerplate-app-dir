@@ -20,5 +20,5 @@ export const profileNavigation: Navigation[] = [
   { name: 'ユーザ管理', href: '/admin', requiredAdmin: true },
 ];
 
-export const ROLE_USER = 1;
-export const ROLE_ADMIN = 2;
+export const ROLE_USER = 'user';
+export const ROLE_ADMIN = 'admin';
