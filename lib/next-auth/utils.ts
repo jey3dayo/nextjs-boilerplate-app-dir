@@ -3,18 +3,14 @@ import { NextRequest } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { env } from '@/env.mjs';
 import { UserId } from '@/types/next-auth';
-import { ROLE_ADMIN } from '@/constants';
 import { HttpCodes, messages } from '@/constants/api';
 import { ApiRequestError } from '@/lib/error';
+import { checkAdmin } from '@/lib/next-auth/role';
 import { getCurrentUser } from '@/lib/next-auth/session';
 // import { prismaClient } from '@/lib/prisma';
 import { getOptions, verifyJwt } from '@/lib/token';
 
 const host = env.BASE_URL;
-
-export function checkAdmin(role: string | null | undefined): boolean {
-  return !!role && role === ROLE_ADMIN;
-}
 
 export function getJwt() {
   const headersList = headers();
