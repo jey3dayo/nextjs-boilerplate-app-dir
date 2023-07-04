@@ -5,7 +5,8 @@ const baseUrl = env?.BASE_URL ?? '';
 const host = /http/.test(baseUrl) ? new URL(baseUrl).href : baseUrl;
 const allowOriginHost = /localhost:/.test(host) ? '*' : `${host}`;
 
-export const headers: Record<string, string> = {
+// api用のheaders
+export const headers: HeadersInit = {
   'Access-Control-Allow-Origin': allowOriginHost,
   'Access-Control-Allow-Headers': 'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept, authorization',
   'Access-Control-Allow-Methods': 'POST, GET, PUT, DELETE, OPTIONS',
@@ -24,8 +25,9 @@ type Header = typeof headers;
 export function getRequestHeaders(req: NextRequest) {
   const requestHeaders = new Headers(req.headers);
 
-  Object.keys(headers).forEach((key: keyof Header) => {
-    requestHeaders.set(key, headers[key] as string);
+  const headersRecord = headers as Record<string, string>;
+  Object.keys(headersRecord).forEach((key: keyof Header) => {
+    requestHeaders.append(key, headersRecord[key]);
   });
 
   return requestHeaders;
