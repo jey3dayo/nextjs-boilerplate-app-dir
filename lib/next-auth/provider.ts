@@ -1,10 +1,10 @@
+import { NextAuthOptions } from 'next-auth';
 import Auth0Provider from 'next-auth/providers/auth0';
 import GithubProvider from 'next-auth/providers/github';
-import { OAuthConfig } from 'next-auth/providers/oauth';
 import { env } from '@/env.mjs';
 import { CassoProvider } from '@/lib/next-auth/casso-provider';
 
-let providers: OAuthConfig<any>[] = [];
+let providers: NextAuthOptions['providers'] = [];
 
 // api/auth/callback/casso
 const cassoProvider = CassoProvider({
