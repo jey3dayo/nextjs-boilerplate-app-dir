@@ -3,7 +3,7 @@ import { Session } from 'next-auth';
 import { getToken } from 'next-auth/jwt';
 import { getServerSession as _getServerSession } from 'next-auth/next';
 import { env } from '@/env.mjs';
-import { UserId } from '@/types/next-auth';
+import { UserId } from '@/types/user';
 import { authOptions } from '@/lib/next-auth';
 import { getOptions, verifyJwt } from '@/lib/token';
 

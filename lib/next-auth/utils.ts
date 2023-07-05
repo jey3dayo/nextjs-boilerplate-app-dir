@@ -1,7 +1,7 @@
 import { headers } from 'next/headers';
 import { NextRequest } from 'next/server';
 import { env } from '@/env.mjs';
-import { Role, UserId } from '@/types/next-auth';
+import { Role, UserId } from '@/types/user';
 import { HttpCodes, messages } from '@/constants/api';
 import { getUser } from '@/lib//prisma/utils';
 import { ApiRequestError } from '@/lib/error';
