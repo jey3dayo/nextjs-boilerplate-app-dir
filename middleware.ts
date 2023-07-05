@@ -2,11 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { withAuth } from 'next-auth/middleware';
 import { accessAllowPages, adminPages, loginPage } from '@/config';
-import { ROLE_USER } from '@/constants';
 import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { debug } from '@/lib/log';
-import { checkAdmin } from '@/lib/next-auth/utils';
+import { checkAdmin } from '@/lib/next-auth/role';
 import { getRequestHeaders } from '@/lib/request-headers';
 
 export default withAuth(
@@ -34,7 +33,7 @@ export default withAuth(
 
     // admin管理ページの場合、権限確認
     if (checkPath(req.nextUrl.pathname, adminPages)) {
-      const isAdmin = isAuth ? checkAdmin(token?.role ?? ROLE_USER) : false;
+      const isAdmin = isAuth ? checkAdmin(token?.role) : false;
       return isAdmin ? null : NextResponse.redirect(new URL('/error?code=403', req.url));
     }
 

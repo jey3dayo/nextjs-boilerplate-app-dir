@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createResponseWithError } from '@/lib/api-utils';
 import { ApiRequestError } from '@/lib/error';
-import { getUserAndCheckUser, getUserIdAndCheckAccess } from '@/lib/next-auth/utils';
+import { checkAdminAccess, getUserAndCheckUser, getUserIdAndCheckAccess } from '@/lib/next-auth/utils';
 import { headers } from '@/lib/request-headers';
 
 export async function GET(req: NextRequest) {
@@ -10,6 +10,7 @@ export async function GET(req: NextRequest) {
   try {
     const userId = await getUserIdAndCheckAccess(req);
     const user = await getUserAndCheckUser(userId);
+    checkAdminAccess(user.role.name);
 
     return NextResponse.json(
       {
