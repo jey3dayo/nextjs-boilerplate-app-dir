@@ -18,7 +18,7 @@ type PageProps = {
 const DEFAULT_CODE = 400;
 const DEFAULT_MESSAGE = '不具合が発生しました';
 
-async function Page(props: PageProps) {
+function Page(props: PageProps) {
   const code: string = props?.searchParams?.code ?? DEFAULT_CODE;
   const title = errorMessages?.[code] ?? DEFAULT_MESSAGE;
 
