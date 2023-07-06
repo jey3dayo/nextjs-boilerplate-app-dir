@@ -2,10 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { withAuth } from 'next-auth/middleware';
 import { accessAllowPages, adminPages, loginPage } from '@/config';
-import { getHeaders } from '@/lib/api-utils';
 import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { debug } from '@/lib/log';
+import { getHeaders } from '@/lib/middleware-utils';
 import { checkAdmin } from '@/lib/next-auth/role';
 
 export default withAuth(
