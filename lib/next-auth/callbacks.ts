@@ -7,7 +7,7 @@ const callbacks: NextAuthOptions['callbacks'] = {
     // jwt.emailでUserを特定する
     if (!token?.email) return token;
 
-    const dbUser = await prismaClient.user.findFirst({
+    const dbUser = await prismaClient.user.findUnique({
       select: {
         id: true,
         name: true,
