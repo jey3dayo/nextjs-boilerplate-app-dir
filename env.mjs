@@ -3,7 +3,6 @@ import { z } from 'zod';
 
 const env = createEnv({
   server: {
-    BASE_URL: z.string().url().optional(),
     VERCEL_URL: z.string().url().optional(),
     GITHUB_ID: z.string().min(1),
     GITHUB_SECRET: z.string().min(1),
@@ -21,6 +20,7 @@ const env = createEnv({
     CASSO_REDIRECT_URI: z.string().url().optional(),
   },
   client: {
+    BASE_URL: z.string().url().optional(),
     NEXT_PUBLIC_APP_NAME: z.string().min(1),
   },
   runtimeEnv: {

@@ -1,6 +1,4 @@
-import { prismaClient } from '@/lib/prisma';
-
-export type UserId = PrismaClient.user['id'];
+export type UserId = string;
 
 export type Role = 'user' | 'admin';
 
