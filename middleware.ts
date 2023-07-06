@@ -5,13 +5,13 @@ import { accessAllowPages, adminPages, loginPage } from '@/config';
 import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { debug } from '@/lib/log';
+import { getHeaders } from '@/lib/middleware-utils';
 import { checkAdmin } from '@/lib/next-auth/role';
-import { getRequestHeaders } from '@/lib/request-headers';
 
 export default withAuth(
   async function middleware(req: NextRequest) {
     debug(`[middleware][${req.method}] ${req.nextUrl.pathname}`);
-    const responseInit = { request: { headers: getRequestHeaders(req) } };
+    const responseInit = { request: { headers: getHeaders(req) } };
 
     // 認証がいらないページか確認
     if (checkPath(req.nextUrl.pathname, accessAllowPages)) return NextResponse.next(responseInit);
@@ -20,7 +20,6 @@ export default withAuth(
     if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
 
     // 認証
-    // XXX: tokenが取れなくなる時がある
     const token = await getToken({ req });
     const isAuth = !!token;
 

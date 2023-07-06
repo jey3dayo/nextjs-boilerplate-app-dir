@@ -1,3 +1,5 @@
+'server-only';
+
 import { NextRequest } from 'next/server';
 import { Session } from 'next-auth';
 import { getToken } from 'next-auth/jwt';

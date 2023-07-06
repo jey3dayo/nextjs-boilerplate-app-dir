@@ -1,3 +1,5 @@
+'server-only';
+
 import * as jose from 'jose';
 import { Payload } from '@/types/jose';
 
@@ -35,8 +37,8 @@ export async function signJwt(payload: Payload, options: Options) {
   return jwt;
 }
 
-// Optionsからsecret, algを除外
 export async function verifyJwt(jwt: string, options: Options): Promise<jose.JWTPayload | undefined> {
+  // Optionsからsecret, algを除外
   const { secret, alg, ...opts } = options;
   try {
     const { payload, protectedHeader } = await jose.jwtVerify(jwt, secret, opts);
