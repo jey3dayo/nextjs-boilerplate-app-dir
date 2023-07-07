@@ -1,3 +1,11 @@
-import About from '@/app/sample/about/about';
+import Content from '@/app/sample/content';
 
-export default About;
+async function Page(): Promise<JSX.Element> {
+  return (
+    <main>
+      <Content />
+    </main>
+  );
+}
+
+export default Page;

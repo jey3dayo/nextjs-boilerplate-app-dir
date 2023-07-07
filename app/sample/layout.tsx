@@ -1,10 +1,15 @@
-import '@/styles/globals.css';
+import { ContentRoot } from '@/components/content-root';
+import { Layout } from '@/components/layout';
 
 export const metadata = {
-  title: 'sample',
-  description: 'description',
+  title: 'サンプル',
+  description: 'サンプル実装',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <div>{children}</div>;
+export default function RootLayout(props: ReactProps) {
+  return (
+    <Layout>
+      <ContentRoot>{props.children}</ContentRoot>
+    </Layout>
+  );
 }
