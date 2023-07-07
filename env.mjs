@@ -20,11 +20,11 @@ const env = createEnv({
     CASSO_REDIRECT_URI: z.string().url().optional(),
   },
   client: {
-    BASE_URL: z.string().url().optional(),
+    NEXT_PUBLIC_BASE_URL: z.string().min(1).optional(),
     NEXT_PUBLIC_APP_NAME: z.string().min(1),
   },
   runtimeEnv: {
-    BASE_URL: process.env.BASE_URL,
+    NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
     GITHUB_ID: process.env.GITHUB_ID,
     GITHUB_SECRET: process.env.GITHUB_SECRET,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,

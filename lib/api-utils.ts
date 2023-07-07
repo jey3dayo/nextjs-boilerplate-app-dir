@@ -3,7 +3,7 @@
 import { headers } from 'next/headers';
 import { NextRequest } from 'next/server';
 import { Role, UserId } from '@/types/user';
-import { baseUrl, headersRecord, HttpCodes, messages } from '@/constants/api';
+import { baseUrlHost, headersRecord, HttpCodes, messages } from '@/constants/api';
 import { ApiRequestError } from '@/lib/error';
 import { checkAdmin } from '@/lib/next-auth/role';
 import { getUser } from '@/lib/prisma/utils';
@@ -28,7 +28,7 @@ export function checkVulnerabilities() {
   const requestHost = headersList.get('host') ?? '';
 
   // hostが変更されていたら実行させない
-  if (![baseUrl, 'localhost'].includes(requestHost)) {
+  if (!/localhost/.test(requestHost) && baseUrlHost !== requestHost) {
     throw new ApiRequestError(messages.invalidAccess, HttpCodes.BadRequest);
   }
 }

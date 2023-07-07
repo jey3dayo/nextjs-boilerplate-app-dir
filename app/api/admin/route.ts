@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { messages } from '@/constants/api';
 import { checkAdminAccess, createResponseWithError, getUserAndValidate, responseInit } from '@/lib/api-utils';
 import { ApiRequestError } from '@/lib/error';
 
@@ -18,6 +19,10 @@ export async function GET(req: NextRequest) {
       responseInit,
     );
   } catch (error: unknown) {
-    return createResponseWithError(error instanceof Error ? error : new ApiRequestError('unknown error'));
+    if (error instanceof Error) {
+      return createResponseWithError(error);
+    }
+
+    return createResponseWithError(new ApiRequestError(messages.unknownError));
   }
 }

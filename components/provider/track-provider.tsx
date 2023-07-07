@@ -1,4 +1,10 @@
-// TODO: GTM, Sentry, Datadog
+import { VercelAnalytics } from '@/components/vercel-analytics';
+
 export function TrackProvider(props: ReactProps) {
-  return <>{props.children}</>;
+  return (
+    <>
+      {props.children}
+      <VercelAnalytics />;
+    </>
+  );
 }

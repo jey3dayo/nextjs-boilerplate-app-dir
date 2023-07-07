@@ -23,6 +23,7 @@ export enum HttpCodes {
   Conflict = 409,
   Gone = 410,
   TooManyRequests = 429,
+  UnprocessableEntity = 422,
   InternalServerError = 500,
   NotImplemented = 501,
   BadGateway = 502,
@@ -31,7 +32,8 @@ export enum HttpCodes {
 }
 
 // api用のheaders
-export const baseUrl = env?.BASE_URL ?? '';
+export const baseUrl = env?.NEXT_PUBLIC_BASE_URL ?? env?.VERCEL_URL ?? '';
+export const baseUrlHost = baseUrl.split(':')[0];
 const host = /http/.test(baseUrl) ? new URL(baseUrl).href : baseUrl;
 
 const allowOriginHost = /localhost:/.test(host) ? '*' : `${host}`;
@@ -58,6 +60,7 @@ export const messages = {
   failedSession: 'セッションが不正です',
   needLogin: 'ログインしてください',
   needAdminRole: '管理者権限が必要です',
-  cantAccess: 'アクセス権がありません',
+  forbidden: 'アクセス権がありません',
   notFound: 'イベントがありません',
+  unknownError: '不明なエラーです',
 };
