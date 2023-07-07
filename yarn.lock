@@ -7352,12 +7352,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.258.0":
-  version: 0.258.0
-  resolution: "lucide-react@npm:0.258.0"
+"lucide-react@npm:^0.259.0":
+  version: 0.259.0
+  resolution: "lucide-react@npm:0.259.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: e8580e97ebfe74123eb8323af614fd520cd23e7f9f38837658e4203b3f596cfb388193953a04f65ddede03bdda7985802d7370e02172c968298b488fc9dc1b61
+  checksum: d760b2af40e36393e2f72beca3162eb8ab264e09fba8660649b7f955ecee38d2d7242ea513f7249c3d97a937b02257c3ee20af5d82d4f77509e3f143da7d009d
   languageName: node
   linkType: hard
 
@@ -7860,7 +7860,7 @@ __metadata:
     jest: ^29.6.1
     jose: ^4.14.4
     local-ssl-proxy: ^2.0.5
-    lucide-react: ^0.258.0
+    lucide-react: ^0.259.0
     next: 13.4.9
     next-auth: ^4.22.1
     next-themes: ^0.2.1
