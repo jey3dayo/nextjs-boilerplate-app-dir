@@ -67,6 +67,14 @@
     @apply text-light hover:text-dark dark:text-dark dark:hover:text-light;
   }
 
+  .ring-theme-accent {
+    @apply ring-accent-300 dark:ring-accent-400;
+  }
+
+  .border-theme-accent {
+    @apply border-accent-300 dark:border-accent-400;
+  }
+
   /* animation */
   .state-open-slide-in {
     @apply data-[state=open]:data-[side=bottom]:slide-in-from-top-1

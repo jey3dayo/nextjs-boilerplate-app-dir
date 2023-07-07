@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { InView } from '@/components/ui/in-view';
+import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 
 const DEFAULT_VOL = 50;
@@ -22,8 +23,7 @@ function Dashboard() {
         <div className="py-4">
           <div className="mb-4">
             <Label htmlFor="text">Text</Label>
-            <input
-              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight shadow"
+            <Input
               id="text"
               type="text"
               placeholder="Text"
@@ -36,8 +36,7 @@ function Dashboard() {
         <div className="py-4">
           <div className="mb-4">
             <Label htmlFor="description">Description</Label>
-            <input
-              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight shadow"
+            <Input
               id="description"
               type="text"
               placeholder="description"
@@ -52,7 +51,7 @@ function Dashboard() {
             Volume
           </Label>
           <div className="space-y-4">vol: {vol}</div>
-          <input
+          <Input
             id="default-range"
             type="range"
             value={vol}
@@ -60,7 +59,6 @@ function Dashboard() {
               const v = Number(target?.value ?? 0);
               setVol(v);
             }}
-            className="bg-input-range h-2 w-full cursor-pointer appearance-none rounded-lg"
           />
         </div>
 
