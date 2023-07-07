@@ -1,6 +1,7 @@
 import { NextAuthOptions } from 'next-auth';
 import Auth0Provider from 'next-auth/providers/auth0';
 import GithubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
 import { env } from '@/env.mjs';
 import { CassoProvider } from '@/lib/next-auth/casso-provider';
 
@@ -19,6 +20,13 @@ const githubProvider = GithubProvider({
   clientSecret: env.GITHUB_SECRET as string,
 });
 if (env?.GITHUB_ID) providers.push(githubProvider);
+
+// api/auth/callback/google
+const googleProvider = GoogleProvider({
+  clientId: env.GOOGLE_CLIENT_ID as string,
+  clientSecret: env.GOOGLE_CLIENT_SECRET as string,
+});
+if (env?.GOOGLE_CLIENT_ID) providers.push(googleProvider);
 
 // api/auth/callback/auth0
 const auth0Provier = Auth0Provider({
