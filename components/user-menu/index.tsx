@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { SignInOut } from '@/components/user-menu/sign-in-out';
 import { SwitchTheme } from '@/components/user-menu/switch-theme';
-import { profileNavigation as navigation } from '@/constants';
+import { guestUserName, profileNavigation as navigation } from '@/constants';
 import { getCurrentUser } from '@/lib/next-auth/session';
 
 export async function UserMenu() {
@@ -34,7 +34,7 @@ export async function UserMenu() {
         <DropdownMenuContent sideOffset={5}>
           <span className="sr-only">ユーザメニュー</span>
           <div className="pointer-events-none flex h-5 select-none items-center justify-center text-sm">
-            {user?.name}
+            {user?.name ?? guestUserName}
           </div>
           <DropdownMenuSeparator />
           <DropdownMenuLabel>リンク</DropdownMenuLabel>
