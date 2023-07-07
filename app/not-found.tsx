@@ -3,8 +3,6 @@
 import ErrorPage from 'next/error';
 import { HttpCodes, messages } from 'constants/api';
 
-function Page() {
+export default function NotFound() {
   return <ErrorPage statusCode={Number(HttpCodes.NotFound)} title={messages.pageNotFound} />;
 }
-
-export default Page;
