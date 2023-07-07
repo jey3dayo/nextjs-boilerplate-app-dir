@@ -1,6 +1,6 @@
 import { OAuthConfig, OAuthUserConfig } from 'next-auth/providers/oauth';
 import CassoLogo from 'public/image/casso-favicon.ico';
-import { env } from '@/env.mjs';
+import { baseUrl } from '@/constants/api';
 
 export interface CassoProfile extends Record<string, any> {
   aud: string;
@@ -41,8 +41,8 @@ export function CassoProvider<P extends CassoProfile>(options: OAuthUserConfig<P
     },
 
     style: {
-      logo: `${env.BASE_URL}/${CassoLogo.src}`,
-      logoDark: `${env.BASE_URL}/${CassoLogo.src}`,
+      logo: `${baseUrl}/${CassoLogo.src}`,
+      logoDark: `${baseUrl}/${CassoLogo.src}`,
       bgDark: '#fff',
       bg: '#fff',
       text: '#000',
