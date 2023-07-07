@@ -66,6 +66,7 @@ export const messages = {
   unknownError: '不具合が発生しました',
   pageNotFound: 'ページが見つかりません',
   internalServerError: 'Internal Server Error.',
+  cantModifyMyself: '自分の権限は修正できません',
 };
 
 export type HttpCodeValue = valueof<typeof HttpCodes>;
