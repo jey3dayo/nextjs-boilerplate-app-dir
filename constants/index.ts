@@ -1,3 +1,5 @@
+export const guestUserName = 'ゲストユーザー';
+
 type Navigation = {
   name: string;
   href: string;
