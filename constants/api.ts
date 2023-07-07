@@ -61,6 +61,18 @@ export const messages = {
   needLogin: 'ログインしてください',
   needAdminRole: '管理者権限が必要です',
   forbidden: 'アクセス権がありません',
-  notFound: 'イベントがありません',
-  unknownError: '不明なエラーです',
+  notFound: '見つかりません',
+  unknownError: '不具合が発生しました',
+  pageNotFound: 'ページが見つかりません',
+  internalServerError: 'Internal Server Error.',
+};
+
+export type HttpCodeValue = valueof<typeof HttpCodes>;
+export type Message = valueof<typeof messages>;
+
+export const errorMessages: Partial<Record<HttpCodeValue, Message>> = {
+  [HttpCodes.BadRequest]: messages.invalidAccess,
+  [HttpCodes.Forbidden]: messages.forbidden,
+  [HttpCodes.NotFound]: messages.pageNotFound,
+  [HttpCodes.InternalServerError]: messages.internalServerError,
 };
