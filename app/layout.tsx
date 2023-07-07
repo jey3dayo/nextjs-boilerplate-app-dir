@@ -2,6 +2,7 @@ import { env } from '@/env.mjs';
 import { Provider } from '@/components/provider';
 import { nextFont } from '@/lib/next-font';
 import '@/styles/globals.css';
+import { classNames } from '@/lib/class-names';
 
 export const metadata = {
   title: env.NEXT_PUBLIC_APP_NAME,
@@ -10,11 +11,13 @@ export const metadata = {
 
 export default function RootLayout(props: ReactProps) {
   return (
-    <html lang="ja" className={nextFont.className} suppressHydrationWarning={true}>
+    <html
+      lang="ja"
+      className={classNames('flex min-h-screen flex-1 flex-col items-center p-0 antialiased', nextFont.className)}
+      suppressHydrationWarning={true}
+    >
       <body>
-        <Provider>
-          <main>{props.children}</main>
-        </Provider>
+        <Provider>{props.children}</Provider>
       </body>
     </html>
   );

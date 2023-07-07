@@ -1,30 +1,14 @@
-'use client';
-
-import { useState } from 'react';
-import { Label } from '@/components/ui/label';
-
+// TODO: いい感じにスタイル当てる
 function Content() {
-  const [text, setText] = useState('');
-
   return (
     <div className="space-y-4 md:p-2">
-      <div className="w-full p-2 md:rounded">
+      <div className="theme shadow-focus w-full p-2 shadow md:w-96 md:rounded">
         <div className="py-4">
           <div className="mb-4">
-            <Label htmlFor="text">Text</Label>
-            <input
-              className="shadow-focus w-full appearance-none rounded border px-3 py-2 leading-tight text-dark shadow"
-              id="text"
-              type="text"
-              placeholder="Text"
-              value={text}
-              onChange={({ target: { value } }) => setText(value)}
-            />
+            <div className="text-dark">dark</div>
+            <div className="text-medium">medium</div>
+            <div className="text-light">light</div>
           </div>
-
-          <div className="text-dark">dark</div>
-          <div className="text-medium">medium</div>
-          <div className="text-light">light</div>
         </div>
       </div>
     </div>

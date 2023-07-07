@@ -4,7 +4,7 @@ export function TrackProvider(props: ReactProps) {
   return (
     <>
       {props.children}
-      <VercelAnalytics />;
+      <VercelAnalytics />
     </>
   );
 }

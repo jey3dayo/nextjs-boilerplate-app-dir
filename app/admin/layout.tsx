@@ -1,3 +1,4 @@
+import { ContentRoot } from '@/components/content-root';
 import { Layout } from '@/components/layout';
 import { Provider } from '@/components/provider';
 
@@ -9,7 +10,9 @@ export const metadata = {
 export default function RootLayout(props: ReactProps) {
   return (
     <Provider>
-      <Layout>{props.children}</Layout>
+      <Layout>
+        <ContentRoot>{props.children}</ContentRoot>
+      </Layout>
     </Provider>
   );
 }

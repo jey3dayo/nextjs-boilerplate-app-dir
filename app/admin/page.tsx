@@ -1,14 +1,9 @@
 import Content from '@/app/admin/content';
-import styles from '@/styles/common.module.css';
 
-async function Page(): Promise<JSX.Element> {
+export default function Page() {
   return (
-    <div className={styles.container}>
-      <main className={styles.main}>
-        <Content />
-      </main>
-    </div>
+    <main>
+      <Content />
+    </main>
   );
 }
-
-export default Page;
