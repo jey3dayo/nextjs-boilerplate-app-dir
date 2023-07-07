@@ -31,11 +31,12 @@ export enum HttpCodes {
   GatewayTimeout = 504,
 }
 
-// api用のheaders
 export const baseUrl = env?.NEXT_PUBLIC_BASE_URL ?? env?.VERCEL_URL ?? '';
+export const baseFullUrl = `https://${baseUrl}`;
 export const baseUrlHost = baseUrl.split(':')[0];
 const host = /http/.test(baseUrl) ? new URL(baseUrl).href : baseUrl;
 
+// api用のheaders
 const allowOriginHost = /localhost:/.test(host) ? '*' : `${host}`;
 export const headersRecord: Record<string, string> = {
   'Access-Control-Allow-Origin': allowOriginHost,
