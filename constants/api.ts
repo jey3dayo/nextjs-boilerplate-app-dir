@@ -33,7 +33,6 @@ export enum HttpCodes {
 }
 
 export const baseUrl = env?.NEXT_PUBLIC_BASE_URL ?? env?.VERCEL_URL ?? '';
-export const baseFullUrl = `https://${baseUrl}`;
 export const baseUrlHost = baseUrl.split(':')[0];
 const host = /http/.test(baseUrl) ? new URL(baseUrl).href : baseUrl;
 

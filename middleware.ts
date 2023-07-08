@@ -6,7 +6,6 @@ import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { debug } from '@/lib/log';
 import { getHeaders } from '@/lib/middleware-utils';
-import { baseFullUrl as requestUrl } from './constants/api';
 
 // proxy環境下でのredirect用
 export default withAuth(
@@ -18,7 +17,7 @@ export default withAuth(
     if (checkPath(req.nextUrl.pathname, accessAllowPages)) return NextResponse.next(responseInit);
 
     // redirect
-    if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', requestUrl));
+    if (req.nextUrl.pathname === '/') return NextResponse.redirect(new URL('/dashboard', req.url));
 
     // token.expが切れていたらリダイレクト
     const token = await getToken({ req });
@@ -26,7 +25,7 @@ export default withAuth(
       let from = req.nextUrl.pathname;
       if (req.nextUrl.search) from += req.nextUrl.search;
 
-      return NextResponse.redirect(new URL(`${loginPage}?from=${encodeURIComponent(from)}`, requestUrl));
+      return NextResponse.redirect(new URL(`${loginPage}?from=${encodeURIComponent(from)}`, req.url));
     }
 
     return NextResponse.next(responseInit);
