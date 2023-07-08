@@ -13,11 +13,13 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { SignInOut } from '@/components/user-menu/sign-in-out';
 import { SwitchTheme } from '@/components/user-menu/switch-theme';
-import { guestUserName, profileNavigation as navigation } from '@/constants';
+import { guestUserName } from '@/constants';
+import { getProfileNavigationByRole } from '@/lib/navigation';
 import { getCurrentUser } from '@/lib/next-auth/session';
 
 export async function UserMenu() {
   const user = await getCurrentUser();
+  const navigation = getProfileNavigationByRole(user?.role);
 
   return (
     <DropdownMenuRoot modal={false}>

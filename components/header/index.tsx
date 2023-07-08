@@ -5,13 +5,17 @@ import { Logo } from '@/components/logo';
 import { ThemeSwitch } from '@/components/theme/theme-switch';
 import { UserMenu } from '@/components/user-menu';
 import { subTitle } from '@/config';
-import { navigation } from '@/constants';
 import { classNames } from '@/lib/class-names';
+import { getNavigationByRole } from '@/lib/navigation';
+import { getCurrentUser } from '@/lib/next-auth/session';
 
 const appName = env.NEXT_PUBLIC_APP_NAME;
 const height = 'h-[8vh] md:h-[7vh] min-h-[52px]';
 
-export function Header() {
+export async function Header() {
+  const user = await getCurrentUser();
+  const navigation = getNavigationByRole(user?.role);
+
   return (
     <>
       <nav

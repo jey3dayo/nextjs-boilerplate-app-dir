@@ -12,12 +12,13 @@ import {
   PopoverRoot,
   PopoverTrigger,
 } from '@/components/ui/popover';
-import { navigation } from '@/constants';
 import { useCurrentUser } from '@/hooks/use-next-auth';
 import { classNames } from '@/lib/class-names';
+import { getNavigationByRole } from '@/lib/navigation';
 
 export function Popover(): JSX.Element {
-  const { status } = useCurrentUser();
+  const { status, user } = useCurrentUser();
+  const navigation = getNavigationByRole(user?.role);
 
   return (
     <PopoverRoot modal={false}>
@@ -31,16 +32,16 @@ export function Popover(): JSX.Element {
         <PopoverContent>
           <div className="mt-9">
             <nav className="grid gap-y-8">
-              {navigation.map((item) => (
+              {navigation.map((v) => (
                 <Link
-                  key={item.name}
-                  href={item.href}
+                  key={v.name}
+                  href={v.href}
                   className={classNames(
                     '-my-3 flex items-center rounded-md p-3',
                     'hover:bg-dark/50 hover:text-light dark:hover:bg-light/50 dark:hover:text-light',
                   )}
                 >
-                  <span className="ml-3 text-base font-medium">{item.name}</span>
+                  <span className="ml-3 text-base font-medium">{v.name}</span>
                 </Link>
               ))}
             </nav>

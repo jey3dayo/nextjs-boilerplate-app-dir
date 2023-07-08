@@ -4,6 +4,7 @@ export const titles = {
   dashboard: 'ダッシュボード',
   admin: '管理ツール',
   sample: 'サンプル',
+  sampleAdmin: 'サンプルAdmin',
 };
 
 type Navigation = {
@@ -20,6 +21,7 @@ export const navigation: Navigation[] = [
 
 export const profileNavigation: Navigation[] = [
   { name: titles.sample, href: '/sample', requiredAdmin: false, current: false },
+  { name: titles.sampleAdmin, href: '/sample/admin', requiredAdmin: false, current: false },
   { name: titles.dashboard, href: '/dashboard', requiredAdmin: false },
   { name: titles.admin, href: '/admin', requiredAdmin: true },
 ];
