@@ -3,7 +3,8 @@
 import { headers } from 'next/headers';
 import { NextRequest } from 'next/server';
 import { Role, UserId } from '@/types/user';
-import { baseUrlHost, headersRecord, HttpCodes, messages } from '@/constants/api';
+import { baseUrlHost, headersRecord, HttpCodes } from '@/constants/api';
+import { messages } from '@/constants/messages';
 import { ApiRequestError } from '@/lib/error';
 import { checkAdmin } from '@/lib/next-auth/role';
 import { getUser } from '@/lib/prisma/utils';
@@ -49,7 +50,7 @@ export async function getUserOrThrow(userId: UserId) {
 
 export function checkAdminAccess(role: Role | undefined) {
   if (!checkAdmin(role)) {
-    throw new ApiRequestError(messages.needAdminRole, HttpCodes.Forbidden);
+    throw new ApiRequestError(messages.adminOnly, HttpCodes.Forbidden);
   }
 }
 

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { messages } from '@/constants/api';
+import { messages } from '@/constants/messages';
 import { checkAdminAccess, createResponseWithError, getUserAndValidate, responseInit } from '@/lib/api-utils';
 import { ApiRequestError } from '@/lib/error';
 

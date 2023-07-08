@@ -1,4 +1,5 @@
 import { env } from '@/env.mjs';
+import { messages } from '@/constants/messages';
 
 export enum HttpCodes {
   OK = 200,
@@ -52,22 +53,6 @@ export const headersRecord: Record<string, string> = {
   Pragma: 'no-cache',
 };
 export type Header = typeof headersRecord;
-
-export const messages = {
-  invalidAccess: '不正なアクセスです',
-  invalidToken: 'トークンの検証に失敗しました',
-  userNotFound: 'ユーザが見つかりません',
-  sessionNotFound: 'セッションが見つかりません',
-  failedSession: 'セッションが不正です',
-  needLogin: 'ログインしてください',
-  needAdminRole: '管理者権限が必要です',
-  forbidden: 'アクセス権がありません',
-  notFound: '見つかりません',
-  unknownError: '不具合が発生しました',
-  pageNotFound: 'ページが見つかりません',
-  internalServerError: 'Internal Server Error.',
-  cantModifyMyself: '自分の権限は修正できません',
-};
 
 export type HttpCodeValue = valueof<typeof HttpCodes>;
 export type Message = valueof<typeof messages>;

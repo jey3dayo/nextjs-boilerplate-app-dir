@@ -1,7 +1,8 @@
 'use client';
 
 import ErrorPage from 'next/error';
-import { errorMessages, HttpCodes, HttpCodeValue, messages } from 'constants/api';
+import { errorMessages, HttpCodes, HttpCodeValue } from 'constants/api';
+import { messages } from '@/constants/messages';
 
 type PageProps = {
   searchParams: {
