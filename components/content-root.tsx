@@ -6,5 +6,5 @@ export function ResponsiveRoot(props: ReactProps) {
 // content: md:89vh h:88vh
 // footer: md:4vh h:4vh
 export function HeroContentRoot(props: ReactProps) {
-  return <div className="theme-text h-[88vh] md:h-[89vh]">{props.children}</div>;
+  return <div className="text-theme h-[88vh] md:h-[89vh]">{props.children}</div>;
 }
