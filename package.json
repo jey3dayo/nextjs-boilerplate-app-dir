@@ -82,7 +82,7 @@
     "@radix-ui/react-toast": "^1.1.4",
     "@t3-oss/env-nextjs": "^0.6.0",
     "@tailwindcss/container-queries": "^0.1.1",
-    "@types/node": "20.4.0",
+    "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "@vercel/analytics": "^1.0.1",
