@@ -1,5 +1,11 @@
 export const guestUserName = 'ゲストユーザー';
 
+export const titles = {
+  dashboard: 'ダッシュボード',
+  admin: '管理ツール',
+  sample: 'サンプル',
+};
+
 type Navigation = {
   name: string;
   href: string;
@@ -8,12 +14,12 @@ type Navigation = {
 };
 
 export const navigation: Navigation[] = [
-  { name: 'ダッシュボード', href: '/dashboard', requiredAdmin: false, current: false },
-  { name: '管理ツール', href: '/admin', requiredAdmin: true, current: false },
+  { name: titles.dashboard, href: '/dashboard', requiredAdmin: false, current: false },
+  { name: titles.admin, href: '/admin', requiredAdmin: true, current: false },
 ];
 
 export const profileNavigation: Navigation[] = [
-  { name: 'sample', href: '/sample', requiredAdmin: false, current: false },
-  { name: 'ダッシュボード', href: '/dashboard', requiredAdmin: false },
-  { name: '管理ツール', href: '/admin', requiredAdmin: true },
+  { name: titles.sample, href: '/sample', requiredAdmin: false, current: false },
+  { name: titles.dashboard, href: '/dashboard', requiredAdmin: false },
+  { name: titles.admin, href: '/admin', requiredAdmin: true },
 ];
