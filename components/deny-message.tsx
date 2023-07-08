@@ -1,4 +1,6 @@
+import { signIn } from 'next-auth/react';
 import { HeroContentRoot } from '@/components/content-root';
+import { titles } from '@/constants';
 import { getNavigationByRole } from '@/lib/navigation';
 import { getCurrentUser } from '@/lib/next-auth/session';
 
@@ -23,6 +25,9 @@ export async function DenyMessage({
           </div>
           <div className="mx-auto mt-16 max-w-2xl lg:mx-0 lg:max-w-none">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 sm:grid-cols-2 md:flex lg:gap-x-10">
+              <a href="/api/auth/signin">
+                {titles.signIn} <span aria-hidden="true">&rarr;</span>
+              </a>
               {navigation.map((link) => (
                 <a key={link.name} href={link.href}>
                   {link.name} <span aria-hidden="true">&rarr;</span>
