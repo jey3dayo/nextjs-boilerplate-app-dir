@@ -1,5 +1,10 @@
-function ContentRoot(props: ReactProps) {
-  return <div className="overflow-hidden md:container md:mx-auto">{props.children}</div>;
+export function ResponsiveRoot(props: ReactProps) {
+  return <div className="flex min-h-screen flex-1 flex-col items-center p-0">{props.children}</div>;
 }
 
-export { ContentRoot };
+// header: md:7vh h:8vh
+// content: md:89vh h:88vh
+// footer: md:4vh h:4vh
+export function HeroContentRoot(props: ReactProps) {
+  return <div className="theme-text h-[88vh] md:h-[89vh]">{props.children}</div>;
+}
