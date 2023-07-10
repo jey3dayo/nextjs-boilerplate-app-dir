@@ -10,3 +10,13 @@ export function Layout(props: ReactProps) {
     </>
   );
 }
+
+export function HeroLayout(props: ReactProps) {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <Header />
+      {props.children}
+      <Footer />
+    </div>
+  );
+}

@@ -1,5 +1,5 @@
-import { ContentRoot } from '@/components/content-root';
-import { Layout } from '@/components/layout';
+import { HeroContentRoot } from '@/components/content-root';
+import { HeroLayout } from '@/components/layout';
 
 export const metadata = {
   title: 'サンプル',
@@ -7,9 +7,5 @@ export const metadata = {
 };
 
 export default function RootLayout(props: ReactProps) {
-  return (
-    <Layout>
-      <ContentRoot>{props.children}</ContentRoot>
-    </Layout>
-  );
+  return <HeroLayout>{props.children}</HeroLayout>;
 }
