@@ -12,7 +12,7 @@ export function Loader() {
       width={size}
       color={color.dark}
       ariaLabel="読込中"
-      wrapperClass="flex min-h-screen flex-1 flex-col items-center px-4 min-height-[100vh]"
+      wrapperClass="flex min-h-screen flex-1 flex-col items-center px-4"
     />
   );
 }

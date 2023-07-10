@@ -11,11 +11,7 @@ export const metadata = {
 
 export default function RootLayout(props: ReactProps) {
   return (
-    <html
-      lang="ja"
-      className={classNames('flex min-h-screen flex-1 flex-col items-center p-0 antialiased', nextFont.className)}
-      suppressHydrationWarning={true}
-    >
+    <html lang="ja" className={classNames('antialiased', nextFont.className)} suppressHydrationWarning>
       <body>
         <Provider>{props.children}</Provider>
       </body>
