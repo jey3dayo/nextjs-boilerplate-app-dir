@@ -12,6 +12,7 @@ import {
   PopoverRoot,
   PopoverTrigger,
 } from '@/components/ui/popover';
+import { titles } from '@/constants';
 import { useCurrentUser } from '@/hooks/use-next-auth';
 import { classNames } from '@/lib/class-names';
 import { getNavigationByRole } from '@/lib/navigation';
@@ -57,9 +58,9 @@ export function Popover(): JSX.Element {
             >
               <span className="font-medium text-light dark:text-dark">
                 {status === 'authenticated' ? (
-                  <span onClick={() => signOut()}>サインアウト</span>
+                  <span onClick={() => signOut()}>{titles.signOut}</span>
                 ) : (
-                  <span onClick={() => signIn()}>サインイン</span>
+                  <span onClick={() => signIn()}>{titles.signIn}</span>
                 )}
               </span>
             </Link>

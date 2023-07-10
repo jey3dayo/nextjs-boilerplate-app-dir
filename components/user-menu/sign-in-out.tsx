@@ -1,11 +1,12 @@
 'use client';
 
 import { signIn, signOut } from 'next-auth/react';
+import { titles } from '@/constants';
 
 export function SignInOut(props: { isLogin: boolean }) {
   return props.isLogin ? (
-    <div onClick={() => signOut()}>サインアウト</div>
+    <div onClick={() => signOut()}>{titles.signOut}</div>
   ) : (
-    <div onClick={() => signIn()}>サインイン</div>
+    <div onClick={() => signIn()}>{titles.signIn}</div>
   );
 }
