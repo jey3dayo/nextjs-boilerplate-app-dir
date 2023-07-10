@@ -1,4 +1,4 @@
-import { ContentRoot } from '@/components/content-root';
+import { AdminOnly } from '@/components/access-control';
 import { Layout } from '@/components/layout';
 import { Provider } from '@/components/provider';
 
@@ -11,7 +11,7 @@ export default function RootLayout(props: ReactProps) {
   return (
     <Provider>
       <Layout>
-        <ContentRoot>{props.children}</ContentRoot>
+        <AdminOnly>{props.children}</AdminOnly>
       </Layout>
     </Provider>
   );

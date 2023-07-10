@@ -1,5 +1,3 @@
-function ContentRoot(props: ReactProps) {
-  return <div className="overflow-hidden md:container md:mx-auto">{props.children}</div>;
+export function HeroContentRoot(props: ReactProps) {
+  return <div className="grow">{props.children}</div>;
 }
-
-export { ContentRoot };

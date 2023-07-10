@@ -24,8 +24,8 @@ export async function Header() {
           height,
         )}
       >
-        <Link href="/" className="shadow-focus mr-6 flex shrink-0 items-center rounded-md px-1 text-white">
-          <div className="mx-auto h-auto w-10 md:h-auto md:w-16">
+        <Link href="/" className="shadow-focus mr-6 flex shrink-0 items-center rounded-sm px-1 text-white">
+          <div className="mx-auto h-auto w-12 sm:h-auto sm:w-16">
             <Logo />
           </div>
           <div className="ml-2">

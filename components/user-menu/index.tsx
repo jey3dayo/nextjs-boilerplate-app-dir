@@ -19,6 +19,7 @@ import { getCurrentUser } from '@/lib/next-auth/session';
 
 export async function UserMenu() {
   const user = await getCurrentUser();
+  const isLogin = !!user?.name;
   const navigation = getProfileNavigationByRole(user?.role);
 
   return (
@@ -50,7 +51,7 @@ export async function UserMenu() {
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
-            <SignInOut isLogin={!!user?.name} />
+            <SignInOut isLogin={isLogin} />
           </DropdownMenuItem>
           <DropdownMenuArrow />
         </DropdownMenuContent>

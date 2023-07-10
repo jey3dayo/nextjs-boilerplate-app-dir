@@ -1,6 +1,8 @@
 export const guestUserName = 'ゲストユーザー';
 
 export const titles = {
+  signIn: 'サインイン',
+  signOut: 'サインアウト',
   dashboard: 'ダッシュボード',
   admin: '管理ツール',
   sample: 'サンプル',
