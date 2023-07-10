@@ -7,6 +7,8 @@ export const titles = {
   admin: '管理ツール',
   sample: 'サンプル',
   sampleAdmin: 'サンプルAdmin',
+  users: 'ユーザ管理',
+  errorPage: 'エラーページ',
 };
 
 type Navigation = {

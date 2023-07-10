@@ -1,8 +1,8 @@
 import { HeroLayout } from '@/components/layout';
+import { titles } from '@/constants';
 
 export const metadata = {
-  title: 'サンプル',
-  description: 'サンプル実装',
+  title: titles.sample,
 };
 
 export default function RootLayout(props: ReactProps) {

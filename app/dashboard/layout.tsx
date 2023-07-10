@@ -1,7 +1,8 @@
 import { Layout } from '@/components/layout';
+import { titles } from '@/constants';
 
 export const metadata = {
-  title: 'ダッシュボード',
+  title: titles.dashboard,
 };
 
 export default function RootLayout(props: ReactProps) {
