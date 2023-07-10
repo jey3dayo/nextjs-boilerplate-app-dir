@@ -16,7 +16,7 @@ export async function DenyMessage({
   const navigation = getNavigationByRole(user?.role);
   return (
     <HeroContentRoot>
-      <div className="isolate flex flex-grow overflow-hidden py-24 sm:px-12 sm:py-32">
+      <div className="isolate flex grow overflow-hidden py-24 sm:px-12 sm:py-32">
         <div className="max-w-7xl px-6 sm:px-8">
           <div className="mx-auto max-w-2xl sm:mx-0">
             <h2 className="text-4xl font-bold tracking-tight sm:text-6xl">アクセス制限</h2>
