@@ -7,12 +7,12 @@ import { Icons } from '@/components/ui/icons';
 import { color } from '@/styles/colors';
 
 export const Avatar = React.forwardRef<React.ElementRef<typeof AvatarRoot>, AvatarProps & Pick<User, 'name' | 'image'>>(
-  ({ name, image, ...props }, ref) => {
+  ({ name, image, className, ...props }, ref) => {
     return (
-      <AvatarRoot ref={ref} {...props}>
+      <AvatarRoot ref={ref} className={className} {...props}>
         <AvatarImage alt={name ?? undefined} src={image ?? undefined} />
         <AvatarFallback>
-          <Icons.user color={color.dark} />
+          <Icons.user color={color.dark} className={className} />
         </AvatarFallback>
       </AvatarRoot>
     );
