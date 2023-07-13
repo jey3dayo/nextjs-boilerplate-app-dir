@@ -11,9 +11,9 @@ export function InView(props: ReactProps) {
     <div
       ref={ref}
       className={classNames(
-        'transition-all will-change-[transform,opacity] duration-300',
+        'transition-all duration-300 will-change-[transform,opacity]',
         inView ? 'opacity-100' : 'opacity-0',
-        inView && 'animate-in slide-in-from-bottom-40 ease-in-out',
+        inView && 'ease-in-out animate-in slide-in-from-bottom-40',
       )}
     >
       {props.children}
