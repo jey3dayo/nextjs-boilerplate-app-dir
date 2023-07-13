@@ -1,5 +1,4 @@
-import { AdminOnly } from '@/components/access-control';
-import { Layout } from '@/components/layout';
+import { Container } from '@/components/container';
 import { titles } from '@/constants';
 
 export const metadata = {
@@ -7,9 +6,5 @@ export const metadata = {
 };
 
 export default function RootLayout(props: ReactProps) {
-  return (
-    <Layout>
-      <AdminOnly>{props.children}</AdminOnly>
-    </Layout>
-  );
+  return <Container>{props.children}</Container>;
 }

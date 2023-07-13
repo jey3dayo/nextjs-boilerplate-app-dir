@@ -1,4 +1,5 @@
-import { Provider } from '@/components/provider';
+import { AdminOnly } from '@/components/access-control';
+import { Layout } from '@/components/layout';
 import { titles } from '@/constants';
 
 export const metadata = {
@@ -6,5 +7,9 @@ export const metadata = {
 };
 
 export default function RootLayout(props: ReactProps) {
-  return <Provider>{props.children}</Provider>;
+  return (
+    <Layout>
+      <AdminOnly>{props.children}</AdminOnly>
+    </Layout>
+  );
 }
