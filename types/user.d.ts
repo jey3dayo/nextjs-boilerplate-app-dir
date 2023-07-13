@@ -4,9 +4,10 @@ export type Role = 'user' | 'admin';
 
 export type User = {
   id: UserId;
-  name: string | null;
-  email: string | null;
-  image: string | null;
+  name: string;
+  email: string;
+  image: string;
+  isSuspended: boolean;
   role: {
     name: Role;
   };

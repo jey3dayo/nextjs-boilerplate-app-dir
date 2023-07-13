@@ -45,6 +45,15 @@
   .text-theme-accent {
     @apply text-accent-500;
   }
+  .text-title {
+    @apply text-theme text-3xl font-bold tracking-tight md:text-4xl;
+  }
+  .text-subtitle {
+    @apply text-theme-accent text-base font-semibold leading-7;
+  }
+  .text-description {
+    @apply text-xl leading-8 text-gray-700;
+  }
 
   .theme-border {
     @apply border-t border-dark/20 dark:border-light/10;
