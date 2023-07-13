@@ -59,3 +59,26 @@ export async function PATCH(req: NextRequest, context: z.infer<typeof routeConte
     return createResponseWithError(new ApiRequestError(messages.unknownError));
   }
 }
+
+export async function GET(req: NextRequest) {
+  try {
+    const user = await getUserAndValidate(req);
+
+    return NextResponse.json(
+      {
+        id: user?.id,
+        name: user?.name,
+        email: user?.email,
+        image: user?.image,
+        role: user?.role?.name,
+      },
+      responseInit,
+    );
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      return createResponseWithError(error);
+    }
+
+    return createResponseWithError(new ApiRequestError(messages.unknownError));
+  }
+}

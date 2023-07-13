@@ -15,3 +15,18 @@ export async function getUser(userId: UserId): Promise<User | null> {
 
   return (user as User) ?? null;
 }
+
+export async function getUsers(): Promise<User[] | null> {
+  const users = await prismaClient.user.findMany({
+    select: {
+      id: true,
+      name: true,
+      email: true,
+      image: true,
+      isSuspended: true,
+      role: { select: { name: true } },
+    },
+  });
+
+  return (users as User[]) ?? null;
+}

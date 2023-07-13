@@ -1,4 +1,5 @@
 import { baseUrl } from '@/constants/api';
+import { getAllCookies } from '@/lib/api-utils';
 
 export const forge = (url: string) => (/^http/.test(url) ? url : `${baseUrl}${url}`);
 
@@ -7,5 +8,20 @@ export async function smartFetch(url: string, init?: RequestInit) {
 }
 
 export async function fetcher(url: string, init?: RequestInit) {
-  return smartFetch(url, init).then((res) => res.json());
+  try {
+    const cookie = getAllCookies();
+    const options = {
+      headers: {
+        cookie,
+      },
+      cache: 'no-store',
+      ...init,
+    } as RequestInit;
+    const res = await smartFetch(url, options);
+    if (res.ok) {
+      return res.json();
+    }
+  } catch (e) {
+    throw e;
+  }
 }

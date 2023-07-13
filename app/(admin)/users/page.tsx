@@ -1,7 +1,7 @@
 import Content from '@/app/(admin)/users/content';
 import { Container } from '@/components/container';
 
-export default function Page() {
+export default async function Page() {
   return (
     <main>
       <Container>
