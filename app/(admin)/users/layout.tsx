@@ -1,10 +1,10 @@
-import { HeroLayout } from '@/components/layout';
+import { Container } from '@/components/container';
 import { titles } from '@/constants';
 
 export const metadata = {
-  title: titles.sample,
+  title: titles.users,
 };
 
 export default function RootLayout(props: RootLayoutProps) {
-  return <HeroLayout>{props.children}</HeroLayout>;
+  return <Container>{props.children}</Container>;
 }

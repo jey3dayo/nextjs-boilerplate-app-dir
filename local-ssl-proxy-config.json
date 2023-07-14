@@ -1,0 +1,10 @@
+{
+  "dev-domain": {
+    "hostname": "localhost.ca-adv.dev",
+    "source": 443,
+    "target": 3000,
+    "bundle": "./certs/ca_bundle.crt",
+    "cert": "./certs/certificate.crt",
+    "key": "./certs/private.key"
+  }
+}

@@ -1,14 +1,14 @@
 'server-only';
 
-import { headers } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { NextRequest } from 'next/server';
 import { Role, UserId } from '@/types/user';
 import { baseUrlHost, headersRecord, HttpCodes } from '@/constants/api';
 import { messages } from '@/constants/messages';
 import { ApiRequestError } from '@/lib/error';
 import { checkAdmin } from '@/lib/next-auth/role';
+import { getUserId } from '@/lib/next-auth/session';
 import { getUser } from '@/lib/prisma/utils';
-import { getUserId } from './next-auth/session';
 
 export const responseInit: ResponseInit = { headers: headersRecord };
 
@@ -35,7 +35,7 @@ export function checkVulnerabilities() {
 }
 
 export async function getUserIdOrThrow(req: NextRequest): Promise<UserId | undefined> {
-  const userId = getUserId(req);
+  const userId = await getUserId(req);
   if (!userId) throw new ApiRequestError(messages.needLogin, HttpCodes.Unauthorized);
 
   return userId;
@@ -62,3 +62,12 @@ export async function getUserAndValidate(req: NextRequest) {
   const user = await getUserOrThrow(userId);
   return user;
 }
+
+export const getAllCookies = (): string => {
+  const cookieStore = cookies();
+  const cookie = cookieStore
+    .getAll()
+    .map((cookie) => `${cookie.name}=${cookie.value}`)
+    .join(';');
+  return cookie;
+};

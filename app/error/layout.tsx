@@ -1,11 +1,12 @@
 import { Layout } from '@/components/layout';
 import { Provider } from '@/components/provider';
+import { titles } from '@/constants';
 
 export const metadata = {
-  title: 'エラー',
+  title: titles.errorPage,
 };
 
-export default function RootLayout(props: ReactProps) {
+export default function RootLayout(props: RootLayoutProps) {
   return (
     <Provider>
       <Layout>{props.children}</Layout>

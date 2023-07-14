@@ -1,16 +1,4 @@
-import {
-  AlertTriangle,
-  HelpCircle,
-  Loader2,
-  Menu,
-  Moon,
-  Plus,
-  Settings,
-  SunMedium,
-  User,
-  X,
-  type Icon,
-} from 'lucide-react';
+import { AlertTriangle, HelpCircle, Loader2, Menu, Moon, Plus, Settings, SunMedium, User, X } from 'lucide-react';
 
 const Icons = {
   user: User,
@@ -35,4 +23,4 @@ const iconSizes: Record<Size, number | undefined> = {
 };
 
 export { Icons, iconSizes };
-export type { Icon as LucideIcon, Size };
+export type { Size };

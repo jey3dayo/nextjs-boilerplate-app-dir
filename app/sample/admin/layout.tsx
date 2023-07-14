@@ -1,10 +1,10 @@
 import { AdminOnly } from '@/components/access-control';
+import { titles } from '@/constants';
 
 export const metadata = {
-  title: '管理者ページ',
-  description: 'サンプル実装',
+  title: titles.dashboard,
 };
 
-export default function RootLayout(props: ReactProps) {
+export default function RootLayout(props: RootLayoutProps) {
   return <AdminOnly>{props.children}</AdminOnly>;
 }
