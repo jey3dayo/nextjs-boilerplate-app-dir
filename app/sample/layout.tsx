@@ -5,6 +5,6 @@ export const metadata = {
   title: titles.sample,
 };
 
-export default function RootLayout(props: ReactProps) {
+export default function RootLayout(props: RootLayoutProps) {
   return <HeroLayout>{props.children}</HeroLayout>;
 }

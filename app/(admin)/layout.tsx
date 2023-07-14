@@ -6,7 +6,7 @@ export const metadata = {
   title: titles.admin,
 };
 
-export default function RootLayout(props: ReactProps) {
+export default function RootLayout(props: RootLayoutProps) {
   return (
     <Layout>
       <AdminOnly>{props.children}</AdminOnly>

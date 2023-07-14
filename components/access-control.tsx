@@ -5,12 +5,12 @@ import { getCurrentUser } from '@/lib/next-auth/session';
 
 async function AdminOnly(props: ReactProps) {
   const user = await getCurrentUser();
-  return checkAdmin(user?.role) ? props.children : <DenyMessage message={messages.adminOnly} />;
+  return checkAdmin(user?.role) ? <>{props.children}</> : <DenyMessage message={messages.adminOnly} />;
 }
 
 async function UserOnly(props: ReactProps) {
   const user = await getCurrentUser();
-  return user ? props.children : <DenyMessage message={messages.needLogin} />;
+  return user ? <>{props.children}</> : <DenyMessage message={messages.needLogin} />;
 }
 
 export { AdminOnly, UserOnly };

@@ -6,7 +6,7 @@ export const metadata = {
   title: titles.errorPage,
 };
 
-export default function RootLayout(props: ReactProps) {
+export default function RootLayout(props: RootLayoutProps) {
   return (
     <Provider>
       <Layout>{props.children}</Layout>

@@ -5,6 +5,6 @@ export const metadata = {
   title: titles.users,
 };
 
-export default function RootLayout(props: ReactProps) {
+export default function RootLayout(props: RootLayoutProps) {
   return <Container>{props.children}</Container>;
 }

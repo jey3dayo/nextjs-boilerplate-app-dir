@@ -1,7 +1,12 @@
 declare global {
   export type ReactProps = {
     className?: string;
-    readonly children: React.ReactElement;
+    children: React.ReactNode;
+  };
+
+  // FIXME: 解決方法がわかったら対応
+  export type RootLayoutProps = {
+    children: React.ReactNode;
   };
 
   export type Nullable<T> = {
