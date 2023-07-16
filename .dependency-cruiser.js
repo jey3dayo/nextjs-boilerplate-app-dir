@@ -33,6 +33,7 @@ module.exports = {
           'components/svg.tsx',
           'app/api/*',
           'app/.*/loading.tsx',
+          'lib/log.ts',
         ],
       },
       to: {},
