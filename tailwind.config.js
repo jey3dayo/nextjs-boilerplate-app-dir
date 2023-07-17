@@ -1,4 +1,5 @@
 import containerQueries from '@tailwindcss/container-queries';
+import forms from '@tailwindcss/forms';
 import animate from 'tailwindcss-animate';
 import { color, colors } from './styles/colors';
 
@@ -25,5 +26,5 @@ export default {
       boxShadowColor: color,
     },
   },
-  plugins: [containerQueries, animate],
+  plugins: [containerQueries, animate, forms],
 };
