@@ -42,6 +42,7 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@swc/core": "^1.3.69",
     "@swc/helpers": "^0.5.1",
+    "@tailwindcss/forms": "^0.5.4",
     "autoprefixer": "^10.4.14",
     "cypress": "^12.17.1",
     "dependency-cruiser": "^13.1.1",

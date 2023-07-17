@@ -28,17 +28,18 @@ const variants = cva([layoutStyle, designStyle, inputStyle, disabledStyle, anima
       default: 'shadow-focus shadow',
       none: '',
     },
-    ring: {
+    focus: {
       default:
-        'focus-visible:border-theme-accent focus-visible:ring-theme-accent focus-visible:outline-none focus-visible:ring-[1px] focus-visible:ring-offset-0',
+        'focus:border-theme-accent focus:ring-theme-accent focus:outline-none focus:ring-[2px] focus:ring-offset-0',
+      none: '',
     },
   },
   defaultVariants: {
     variant: 'text',
-    ring: 'default',
     textSize: 'none',
     border: 'default',
-    shadow: 'default',
+    shadow: 'none',
+    focus: 'default',
   },
 });
 
@@ -47,20 +48,20 @@ type Variants = VariantProps<typeof variants>;
 interface Props extends React.InputHTMLAttributes<HTMLInputElement>, Variants {}
 
 const Input = React.forwardRef<HTMLInputElement, Props>(
-  ({ type, variant, textSize, border, shadow, ring, className, ...props }, ref) => {
+  ({ type, variant, textSize, border, shadow, focus, className, ...props }, ref) => {
     // 初期化上書
     switch (type) {
       case 'range':
         variant = variant ?? 'range';
         border = border ?? 'none';
-        shadow = shadow ?? 'none';
+        focus = focus ?? 'none';
         break;
       default:
     }
     return (
       <input
         type={type}
-        className={classNames(variants({ variant, textSize, border, shadow, ring, className }))}
+        className={classNames(variants({ variant, textSize, border, shadow, focus, className }))}
         ref={ref}
         {...props}
       />
