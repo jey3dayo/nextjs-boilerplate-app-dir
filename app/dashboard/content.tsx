@@ -18,8 +18,8 @@ function Dashboard() {
   const [vol, setVol] = useState(DEFAULT_VOL);
 
   return (
-    <div className="space-y-4 md:p-2">
-      <div className="theme shadow-focus w-full p-2 shadow md:w-96 md:rounded">
+    <div className="m-4 space-y-4 md:p-2">
+      <div className="box w-full p-4 md:w-96">
         <div className="py-4">
           <div className="mb-4">
             <Label htmlFor="text">Text</Label>
