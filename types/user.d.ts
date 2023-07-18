@@ -1,6 +1,6 @@
 export type UserId = string;
-
-export type Role = 'user' | 'admin';
+export type RoleId = number;
+export type RoleName = 'user' | 'admin';
 
 export type User = {
   id: UserId;
@@ -9,6 +9,13 @@ export type User = {
   image: string;
   isSuspended: boolean;
   role: {
-    name: Role;
+    id: RoleId;
+    name: RoleName;
   };
+};
+
+export type Role = {
+  id: number;
+  name: RoleName;
+  description: string;
 };

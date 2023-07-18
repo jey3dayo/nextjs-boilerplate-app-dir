@@ -2,7 +2,7 @@
 
 import { cookies, headers } from 'next/headers';
 import { NextRequest } from 'next/server';
-import { Role, UserId } from '@/types/user';
+import { RoleName, UserId } from '@/types/user';
 import { baseUrlHost, headersRecord, HttpCodes } from '@/constants/api';
 import { messages } from '@/constants/messages';
 import { ApiRequestError } from '@/lib/error';
@@ -48,7 +48,7 @@ export async function getUserOrThrow(userId: UserId) {
   return user;
 }
 
-export function checkAdminAccess(role: Role | undefined) {
+export function checkAdminAccess(role: RoleName | undefined) {
   if (!checkAdmin(role)) {
     throw new ApiRequestError(messages.adminOnly, HttpCodes.Forbidden);
   }
