@@ -3,6 +3,7 @@ import { Avatar } from '@/components/avatar';
 import Switch from '@/components/switch';
 import { titles } from '@/constants';
 import { fetcher } from '@/lib/fetcher';
+import { prismaClient } from '@/lib/prisma';
 
 async function getUsers() {
   const res = await fetcher('/api/users');
@@ -17,10 +18,25 @@ async function Content() {
     console.error(e);
   }
 
-  async function onCheckedChange(id: string, checked: boolean) {
+  async function onUpdateRole(id: string, roleName: string) {
     'use server';
-    // TODO: update user
-    console.log({ t: 'parent', id, checked });
+    // joinしたroleのidを取得
+    const role = await prismaClient.role.findFirst({ where: { name: roleName } });
+    // TODO: throw error
+    if (!role) return;
+
+    await prismaClient.user.update({
+      where: { id: id },
+      data: { roleId: role.id },
+    });
+  }
+
+  async function onUpdateIsSuspended(id: string, checked: boolean) {
+    'use server';
+    await prismaClient.user.update({
+      where: { id: id },
+      data: { isSuspended: checked },
+    });
   }
 
   return (
@@ -56,7 +72,7 @@ async function Content() {
               <div className="ml-3 w-10 bg-blue-100">
                 <p className="text-sm font-medium text-gray-900">{user.role.name}</p>
               </div>
-              <Switch id={user.id} variant="warning" value={user.isSuspended} onChange={onCheckedChange} />
+              <Switch id={user.id} variant="warning" value={user.isSuspended} onChange={onUpdateIsSuspended} />
             </li>
           ))}
         </ul>
