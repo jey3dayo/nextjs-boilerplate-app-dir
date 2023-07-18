@@ -3604,12 +3604,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"class-variance-authority@npm:^0.6.1":
-  version: 0.6.1
-  resolution: "class-variance-authority@npm:0.6.1"
+"class-variance-authority@npm:^0.7.0":
+  version: 0.7.0
+  resolution: "class-variance-authority@npm:0.7.0"
   dependencies:
-    clsx: 1.2.1
-  checksum: 9be6b27998489c7af4535399ff00289c3347756209bb5405ca115e51bef7159f057f02532a53132299a3e26925552894ff1018bd8cc10807130b063039e82d8d
+    clsx: 2.0.0
+  checksum: e7fd1fab433ef06f52a1b7b241b70b4a185864deef199d3b0a2c3412f1cc179517288264c383f3b971a00d76811625fc8f7ffe709e6170219e88cd7368f08a20
   languageName: node
   linkType: hard
 
@@ -3687,14 +3687,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:1.2.1":
-  version: 1.2.1
-  resolution: "clsx@npm:1.2.1"
-  checksum: 30befca8019b2eb7dbad38cff6266cf543091dae2825c856a62a8ccf2c3ab9c2907c4d12b288b73101196767f66812365400a227581484a05f968b0307cfaf12
-  languageName: node
-  linkType: hard
-
-"clsx@npm:^2.0.0":
+"clsx@npm:2.0.0, clsx@npm:^2.0.0":
   version: 2.0.0
   resolution: "clsx@npm:2.0.0"
   checksum: a2cfb2351b254611acf92faa0daf15220f4cd648bdf96ce369d729813b85336993871a4bf6978ddea2b81b5a130478339c20d9d0b5c6fc287e5147f0c059276e
@@ -7466,12 +7459,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lucide-react@npm:^0.260.0":
-  version: 0.260.0
-  resolution: "lucide-react@npm:0.260.0"
+"lucide-react@npm:^0.261.0":
+  version: 0.261.0
+  resolution: "lucide-react@npm:0.261.0"
   peerDependencies:
     react: ^16.5.1 || ^17.0.0 || ^18.0.0
-  checksum: 27e1b44ed859988a939e750ddaf0d6f1a652b87cd104314c62ec7ee26b92cfc037b9d402ce8468a7c8b3883e174a85dedb18be39ec7cddd9d215b58512ff2dc7
+  checksum: 49557c5fe53c4a93e70f407141bf2aa11c8b0050fec34fc2d1f001ee61a1a6d285ca7125d959a3ef11a4d601de2e63ce81f1804493f6d512e637e80a2d5ba017
   languageName: node
   linkType: hard
 
@@ -7956,7 +7949,7 @@ __metadata:
     "@vercel/analytics": ^1.0.1
     "@vercel/og": ^0.5.8
     autoprefixer: ^10.4.14
-    class-variance-authority: ^0.6.1
+    class-variance-authority: ^0.7.0
     clsx: ^2.0.0
     cypress: ^12.17.1
     date-fns: ^2.30.0
@@ -7973,7 +7966,7 @@ __metadata:
     jose: ^4.14.4
     lint-staged: ^13.2.3
     local-ssl-proxy: ^2.0.5
-    lucide-react: ^0.260.0
+    lucide-react: ^0.261.0
     next: 13.4.10
     next-auth: ^4.22.1
     next-themes: ^0.2.1
@@ -7992,7 +7985,7 @@ __metadata:
     server-only: ^0.0.1
     start-server-and-test: ^2.0.0
     swr: ^2.2.0
-    tailwind-merge: ^1.13.2
+    tailwind-merge: ^1.14.0
     tailwindcss: 3.3.3
     tailwindcss-animate: ^1.0.6
     ts-jest: ^29.1.1
@@ -10156,10 +10149,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-merge@npm:^1.13.2":
-  version: 1.13.2
-  resolution: "tailwind-merge@npm:1.13.2"
-  checksum: 8f9de3bd1e6271f5980f863ab85e0103f062bf84d814d3188bf6870af7eb43725ea40493ef0693dedd652b668cbdfcd6544235b16b70d438ed20bca6118a9066
+"tailwind-merge@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "tailwind-merge@npm:1.14.0"
+  checksum: 8cf5d37f51b3b32e4bdd5544feaed34357bfba2f64f14834cc4a21ac29b0ae22d7255386467a0f1dadb3e38499389efbbabeddcd0b16571af5a0d346a4921877
   languageName: node
   linkType: hard
 

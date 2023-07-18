@@ -2,7 +2,7 @@ import { env } from '@/env.mjs';
 import { Provider } from '@/components/provider';
 import { nextFont } from '@/lib/next-font';
 import '@/styles/globals.css';
-import { classNames } from '@/lib/class-names';
+import { cx } from '@/lib/class-names';
 
 export const metadata = {
   title: env.NEXT_PUBLIC_APP_NAME,
@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function RootLayout(props: RootLayoutProps) {
   return (
-    <html lang="ja" className={classNames('antialiased', nextFont.className)} suppressHydrationWarning>
+    <html lang="ja" className={cx('antialiased', nextFont.className)} suppressHydrationWarning>
       <body>
         <Provider>{props.children}</Provider>
       </body>

@@ -14,7 +14,7 @@ import {
 } from '@/components/ui/popover';
 import { titles } from '@/constants';
 import { useCurrentUser } from '@/hooks/use-next-auth';
-import { classNames } from '@/lib/class-names';
+import { cx } from '@/lib/class-names';
 import { getNavigationByRole } from '@/lib/navigation';
 
 export function Popover(): JSX.Element {
@@ -37,7 +37,7 @@ export function Popover(): JSX.Element {
                 <Link
                   key={v.name}
                   href={v.href}
-                  className={classNames(
+                  className={cx(
                     '-my-3 flex items-center rounded-md p-3',
                     'hover:bg-dark/50 hover:text-light dark:hover:bg-light/50 dark:hover:text-light',
                   )}
@@ -51,7 +51,7 @@ export function Popover(): JSX.Element {
           <div className="mb-2 mt-6">
             <Link
               href="#"
-              className={classNames(
+              className={cx(
                 'flex w-full items-center justify-center rounded-md px-4 py-2',
                 'border border-transparent bg-dark shadow-sm hover:bg-dark dark:bg-light',
               )}

@@ -1,7 +1,7 @@
 import { expect, test } from '@jest/globals';
-import { classNames } from '@/lib/class-names';
+import { cx } from '@/lib/class-names';
 
-test('classNames', async () => {
+test('cx', async () => {
   const classes = ['aaa', 'bbb ccc'];
-  expect(classNames(...classes)).toEqual('aaa bbb ccc');
+  expect(cx(...classes)).toEqual('aaa bbb ccc');
 });

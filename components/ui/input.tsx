@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { classNames } from '@/lib/class-names';
+import { cx } from '@/lib/class-names';
 
 const layoutStyle = 'appearance-none flex items-center justify-center w-full';
 const designStyle = 'leading-tight rounded bg-transparent';
@@ -61,7 +61,7 @@ const Input = React.forwardRef<HTMLInputElement, Props>(
     return (
       <input
         type={type}
-        className={classNames(variants({ variant, textSize, border, shadow, focus, className }))}
+        className={cx(variants({ variant, textSize, border, shadow, focus, className }))}
         ref={ref}
         {...props}
       />
