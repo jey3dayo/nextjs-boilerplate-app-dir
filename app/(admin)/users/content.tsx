@@ -38,7 +38,7 @@ async function Content() {
         <div className="md:max-w-md">
           <p className="text-subtitle">{titles.admin}</p>
           <h1 className="text-title mt-1">{titles.users}</h1>
-          <p className="text-description mt-4">権限とユーザの停止が行えます</p>
+          <p className="text-description mt-4">権限変更とユーザの停止が行えます</p>
         </div>
       </div>
 
@@ -68,6 +68,7 @@ async function Content() {
                 userId={user.id}
                 roleId={user.role.id}
                 onUpdateRole={onUpdateRole}
+                aria-label="権限選択"
               />
               <Switch id={user.id} variant="warning" value={user.isSuspended} onChange={onUpdateIsSuspended} />
             </li>

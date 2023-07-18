@@ -1,6 +1,6 @@
 import React from 'react';
 import { Role, RoleId, UserId } from '@/types/user';
-import { Select, SelectGroup } from '@/components/select';
+import { Select, SelectGroupValue } from '@/components/select';
 
 async function SelectRole(props: {
   className: string;
@@ -8,8 +8,9 @@ async function SelectRole(props: {
   userId: UserId;
   roleId: RoleId;
   onUpdateRole: (userId: string, roleId: string) => void;
+  'aria-label': string;
 }) {
-  const selectGroup: SelectGroup[] = [
+  const selectGroup: SelectGroupValue[] = [
     {
       label: '権限',
       values: props.roles.map((role) => ({
@@ -26,6 +27,7 @@ async function SelectRole(props: {
       id={props.userId}
       value={`${props.roleId}`}
       onChange={props.onUpdateRole}
+      aria-label={props['aria-label']}
     />
   );
 }

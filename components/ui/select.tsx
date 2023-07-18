@@ -6,10 +6,9 @@ import { Icons } from '@/components/ui/icons';
 import { cx } from '@/lib/class-names';
 
 const SelectRoot = SelectPrimitive.Root;
-
 const SelectGroup = SelectPrimitive.Group;
-
 const SelectValue = SelectPrimitive.Value;
+const SelectPortal = SelectPrimitive.Portal;
 
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
@@ -18,7 +17,11 @@ const SelectTrigger = React.forwardRef<
   <SelectPrimitive.Trigger
     ref={ref}
     className={cx(
-      'border-input ring-offset-background placeholder:text-muted-foreground flex h-10 w-full items-center justify-between whitespace-nowrap rounded-md border bg-transparent px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+      'inline-flex h-10 w-full items-center justify-between px-3 py-2',
+      'border-input placeholder:text-muted-foreground whitespace-nowrap rounded-md border bg-transparent text-sm leading-none',
+      'data-[placeholder]:text-accent-400',
+      'disabled:cursor-not-allowed disabled:opacity-50',
+      'shadow-focus',
       className,
     )}
     {...props}
@@ -39,7 +42,9 @@ const SelectContent = React.forwardRef<
     <SelectPrimitive.Content
       ref={ref}
       className={cx(
-        'bg-popover text-popover-foreground relative z-50 min-w-[8rem] overflow-hidden rounded-md border shadow-md',
+        'relative z-50 min-w-[8rem] overflow-hidden rounded-md',
+        'bg-theme text-theme text-popover-foreground ',
+        'shadow',
         position === 'popper' && 'translate-y-1',
         className,
       )}
@@ -64,7 +69,11 @@ const SelectLabel = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Label>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
 >(({ className, ...props }, ref) => (
-  <SelectPrimitive.Label ref={ref} className={cx('py-1.5 pl-8 pr-2 text-sm font-semibold', className)} {...props} />
+  <SelectPrimitive.Label
+    ref={ref}
+    className={cx('py-1.5 pl-6 pr-9', 'text-theme-neutral text-xs font-semibold leading-6', className)}
+    {...props}
+  />
 ));
 SelectLabel.displayName = SelectPrimitive.Label.displayName;
 
@@ -75,7 +84,10 @@ const SelectItem = React.forwardRef<
   <SelectPrimitive.Item
     ref={ref}
     className={cx(
-      'relative flex h-[25px] select-none items-center rounded-md pl-[25px] pr-[35px] text-[13px] leading-none text-violet11 data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1 data-[highlighted]:outline-none',
+      'relative flex h-6 select-none items-center pl-6 pr-9',
+      'text-theme rounded-md text-xs leading-none',
+      'data-[highlighted]:bg-theme-accent data-[highlighted]:text-light data-[highlighted]:outline-none',
+      'data-[disabled]:text-theme-neutral data-[disabled]:pointer-events-none',
       className,
     )}
     {...props}
@@ -92,8 +104,53 @@ const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
 >(({ className, ...props }, ref) => (
-  <SelectPrimitive.Separator ref={ref} className={cx('bg-muted -mx-1 my-1 h-px', className)} {...props} />
+  <SelectPrimitive.Separator ref={ref} className={cx('m-1 h-px bg-primary-200', className)} {...props} />
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
-export { SelectRoot, SelectGroup, SelectValue, SelectTrigger, SelectContent, SelectLabel, SelectItem, SelectSeparator };
+const SelectScrollUpButton = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.SelectScrollUpButton>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.SelectScrollUpButton>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.SelectScrollUpButton
+    ref={ref}
+    className={cx('flex h-6 cursor-default items-center justify-center bg-white text-accent-500', className)}
+    {...props}
+  />
+));
+SelectScrollUpButton.displayName = SelectPrimitive.SelectScrollUpButton.displayName;
+
+const SelectScrollDownButton = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.SelectScrollDownButton>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.SelectScrollDownButton>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.SelectScrollDownButton
+    ref={ref}
+    className={cx('flex h-6 cursor-default items-center justify-center bg-white text-accent-500', className)}
+    {...props}
+  />
+));
+SelectScrollDownButton.displayName = SelectPrimitive.SelectScrollDownButton.displayName;
+
+const SelectViewport = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.SelectViewport>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.SelectViewport>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.SelectViewport ref={ref} className={cx('p-1', className)} {...props} />
+));
+SelectViewport.displayName = SelectPrimitive.SelectViewport.displayName;
+
+export {
+  SelectRoot,
+  SelectGroup,
+  SelectValue,
+  SelectPortal,
+  SelectScrollDownButton,
+  SelectScrollUpButton,
+  SelectViewport,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+};
