@@ -1,16 +1,37 @@
-import { AlertTriangle, HelpCircle, Loader2, Menu, Moon, Plus, Settings, SunMedium, User, X } from 'lucide-react';
+import {
+  AlertTriangle,
+  Check,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  HelpCircle,
+  Loader2,
+  Menu,
+  Moon,
+  Plus,
+  Settings,
+  SunMedium,
+  User,
+  X,
+} from 'lucide-react';
 
 const Icons = {
-  user: User,
-  close: X,
-  menu: Menu,
-  spinner: Loader2,
-  settings: Settings,
   add: Plus,
-  warning: AlertTriangle,
+  check: Check,
+  chevronDown: ChevronDown,
+  chevronLeft: ChevronLeft,
+  chevronRight: ChevronRight,
+  chevronUp: ChevronUp,
+  close: X,
   help: HelpCircle,
-  sun: SunMedium,
+  menu: Menu,
   moon: Moon,
+  settings: Settings,
+  spinner: Loader2,
+  sun: SunMedium,
+  user: User,
+  warning: AlertTriangle,
 };
 
 type Size = 'none' | 'sm' | 'md' | 'lg';
