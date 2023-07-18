@@ -52,7 +52,7 @@
     @apply text-theme-accent text-base font-semibold leading-7;
   }
   .text-description {
-    @apply text-xl leading-8 text-gray-700;
+    @apply text-theme-neutral text-xl leading-8;
   }
 
   .theme-border {

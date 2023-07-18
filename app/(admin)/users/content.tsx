@@ -40,7 +40,7 @@ async function Content() {
   }
 
   return (
-    <div className="md:mx-auto md:w-full md:max-w-3xl">
+    <div className="min-h-[86vh] md:mx-auto md:min-h-[82vh] md:w-full md:max-w-3xl">
       <div className="pl-2 md:pr-4">
         <div className="md:max-w-md">
           <p className="text-subtitle">{titles.admin}</p>
@@ -50,7 +50,7 @@ async function Content() {
       </div>
 
       <div className="pl-2 pt-5 md:pr-4">
-        <ul className="w-full divide-y divide-gray-200">
+        <ul className="w-full divide-y divide-gray-200 dark:divide-gray-700">
           <li className="flex items-center py-4">
             <div>&nbsp;</div>
             <div className="flex-1">&nbsp;</div>
@@ -66,11 +66,11 @@ async function Content() {
                 className="h-11 w-11 rounded-full"
               />
               <div className="ml-3 flex-1">
-                <p className="text-sm font-medium text-gray-900">{user.name}</p>
-                <p className="text-sm text-gray-500">{user.email}</p>
+                <p className="text-theme text-sm font-medium">{user.name}</p>
+                <p className="text-theme-neutral text-sm">{user.email}</p>
               </div>
-              <div className="ml-3 w-10 bg-blue-100">
-                <p className="text-sm font-medium text-gray-900">{user.role.name}</p>
+              <div className="ml-3 w-10">
+                <p className="text-theme-neutral text-sm font-medium">{user.role.name}</p>
               </div>
               <Switch id={user.id} variant="warning" value={user.isSuspended} onChange={onUpdateIsSuspended} />
             </li>
