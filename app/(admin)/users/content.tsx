@@ -1,33 +1,26 @@
-import { User } from '@/types/user';
+import { Role, User } from '@/types/user';
+import SelectRole from '@/app/(admin)/users/select-role';
 import { Avatar } from '@/components/avatar';
 import Switch from '@/components/switch';
 import { titles } from '@/constants';
-import { fetcher } from '@/lib/fetcher';
+import { getRoles, getUsers } from '@/lib/fetch-helpers';
 import { prismaClient } from '@/lib/prisma';
-
-async function getUsers() {
-  const res = await fetcher('/api/users');
-  return res;
-}
 
 async function Content() {
   let users: User[] = [];
+  let roles: Role[] = [];
   try {
     users = await getUsers();
+    roles = await getRoles();
   } catch (e) {
     console.error(e);
   }
 
-  async function onUpdateRole(id: string, roleName: string) {
+  async function onUpdateRole(id: string, roleId: string) {
     'use server';
-    // joinしたroleのidを取得
-    const role = await prismaClient.role.findFirst({ where: { name: roleName } });
-    // TODO: throw error
-    if (!role) return;
-
     await prismaClient.user.update({
       where: { id: id },
-      data: { roleId: role.id },
+      data: { roleId: Number(roleId) },
     });
   }
 
@@ -69,9 +62,13 @@ async function Content() {
                 <p className="text-theme text-sm font-medium">{user.name}</p>
                 <p className="text-theme-neutral text-sm">{user.email}</p>
               </div>
-              <div className="ml-3 w-10">
-                <p className="text-theme-neutral text-sm font-medium">{user.role.name}</p>
-              </div>
+              <SelectRole
+                roles={roles}
+                className="mx-3 w-[130px]"
+                userId={user.id}
+                roleId={user.role.id}
+                onUpdateRole={onUpdateRole}
+              />
               <Switch id={user.id} variant="warning" value={user.isSuspended} onChange={onUpdateIsSuspended} />
             </li>
           ))}

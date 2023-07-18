@@ -6,7 +6,7 @@ async function getUsers() {
 }
 
 async function getRoles() {
-  const res = await fetcher('/api/roles');
+  const res = await fetcher('/api/roles', { cache: 'force-cache' });
   return res;
 }
 
