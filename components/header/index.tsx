@@ -5,7 +5,7 @@ import { Logo } from '@/components/logo';
 import { ThemeSwitch } from '@/components/theme/theme-switch';
 import { UserMenu } from '@/components/user-menu';
 import { subTitle } from '@/config';
-import { classNames } from '@/lib/class-names';
+import { cx } from '@/lib/class-names';
 import { getNavigationByRole } from '@/lib/navigation';
 import { getCurrentUser } from '@/lib/next-auth/session';
 
@@ -19,7 +19,7 @@ export async function Header() {
   return (
     <>
       <nav
-        className={classNames(
+        className={cx(
           'z-20 flex flex-wrap items-center justify-between bg-dark/90 px-2 md:fixed md:left-0 md:top-0 md:w-full',
           height,
         )}
@@ -57,7 +57,7 @@ export async function Header() {
         </div>
       </nav>
       {/* FIXME: height固定*/}
-      <div className={classNames('hidden md:flex', height)} />
+      <div className={cx('hidden md:flex', height)} />
     </>
   );
 }

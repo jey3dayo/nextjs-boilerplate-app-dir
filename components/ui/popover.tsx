@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { cva, VariantProps } from 'class-variance-authority';
 import { Icons, iconSizes } from '@/components/ui/icons';
-import { classNames } from '@/lib/class-names';
+import { cx } from '@/lib/class-names';
 
 const PopoverRoot = PopoverPrimitive.Root;
 const PopoverPortal = PopoverPrimitive.Portal;
@@ -34,7 +34,7 @@ interface PopoverAnchorChildProps
 
 const PopoverAnchorChild = React.forwardRef<HTMLDivElement, PopoverAnchorChildProps>(
   ({ className, variant, ...props }, ref) => {
-    return <div className={classNames(popoverAnchorChildVariants({ variant, className }))} ref={ref} {...props} />;
+    return <div className={cx(popoverAnchorChildVariants({ variant, className }))} ref={ref} {...props} />;
   },
 );
 PopoverAnchorChild.displayName = 'PopoverAnchorChild';
@@ -48,7 +48,7 @@ const PopoverContent = React.forwardRef<
   <PopoverPrimitive.Content
     ref={ref}
     sticky={sticky ?? 'always'}
-    className={classNames(
+    className={cx(
       className,
       'theme focus shadow-focus w-[94vw] rounded px-8 py-4 opacity-95',
       'state-open-slide-in transition will-change-[transform,opacity] animate-in',
@@ -77,14 +77,14 @@ const PopoverTrigger = React.forwardRef<
   React.ElementRef<typeof PopoverPrimitive.Trigger>,
   PopoverPrimitive.PopoverTriggerProps
 >(({ className, ...props }, ref) => (
-  <PopoverPrimitive.Trigger className={classNames(popoverTriggerVariants({ className }))} ref={ref} {...props} />
+  <PopoverPrimitive.Trigger className={cx(popoverTriggerVariants({ className }))} ref={ref} {...props} />
 ));
 PopoverTrigger.displayName = 'PopoverTrigger';
 
 const popoverCloseVariants = cva('', {
   variants: {
     variant: {
-      default: classNames(
+      default: cx(
         'absolute inline-flex justify-center items-center',
         'rounded cursor-default shadow-focus',
         'right-1 top-1 h-8 w-8',
@@ -106,7 +106,7 @@ const PopoverClose = React.forwardRef<
   }
 >(({ className, variant, children, ...props }, ref) => (
   <PopoverPrimitive.Close
-    className={classNames(popoverCloseVariants({ variant, className }))}
+    className={cx(popoverCloseVariants({ variant, className }))}
     ref={ref}
     aria-label="メニューを閉じる"
     {...props}

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { classNames } from '@/lib/class-names';
+import { cx } from '@/lib/class-names';
 
 const layoutStyle = 'relative inline-flex items-center justify-center';
 const designStyle = 'rounded-lg text-base font-medium';
@@ -48,9 +48,7 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>, Variants 
 
 const Button = React.forwardRef<HTMLButtonElement, Props>(
   ({ className, variant, size, shadow, duration, ...props }, ref) => {
-    return (
-      <button className={classNames(variants({ variant, size, shadow, duration, className }))} ref={ref} {...props} />
-    );
+    return <button className={cx(variants({ variant, size, shadow, duration, className }))} ref={ref} {...props} />;
   },
 );
 Button.displayName = 'Button';

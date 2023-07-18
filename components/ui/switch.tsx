@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as SwitchPrimitives from '@radix-ui/react-switch';
 import { cva, VariantProps } from 'class-variance-authority';
-import { classNames } from '@/lib/class-names';
+import { cx } from '@/lib/class-names';
 
 const thumbLayoutStyle = 'block w-[21px] h-[21px]';
 const thumbDesignStyle = 'bg-white rounded-full h-[25px] w-[42px]';
@@ -31,11 +31,7 @@ const SwitchThumb = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Thumb>,
   SwitchPrimitives.SwitchProps & SwitchThumbVariants
 >(({ className, variant, shadow, children, ...props }, ref) => (
-  <SwitchPrimitives.Thumb
-    className={classNames(switchThumbVariants({ variant, shadow, className }))}
-    ref={ref}
-    {...props}
-  >
+  <SwitchPrimitives.Thumb className={cx(switchThumbVariants({ variant, shadow, className }))} ref={ref} {...props}>
     {children}
   </SwitchPrimitives.Thumb>
 ));
@@ -68,11 +64,7 @@ const SwitchRoot = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   SwitchPrimitives.SwitchProps & SwitchRootVariants
 >(({ className, variant, shadow, children, ...props }, ref) => (
-  <SwitchPrimitives.Root
-    className={classNames(switchRootVariants({ variant, shadow, className }))}
-    ref={ref}
-    {...props}
-  >
+  <SwitchPrimitives.Root className={cx(switchRootVariants({ variant, shadow, className }))} ref={ref} {...props}>
     {children}
   </SwitchPrimitives.Root>
 ));
