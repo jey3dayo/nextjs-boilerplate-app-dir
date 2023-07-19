@@ -7,7 +7,7 @@ async function SelectRole(props: {
   roles: Role[];
   userId: UserId;
   roleId: RoleId;
-  onUpdateRole: (userId: string, roleId: string) => void;
+  onUpdateRole: (userId: string, roleId: string) => Promise<boolean>;
   disabled: boolean;
   'aria-label': string;
 }) {

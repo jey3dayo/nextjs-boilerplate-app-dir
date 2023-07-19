@@ -16,6 +16,7 @@ import {
   SelectValue,
   SelectViewport,
 } from '@/components/ui/select';
+import { toast } from '@/components/ui/use-toast';
 import { cx } from '@/lib/class-names';
 
 export type SelectGroupValue = {
@@ -36,13 +37,19 @@ export function Select(props: {
   value: string | number;
   placeholder?: string;
   disabled: boolean;
-  onChange: (id: string, value: string) => void;
+  onChange: (id: string, value: string) => Promise<boolean>;
   'aria-label': string;
 }) {
   const [value, setValue] = React.useState(`${props.value}`);
-  function onSelect(v: string) {
+
+  async function onSelect(v: string) {
     setValue(v);
-    props.onChange(props.id, v);
+    const result = await props.onChange(props.id, v);
+    if (result) {
+      toast({
+        description: `保存しました`,
+      });
+    }
   }
 
   return (

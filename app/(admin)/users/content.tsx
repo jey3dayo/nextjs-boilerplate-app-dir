@@ -23,6 +23,7 @@ async function Content() {
       where: { id: id },
       data: { roleId: Number(roleId) },
     });
+    return true;
   }
 
   async function onUpdateIsSuspended(id: string, checked: boolean) {
@@ -31,6 +32,7 @@ async function Content() {
       where: { id: id },
       data: { isSuspended: checked },
     });
+    return true;
   }
 
   const currentUser = await getCurrentUser();
