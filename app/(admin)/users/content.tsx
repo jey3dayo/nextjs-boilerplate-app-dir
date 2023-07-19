@@ -1,6 +1,6 @@
 import { Role, User } from '@/types/user';
-import SelectRole from '@/app/(admin)/users/select-role';
 import { Avatar } from '@/components/avatar';
+import { SelectRole } from '@/components/select-role';
 import Switch from '@/components/switch';
 import { titles } from '@/constants';
 import { getRoles, getUsers } from '@/lib/fetch-helpers';

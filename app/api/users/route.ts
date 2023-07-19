@@ -11,14 +11,11 @@ export async function GET(req: NextRequest) {
     if (!user) throw new ApiRequestError(messages.userNotFound);
     checkAdminAccess(user?.role?.name);
 
-    const values = await getUsers();
+    const users = await getUsers();
 
-    return NextResponse.json(values, responseInit);
+    return NextResponse.json(users, responseInit);
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      return createResponseWithError(error);
-    }
-
-    return createResponseWithError(new ApiRequestError(messages.unknownError));
+    const err = error instanceof Error ? error : new ApiRequestError(messages.unknownError);
+    return createResponseWithError(err);
   }
 }

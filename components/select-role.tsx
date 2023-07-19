@@ -2,7 +2,7 @@ import React from 'react';
 import { Role, RoleId, UserId } from '@/types/user';
 import { Select, SelectGroupValue } from '@/components/select';
 
-async function SelectRole(props: {
+export async function SelectRole(props: {
   className: string;
   roles: Role[];
   userId: UserId;
@@ -33,4 +33,3 @@ async function SelectRole(props: {
     />
   );
 }
-export default SelectRole;

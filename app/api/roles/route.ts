@@ -14,10 +14,7 @@ export async function GET(req: NextRequest) {
 
     return NextResponse.json(values, responseInit);
   } catch (error: unknown) {
-    if (error instanceof Error) {
-      return createResponseWithError(error);
-    }
-
-    return createResponseWithError(new ApiRequestError(messages.unknownError));
+    const err = error instanceof Error ? error : new ApiRequestError(messages.unknownError);
+    return createResponseWithError(err);
   }
 }
