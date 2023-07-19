@@ -1,5 +1,6 @@
 import containerQueries from '@tailwindcss/container-queries';
 import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
 import animate from 'tailwindcss-animate';
 import { color, colors } from './styles/colors';
 
@@ -48,5 +49,5 @@ export default {
       },
     },
   },
-  plugins: [containerQueries, animate, forms],
+  plugins: [containerQueries, animate, typography, forms],
 };

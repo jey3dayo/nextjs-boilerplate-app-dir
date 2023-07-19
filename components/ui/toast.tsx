@@ -34,7 +34,7 @@ const toastVariants = cva(
       variant: {
         // TODO: デザイン調整
         default: 'border bg-background',
-        destructive: 'destructive group border-destructive bg-destructive text-destructive-foreground',
+        destructive: 'group border-destructive bg-destructive text-destructive-foreground',
       },
     },
     defaultVariants: {

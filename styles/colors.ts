@@ -1,10 +1,12 @@
-import { blackA, mauve, violet } from '@radix-ui/colors';
+import { blackA, green, mauve, slate, violet } from '@radix-ui/colors';
 import tailwindColors from 'tailwindcss/colors';
 
 export const radixUiColors = {
   ...blackA,
   ...violet,
   ...mauve,
+  ...slate,
+  ...green,
 };
 
 const primaryColor = 'neutral';
