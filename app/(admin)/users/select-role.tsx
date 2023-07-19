@@ -8,6 +8,7 @@ async function SelectRole(props: {
   userId: UserId;
   roleId: RoleId;
   onUpdateRole: (userId: string, roleId: string) => void;
+  disabled: boolean;
   'aria-label': string;
 }) {
   const selectGroup: SelectGroupValue[] = [
@@ -28,6 +29,7 @@ async function SelectRole(props: {
       value={`${props.roleId}`}
       onChange={props.onUpdateRole}
       aria-label={props['aria-label']}
+      disabled={props.disabled}
     />
   );
 }

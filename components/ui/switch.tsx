@@ -40,7 +40,8 @@ SwitchThumb.displayName = SwitchPrimitives.Thumb.displayName;
 const rootLayoutStyle = 'relative outline-none cursor-default';
 const rootDesignStyle = 'h-[25px] w-[42px] cursor-pointer rounded-full';
 const rootAnimationStyle = 'transition will-change-[transform,opacity] ease-in-out';
-const switchRootVariants = cva([rootLayoutStyle, rootDesignStyle, rootAnimationStyle].join(' '), {
+const disabledStyle = 'disabled:cursor-not-allowed disabled:opacity-50';
+const switchRootVariants = cva([rootLayoutStyle, rootDesignStyle, rootAnimationStyle, disabledStyle].join(' '), {
   variants: {
     variant: {
       default: 'bg-primary-500 data-[state=checked]:bg-accent-500',

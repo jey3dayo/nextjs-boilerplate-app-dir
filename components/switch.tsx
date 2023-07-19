@@ -9,12 +9,14 @@ function Switch({
   value,
   id,
   onChange: _onChange,
+  disabled,
 }: {
   variant?: SwitchRootVariants['variant'];
   id: string;
   label?: string;
   value: boolean;
   onChange: (id: string, checked: boolean) => void;
+  disabled: boolean;
 }) {
   const [checked, setChecked] = React.useState(value);
 
@@ -33,9 +35,10 @@ function Switch({
       <SwitchRoot
         variant={variant}
         className="peer h-[24px] w-[42px] rounded-full"
-        id="disabled user"
+        id="user"
         checked={checked}
         onCheckedChange={onChange}
+        disabled={disabled}
       >
         <SwitchThumb variant={variant} className="h-[21px] w-[21px]" />
       </SwitchRoot>

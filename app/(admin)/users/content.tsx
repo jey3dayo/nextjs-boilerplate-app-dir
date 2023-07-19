@@ -4,6 +4,7 @@ import { Avatar } from '@/components/avatar';
 import Switch from '@/components/switch';
 import { titles } from '@/constants';
 import { getRoles, getUsers } from '@/lib/fetch-helpers';
+import { getCurrentUser } from '@/lib/next-auth/session';
 import { prismaClient } from '@/lib/prisma';
 
 async function Content() {
@@ -32,6 +33,7 @@ async function Content() {
     });
   }
 
+  const currentUser = await getCurrentUser();
   return (
     <div className="min-h-[86vh] md:mx-auto md:min-h-[82vh] md:w-full md:max-w-3xl">
       <div className="pl-2 md:pr-4">
@@ -69,8 +71,15 @@ async function Content() {
                 roleId={user.role.id}
                 onUpdateRole={onUpdateRole}
                 aria-label="権限選択"
+                disabled={user.id === currentUser?.id}
               />
-              <Switch id={user.id} variant="warning" value={user.isSuspended} onChange={onUpdateIsSuspended} />
+              <Switch
+                id={user.id}
+                variant="warning"
+                value={user.isSuspended}
+                onChange={onUpdateIsSuspended}
+                disabled={user.id === currentUser?.id}
+              />
             </li>
           ))}
         </ul>
