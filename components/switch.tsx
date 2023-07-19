@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { SwitchRoot, SwitchRootVariants, SwitchThumb } from '@/components/ui/switch';
+import { toast } from '@/components/ui/use-toast';
 
 function Switch({
   variant,
@@ -9,18 +10,26 @@ function Switch({
   value,
   id,
   onChange: _onChange,
+  disabled,
 }: {
   variant?: SwitchRootVariants['variant'];
   id: string;
   label?: string;
   value: boolean;
-  onChange: (id: string, checked: boolean) => void;
+  onChange: (id: string, checked: boolean) => Promise<boolean>;
+  disabled: boolean;
 }) {
   const [checked, setChecked] = React.useState(value);
 
-  function onChange(checked: boolean) {
+  async function onChange(checked: boolean) {
     setChecked(checked);
-    _onChange(id, checked);
+    const result = await _onChange(id, checked);
+
+    if (result) {
+      toast({
+        description: '保存しました',
+      });
+    }
   }
 
   return (
@@ -33,9 +42,10 @@ function Switch({
       <SwitchRoot
         variant={variant}
         className="peer h-[24px] w-[42px] rounded-full"
-        id="disabled user"
+        id="user"
         checked={checked}
         onCheckedChange={onChange}
+        disabled={disabled}
       >
         <SwitchThumb variant={variant} className="h-[21px] w-[21px]" />
       </SwitchRoot>

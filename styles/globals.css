@@ -4,9 +4,37 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+  }
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+  }
+
   body {
     @apply text-dark dark:text-light;
     @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 }
 
@@ -52,7 +80,7 @@
     @apply text-theme-accent text-base font-semibold leading-7;
   }
   .text-description {
-    @apply text-xl leading-8 text-gray-700;
+    @apply text-theme-neutral text-xl leading-8;
   }
 
   .theme-border {

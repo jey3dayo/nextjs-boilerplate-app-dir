@@ -1,5 +1,6 @@
 import containerQueries from '@tailwindcss/container-queries';
 import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
 import animate from 'tailwindcss-animate';
 import { color, colors } from './styles/colors';
 
@@ -17,14 +18,36 @@ export default {
     extend: {
       colors,
 
-      // TODO: 問題があればcolorsにまとめる
+      // TODO: colorsにまとめる
       textColor: color,
       backgroundColor: color,
       ringColor: color,
       borderColor: color,
       fill: color,
       boxShadowColor: color,
+
+      // TODO: 置き換え可能か調べる
+      keyframes: {
+        hide: {
+          from: { opacity: 1 },
+          to: { opacity: 0 },
+        },
+        slideIn: {
+          from: { transform: 'translateX(calc(100% + var(--viewport-padding)))' },
+          to: { transform: 'translateX(0)' },
+        },
+        swipeOut: {
+          from: { transform: 'translateX(var(--radix-toast-swipe-end-x))' },
+          to: { transform: 'translateX(calc(100% + var(--viewport-padding)))' },
+        },
+      },
+      // TODO: 消す
+      animation: {
+        hide: 'hide 100ms ease-in',
+        slideIn: 'slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1)',
+        swipeOut: 'swipeOut 100ms ease-out',
+      },
     },
   },
-  plugins: [containerQueries, animate, forms],
+  plugins: [containerQueries, animate, typography, forms],
 };

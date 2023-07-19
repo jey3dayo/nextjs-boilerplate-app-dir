@@ -42,7 +42,9 @@
     "@ianvs/prettier-plugin-sort-imports": "^4.1.0",
     "@swc/core": "^1.3.69",
     "@swc/helpers": "^0.5.1",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "^0.5.4",
+    "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.14",
     "cypress": "^12.17.1",
     "dependency-cruiser": "^13.1.1",
@@ -65,6 +67,7 @@
     "prettier-plugin-tailwindcss": "^0.4.1",
     "prisma": "5.0.0",
     "start-server-and-test": "^2.0.0",
+    "tailwindcss-animate": "^1.0.6",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0"
@@ -80,10 +83,10 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-popover": "^1.0.6",
     "@radix-ui/react-portal": "^1.0.3",
+    "@radix-ui/react-select": "^1.2.2",
     "@radix-ui/react-switch": "^1.0.3",
     "@radix-ui/react-toast": "^1.1.4",
     "@t3-oss/env-nextjs": "^0.6.0",
-    "@tailwindcss/container-queries": "^0.1.1",
     "@types/node": "20.4.2",
     "@types/react": "18.2.15",
     "@types/react-dom": "18.2.7",
@@ -106,7 +109,6 @@
     "swr": "^2.2.0",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
-    "tailwindcss-animate": "^1.0.6",
     "typescript": "5.1.6",
     "zod": "^3.21.4"
   }
