@@ -24,7 +24,7 @@ const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].j
     shadow: {
       none: '',
       default: 'shadow-focus',
-      dark: 'shadow-simple',
+      dark: 'shadow-deep',
     },
     duration: {
       '0': 'duration-0',

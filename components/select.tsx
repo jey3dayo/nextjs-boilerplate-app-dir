@@ -47,7 +47,7 @@ export function Select(props: {
     const result = await props.onChange(props.id, v);
     if (result) {
       toast({
-        description: `保存しました`,
+        title: `保存しました`,
       });
     }
   }
