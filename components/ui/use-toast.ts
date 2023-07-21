@@ -7,9 +7,9 @@ const TOAST_REMOVE_DELAY = 1000000;
 
 type ToasterToast = ToastProps & {
   id: string;
-  title?: React.ReactNode;
-  description?: React.ReactNode;
+  title: React.ReactNode;
   action?: ToastActionElement;
+  timestamp?: Date;
 };
 
 const actionTypes = {
@@ -140,7 +140,7 @@ function toast({ ...props }: Toast) {
   const update = (props: ToasterToast) =>
     dispatch({
       type: 'UPDATE_TOAST',
-      toast: { ...props, id },
+      toast: { ...props, id, timestamp: new Date() },
     });
   const dismiss = () => dispatch({ type: 'DISMISS_TOAST', toastId: id });
 
@@ -150,6 +150,7 @@ function toast({ ...props }: Toast) {
       ...props,
       id,
       open: true,
+      timestamp: new Date(),
       onOpenChange: (open) => {
         if (!open) dismiss();
       },

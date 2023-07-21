@@ -27,7 +27,7 @@ function Switch({
 
     if (result) {
       toast({
-        description: '保存しました',
+        title: '保存しました',
       });
     }
   }
