@@ -1,5 +1,6 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import { Icons } from '@/components/ui/icons';
 import {
   Toast,
@@ -11,7 +12,6 @@ import {
   ToastViewport,
 } from '@/components/ui/toast';
 import { useToast } from '@/components/ui/use-toast';
-import { cx } from '@/lib/class-names';
 
 function prettyDate(date: number | Date | undefined) {
   return new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format(date);
@@ -32,15 +32,9 @@ export function Toaster() {
             </ToastDescription>
 
             <ToastAction asChild altText="閉じる">
-              <button
-                className={cx(
-                  'inline-flex h-8 items-center justify-center rounded px-2',
-                  'text-theme text-xs font-medium leading-6',
-                  'shadow-focus hover:shadow',
-                )}
-              >
+              <Button variant="icon">
                 <Icons.close className="h-4 w-4" />
-              </button>
+              </Button>
             </ToastAction>
             <ToastClose />
           </Toast>

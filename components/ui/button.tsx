@@ -13,6 +13,7 @@ const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].j
       default: 'bg-theme-neutral-hover text-light',
       dark: 'bg-medium-hover',
       accent: 'bg-theme-accent-hover text-light',
+      icon: 'text-theme text-xs font-medium leading-6',
       inherit: 'bg-inherit',
     },
     size: {
@@ -25,6 +26,7 @@ const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].j
       none: '',
       default: 'shadow-focus',
       dark: 'shadow-deep',
+      icon: 'shadow-focus hover:shadow',
     },
     duration: {
       '0': 'duration-0',
@@ -48,6 +50,11 @@ interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement>, Variants 
 
 const Button = React.forwardRef<HTMLButtonElement, Props>(
   ({ className, variant, size, shadow, duration, ...props }, ref) => {
+    if (variant === 'icon') {
+      size = 'sm';
+      shadow = 'icon';
+    }
+
     return <button className={cx(variants({ variant, size, shadow, duration, className }))} ref={ref} {...props} />;
   },
 );
