@@ -140,8 +140,12 @@
     @apply shadow-[6px_6px_20px_theme(colors.primary.200),-6px_-6px_20px_theme(colors.primary.50)]
   dark:shadow-[6px_6px_20px_theme(colors.slate.800),-6px_-6px_20px_theme(colors.slate.700)];
   }
+  .shadow-highlight {
+    @apply shadow-[-15px_0px_30px_-10px_theme(colors.blue.200),0px_0px_30px_-10px_theme(colors.blue.200),15px_0px_30px_-10px_theme(colors.blue.200)]
+    dark:shadow-[-15px_0px_30px_-10px_theme(colors.blue.900),0px_0px_30px_-10px_theme(colors.blue.900),15px_0px_30px_-10px_theme(colors.blue.900)];
+  }
   .box {
-    @apply text-theme shadow-neumorphism rounded-xl bg-slate-50 dark:bg-primary-800;
+    @apply text-theme shadow-highlight rounded-xl bg-slate-50 dark:bg-primary-800;
   }
 }
 
