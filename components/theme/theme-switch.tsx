@@ -1,7 +1,7 @@
 'use client';
 
+import { Size } from '@/components/ui/icon';
 import { DarkIconButton, LightIconButton } from '@/components/ui/icon-button';
-import { Size } from '@/components/ui/icons';
 import { useMounted } from '@/hooks/use-mounted';
 import { useTheme } from '@/hooks/use-themes';
 

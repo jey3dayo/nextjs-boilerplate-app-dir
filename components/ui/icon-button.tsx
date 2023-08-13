@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, ButtonVariants } from '@/components/ui/button';
-import { Icons, iconSizes } from '@/components/ui/icons';
+import { Icon, iconSizes } from '@/components/ui/icon';
 import { color } from '@/styles/colors';
 
 const defaultIconColor = color.light;
@@ -12,7 +12,7 @@ interface IconButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 const MenuIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, size, variant, iconColor, ...props }, ref) => (
     <Button className={className} variant={variant} size={size} aria-label="メニュー" ref={ref} {...props}>
-      <Icons.menu color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+      <Icon name="menu" color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
     </Button>
   ),
 );
@@ -21,7 +21,7 @@ MenuIconButton.displayName = 'MenuIconButton';
 const DarkIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, size, variant, iconColor, ...props }, ref) => (
     <Button className={className} variant={variant} size={size} aria-label="ダークモード" ref={ref} {...props}>
-      <Icons.moon color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+      <Icon name="moon" color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
     </Button>
   ),
 );
@@ -30,7 +30,7 @@ DarkIconButton.displayName = 'DarkIconButton';
 const LightIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, size, variant, iconColor, ...props }, ref) => (
     <Button className={className} variant={variant} size={size} aria-label="ライトモード" ref={ref} {...props}>
-      <Icons.sun color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+      <Icon name="sun" color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
     </Button>
   ),
 );
