@@ -4,8 +4,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/blue.css';
+
 @layer base {
   :root {
+    /* TODO: graycolor */
+    --graycolor-1: var(--slate-1);
+    --graycolor-2: var(--slate-2);
+    --graycolor-3: var(--slate-3);
+    --graycolor-4: var(--slate-4);
+    --graycolor-5: var(--slate-5);
+    --graycolor-6: var(--slate-6);
+    --graycolor-7: var(--slate-7);
+    --graycolor-8: var(--slate-8);
+    --graycolor-9: var(--slate-9);
+    --graycolor-10: var(--slate-10);
+    --graycolor-11: var(--slate-11);
+    --graycolor-12: var(--slate-12);
+    --accent-1: var(--blue-1);
+    --accent-2: var(--blue-2);
+    --accent-3: var(--blue-3);
+    --accent-4: var(--blue-4);
+    --accent-5: var(--blue-5);
+    --accent-6: var(--blue-6);
+    --accent-7: var(--blue-7);
+    --accent-8: var(--blue-8);
+    --accent-9: var(--blue-9);
+    --accent-10: var(--blue-10);
+    --accent-11: var(--blue-11);
+    --accent-12: var(--blue-12);
+
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
@@ -52,6 +80,7 @@
 
   body {
     @apply text-dark dark:text-light;
+  /* TODO: slate to graycolor */
     @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
   }
 
@@ -83,7 +112,7 @@
     @apply bg-dark dark:bg-light;
   }
   .bg-theme-neutral {
-    @apply bg-graycolor-700 dark:bg-graycolor-500;
+    @apply bg-graycolor-9;
   }
   .bg-theme-accent {
     @apply bg-accentcolor-500 dark:bg-accentcolor-400;
@@ -97,7 +126,7 @@
     @apply text-light dark:text-dark;
   }
   .text-theme-neutral {
-    @apply text-graycolor-700 dark:text-graycolor-500;
+    @apply text-graycolor-8;
   }
   .text-theme-accent {
     @apply text-accentcolor-500;
@@ -125,7 +154,7 @@
     @apply bg-medium hover:bg-medium/80;
   }
   .bg-theme-neutral-hover {
-    @apply bg-graycolor-700 hover:bg-graycolor-600 dark:bg-graycolor-500 dark:hover:bg-graycolor-400;
+    @apply bg-graycolor-8 hover:bg-graycolor-7;
   }
   .bg-theme-accent-hover {
     @apply bg-accentcolor-500 hover:bg-accentcolor-400;
@@ -155,7 +184,7 @@
 
   /* ui */
   .bg-input-range {
-    @apply bg-graycolor-200 dark:bg-graycolor-500;
+    @apply bg-graycolor-3;
   }
   .shadow-focus {
     @apply shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)]
@@ -166,7 +195,8 @@
     @apply shadow-[0_2px_10px] shadow-dark focus:shadow-[0_0_0_2px] focus:shadow-dark;
   }
   .shadow-neumorphism {
-    @apply shadow-[6px_6px_20px_theme(colors.graycolor.200),-6px_-6px_20px_theme(colors.graycolor.50)]
+  /* TODO: slate to graycolor */
+    @apply shadow-[6px_6px_20px_theme(colors.graycolor.3),-6px_-6px_20px_theme(colors.graycolor.1)]
   dark:shadow-[6px_6px_20px_theme(colors.slate.800),-6px_-6px_20px_theme(colors.slate.700)];
   }
   .shadow-highlight {
@@ -174,7 +204,9 @@
     dark:shadow-[-15px_0px_30px_-10px_theme(colors.blue.900),0px_0px_30px_-10px_theme(colors.blue.900),15px_0px_30px_-10px_theme(colors.blue.900)];
   }
   .box {
-    @apply text-theme shadow-highlight rounded-xl bg-slate-50 dark:bg-graycolor-800;
+    /* TODO: dark対応された数値でアクセスしたい */
+    @apply text-theme shadow-highlight rounded-xl bg-graycolor-12;
+    /* @apply text-theme shadow-highlight rounded-xl bg-slate-1; */
   }
 }
 

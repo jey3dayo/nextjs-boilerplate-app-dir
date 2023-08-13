@@ -21,9 +21,21 @@ export const color = {
   white: tailwindColors[grayColor]['50'],
 };
 
+// FIXME: これだとdarkmodeに対応できてない
+// keyをアクセスしやすいように書換
+interface ColorMap { [key: string]: string; };
+const graycolor: ColorMap = {};
+const accentcolor: ColorMap = {};
+Object.keys(slate).forEach((key, index) => {
+  graycolor[index + 1] = slate[key as keyof typeof slate];
+  accentcolor[index + 1] = violet[key as keyof typeof violet];
+});
+
 export const colors = {
+  // TODO: accentcolorに変更したい
   accentcolor: tailwindColors[accentColor],
-  graycolor: tailwindColors[grayColor],
+  // accentcolor: violet,
+  graycolor,
   hue: color,
   ...radixUiColors,
 

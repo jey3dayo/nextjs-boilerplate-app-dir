@@ -44,8 +44,8 @@ const disabledStyle = 'disabled:cursor-not-allowed disabled:opacity-50';
 const switchRootVariants = cva([rootLayoutStyle, rootDesignStyle, rootAnimationStyle, disabledStyle].join(' '), {
   variants: {
     variant: {
-      default: 'bg-graycolor-500 data-[state=checked]:bg-accentcolor-500',
-      warning: 'bg-graycolor-500 data-[state=checked]:bg-red-500',
+      default: 'bg-graycolor-6 data-[state=checked]:bg-accentcolor-500',
+      warning: 'bg-graycolor-6 data-[state=checked]:bg-red-500',
       none: '',
     },
     shadow: {
