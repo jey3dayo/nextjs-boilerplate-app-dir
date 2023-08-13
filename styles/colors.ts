@@ -9,16 +9,16 @@ export const radixUiColors = {
   ...green,
 };
 
-const primaryColor = 'neutral';
-const accentColor = 'sky';
+export const grayColor = 'neutral';
+export const accentColor = 'violet';
 
 // TODO: hue-dark, hue-medium, hue-lightでアクセスする
 export const color = {
-  black: tailwindColors[primaryColor]['950'],
-  dark: tailwindColors[primaryColor]['800'],
-  medium: tailwindColors[primaryColor]['500'],
-  light: tailwindColors[primaryColor]['100'],
-  white: tailwindColors[primaryColor]['50'],
+  black: tailwindColors[grayColor]['950'],
+  dark: tailwindColors[grayColor]['800'],
+  medium: tailwindColors[grayColor]['500'],
+  light: tailwindColors[grayColor]['100'],
+  white: tailwindColors[grayColor]['50'],
 };
 
 export const colors = {

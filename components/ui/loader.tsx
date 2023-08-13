@@ -1,5 +1,6 @@
 'use client';
 
+// TODO: RSC対応Spinnerがあれば入れ替えたい
 import { Bars } from 'react-loader-spinner';
 import { color } from '@/styles/colors';
 

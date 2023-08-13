@@ -56,7 +56,7 @@ const DropdownMenuContent = React.forwardRef<
     sideOffset={sideOffset}
     className={cx(
       'min-w-8 z-50 mr-1 p-1',
-      'text-popover-foreground theme rounded-md border shadow-md',
+      'theme rounded-md border text-popover-foreground shadow-md',
       'will-change-[transform] animate-in',
       'data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
       className,
@@ -78,7 +78,7 @@ const DropdownMenuItem = React.forwardRef<
       'item-center group relative mx-1 flex px-2 py-1 text-sm',
       'cursor-default select-none rounded-sm outline-none transition-colors',
       'data-[highlighted]:bg-theme-neutral data-[highlighted]:text-light',
-      'data-[disabled]:pointer-events-none data-[disabled]:text-accent-800 data-[disabled]:opacity-50',
+      'data-[disabled]:pointer-events-none data-[disabled]:text-accentcolor-800 data-[disabled]:opacity-50',
       inset && 'pl-8',
       className,
     )}
