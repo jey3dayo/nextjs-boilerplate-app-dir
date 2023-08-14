@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import * as SelectPrimitive from '@radix-ui/react-select';
-import { Icons } from '@/components/ui/icons';
+import { Icon } from '@/components/ui/icon';
 import { cx } from '@/lib/class-names';
 
 const SelectRoot = SelectPrimitive.Root;
@@ -18,8 +18,8 @@ const SelectTrigger = React.forwardRef<
     ref={ref}
     className={cx(
       'inline-flex h-10 w-full items-center justify-between px-3 py-2',
-      'border-input whitespace-nowrap rounded-md border bg-transparent text-sm leading-none placeholder:text-muted-foreground',
-      'data-[placeholder]:text-accent-400',
+      'whitespace-nowrap rounded-md border border-input bg-transparent text-sm leading-none placeholder:text-muted-foreground',
+      'data-[placeholder]:text-accentcolor-400',
       'disabled:cursor-not-allowed disabled:opacity-50',
       'shadow-focus',
       className,
@@ -28,7 +28,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <Icons.chevronDown className="h-4 w-4 opacity-50" />
+      <Icon name="chevronDown" className="h-4 w-4 opacity-50" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));
@@ -94,7 +94,7 @@ const SelectItem = React.forwardRef<
   >
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
     <SelectPrimitive.ItemIndicator className="absolute left-0 inline-flex w-6 items-center justify-center">
-      <Icons.check className="h-4 w-4" />
+      <Icon name="check" className="h-4 w-4" />
     </SelectPrimitive.ItemIndicator>
   </SelectPrimitive.Item>
 ));
@@ -104,7 +104,7 @@ const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
 >(({ className, ...props }, ref) => (
-  <SelectPrimitive.Separator ref={ref} className={cx('m-1 h-px bg-primary-200', className)} {...props} />
+  <SelectPrimitive.Separator ref={ref} className={cx('m-1 h-px bg-graycolor-200', className)} {...props} />
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
 
@@ -114,7 +114,7 @@ const SelectScrollUpButton = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.SelectScrollUpButton
     ref={ref}
-    className={cx('flex h-6 cursor-default items-center justify-center bg-white text-accent-500', className)}
+    className={cx('flex h-6 cursor-default items-center justify-center bg-white text-accentcolor-500', className)}
     {...props}
   />
 ));
@@ -126,7 +126,7 @@ const SelectScrollDownButton = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.SelectScrollDownButton
     ref={ref}
-    className={cx('flex h-6 cursor-default items-center justify-center bg-white text-accent-500', className)}
+    className={cx('flex h-6 cursor-default items-center justify-center bg-white text-accentcolor-500', className)}
     {...props}
   />
 ));

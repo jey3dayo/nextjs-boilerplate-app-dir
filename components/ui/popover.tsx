@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { cva, VariantProps } from 'class-variance-authority';
-import { Icons, iconSizes } from '@/components/ui/icons';
+import { Icon, iconSizes } from '@/components/ui/icon';
 import { cx } from '@/lib/class-names';
 
 const PopoverRoot = PopoverPrimitive.Root;
@@ -111,7 +111,7 @@ const PopoverClose = React.forwardRef<
     aria-label="メニューを閉じる"
     {...props}
   >
-    {children ? children : <Icons.close className="text-theme-inverse" size={iconSizes['md']} />}
+    {children ? children : <Icon name="close" className="text-theme-inverse" size={iconSizes['md']} />}
   </PopoverPrimitive.Close>
 ));
 PopoverClose.displayName = 'PopoverClose';

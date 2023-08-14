@@ -1,4 +1,5 @@
 /** styles/tailwind.css */
+/** https://ui.shadcn.com/docs/theming */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,32 +7,60 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
-
-    --ring: 215 20.2% 65.1%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64.9%;
+    --radius: 0.5rem;
   }
+
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --ring: 216 34% 17%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 
   body {
     @apply text-dark dark:text-light;
     @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
@@ -54,10 +83,10 @@
     @apply bg-dark dark:bg-light;
   }
   .bg-theme-neutral {
-    @apply bg-primary-700 dark:bg-primary-500;
+    @apply bg-graycolor-700 dark:bg-graycolor-500;
   }
   .bg-theme-accent {
-    @apply bg-accent-500 dark:bg-accent-400;
+    @apply bg-accentcolor-500 dark:bg-accentcolor-400;
   }
 
   /* text */
@@ -68,10 +97,10 @@
     @apply text-light dark:text-dark;
   }
   .text-theme-neutral {
-    @apply text-primary-700 dark:text-primary-500;
+    @apply text-graycolor-700 dark:text-graycolor-500;
   }
   .text-theme-accent {
-    @apply text-accent-500;
+    @apply text-accentcolor-500;
   }
   .text-title {
     @apply text-theme text-3xl font-bold tracking-tight md:text-4xl;
@@ -96,10 +125,10 @@
     @apply bg-medium hover:bg-medium/80;
   }
   .bg-theme-neutral-hover {
-    @apply bg-primary-700 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400;
+    @apply bg-graycolor-700 hover:bg-graycolor-600 dark:bg-graycolor-500 dark:hover:bg-graycolor-400;
   }
   .bg-theme-accent-hover {
-    @apply bg-accent-500 hover:bg-accent-400;
+    @apply bg-accentcolor-500 hover:bg-accentcolor-400;
   }
   .text-theme-hover {
     @apply text-dark hover:text-light dark:text-light dark:hover:text-dark;
@@ -109,11 +138,11 @@
   }
 
   .ring-theme-accent {
-    @apply ring-accent-300 dark:ring-accent-400;
+    @apply ring-accentcolor-300 dark:ring-accentcolor-400;
   }
 
   .border-theme-accent {
-    @apply border-accent-300 dark:border-accent-400;
+    @apply border-accentcolor-300 dark:border-accentcolor-400;
   }
 
   /* animation */
@@ -126,22 +155,26 @@
 
   /* ui */
   .bg-input-range {
-    @apply bg-primary-200 dark:bg-primary-500;
+    @apply bg-graycolor-200 dark:bg-graycolor-500;
   }
   .shadow-focus {
     @apply shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)]
-      focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.accent.300)]
+      focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.accentcolor.300)]
       focus:outline-none;
   }
   .shadow-deep {
     @apply shadow-[0_2px_10px] shadow-dark focus:shadow-[0_0_0_2px] focus:shadow-dark;
   }
   .shadow-neumorphism {
-    @apply shadow-[6px_6px_20px_theme(colors.primary.200),-6px_-6px_20px_theme(colors.primary.50)]
+    @apply shadow-[6px_6px_20px_theme(colors.graycolor.200),-6px_-6px_20px_theme(colors.graycolor.50)]
   dark:shadow-[6px_6px_20px_theme(colors.slate.800),-6px_-6px_20px_theme(colors.slate.700)];
   }
+  .shadow-highlight {
+    @apply shadow-[-15px_0px_30px_-10px_theme(colors.blue.200),0px_0px_30px_-10px_theme(colors.blue.200),15px_0px_30px_-10px_theme(colors.blue.200)]
+    dark:shadow-[-15px_0px_30px_-10px_theme(colors.blue.900),0px_0px_30px_-10px_theme(colors.blue.900),15px_0px_30px_-10px_theme(colors.blue.900)];
+  }
   .box {
-    @apply text-theme shadow-neumorphism rounded-xl bg-slate-50 dark:bg-primary-800;
+    @apply text-theme shadow-highlight rounded-xl bg-slate-50 dark:bg-graycolor-800;
   }
 }
 
