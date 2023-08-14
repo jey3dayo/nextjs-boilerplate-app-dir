@@ -4,83 +4,35 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'https://cdn.jsdelivr.net/npm/@radix-ui/colors@latest/blue.css';
-
 @layer base {
   :root {
-    /* TODO: graycolor */
-    --graycolor-1: var(--slate-1);
-    --graycolor-2: var(--slate-2);
-    --graycolor-3: var(--slate-3);
-    --graycolor-4: var(--slate-4);
-    --graycolor-5: var(--slate-5);
-    --graycolor-6: var(--slate-6);
-    --graycolor-7: var(--slate-7);
-    --graycolor-8: var(--slate-8);
-    --graycolor-9: var(--slate-9);
-    --graycolor-10: var(--slate-10);
-    --graycolor-11: var(--slate-11);
-    --graycolor-12: var(--slate-12);
-    --accent-1: var(--blue-1);
-    --accent-2: var(--blue-2);
-    --accent-3: var(--blue-3);
-    --accent-4: var(--blue-4);
-    --accent-5: var(--blue-5);
-    --accent-6: var(--blue-6);
-    --accent-7: var(--blue-7);
-    --accent-8: var(--blue-8);
-    --accent-9: var(--blue-9);
-    --accent-10: var(--blue-10);
-    --accent-11: var(--blue-11);
-    --accent-12: var(--blue-12);
+    --background: var(--mauve1);
+    --foreground: var(--mauve12);
+    --card: var(--mauve1);
+    --card-foreground: var(--mauve12);
+    --popover: var(--mauve1);
+    --popover-foreground: var(--mauve12);
 
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5% 64.9%;
+    --primary: var(--violet11);
+    --primary-foreground: var(--mauve12);
+    --secondary: var(--teal10);
+    --secondary-foreground: var(--mauve3);
+    --muted: var(--mauve3);
+    --muted-foreground: var(--mauve10);
+    --accent: var(--teal11);
+    --accent-foreground: var(--mauve12);
+    --destructive: var(--tomato11);
+    --destructive-foreground: var(--mauve12);
+    --border: var(--mauve4);
+    --input: var(--mauve4);
+    --ring: var(--mauve8);
     --radius: 0.5rem;
   }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
+  .dark {}
 
   body {
     @apply text-dark dark:text-light;
-    /* TODO: slate to graycolor */
+    /* TODO: slate to gray-color */
     @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
   }
 

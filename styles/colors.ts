@@ -1,18 +1,11 @@
-import { blackA, green, mauve, slate, violet } from '@radix-ui/colors';
 import tailwindColors from 'tailwindcss/colors';
-
-export const radixUiColors = {
-  ...blackA,
-  ...violet,
-  ...mauve,
-  ...slate,
-  ...green,
-};
+import { toRadixVar, toRadixVars } from 'windy-radix-palette/vars';
 
 export const grayColor = 'neutral';
+export const radixGrayColor = 'mauve';
 export const accentColor = 'violet';
 
-// TODO: hue-dark, hue-medium, hue-lightでアクセスする
+// TODO: radix-colorによるアクセスを考慮
 export const color = {
   black: tailwindColors[grayColor]['950'],
   dark: tailwindColors[grayColor]['800'],
@@ -21,25 +14,9 @@ export const color = {
   white: tailwindColors[grayColor]['50'],
 };
 
-// FIXME: これだとdarkmodeに対応できてない
-// keyをアクセスしやすいように書換
-interface ColorMap {
-  [key: string]: string;
-}
-const graycolor: ColorMap = {};
-const accentcolor: ColorMap = {};
-Object.keys(slate).forEach((key, index) => {
-  graycolor[index + 1] = slate[key as keyof typeof slate];
-  accentcolor[index + 1] = violet[key as keyof typeof violet];
-});
-
 export const colors = {
-  // TODO: accentcolorに変更したい
-  accentcolor: tailwindColors[accentColor],
-  // accentcolor: violet,
-  graycolor,
-  hue: color,
-  ...radixUiColors,
+  'accent-color': toRadixVars(accentColor),
+  'gray-color': toRadixVars(radixGrayColor),
 
   border: 'hsl(var(--border))',
   input: 'hsl(var(--input))',

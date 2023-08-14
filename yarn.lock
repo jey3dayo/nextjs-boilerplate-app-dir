@@ -8194,6 +8194,8 @@ __metadata:
     ts-node: ^10.9.1
     tsconfig-paths: ^4.2.0
     typescript: 5.1.6
+    windy-radix-palette: ^0.6.1
+    windy-radix-typography: ^0.2.1
     zod: ^3.21.4
   languageName: unknown
   linkType: soft
@@ -11109,6 +11111,26 @@ __metadata:
   dependencies:
     string-width: ^1.0.2 || 2 || 3 || 4
   checksum: d5fc37cd561f9daee3c80e03b92ed3e84d80dde3365a8767263d03dacfc8fa06b065ffe1df00d8c2a09f731482fcacae745abfbb478d4af36d0a891fad4834d3
+  languageName: node
+  linkType: hard
+
+"windy-radix-palette@npm:^0.6.1":
+  version: 0.6.1
+  resolution: "windy-radix-palette@npm:0.6.1"
+  peerDependencies:
+    "@radix-ui/colors": ">=0.1.0"
+    tailwindcss: ">=3.0.0"
+  checksum: 6e6291d23df3fa97e23c06ffe9b4dfa108978c7fffdaae971fff427a4ea1cd158216942da1994309c5375f116310451b89f1b12c52e75e58de6d5a11441a7b73
+  languageName: node
+  linkType: hard
+
+"windy-radix-typography@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "windy-radix-typography@npm:0.2.1"
+  peerDependencies:
+    "@tailwindcss/typography": ">=0.1.0"
+    tailwindcss: ">=3.0.0"
+  checksum: 2a845e638371ff75647f53a6100100f5dfd64f14a3a45f2a9e15ce7013bca99415c3ac9547a8a69b21229ec7d779740ef5a8ce3de1d7da75196cf0ffb0d99403
   languageName: node
   linkType: hard
 
