@@ -4,7 +4,7 @@ import typography from '@tailwindcss/typography';
 import animate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import windyRadixPalette from 'windy-radix-palette';
-import { toRadixVar, toRadixVars } from 'windy-radix-palette/vars';
+import { toRadixVar } from 'windy-radix-palette/vars';
 import windyRadixTypography from 'windy-radix-typography';
 import { accentColor, color, colors, radixGrayColor } from './styles/colors';
 
@@ -34,7 +34,6 @@ const config = {
         ...color,
         // TODO: removed theme, theme-inverse
         theme: toRadixVar(radixGrayColor, 12),
-        description: toRadixVar(accentColor, 11),
         'theme-inverse': toRadixVar(radixGrayColor, 1),
         'theme-accent': toRadixVar(accentColor, 11),
       },
@@ -43,7 +42,6 @@ const config = {
         theme: toRadixVar(radixGrayColor, 2),
         'theme-inverse': toRadixVar(radixGrayColor, 9),
         'theme-neutral': toRadixVar(radixGrayColor, 9),
-        'theme-accent': toRadixVar(accentColor, 8),
         'theme-accent': toRadixVar(accentColor, 8),
       },
       ringColor: color,

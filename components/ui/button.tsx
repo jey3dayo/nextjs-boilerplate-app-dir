@@ -3,7 +3,7 @@ import { cva, VariantProps } from 'class-variance-authority';
 import { cx } from '@/lib/class-names';
 
 const layoutStyle = 'relative inline-flex items-center justify-center';
-const designStyle = 'rounded-lg text-base font-medium';
+const designStyle = 'rounded-md text-base font-medium';
 const disabledStyle = 'disabled:pointer-events-none disabled:opacity-50';
 const animationStyle = 'transition will-change-[transform,opacity] ease-in-out';
 
@@ -13,7 +13,7 @@ const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].j
       default: 'bg-theme-neutral-hover text-light',
       dark: 'bg-medium-hover',
       accent: 'bg-theme-accent-hover text-light',
-      icon: 'text-theme text-xs font-medium leading-6',
+      icon: 'text-xs font-medium leading-6 text-theme',
       inherit: 'bg-inherit',
     },
     size: {

@@ -24,7 +24,7 @@ const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
   DropdownMenuPrimitive.DropdownMenuSeparatorProps
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.Separator ref={ref} className={cx('bg-theme-inverse mx-1 my-1 h-px', className)} {...props} />
+  <DropdownMenuPrimitive.Separator ref={ref} className={cx('mx-1 my-1 h-px bg-theme-inverse', className)} {...props} />
 ));
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
 
@@ -38,7 +38,7 @@ const DropdownMenuLabel = React.forwardRef<
     ref={ref}
     className={cx(
       'px-2 pt-1 leading-5',
-      'text-theme-accent select-none text-xs font-semibold',
+      'select-none text-xs font-semibold text-theme-accent',
       inset && 'pl-8',
       className,
     )}
@@ -78,7 +78,7 @@ const DropdownMenuItem = React.forwardRef<
       'item-center group relative mx-1 flex px-2 py-1 text-sm',
       'cursor-default select-none rounded-sm outline-none transition-colors',
       'data-[highlighted]:bg-theme-neutral data-[highlighted]:text-light',
-      'data-[disabled]:pointer-events-none data-[disabled]:text-accentcolor-800 data-[disabled]:opacity-50',
+      'data-[disabled]:pointer-events-none data-[disabled]:text-accent-color-9 data-[disabled]:opacity-50',
       inset && 'pl-8',
       className,
     )}

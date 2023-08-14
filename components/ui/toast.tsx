@@ -105,7 +105,7 @@ const ToastTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
-    className={cx('text-theme mb-1 text-sm font-medium [grid-area:_title]', className)}
+    className={cx('mb-1 text-sm font-medium text-theme [grid-area:_title]', className)}
     {...props}
   />
 ));
@@ -117,7 +117,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={cx('text-theme m-0 text-xs leading-[1.3] opacity-60 [grid-area:_description]', className)}
+    className={cx('m-0 text-xs leading-[1.3] text-theme opacity-60 [grid-area:_description]', className)}
     {...props}
   />
 ));

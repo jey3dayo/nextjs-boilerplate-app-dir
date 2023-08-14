@@ -39,6 +39,10 @@ export const colors = {
     DEFAULT: 'hsl(var(--muted))',
     foreground: 'hsl(var(--muted-foreground))',
   },
+  weak: {
+    DEFAULT: 'hsl(var(--weak))',
+    foreground: 'hsl(var(--weak-foreground))',
+  },
   accent: {
     DEFAULT: 'hsl(var(--accent))',
     foreground: 'hsl(var(--accent-foreground))',
