@@ -4,9 +4,9 @@ import typography from '@tailwindcss/typography';
 import animate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import windyRadixPalette from 'windy-radix-palette';
-import { toRadixVar } from 'windy-radix-palette/vars';
+import { toRadixVar, toRadixVars } from 'windy-radix-palette/vars';
 import windyRadixTypography from 'windy-radix-typography';
-import { accentColor, color, colors, radixGrayColor } from './styles/colors';
+import { accentColor, color, radixGrayColor } from './styles/colors';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -27,7 +27,48 @@ const config = {
       },
     },
     extend: {
-      colors,
+      colors: {
+        'accent-color': toRadixVars(accentColor),
+        'gray-color': toRadixVars(radixGrayColor),
+
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
+          foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        weak: {
+          DEFAULT: 'hsl(var(--weak))',
+          foreground: 'hsl(var(--weak-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+      },
 
       // TODO: colorsにまとめる
       textColor: {
