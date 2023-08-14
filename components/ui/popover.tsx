@@ -111,7 +111,7 @@ const PopoverClose = React.forwardRef<
     aria-label="メニューを閉じる"
     {...props}
   >
-    {children ? children : <Icon name="close" className="text-theme-inverse" size={iconSizes['md']} />}
+    {children ? children : <Icon name="x" className="text-theme-inverse" size={iconSizes['md']} />}
   </PopoverPrimitive.Close>
 ));
 PopoverClose.displayName = 'PopoverClose';
