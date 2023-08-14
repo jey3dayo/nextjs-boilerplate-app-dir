@@ -23,7 +23,9 @@ export const color = {
 
 // FIXME: これだとdarkmodeに対応できてない
 // keyをアクセスしやすいように書換
-interface ColorMap { [key: string]: string; };
+interface ColorMap {
+  [key: string]: string;
+}
 const graycolor: ColorMap = {};
 const accentcolor: ColorMap = {};
 Object.keys(slate).forEach((key, index) => {
