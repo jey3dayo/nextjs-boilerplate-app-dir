@@ -3,11 +3,13 @@ import * as SwitchPrimitives from '@radix-ui/react-switch';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cx } from '@/lib/class-names';
 
-const thumbLayoutStyle = 'block w-[21px] h-[21px]';
-const thumbDesignStyle = 'bg-white rounded-full h-[25px] w-[42px]';
-const thumbAnimationStyle =
-  'transition-transform duration-100 translate-x-0.5 data-[state=checked]:translate-x-[19px] will-change-[transform,opacity] ease-in-out';
-const switchThumbVariants = cva([thumbLayoutStyle, thumbDesignStyle, thumbAnimationStyle].join(' '), {
+const thumbStyles = {
+  layout: 'block w-[21px] h-[21px]',
+  design: 'bg-white rounded-full h-[25px] w-[42px]',
+  animation:
+    'transition-transform duration-100 translate-x-0.5 data-[state=checked]:translate-x-[19px] will-change-[transform,opacity] ease-in-out',
+};
+const switchThumbVariants = cva(Object.values(thumbStyles).join(' '), {
   variants: {
     variant: {
       default: '',
@@ -38,11 +40,13 @@ const SwitchThumb = React.forwardRef<
 ));
 SwitchThumb.displayName = SwitchPrimitives.Thumb.displayName;
 
-const rootLayoutStyle = 'relative outline-none cursor-default';
-const rootDesignStyle = 'h-[25px] w-[42px] cursor-pointer rounded-full';
-const rootAnimationStyle = 'transition will-change-[transform,opacity] ease-in-out';
-const disabledStyle = 'disabled:cursor-not-allowed disabled:opacity-60';
-const switchRootVariants = cva([rootLayoutStyle, rootDesignStyle, rootAnimationStyle, disabledStyle].join(' '), {
+const rootStyles = {
+  layout: 'relative outline-none cursor-default',
+  design: 'h-[25px] w-[42px] cursor-pointer rounded-full',
+  animation: 'transition will-change-[transform,opacity] ease-in-out',
+  disabled: 'disabled:cursor-not-allowed disabled:opacity-60',
+};
+const switchRootVariants = cva(Object.values(rootStyles).join(' '), {
   variants: {
     variant: {
       default: 'bg-input data-[state=checked]:bg-primary',

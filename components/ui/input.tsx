@@ -2,13 +2,14 @@ import * as React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cx } from '@/lib/class-names';
 
-const layoutStyle = 'appearance-none flex items-center justify-center w-full';
-const designStyle = 'leading-tight rounded bg-transparent';
-const inputStyle =
-  'text-foreground file:text-sm file:font-medium file:bg-transparent placeholder:text-muted-foreground';
-const disabledStyle = 'disabled:cursor-not-allowed disabled:opacity-50';
-const animationStyle = 'transition will-change-[transform,opacity] ease-in-out';
-const variants = cva([layoutStyle, designStyle, inputStyle, disabledStyle, animationStyle].join(''), {
+const styles = {
+  layout: 'appearance-none flex items-center justify-center w-full',
+  design: 'leading-tight rounded bg-transparent',
+  input: 'text-foreground file:text-sm file:font-medium file:bg-transparent placeholder:text-muted-foreground',
+  disabled: 'disabled:cursor-not-allowed disabled:opacity-50',
+  animation: 'transition will-change-[transform,opacity] ease-in-out',
+};
+const variants = cva(Object.values(styles).join(' '), {
   variants: {
     variant: {
       text: 'h-10 px-3 py-2',
