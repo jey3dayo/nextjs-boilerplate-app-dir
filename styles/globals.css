@@ -6,53 +6,29 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5% 64.9%;
+    --background: var(--mauve1);
+    --foreground: var(--mauve12);
+    --card: var(--mauve1);
+    --card-foreground: var(--mauve12);
+    --popover: var(--mauve1);
+    --popover-foreground: var(--mauve12);
+
+    --primary: var(--violet11);
+    --primary-foreground: var(--mauve12);
+    --secondary: var(--teal10);
+    --secondary-foreground: var(--mauve3);
+    --muted: var(--mauve3);
+    --muted-foreground: var(--mauve10);
+    --weak: var(--mauve11);
+    --weak-foreground: var(--mauve2);
+    --accent: var(--teal10);
+    --accent-foreground: var(--mauve12);
+    --destructive: var(--red9);
+    --destructive-foreground: var(--mauve12);
+    --border: var(--mauve8);
+    --input: var(--mauve5);
+    --ring: var(--mauve8);
     --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
-  }
-
-  body {
-    @apply text-dark dark:text-light;
-    @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
   }
 
   * {
@@ -60,89 +36,36 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
+
+    /* TODO: slate to gray-color */
+    @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
   }
 }
 
 @layer components {
-  .theme {
-    @apply bg-light text-dark dark:bg-dark dark:text-light;
-  }
-  .theme-inverse {
-    @apply bg-dark text-light dark:bg-light dark:text-dark;
-  }
-
-  /* bg */
-  .bg-theme {
-    @apply bg-hue-white dark:bg-hue-dark;
-  }
-  .bg-theme-inverse {
-    @apply bg-dark dark:bg-light;
-  }
-  .bg-theme-neutral {
-    @apply bg-graycolor-700 dark:bg-graycolor-500;
-  }
-  .bg-theme-accent {
-    @apply bg-accentcolor-500 dark:bg-accentcolor-400;
+  .box {
+    @apply shadow-highlight rounded-md bg-gray-color-3 text-foreground;
   }
 
   /* text */
-  .text-theme {
-    @apply text-dark dark:text-light;
-  }
-  .text-theme-inverse {
-    @apply text-light dark:text-dark;
-  }
-  .text-theme-neutral {
-    @apply text-graycolor-700 dark:text-graycolor-500;
-  }
-  .text-theme-accent {
-    @apply text-accentcolor-500;
-  }
   .text-title {
-    @apply text-theme text-3xl font-bold tracking-tight md:text-4xl;
+    @apply text-3xl font-bold tracking-tight text-foreground md:text-4xl;
   }
   .text-subtitle {
-    @apply text-theme-accent text-base font-semibold leading-7;
+    @apply text-base font-semibold leading-7 text-primary;
   }
   .text-description {
-    @apply text-theme-neutral text-xl leading-8;
-  }
-
-  .border-theme {
-    @apply border border-dark/20 dark:border-light/10;
-  }
-
-  .border-theme-top {
-    @apply border-t border-dark/20 dark:border-light/10;
-  }
-
-  /* hover */
-  .bg-medium-hover {
-    @apply bg-medium hover:bg-medium/80;
-  }
-  .bg-theme-neutral-hover {
-    @apply bg-graycolor-700 hover:bg-graycolor-600 dark:bg-graycolor-500 dark:hover:bg-graycolor-400;
-  }
-  .bg-theme-accent-hover {
-    @apply bg-accentcolor-500 hover:bg-accentcolor-400;
-  }
-  .text-theme-hover {
-    @apply text-dark hover:text-light dark:text-light dark:hover:text-dark;
-  }
-  .text-theme-inverse-hover {
-    @apply text-light hover:text-dark dark:text-dark dark:hover:text-light;
-  }
-
-  .ring-theme-accent {
-    @apply ring-accentcolor-300 dark:ring-accentcolor-400;
-  }
-
-  .border-theme-accent {
-    @apply border-accentcolor-300 dark:border-accentcolor-400;
+    @apply text-base font-semibold leading-7 text-weak;
   }
 
   /* animation */
@@ -154,27 +77,22 @@
   }
 
   /* ui */
-  .bg-input-range {
-    @apply bg-graycolor-200 dark:bg-graycolor-500;
-  }
   .shadow-focus {
     @apply shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)]
-      focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.accentcolor.300)]
+      focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.primary-color.4)]
       focus:outline-none;
   }
   .shadow-deep {
     @apply shadow-[0_2px_10px] shadow-dark focus:shadow-[0_0_0_2px] focus:shadow-dark;
   }
   .shadow-neumorphism {
-    @apply shadow-[6px_6px_20px_theme(colors.graycolor.200),-6px_-6px_20px_theme(colors.graycolor.50)]
+    /* TODO: slate to gray-color */
+    @apply shadow-[6px_6px_20px_theme(colors.gray-color.3),-6px_-6px_20px_theme(colors.gray-color.1)]
   dark:shadow-[6px_6px_20px_theme(colors.slate.800),-6px_-6px_20px_theme(colors.slate.700)];
   }
   .shadow-highlight {
     @apply shadow-[-15px_0px_30px_-10px_theme(colors.blue.200),0px_0px_30px_-10px_theme(colors.blue.200),15px_0px_30px_-10px_theme(colors.blue.200)]
     dark:shadow-[-15px_0px_30px_-10px_theme(colors.blue.900),0px_0px_30px_-10px_theme(colors.blue.900),15px_0px_30px_-10px_theme(colors.blue.900)];
-  }
-  .box {
-    @apply text-theme shadow-highlight rounded-xl bg-slate-50 dark:bg-graycolor-800;
   }
 }
 

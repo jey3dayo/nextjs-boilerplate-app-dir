@@ -24,7 +24,7 @@ const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
   DropdownMenuPrimitive.DropdownMenuSeparatorProps
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.Separator ref={ref} className={cx('bg-theme-inverse mx-1 my-1 h-px', className)} {...props} />
+  <DropdownMenuPrimitive.Separator ref={ref} className={cx('m-1 h-px bg-border', className)} {...props} />
 ));
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
 
@@ -36,12 +36,7 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
-    className={cx(
-      'px-2 pt-1 leading-5',
-      'text-theme-accent select-none text-xs font-semibold',
-      inset && 'pl-8',
-      className,
-    )}
+    className={cx('px-2 pt-1 leading-5', 'select-none text-xs font-semibold text-primary', inset && 'pl-8', className)}
     {...props}
   />
 ));
@@ -56,7 +51,7 @@ const DropdownMenuContent = React.forwardRef<
     sideOffset={sideOffset}
     className={cx(
       'min-w-8 z-50 mr-1 p-1',
-      'theme rounded-md border text-popover-foreground shadow-md',
+      'rounded-md border bg-popover text-popover-foreground shadow-md',
       'will-change-[transform] animate-in',
       'data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1',
       className,
@@ -77,8 +72,8 @@ const DropdownMenuItem = React.forwardRef<
     className={cx(
       'item-center group relative mx-1 flex px-2 py-1 text-sm',
       'cursor-default select-none rounded-sm outline-none transition-colors',
-      'data-[highlighted]:bg-theme-neutral data-[highlighted]:text-light',
-      'data-[disabled]:pointer-events-none data-[disabled]:text-accentcolor-800 data-[disabled]:opacity-50',
+      'data-[highlighted]:bg-weak data-[highlighted]:text-background',
+      'data-[disabled]:pointer-events-none data-[disabled]:text-primary-color-9 data-[disabled]:opacity-50',
       inset && 'pl-8',
       className,
     )}

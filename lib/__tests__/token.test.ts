@@ -35,14 +35,14 @@ describe('verifyJwt', () => {
 
   it('should return payload', async () => {
     const input =
-      'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNsajN1dG9hYzAwMDBoOWc2MXYwb3c0Z3UiLCJpYXQiOjE2ODgzNjg1MDYsImlzcyI6InVybjpBd2Vzb21lIEFwcDppc3N1ZXIiLCJhdWQiOiJ1cm46QXdlc29tZSBBcHA6Y2xpZW50X2lkIiwiZXhwIjoxNjkwOTYwNTA2fQ.1c99_p9a2Tsf4ZihsZopO529-j0fLWyctcocVLpxKuI';
+      'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNsajN1dG9hYzAwMDBoOWc2MXYwb3c0Z3UiLCJpYXQiOjE2OTIwNzIyODMsImlzcyI6InVybjpBd2Vzb21lIEFwcDppc3N1ZXIiLCJhdWQiOiJ1cm46QXdlc29tZSBBcHA6Y2xpZW50X2lkIiwiZXhwIjoxNjk0NjY0MjgzfQ.kWleR61Qae-VwEhaLIoXoFUd_geq7zhdVmxKxRk9wHM';
     const payload = await verifyJwt(input, options);
     expect(payload).toMatchObject({
       id: userId,
-      iat: 1688368506,
+      iat: 1692072283,
       iss: 'urn:Awesome App:issuer',
       aud: 'urn:Awesome App:client_id',
-      exp: 1690960506,
+      exp: 1694664283,
     });
   });
 

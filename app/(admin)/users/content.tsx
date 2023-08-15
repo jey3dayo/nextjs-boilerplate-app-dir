@@ -37,12 +37,12 @@ async function Content() {
 
   const currentUser = await getCurrentUser();
   return (
-    <div className="min-h-[86vh] md:mx-auto md:min-h-[82vh] md:w-full md:max-w-3xl">
+    <div className="min-h-[86vh] text-foreground md:mx-auto md:min-h-[82vh] md:w-full md:max-w-3xl">
       <div className="pl-2 md:pr-4">
         <div className="md:max-w-md">
           <p className="text-subtitle">{titles.admin}</p>
           <h1 className="text-title mt-1">{titles.users}</h1>
-          <p className="text-description mt-4">権限変更とユーザの停止が行えます</p>
+          <p className="text-description mt-4 text-xl">権限変更とユーザの停止が行えます</p>
         </div>
       </div>
 
@@ -63,8 +63,8 @@ async function Content() {
                 className="h-11 w-11 rounded-full"
               />
               <div className="ml-3 flex-1">
-                <p className="text-theme text-sm font-medium">{user.name}</p>
-                <p className="text-theme-neutral text-sm">{user.email}</p>
+                <p className="text-sm font-medium">{user.name}</p>
+                <p className="text-sm text-weak">{user.email}</p>
               </div>
               <SelectRole
                 roles={roles}

@@ -2,18 +2,20 @@ import * as React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 import { cx } from '@/lib/class-names';
 
-const layoutStyle = 'relative inline-flex items-center justify-center';
-const designStyle = 'rounded-lg text-base font-medium';
-const disabledStyle = 'disabled:pointer-events-none disabled:opacity-50';
-const animationStyle = 'transition will-change-[transform,opacity] ease-in-out';
+const styles = {
+  layout: 'relative inline-flex items-center justify-center',
+  design: 'rounded-md text-base font-medium',
+  disabled: 'disabled:pointer-events-none disabled:opacity-50',
+  animation: 'transition will-change-[transform,opacity] ease-in-out',
+};
 
-const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].join(' '), {
+const variants = cva(Object.values(styles).join(' '), {
   variants: {
     variant: {
-      default: 'bg-theme-neutral-hover text-light',
-      dark: 'bg-medium-hover',
-      accent: 'bg-theme-accent-hover text-light',
-      icon: 'text-theme text-xs font-medium leading-6',
+      default: 'bg-gray-color-8 text-foreground hover:bg-gray-color-7',
+      dark: 'bg-weak hover:bg-weak/80',
+      accent: 'bg-primary-color-8 text-light hover:bg-primary-color-7',
+      icon: 'text-xs font-medium leading-6 text-foreground',
       inherit: 'bg-inherit',
     },
     size: {
