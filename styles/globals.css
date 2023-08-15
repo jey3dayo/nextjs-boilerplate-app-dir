@@ -12,7 +12,6 @@
     --card-foreground: var(--mauve12);
     --popover: var(--mauve1);
     --popover-foreground: var(--mauve12);
-
     --primary: var(--violet11);
     --primary-foreground: var(--mauve12);
     --secondary: var(--teal10);
@@ -30,7 +29,6 @@
     --ring: var(--mauve8);
     --radius: 0.5rem;
   }
-
   * {
     @apply border-border;
   }
