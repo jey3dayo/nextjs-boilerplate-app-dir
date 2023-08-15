@@ -18,7 +18,7 @@
     "dev": "next dev",
     "dev:proxy": "next dev & local-ssl-proxy --config local-ssl-proxy-config.json",
     "dev:proxy:turbo": "next dev --turbo & local-ssl-proxy --config local-ssl-proxy-config.json",
-    "test": "env-cmd -f ./.env.test run-p lint prettier:check depcruise jest component:headless type-check",
+    "test": "env-cmd -f ./.env.test run-p lint prettier:check depcruise jest component:headless",
     "test:quick": "run-p lint prettier:check depcruise type-check",
     "pre-build": "run-s format build",
     "build": "prisma generate && next build",
