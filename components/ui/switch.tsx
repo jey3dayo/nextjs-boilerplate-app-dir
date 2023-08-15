@@ -12,6 +12,7 @@ const switchThumbVariants = cva([thumbLayoutStyle, thumbDesignStyle, thumbAnimat
     variant: {
       default: '',
       warning: '',
+      accent: '',
       none: '',
     },
     shadow: {

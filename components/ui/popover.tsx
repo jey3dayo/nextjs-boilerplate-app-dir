@@ -50,7 +50,7 @@ const PopoverContent = React.forwardRef<
     sticky={sticky ?? 'always'}
     className={cx(
       className,
-      'theme focus shadow-focus w-[94vw] rounded px-8 py-4 opacity-95',
+      'focus shadow-focus w-[94vw] rounded bg-popover px-8 py-4 opacity-95',
       'state-open-slide-in transition will-change-[transform,opacity] animate-in',
     )}
     {...props}
@@ -88,7 +88,7 @@ const popoverCloseVariants = cva('', {
         'absolute inline-flex justify-center items-center',
         'rounded cursor-default shadow-focus',
         'right-1 top-1 h-8 w-8',
-        'bg-medium-hover',
+        'bg-gray-color-7 hover:bg-gray-color-8',
       ),
     },
   },
@@ -111,7 +111,7 @@ const PopoverClose = React.forwardRef<
     aria-label="メニューを閉じる"
     {...props}
   >
-    {children ? children : <Icon name="x" className="text-theme-inverse" size={iconSizes['md']} />}
+    {children ? children : <Icon name="x" size={iconSizes['md']} />}
   </PopoverPrimitive.Close>
 ));
 PopoverClose.displayName = 'PopoverClose';

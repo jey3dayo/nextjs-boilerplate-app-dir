@@ -1,8 +1,10 @@
 import tailwindColors from 'tailwindcss/colors';
+import { toRadixVars } from 'windy-radix-palette/vars';
 
 export const grayColor = 'neutral';
 export const radixGrayColor = 'mauve';
-export const accentColor = 'violet';
+export const primaryColor = 'violet';
+export const accentColor = 'teal';
 
 // TODO: radix-colorによるアクセスを考慮
 export const color = {

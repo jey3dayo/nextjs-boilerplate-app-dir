@@ -37,11 +37,9 @@ function Content() {
         <div className="text-destructive-foreground">text-destructive-foreground: var(--mauve12)</div>
       </div>
 
-      <div className="theme p-2 md:mx-auto md:w-full md:max-w-3xl">
+      <div className="bg-background p-2 md:mx-auto md:w-full md:max-w-3xl">
         <div className="py-4">
           <div className="mb-4">
-            <div className="text-theme">text-theme</div>
-            <div className="text-theme-accent">theme-accent</div>
             <div className="text-dark">dark</div>
             <div className="text-medium">medium</div>
             <div className="text-light">light</div>

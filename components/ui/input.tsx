@@ -4,14 +4,15 @@ import { cx } from '@/lib/class-names';
 
 const layoutStyle = 'appearance-none flex items-center justify-center w-full';
 const designStyle = 'leading-tight rounded bg-transparent';
-const inputStyle = 'text-theme file:text-sm file:font-medium file:bg-transparent placeholder:text-muted-foreground';
+const inputStyle =
+  'text-foreground file:text-sm file:font-medium file:bg-transparent placeholder:text-muted-foreground';
 const disabledStyle = 'disabled:cursor-not-allowed disabled:opacity-50';
 const animationStyle = 'transition will-change-[transform,opacity] ease-in-out';
-const variants = cva([layoutStyle, designStyle, inputStyle, disabledStyle, animationStyle].join(' '), {
+const variants = cva([layoutStyle, designStyle, inputStyle, disabledStyle, animationStyle].join(''), {
   variants: {
     variant: {
       text: 'h-10 px-3 py-2',
-      range: 'bg-input-range h-2 cursor-pointer',
+      range: 'h-2 cursor-pointer bg-input',
       none: '',
     },
     textSize: {
@@ -21,7 +22,7 @@ const variants = cva([layoutStyle, designStyle, inputStyle, disabledStyle, anima
       none: '',
     },
     border: {
-      default: 'border file:border-0',
+      default: 'border border-border file:border-0',
       none: '',
     },
     shadow: {
@@ -30,7 +31,7 @@ const variants = cva([layoutStyle, designStyle, inputStyle, disabledStyle, anima
     },
     focus: {
       default:
-        'focus:border-theme-accent focus:ring-theme-accent focus:outline-none focus:ring-[2px] focus:ring-offset-0',
+        'focus:border-primary focus:outline-none focus:ring-[2px] focus:ring-primary-color-4 focus:ring-offset-0',
       none: '',
     },
   },

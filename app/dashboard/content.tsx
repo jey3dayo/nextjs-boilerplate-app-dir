@@ -74,7 +74,7 @@ function Dashboard() {
       </div>
 
       <InView>
-        <figure className="theme p-8 md:flex md:rounded-xl md:p-0">
+        <figure className="bg-background p-8 md:flex md:rounded-md md:p-0">
           <Image
             className="mx-auto h-auto w-24 rounded-full md:w-48 md:rounded-none"
             src="/image/sarah-dayan.jpg"
@@ -88,8 +88,8 @@ function Dashboard() {
               <p className="text-lg font-medium">{description}</p>
             </blockquote>
             <figcaption className="font-medium">
-              <div className="text-theme-accent">{text}</div>
-              <div className="text-theme-neutral">Staff Engineer, Algolia</div>
+              <div className="text-primary">{text}</div>
+              <div className="text-weak">Staff Engineer, Algolia</div>
             </figcaption>
           </div>
         </figure>

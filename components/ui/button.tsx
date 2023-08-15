@@ -10,10 +10,10 @@ const animationStyle = 'transition will-change-[transform,opacity] ease-in-out';
 const variants = cva([layoutStyle, designStyle, disabledStyle, animationStyle].join(' '), {
   variants: {
     variant: {
-      default: 'bg-theme-neutral-hover text-light',
-      dark: 'bg-medium-hover',
-      accent: 'bg-theme-accent-hover text-light',
-      icon: 'text-xs font-medium leading-6 text-theme',
+      default: 'bg-gray-color-8 text-foreground hover:bg-gray-color-7',
+      dark: 'bg-weak hover:bg-weak/80',
+      accent: 'bg-primary-color-8 text-light hover:bg-primary-color-7',
+      icon: 'text-xs font-medium leading-6 text-foreground',
       inherit: 'bg-inherit',
     },
     size: {

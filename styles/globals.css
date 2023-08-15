@@ -25,16 +25,10 @@
     --accent-foreground: var(--mauve12);
     --destructive: var(--red9);
     --destructive-foreground: var(--mauve12);
-    --border: var(--mauve4);
-    --input: var(--mauve4);
+    --border: var(--mauve8);
+    --input: var(--mauve5);
     --ring: var(--mauve8);
     --radius: 0.5rem;
-  }
-
-  body {
-    @apply text-dark dark:text-light;
-    /* TODO: slate to gray-color */
-    @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
   }
 
   * {
@@ -42,19 +36,25 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     font-feature-settings:
       'rlig' 1,
       'calt' 1;
+
+    /* TODO: slate to gray-color */
+    @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
   }
 }
 
 @layer components {
-  .theme {
-    @apply bg-light text-dark dark:bg-dark dark:text-light;
-  }
-  .theme-inverse {
-    @apply bg-dark text-light dark:bg-light dark:text-dark;
+  .box {
+    @apply shadow-highlight rounded-md bg-gray-color-3 text-foreground;
   }
 
   /* text */
@@ -68,39 +68,6 @@
     @apply text-base font-semibold leading-7 text-weak;
   }
 
-  /* border */
-  .border-theme {
-    @apply border border-dark/20 dark:border-light/10;
-  }
-  .border-theme-top {
-    @apply border-t border-dark/20 dark:border-light/10;
-  }
-
-  /* hover */
-  .bg-medium-hover {
-    @apply bg-medium hover:bg-medium/80;
-  }
-  .bg-theme-neutral-hover {
-    @apply bg-gray-color-8 hover:bg-gray-color-7;
-  }
-  .bg-theme-accent-hover {
-    @apply bg-accent-color-6 hover:bg-accent-color-5;
-  }
-  .text-theme-hover {
-    @apply text-dark hover:text-light dark:text-light dark:hover:text-dark;
-  }
-  .text-theme-inverse-hover {
-    @apply text-light hover:text-dark dark:text-dark dark:hover:text-light;
-  }
-
-  .ring-theme-accent {
-    @apply ring-accent-color-4;
-  }
-
-  .border-theme-accent {
-    @apply border-accent-color-4;
-  }
-
   /* animation */
   .state-open-slide-in {
     @apply data-[state=open]:data-[side=bottom]:slide-in-from-top-1
@@ -110,12 +77,9 @@
   }
 
   /* ui */
-  .bg-input-range {
-    @apply bg-gray-color-3;
-  }
   .shadow-focus {
     @apply shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2)]
-      focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.accent-color.4)]
+      focus:shadow-[0_10px_38px_-10px_hsla(206,22%,7%,.35),0_10px_20px_-15px_hsla(206,22%,7%,.2),0_0_0_2px_theme(colors.primary-color.4)]
       focus:outline-none;
   }
   .shadow-deep {
@@ -129,10 +93,6 @@
   .shadow-highlight {
     @apply shadow-[-15px_0px_30px_-10px_theme(colors.blue.200),0px_0px_30px_-10px_theme(colors.blue.200),15px_0px_30px_-10px_theme(colors.blue.200)]
     dark:shadow-[-15px_0px_30px_-10px_theme(colors.blue.900),0px_0px_30px_-10px_theme(colors.blue.900),15px_0px_30px_-10px_theme(colors.blue.900)];
-  }
-  .box {
-    /* TODO: slider消えたの確認 */
-    @apply shadow-highlight rounded-xl bg-gray-color-3 text-foreground;
   }
 }
 

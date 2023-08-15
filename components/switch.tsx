@@ -35,7 +35,7 @@ function Switch({
   return (
     <div className="flex items-center justify-center">
       {label && (
-        <label className="pr-[15px] text-[15px] leading-none text-theme" htmlFor="airplane-mode">
+        <label className="pr-[15px] text-[15px] leading-none text-foreground" htmlFor="airplane-mode">
           {label}
         </label>
       )}
