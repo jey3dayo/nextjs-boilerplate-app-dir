@@ -1,5 +1,4 @@
 import tailwindColors from 'tailwindcss/colors';
-import { toRadixVars } from 'windy-radix-palette/vars';
 
 export const grayColor = 'neutral';
 export const radixGrayColor = 'mauve';

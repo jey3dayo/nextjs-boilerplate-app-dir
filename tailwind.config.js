@@ -4,9 +4,9 @@ import typography from '@tailwindcss/typography';
 import animate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import windyRadixPalette from 'windy-radix-palette';
-import { toRadixVar, toRadixVars } from 'windy-radix-palette/vars';
+import { toRadixVars } from 'windy-radix-palette/vars';
 import windyRadixTypography from 'windy-radix-typography';
-import { accentColor, color, radixGrayColor } from './styles/colors';
+import { accentColor, color, primaryColor, radixGrayColor } from './styles/colors';
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -28,8 +28,10 @@ const config = {
     },
     extend: {
       colors: {
-        'accent-color': toRadixVars(accentColor),
+        'primary-color': toRadixVars(primaryColor),
         'gray-color': toRadixVars(radixGrayColor),
+        'accent-color': toRadixVars(accentColor),
+        ...color,
 
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -69,27 +71,6 @@ const config = {
           foreground: 'hsl(var(--card-foreground))',
         },
       },
-
-      // TODO: colorsにまとめる
-      textColor: {
-        ...color,
-        // TODO: removed theme, theme-inverse
-        theme: toRadixVar(radixGrayColor, 12),
-        'theme-inverse': toRadixVar(radixGrayColor, 1),
-        'theme-accent': toRadixVar(accentColor, 11),
-      },
-      backgroundColor: {
-        ...color,
-        theme: toRadixVar(radixGrayColor, 2),
-        'theme-inverse': toRadixVar(radixGrayColor, 9),
-        'theme-neutral': toRadixVar(radixGrayColor, 9),
-        'theme-accent': toRadixVar(accentColor, 8),
-      },
-      ringColor: color,
-      borderColor: color,
-      fill: color,
-      boxShadowColor: color,
-
       borderRadius: {
         lg: `var(--radius)`,
         md: `calc(var(--radius) - 2px)`,

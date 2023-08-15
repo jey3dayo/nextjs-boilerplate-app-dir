@@ -73,7 +73,7 @@ const DropdownMenuItem = React.forwardRef<
       'item-center group relative mx-1 flex px-2 py-1 text-sm',
       'cursor-default select-none rounded-sm outline-none transition-colors',
       'data-[highlighted]:bg-weak data-[highlighted]:text-background',
-      'data-[disabled]:text-primary-color-9 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      'data-[disabled]:pointer-events-none data-[disabled]:text-primary-color-9 data-[disabled]:opacity-50',
       inset && 'pl-8',
       className,
     )}

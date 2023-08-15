@@ -115,7 +115,7 @@ const SelectScrollUpButton = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.SelectScrollUpButton
     ref={ref}
-    className={cx('text-primary-color-6 flex h-6 cursor-default items-center justify-center bg-background', className)}
+    className={cx('flex h-6 cursor-default items-center justify-center bg-background text-primary-color-6', className)}
     {...props}
   />
 ));
@@ -127,7 +127,7 @@ const SelectScrollDownButton = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.SelectScrollDownButton
     ref={ref}
-    className={cx('text-primary-color-6 flex h-6 cursor-default items-center justify-center bg-background', className)}
+    className={cx('flex h-6 cursor-default items-center justify-center bg-background text-primary-color-6', className)}
     {...props}
   />
 ));
