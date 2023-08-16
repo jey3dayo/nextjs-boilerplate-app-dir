@@ -5,7 +5,6 @@ export const radixGrayColor = 'mauve';
 export const primaryColor = 'violet';
 export const accentColor = 'teal';
 
-// TODO: radix-colorによるアクセスを考慮
 export const color = {
   black: tailwindColors[grayColor]['950'],
   dark: tailwindColors[grayColor]['800'],
