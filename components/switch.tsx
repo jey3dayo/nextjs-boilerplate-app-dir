@@ -21,15 +21,15 @@ function Switch({
 }) {
   const [checked, setChecked] = React.useState(value);
 
-  async function onChange(checked: boolean) {
+  function onChange(checked: boolean) {
     setChecked(checked);
-    const result = await _onChange(id, checked);
-
-    if (result) {
-      toast({
-        title: '保存しました',
-      });
-    }
+    void _onChange(id, checked).then((result) => {
+      if (result) {
+        toast({
+          title: '保存しました',
+        });
+      }
+    });
   }
 
   return (

@@ -22,7 +22,7 @@ export function Toaster() {
 
   return (
     <ToastProvider swipeDirection="right">
-      {toasts.map(function ({ id, title, action, timestamp, ...props }) {
+      {toasts.map(function ({ id, title, timestamp, ...props }) {
         return (
           <Toast key={id} {...props}>
             <ToastTitle>{title}</ToastTitle>

@@ -42,14 +42,15 @@ export function Select(props: {
 }) {
   const [value, setValue] = React.useState(`${props.value}`);
 
-  async function onSelect(v: string) {
+  function onSelect(v: string) {
     setValue(v);
-    const result = await props.onChange(props.id, v);
-    if (result) {
-      toast({
-        title: `保存しました`,
-      });
-    }
+    void props.onChange(props.id, v).then((result) => {
+      if (result) {
+        toast({
+          title: `保存しました`,
+        });
+      }
+    });
   }
 
   return (

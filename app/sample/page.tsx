@@ -1,6 +1,6 @@
 import Content from '@/app/sample/content';
 
-async function Page(): Promise<JSX.Element> {
+function Page() {
   return (
     <main>
       <Content />

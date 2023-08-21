@@ -58,9 +58,9 @@ export function Popover(): JSX.Element {
             >
               <span className="font-medium text-light dark:text-dark">
                 {status === 'authenticated' ? (
-                  <span onClick={() => signOut()}>{titles.signOut}</span>
+                  <span onClick={() => void signOut()}>{titles.signOut}</span>
                 ) : (
-                  <span onClick={() => signIn()}>{titles.signIn}</span>
+                  <span onClick={() => void signIn()}>{titles.signIn}</span>
                 )}
               </span>
             </Link>

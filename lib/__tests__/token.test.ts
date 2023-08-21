@@ -6,7 +6,7 @@ import { getOptions, signJwt, verifyJwt } from '@/lib/token';
 const userId = 'clj3utoac0000h9g61v0ow4gu';
 
 describe('getOptions', () => {
-  it('should return options', async () => {
+  it('should return options', () => {
     const options = getOptions(env.NEXTAUTH_SECRET, env.NEXT_PUBLIC_APP_NAME);
     expect(options).toHaveProperty('secret');
     expect(options.secret).toBeInstanceOf(Uint8Array);

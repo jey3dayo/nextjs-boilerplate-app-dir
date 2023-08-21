@@ -1,3 +1,10 @@
+import { PrismaClient } from '@prisma/client';
+
+declare global {
+  // eslint-disable-next-line no-var
+  var cachedPrisma: PrismaClient | undefined;
+}
+
 declare global {
   export type ReactProps = {
     className?: string;

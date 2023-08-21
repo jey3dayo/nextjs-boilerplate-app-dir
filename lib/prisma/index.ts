@@ -1,11 +1,7 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import { debugQueryMode } from '@/config';
 
-declare global {
-  var cachedPrisma: PrismaClient<Prisma.PrismaClientOptions, Prisma.LogLevel>;
-}
-
-async function onQuery(event: Prisma.QueryEvent) {
+function onQuery(event: Prisma.QueryEvent) {
   console.log(`${event?.query} ${event?.params}`);
 }
 
@@ -17,7 +13,7 @@ if (process.env.NODE_ENV === 'production') {
     if (debugQueryMode) {
       global.cachedPrisma = new PrismaClient({ log: [{ emit: 'event', level: 'query' }] });
 
-      global.cachedPrisma.$on('query', onQuery);
+      global.cachedPrisma.$on('query' as never, onQuery);
     } else {
       global.cachedPrisma = new PrismaClient();
     }
