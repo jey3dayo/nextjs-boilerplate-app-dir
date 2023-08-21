@@ -13,3 +13,5 @@ export const messages = {
   internalServerError: 'Internal Server Error.',
   cantModifyMyself: '自分の権限は修正できません',
 };
+
+export const ignoreMessages = ['/application/deployConfigs', '/keyboardRegion/regionChanged'];

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { getToken } from 'next-auth/jwt';
 import { withAuth } from 'next-auth/middleware';
 import { accessAllowPages, loginPage } from '@/config';
+import { ignoreMessages } from '@/constants/messages';
 import { checkPath } from '@/lib/check-path';
 import { isExpired } from '@/lib/date';
 import { debug } from '@/lib/log';
@@ -10,7 +11,9 @@ import { getHeaders } from '@/lib/middleware-utils';
 // proxy環境下でのredirect用
 export default withAuth(
   async function middleware(req: NextRequest) {
-    debug(`[middleware][${req.method}] ${req.nextUrl.pathname}`);
+    if (!ignoreMessages.includes(req.nextUrl.pathname)) {
+      debug(`[middleware][${req.method}] ${req.nextUrl.pathname}`);
+    }
     const responseInit = { request: { headers: getHeaders(req) } };
 
     // 認証がいらないページか確認
