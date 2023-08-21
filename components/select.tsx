@@ -42,18 +42,19 @@ export function Select(props: {
 }) {
   const [value, setValue] = React.useState(`${props.value}`);
 
-  async function onSelect(v: string) {
+  function onSelect(v: string) {
     setValue(v);
-    const result = await props.onChange(props.id, v);
-    if (result) {
-      toast({
-        title: `保存しました`,
-      });
-    }
+    void props.onChange(props.id, v).then((result) => {
+      if (result) {
+        toast({
+          title: `保存しました`,
+        });
+      }
+    });
   }
 
   return (
-    <SelectRoot value={value} onValueChange={void onSelect} disabled={props.disabled}>
+    <SelectRoot value={value} onValueChange={onSelect} disabled={props.disabled}>
       <SelectTrigger className={cx(props.className)} aria-label={props['aria-label']}>
         <SelectValue aria-label={value} placeholder={props?.placeholder ?? ''} />
       </SelectTrigger>
