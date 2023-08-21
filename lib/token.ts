@@ -29,8 +29,8 @@ export async function signJwt(payload: Payload, options: Options) {
   const jwt = await new jose.SignJWT(payload)
     .setProtectedHeader({ alg: alg })
     .setIssuedAt()
-    .setIssuer(opts.issuer as string)
-    .setAudience(opts.audience as string)
+    .setIssuer(opts.issuer)
+    .setAudience(opts.audience)
     .setExpirationTime(opts.expiresIn)
     .sign(secret);
 
@@ -44,7 +44,7 @@ export async function verifyJwt(jwt: string, options: Options): Promise<jose.JWT
     const { payload, protectedHeader } = await jose.jwtVerify(jwt, secret, opts);
     if (protectedHeader.alg !== alg) throw new Error('invalid protectedHeader');
 
-    return payload as jose.JWTPayload;
+    return payload;
   } catch (e) {
     return undefined;
   }

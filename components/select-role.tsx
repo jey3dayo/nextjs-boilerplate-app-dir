@@ -2,7 +2,7 @@ import React from 'react';
 import { Role, RoleId, UserId } from '@/types/user';
 import { Select, SelectGroupValue } from '@/components/select';
 
-export async function SelectRole(props: {
+export function SelectRole(props: {
   className: string;
   roles: Role[];
   userId: UserId;

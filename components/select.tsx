@@ -53,7 +53,7 @@ export function Select(props: {
   }
 
   return (
-    <SelectRoot value={value} onValueChange={onSelect} disabled={props.disabled}>
+    <SelectRoot value={value} onValueChange={void onSelect} disabled={props.disabled}>
       <SelectTrigger className={cx(props.className)} aria-label={props['aria-label']}>
         <SelectValue aria-label={value} placeholder={props?.placeholder ?? ''} />
       </SelectTrigger>

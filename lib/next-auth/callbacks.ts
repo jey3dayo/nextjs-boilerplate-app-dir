@@ -31,7 +31,7 @@ const callbacks: NextAuthOptions['callbacks'] = {
       role: dbUser.role.name,
     } as Session['user'] as JWT;
   },
-  async session({ session, token }) {
+  session({ session, token }) {
     if (token) {
       if (session?.user) {
         session.user.id = token.id;

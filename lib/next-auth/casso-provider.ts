@@ -2,7 +2,7 @@ import { OAuthConfig, OAuthUserConfig } from 'next-auth/providers/oauth';
 import CassoLogo from 'public/image/casso-favicon.ico';
 import { baseUrl } from '@/constants/api';
 
-export interface CassoProfile extends Record<string, any> {
+export interface CassoProfile extends Record<string, unknown> {
   aud: string;
   azp: string;
   email: string;

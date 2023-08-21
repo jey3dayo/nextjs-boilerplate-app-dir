@@ -24,7 +24,7 @@ export async function PATCH(req: NextRequest, context: z.infer<typeof routeConte
     const { params } = routeContextSchema.parse(context);
 
     // bodyの検証
-    const body = await req.json();
+    const body: unknown = await req.json();
     const payload = userNameSchema.parse(body);
 
     // 自分の権限は編集できない

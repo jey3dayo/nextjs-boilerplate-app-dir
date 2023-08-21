@@ -44,7 +44,7 @@ function Switch({
         className="peer h-[24px] w-[42px] rounded-full"
         id="user"
         checked={checked}
-        onCheckedChange={onChange}
+        onCheckedChange={void onChange}
         disabled={disabled}
       >
         <SwitchThumb variant={variant} className="h-[21px] w-[21px]" />
