@@ -1,6 +1,17 @@
 {
-  "extends": ["@commitlint/config-conventional"],
+  "extends": [
+    "@commitlint/config-conventional"
+  ],
   "rules": {
-    "subject-case": [2, "always", ["lower-case", "upper-case", "sentence-case"]]
+    "subject-case": [
+      2,
+      "always",
+      [
+        "lower-case",
+        "upper-case",
+        "start-case",
+        "sentence-case"
+      ]
+    ]
   }
 }
