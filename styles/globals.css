@@ -29,26 +29,6 @@
     --ring: var(--mauve8);
     --radius: 0.5rem;
   }
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply text-foreground;
-    font-feature-settings:
-      'rlig' 1,
-      'calt' 1;
-
-    /* TODO: slate to gray-color */
-    @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
-  }
-
-  ::selection {
-    @apply bg-primary text-foreground;
-  }
-  ::-moz-selection {
-    @apply bg-primary text-foreground;
-  }
 }
 
 @media (max-width: 640px) {
@@ -98,6 +78,29 @@
   .shadow-highlight {
     @apply shadow-[-15px_0px_30px_-10px_theme(colors.blue.200),0px_0px_30px_-10px_theme(colors.blue.200),15px_0px_30px_-10px_theme(colors.blue.200)]
     dark:shadow-[-15px_0px_30px_-10px_theme(colors.blue.900),0px_0px_30px_-10px_theme(colors.blue.900),15px_0px_30px_-10px_theme(colors.blue.900)];
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+
+    /* TODO: slate to gray-color */
+    @apply bg-gradient-to-tr from-white via-cyan-50/40 to-indigo-50 dark:from-neutral-950/20 dark:via-slate-950/60 dark:to-stone-950;
+  }
+
+  ::selection {
+    @apply bg-primary text-foreground;
+  }
+  ::-moz-selection {
+    @apply bg-primary text-foreground;
   }
 }
 

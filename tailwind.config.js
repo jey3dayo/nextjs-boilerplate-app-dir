@@ -10,7 +10,11 @@ import { accentColor, color, primaryColor, radixGrayColor } from './styles/color
 
 /** @type {import('tailwindcss').Config} */
 const config = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}', './app/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   options: {
     // https://purgecss.com/safelisting.html#patterns
     safelist: {
@@ -27,6 +31,10 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      },
       colors: {
         'primary-color': toRadixVars(primaryColor),
         'gray-color': toRadixVars(radixGrayColor),
