@@ -20,13 +20,14 @@ jobs:
       - uses: fluxninja/openai-pr-reviewer@3e70a189d4b85f11a70daff12b7862d620f9d8b5 # https://github.com/coderabbitai/openai-pr-reviewer/releases/tag/0.54.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_PR_REVIEWER_OPENAI_API_KEY }} # 環境に応じて変更
+          OPENAI_API_KEY: ${{ secrets.OPENAI_PR_REVIEWER_OPENAI_API_KEY }}
         with:
           debug: false
           review_simple_changes: false
           review_comment_lgtm: false
-          openai_light_model: gpt-3.5-turbo-0613 # v0.54.0 デフォルトでは gpt-3.5-turbo が使われる
-          openai_heavy_model: gpt-3.5-turbo-0613 # v0.54.0 デフォルトでは gpt-3.5-turbo が使われる
+          openai_base_url: ${{ secrets.OPENAI_PR_REVIEWER_OPENAI_BASE_URL }}
+          openai_light_model: ${{ secrets.OPENAI_PR_REVIEWER_OPENAI_MODEL }}
+          openai_heavy_model: ${{ secrets.OPENAI_PR_REVIEWER_OPENAI_MODEL }}
           system_message: |
             あなたは `@openai` (a.k.a. `github-actions[bot]`) です。
             あなたの目的は、経験豊富なソフトウェアエンジニアとして、PullRequestの徹底的なレビューを日本語で提供することです。
