@@ -20,11 +20,11 @@ export async function Header() {
     <>
       <nav
         className={cx(
-          'z-20 flex flex-wrap items-center justify-between bg-dark/90 px-2 md:fixed md:left-0 md:top-0 md:w-full',
+          'z-20 flex flex-wrap items-center justify-between px-2 md:fixed md:left-0 md:top-0 md:w-full',
           height,
         )}
       >
-        <Link href="/" className="shadow-focus mr-6 flex shrink-0 items-center rounded-sm px-1 text-white">
+        <Link href="/" className="mr-6 flex shrink-0 items-center rounded-sm px-1 text-foreground">
           <div className="mx-auto h-auto w-12 sm:h-auto sm:w-16">
             <Logo />
           </div>
@@ -45,7 +45,7 @@ export async function Header() {
               <Link
                 key={v.href}
                 href={v.href}
-                className="shadow-focus mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium text-light hover:bg-dark"
+                className="mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium hover:bg-background/90"
                 aria-current="page"
               >
                 {v.name}

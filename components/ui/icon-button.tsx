@@ -21,7 +21,7 @@ MenuIconButton.displayName = 'MenuIconButton';
 const DarkIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, size, variant, iconColor, ...props }, ref) => (
     <Button className={className} variant={variant} size={size} aria-label="ダークモード" ref={ref} {...props}>
-      <Icon name="moon" color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+      <Icon name="moon" color={iconColor} size={size ? iconSizes[size] : undefined} />
     </Button>
   ),
 );
@@ -30,7 +30,7 @@ DarkIconButton.displayName = 'DarkIconButton';
 const LightIconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
   ({ className, size, variant, iconColor, ...props }, ref) => (
     <Button className={className} variant={variant} size={size} aria-label="ライトモード" ref={ref} {...props}>
-      <Icon name="sun" color={iconColor ?? defaultIconColor} size={size ? iconSizes[size] : undefined} />
+      <Icon name="sun" color={iconColor} size={size ? iconSizes[size] : undefined} />
     </Button>
   ),
 );

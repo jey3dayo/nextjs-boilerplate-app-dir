@@ -15,7 +15,7 @@ const variants = cva(Object.values(styles).join(' '), {
       default: 'bg-gray-color-8 text-foreground hover:bg-gray-color-7',
       dark: 'bg-weak hover:bg-weak/80',
       accent: 'bg-primary-color-8 text-light hover:bg-primary-color-7',
-      icon: 'text-xs font-medium leading-6 text-foreground',
+      icon: 'text-xs font-medium leading-6 text-foreground hover:bg-background/90',
       inherit: 'bg-inherit',
     },
     size: {
