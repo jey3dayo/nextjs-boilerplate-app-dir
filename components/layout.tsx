@@ -20,3 +20,12 @@ export function HeroLayout(props: ReactProps) {
     </div>
   );
 }
+
+export function HeadlessLayout(props: ReactProps) {
+  return (
+    <div className="flex min-h-screen flex-col">
+      {props.children}
+      <Footer />
+    </div>
+  );
+}

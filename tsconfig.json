@@ -33,6 +33,6 @@
       "prisma/*": ["./prisma/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.mts", "**/*.tsx", "**/*.js", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.mts", "**/*.tsx", "**/*.js", "**/*.mjs", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
