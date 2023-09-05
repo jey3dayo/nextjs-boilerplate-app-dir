@@ -17,13 +17,8 @@ export async function Header() {
   const navigation = getNavigationByRole(user?.role);
 
   return (
-    <>
-      <nav
-        className={cx(
-          'z-20 flex flex-wrap items-center justify-between px-2 md:fixed md:left-0 md:top-0 md:w-full',
-          height,
-        )}
-      >
+    <header className="sticky z-20 border-b bg-background/80 px-0 md:left-0 md:top-0 md:w-full">
+      <nav className={cx('flex h-16 flex-wrap items-center justify-between px-3 md:space-x-0 md:px-4', height)}>
         <Link href="/" className="mr-6 flex shrink-0 items-center rounded-sm px-1 text-foreground">
           <div className="mx-auto h-auto w-12 sm:h-auto sm:w-16">
             <Logo />
@@ -34,12 +29,12 @@ export async function Header() {
           </div>
         </Link>
 
-        <div className="md:hidden">
+        <div className="justify-end md:hidden">
           <ThemeSwitch size="md" />
           <Popover />
         </div>
 
-        <div className="hidden w-full md:flex md:w-auto md:items-center md:justify-between">
+        <div className="hidden w-full md:flex md:w-auto md:items-center md:justify-end">
           <div className="grow text-lg">
             {navigation.map((v) => (
               <Link
@@ -56,8 +51,6 @@ export async function Header() {
           <UserMenu />
         </div>
       </nav>
-      {/* FIXME: height固定*/}
-      <div className={cx('hidden md:flex', height)} />
-    </>
+    </header>
   );
 }
