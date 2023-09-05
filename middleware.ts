@@ -35,7 +35,7 @@ export default withAuth(
   },
   {
     callbacks: {
-      async authorized() {
+      authorized() {
         // This is a work-around for handling redirect on auth pages.
         return true;
       },
