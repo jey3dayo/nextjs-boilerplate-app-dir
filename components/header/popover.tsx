@@ -24,7 +24,7 @@ export function Popover(): JSX.Element {
   return (
     <PopoverRoot modal={false}>
       <PopoverTrigger asChild>
-        <MenuIconButton variant="dark" size="md" />
+        <MenuIconButton className="mx-1" />
       </PopoverTrigger>
       <PopoverAnchor asChild>
         <PopoverAnchorChild />

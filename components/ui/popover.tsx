@@ -3,7 +3,7 @@
 import * as React from 'react';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
 import { cva, VariantProps } from 'class-variance-authority';
-import { Icon, iconSizes } from '@/components/ui/icon';
+import { CloseIconButton } from '@/components/ui/icon-button';
 import { cx } from '@/lib/class-names';
 
 const PopoverRoot = PopoverPrimitive.Root;
@@ -50,7 +50,7 @@ const PopoverContent = React.forwardRef<
     sticky={sticky ?? 'always'}
     className={cx(
       className,
-      'focus shadow-focus w-[94vw] rounded bg-popover px-8 py-4 opacity-95',
+      'focus shadow-focus z-40 w-[94vw] rounded bg-popover px-8 py-4 opacity-95',
       'state-open-slide-in transition will-change-[transform,opacity] animate-in',
     )}
     {...props}
@@ -86,9 +86,8 @@ const popoverCloseVariants = cva('', {
     variant: {
       default: cx(
         'absolute inline-flex justify-center items-center',
-        'rounded cursor-default shadow-focus',
-        'right-1 top-1 h-8 w-8',
-        'bg-gray-color-7 hover:bg-gray-color-8',
+        'rounded cursor-default bg-transparent',
+        'right-2 top-2 h-6 w-6',
       ),
     },
   },
@@ -105,13 +104,8 @@ const PopoverClose = React.forwardRef<
     variant?: 'default';
   }
 >(({ className, variant, children, ...props }, ref) => (
-  <PopoverPrimitive.Close
-    className={cx(popoverCloseVariants({ variant, className }))}
-    ref={ref}
-    aria-label="メニューを閉じる"
-    {...props}
-  >
-    {children ? children : <Icon name="x" size={iconSizes['md']} />}
+  <PopoverPrimitive.Close className={cx(popoverCloseVariants({ variant, className }))} ref={ref} {...props}>
+    {children ? children : <CloseIconButton aria-label="メニューを閉じる" />}
   </PopoverPrimitive.Close>
 ));
 PopoverClose.displayName = 'PopoverClose';
