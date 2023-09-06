@@ -1,8 +1,21 @@
+import { Inter as FontSans } from 'next/font/google';
+import localFont from 'next/font/local';
 import { env } from '@/env.mjs';
 import { Provider } from '@/components/provider';
 import { nextFont } from '@/lib/next-font';
 import '@/styles/globals.css';
 import { cx } from '@/lib/class-names';
+
+const fontSans = FontSans({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
+
+// Font files can be colocated inside of `pages`
+const fontHeading = localFont({
+  src: '../assets/fonts/CalSans-SemiBold.woff2',
+  variable: '--font-heading',
+});
 
 export const metadata = {
   title: env.NEXT_PUBLIC_APP_NAME,
@@ -12,7 +25,7 @@ export const metadata = {
 export default function RootLayout(props: RootLayoutProps) {
   return (
     <html lang="ja" className={cx('antialiased', nextFont.className)} suppressHydrationWarning>
-      <body>
+      <body className={cx('font-sans antialiased', fontSans.variable, fontHeading.variable)}>
         <Provider>{props.children}</Provider>
       </body>
     </html>
