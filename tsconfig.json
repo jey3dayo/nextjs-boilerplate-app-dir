@@ -30,9 +30,20 @@
     "paths": {
       "@/*": ["./*"],
       "public/*": ["./public/*"],
-      "prisma/*": ["./prisma/*"]
+      "prisma/*": ["./prisma/*"],
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.mts", "**/*.tsx", "**/*.js", "**/*.mjs", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.mts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.mjs",
+    ".next/types/**/*.ts",
+    "contentlayer.config.ts",
+    ".contentlayer/generated"
+  ],
   "exclude": ["node_modules"]
 }
