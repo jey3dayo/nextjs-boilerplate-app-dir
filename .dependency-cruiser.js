@@ -34,6 +34,7 @@ module.exports = {
           'app/api/*',
           'app/.*/loading.tsx',
           'lib/log.ts',
+          '.contentlayer/*',
         ],
       },
       to: {},
@@ -190,7 +191,7 @@ module.exports = {
        for a complete list
     */
     doNotFollow: {
-      path: 'node_modules',
+      path: 'node_modules|.contentlayer',
     },
 
     /* conditions specifying which dependencies to exclude
