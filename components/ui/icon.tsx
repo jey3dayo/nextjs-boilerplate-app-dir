@@ -6,6 +6,7 @@ interface IconProps extends LucideProps {
   name: keyof typeof dynamicIconImports;
 }
 
+// TODO: removed dynamic load
 const Icon = ({ name, ...props }: IconProps) => {
   const LucideIcon = dynamic(dynamicIconImports[name]);
 

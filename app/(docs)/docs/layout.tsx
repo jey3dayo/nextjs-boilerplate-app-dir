@@ -1,4 +1,5 @@
 import Sidebar from '@/components/docs/sidebar';
+import '@/styles/mdx.css';
 
 export default function DocsLayout({ children }: RootLayoutProps) {
   return (
