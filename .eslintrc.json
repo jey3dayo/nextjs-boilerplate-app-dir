@@ -16,6 +16,12 @@
   "ignorePatterns": ["components/svg.tsx"],
   "rules": {
     "tailwindcss/classnames-order": "error",
+    "tailwindcss/no-custom-classname": [
+      "error",
+      {
+        "whitelist": ["mdx"]
+      }
+    ],
     "filenames/match-regex": ["error", "^[a-z0-9]+(-[a-z0-9]+)*(.test|.mock|.config|.d)?$"],
     "no-extra-semi": "off",
     "@typescript-eslint/no-extra-semi": "error",
