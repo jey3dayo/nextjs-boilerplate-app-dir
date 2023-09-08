@@ -7,9 +7,8 @@ declare global {
 
 declare global {
   export type ReactProps = {
-    className?: string;
     children: React.ReactNode;
-  };
+  } & React.HTMLAttributes<HTMLDivElement>;
 
   // FIXME: 解決方法がわかったら対応
   export type RootLayoutProps = {
