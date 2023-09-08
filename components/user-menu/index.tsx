@@ -43,7 +43,7 @@ export async function UserMenu() {
           <DropdownMenuLabel>リンク</DropdownMenuLabel>
           {navigation.map((v) => (
             <Link key={v.href} href={v.href}>
-              <DropdownMenuItem>{v.name}</DropdownMenuItem>
+              <DropdownMenuItem>{v.title}</DropdownMenuItem>
             </Link>
           ))}
           <DropdownMenuGroup>
