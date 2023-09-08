@@ -1591,18 +1591,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/loader@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@mdx-js/loader@npm:2.3.0"
-  dependencies:
-    "@mdx-js/mdx": ^2.0.0
-    source-map: ^0.7.0
-  peerDependencies:
-    webpack: ">=4"
-  checksum: 1217f811b7ee37e4f63ca828642cd47120b7b2994975409b38cdd8550434166520c94f116efa975cb2b14760a5cc7a424848649519ce05d47f96d21b8c2c1066
-  languageName: node
-  linkType: hard
-
 "@mdx-js/mdx@npm:^2.0.0":
   version: 2.3.0
   resolution: "@mdx-js/mdx@npm:2.3.0"
@@ -1625,18 +1613,6 @@ __metadata:
     unist-util-visit: ^4.0.0
     vfile: ^5.0.0
   checksum: d918766a326502ec0b54adee61dc2930daf5b748acb9107f9bfd1ab0dbc4d7b1a4d0dbb9e21da9dd2a9fc2f9950b2973a43c6ba62d3a72eb67a30f6c953e5be8
-  languageName: node
-  linkType: hard
-
-"@mdx-js/react@npm:^2.3.0":
-  version: 2.3.0
-  resolution: "@mdx-js/react@npm:2.3.0"
-  dependencies:
-    "@types/mdx": ^2.0.0
-    "@types/react": ">=16"
-  peerDependencies:
-    react: ">=16"
-  checksum: f45fe779556e6cd9a787f711274480e0638b63c460f192ebdcd77cc07ffa61e23c98cb46dd46e577093e1cb4997a232a848d1fb0ba850ae204422cf603add524
   languageName: node
   linkType: hard
 
@@ -1663,23 +1639,6 @@ __metadata:
   dependencies:
     glob: 7.1.7
   checksum: d60c136e4a8d156b50d4b248eef9918bbf4bd7da293487cdf1f7bc172b07beeae4a2822798942d2f87999af86c53d871ebea592f3d6099ae23a0746d2abf7c73
-  languageName: node
-  linkType: hard
-
-"@next/mdx@npm:^13.4.19":
-  version: 13.4.19
-  resolution: "@next/mdx@npm:13.4.19"
-  dependencies:
-    source-map: ^0.7.0
-  peerDependencies:
-    "@mdx-js/loader": ">=0.15.0"
-    "@mdx-js/react": ">=0.15.0"
-  peerDependenciesMeta:
-    "@mdx-js/loader":
-      optional: true
-    "@mdx-js/react":
-      optional: true
-  checksum: 56d591e43285eb5029a40940e4ce004635043ad7fbed2ce2740ea5a1840fc5b284eb96a8787e5fb6131ccf46d7fbc6320161e20a23775a0dd1493013caf3c52e
   languageName: node
   linkType: hard
 
@@ -3251,13 +3210,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/extend@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "@types/extend@npm:3.0.1"
-  checksum: 1ef199a1386be8744d4642eb5f599588829d9e82c55d399f1437d3543b9343203e6724231235793cb434410afb2d10bfbf18ea28f943d10c2246542c9e5c6203
-  languageName: node
-  linkType: hard
-
 "@types/graceful-fs@npm:^4.1.3":
   version: 4.1.6
   resolution: "@types/graceful-fs@npm:4.1.6"
@@ -3430,7 +3382,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:18.2.21, @types/react@npm:>=16":
+"@types/react@npm:*, @types/react@npm:18.2.21":
   version: 18.2.21
   resolution: "@types/react@npm:18.2.21"
   dependencies:
@@ -10480,16 +10432,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mdast-util-newline-to-break@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "mdast-util-newline-to-break@npm:1.0.0"
-  dependencies:
-    "@types/mdast": ^3.0.0
-    mdast-util-find-and-replace: ^2.0.0
-  checksum: af6524ed28eaf5634a8ef1d89388fefecddea7687b0837d0781e9aaca191c5615b226120778b392d04f903ae0903f31292830143908910e5d39c80151d1e6130
-  languageName: node
-  linkType: hard
-
 "mdast-util-phrasing@npm:^3.0.0":
   version: 3.0.1
   resolution: "mdast-util-phrasing@npm:3.0.1"
@@ -10547,21 +10489,6 @@ __metadata:
   dependencies:
     "@types/mdast": ^4.0.0
   checksum: 35489fb5710d58cbc2d6c8b6547df161a3f81e0f28f320dfb3548a9393555daf07c310c0c497708e67ed4dfea4a06e5655799e7d631ca91420c288b4525d6c29
-  languageName: node
-  linkType: hard
-
-"mdast-util-toc@npm:^6.0.0":
-  version: 6.1.1
-  resolution: "mdast-util-toc@npm:6.1.1"
-  dependencies:
-    "@types/extend": ^3.0.0
-    "@types/mdast": ^3.0.0
-    extend: ^3.0.0
-    github-slugger: ^2.0.0
-    mdast-util-to-string: ^3.1.0
-    unist-util-is: ^5.0.0
-    unist-util-visit: ^4.0.0
-  checksum: 4a50455729c139b1ac648be8edfdaed581c9ed51697bccfbd1f1a70f16dbb4b7014da703135bc49551d116f82517483fd032ed1c5f27741f5c05d78925fe68e6
   languageName: node
   linkType: hard
 
@@ -11530,10 +11457,7 @@ __metadata:
     "@commitlint/config-conventional": ^17.7.0
     "@ianvs/prettier-plugin-sort-imports": ^4.1.0
     "@mapbox/rehype-prism": ^0.8.0
-    "@mdx-js/loader": ^2.3.0
-    "@mdx-js/react": ^2.3.0
     "@next-auth/prisma-adapter": ^1.0.7
-    "@next/mdx": ^13.4.19
     "@prisma/client": ^5.2.0
     "@radix-ui/colors": ^2.1.0
     "@radix-ui/react-avatar": ^1.0.3
@@ -11602,9 +11526,7 @@ __metadata:
     rehype-pretty-code: ^0.10.1
     rehype-slug: ^6.0.0
     remark: ^14.0.3
-    remark-breaks: ^3.0.3
     remark-gfm: ^3.0.1
-    remark-toc: ^8.0.1
     server-only: ^0.0.1
     shiki: ^0.14.4
     start-server-and-test: ^2.0.0
@@ -13293,17 +13215,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"remark-breaks@npm:^3.0.3":
-  version: 3.0.3
-  resolution: "remark-breaks@npm:3.0.3"
-  dependencies:
-    "@types/mdast": ^3.0.0
-    mdast-util-newline-to-break: ^1.0.0
-    unified: ^10.0.0
-  checksum: 054a123aaa1d53e233ef06528e46a986da3180cbd1ac08a192531dc7651b9a329f0ac41ef9dd189f69c05674698e51dc64d69cd97435f1ec64ed0998fec3b3d5
-  languageName: node
-  linkType: hard
-
 "remark-frontmatter@npm:^4.0.1":
   version: 4.0.1
   resolution: "remark-frontmatter@npm:4.0.1"
@@ -13381,17 +13292,6 @@ __metadata:
     mdast-util-to-markdown: ^1.0.0
     unified: ^10.0.0
   checksum: 6004e204fba672ee322c3cf0bef090e95802feedf7ef875f88b120c5e6208f1eb09c014486d5ca42a1e199c0a17ce0ed165fb248c66608458afed4bdca51dd3a
-  languageName: node
-  linkType: hard
-
-"remark-toc@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "remark-toc@npm:8.0.1"
-  dependencies:
-    "@types/mdast": ^3.0.0
-    mdast-util-toc: ^6.0.0
-    unified: ^10.0.0
-  checksum: 4a8d6dbde402c9eece0fc8774c1d639fa5cd8d4ba75a7c2ff848f239d60f52e0d055467bbc11b7871508f0ecac13ec8013a89d4131f0b242bc08fb6fec7de517
   languageName: node
   linkType: hard
 
