@@ -1,12 +1,12 @@
 import fromUnixTime from 'date-fns/fromUnixTime';
-import isBefore from 'date-fns/isBefore';
+import isAfter from 'date-fns/isAfter';
 
 export function isExpired(exp: number | undefined): boolean {
   if (exp === undefined) return false;
 
   const expirationDate = fromUnixTime(exp);
   const currentDate = new Date();
-  return isBefore(expirationDate, currentDate);
+  return isAfter(currentDate, expirationDate);
 }
 
 export function formatDate(input: string | number): string {
