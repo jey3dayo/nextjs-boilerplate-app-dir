@@ -47,8 +47,8 @@ jobs:
       - name: Intall dependencies.
         run: yarn install
 
-      - name: Test
-        run: yarn test
-
       - name: Rebuild the .next/ directory
         run: yarn build:test
+
+      - name: Test
+        run: yarn test
