@@ -92,7 +92,7 @@ module.exports = {
         'available on live with an non-guaranteed version. Fix it by adding the package to the dependencies ' +
         'in your package.json.',
       from: {
-        pathNot: '\\.(spec|test)\\.(js|mjs|cjs|ts|ls|coffee|litcoffee|coffee\\.md)$',
+        pathNot: '\\.(spec|test)\\.(js|mjs|cjs|ts|tsx|ls|coffee|litcoffee|coffee\\.md)$',
       },
       to: {
         dependencyTypes: ['npm-no-pkg', 'npm-unknown'],
