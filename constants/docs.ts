@@ -37,6 +37,10 @@ export const docsConfig: Record<string, Navigation[]> = {
           href: '/docs/documentation/code-blocks',
         },
         {
+          title: 'Style Guide',
+          href: '/docs/documentation/style-guide',
+        },
+        {
           title: 'Disabled',
           href: '/docs/in-progress',
           disabled: true,
