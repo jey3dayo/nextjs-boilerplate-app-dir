@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Icon } from '@/components/ui/icon';
+import { Icons } from '@/components/ui/icon';
 import {
   SelectContent,
   SelectGroup,
@@ -61,7 +61,7 @@ export function Select(props: {
       <SelectPortal>
         <SelectContent>
           <SelectScrollUpButton>
-            <Icon name="chevron-up" />
+            <Icons.chevronUp />
           </SelectScrollUpButton>
           <SelectViewport>
             {props.selectGroups.map((selectGroup, i) => {
@@ -81,7 +81,7 @@ export function Select(props: {
             })}
           </SelectViewport>
           <SelectScrollDownButton>
-            <Icon name="chevron-down" />
+            <Icons.chevronDown />
           </SelectScrollDownButton>
         </SelectContent>
       </SelectPortal>

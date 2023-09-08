@@ -16,7 +16,7 @@ const DropdownMenuArrow = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.DropdownMenuArrow>,
   DropdownMenuPrimitive.DropdownMenuArrowProps
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.DropdownMenuArrow ref={ref} className={cx('fill-white', className)} {...props} />
+  <DropdownMenuPrimitive.DropdownMenuArrow ref={ref} className={cx('fill-border', className)} {...props} />
 ));
 DropdownMenuArrow.displayName = DropdownMenuPrimitive.DropdownMenuArrow.displayName;
 

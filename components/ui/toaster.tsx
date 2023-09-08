@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Icon } from '@/components/ui/icon';
+import { Icons } from '@/components/ui/icon';
 import {
   Toast,
   ToastAction,
@@ -33,7 +33,7 @@ export function Toaster() {
 
             <ToastAction asChild altText="閉じる">
               <Button variant="icon">
-                <Icon name="x" className="h-4 w-4" />
+                <Icons.x className="h-4 w-4" />
               </Button>
             </ToastAction>
             <ToastClose />

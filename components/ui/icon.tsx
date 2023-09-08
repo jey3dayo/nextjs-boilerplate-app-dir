@@ -1,17 +1,36 @@
-import dynamic from 'next/dynamic';
-import { LucideProps } from 'lucide-react';
-import dynamicIconImports from 'lucide-react/dynamicIconImports';
+import {
+  AlertTriangle,
+  Check,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  ChevronUp,
+  HelpCircle,
+  Loader2,
+  Menu,
+  Moon,
+  SunMedium,
+  User,
+  X,
+  type LucideIcon,
+} from 'lucide-react';
 
-interface IconProps extends LucideProps {
-  name: keyof typeof dynamicIconImports;
-}
-
-// TODO: removed dynamic load
-const Icon = ({ name, ...props }: IconProps) => {
-  const LucideIcon = dynamic(dynamicIconImports[name]);
-
-  return <LucideIcon {...props} />;
+const Icons = {
+  x: X,
+  chevronUp: ChevronUp,
+  chevronDown: ChevronDown,
+  chevronLeft: ChevronLeft,
+  chevronRight: ChevronRight,
+  user: User,
+  check: Check,
+  menu: Menu,
+  help: HelpCircle,
+  warning: AlertTriangle,
+  loader: Loader2,
+  sun: SunMedium,
+  moon: Moon,
 };
+
 type Size = 'none' | 'sm' | 'md' | 'lg';
 
 const iconSizes: Record<Size, number | undefined> = {
@@ -21,5 +40,5 @@ const iconSizes: Record<Size, number | undefined> = {
   sm: 20,
 };
 
-export { Icon, iconSizes };
-export type { Size };
+export { Icons, iconSizes };
+export type { LucideIcon as Icon, Size };

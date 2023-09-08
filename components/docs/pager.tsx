@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Doc } from 'contentlayer/generated';
 import { buttonVariants } from '@/components/ui/button';
-import { Icon } from '@/components/ui/icon';
+import { Icons } from '@/components/ui/icon';
 import { docsConfig } from '@/constants/docs';
 import { cx } from '@/lib/class-names';
 
@@ -22,14 +22,14 @@ export function DocsPager({ doc }: { doc: Doc }) {
     <div className="flex flex-row items-center justify-between">
       {pager?.prev && (
         <Link href={pager.prev.href} className={cx(buttonVariants({ variant: 'ghost' }))}>
-          <Icon name="chevron-left" className="mr-2 h-4 w-4" />
+          <Icons.chevronLeft className="mr-2 h-4 w-4" />
           {pager.prev.title}
         </Link>
       )}
       {pager?.next && (
         <Link href={pager.next.href} className={cx(buttonVariants({ variant: 'ghost' }), 'ml-auto')}>
           {pager.next.title}
-          <Icon name="chevron-right" className="ml-2 h-4 w-4" />
+          <Icons.chevronRight className="ml-2 h-4 w-4" />
         </Link>
       )}
     </div>
