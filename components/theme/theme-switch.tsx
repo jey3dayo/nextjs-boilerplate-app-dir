@@ -9,11 +9,12 @@ export function ThemeSwitch({ size = 'sm' }: { size?: Size }) {
   const mounted = useMounted();
   const { resolvedTheme, toggleTheme } = useTheme();
 
-  if (!mounted) return <DarkIconButton className="mx-1" size={size} onClick={toggleTheme} />;
+  const DarkIconBtn = () => <DarkIconButton className="mx-1 bg-transparent" size={size} onClick={toggleTheme} />;
+  if (!mounted) return <DarkIconBtn />;
 
   return resolvedTheme === 'dark' ? (
-    <DarkIconButton className="mx-1" size={size} onClick={toggleTheme} />
+    <DarkIconBtn />
   ) : (
-    <LightIconButton className="mx-1" size={size} onClick={toggleTheme} />
+    <LightIconButton className="mx-1 bg-transparent" size={size} onClick={toggleTheme} />
   );
 }
