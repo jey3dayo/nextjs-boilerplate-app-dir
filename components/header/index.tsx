@@ -43,7 +43,7 @@ export async function Header() {
                 className="mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium hover:bg-background/90"
                 aria-current="page"
               >
-                {v.name}
+                {v.title}
               </Link>
             ))}
           </div>

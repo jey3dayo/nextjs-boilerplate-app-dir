@@ -35,14 +35,14 @@ export function Popover(): JSX.Element {
             <nav className="grid gap-y-8">
               {navigation.map((v) => (
                 <Link
-                  key={v.name}
+                  key={v.title}
                   href={v.href}
                   className={cx(
                     '-my-3 flex items-center rounded-md p-3',
                     'hover:bg-dark/50 hover:text-light dark:hover:bg-light/50 dark:hover:text-light',
                   )}
                 >
-                  <span className="ml-3 text-base font-medium">{v.name}</span>
+                  <span className="ml-3 text-base font-medium">{v.title}</span>
                 </Link>
               ))}
             </nav>

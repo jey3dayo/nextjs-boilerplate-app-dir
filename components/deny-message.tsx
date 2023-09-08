@@ -27,8 +27,8 @@ export async function DenyMessage({
               {titles.signIn} <span aria-hidden="true">&rarr;</span>
             </a>
             {navigation.map((link) => (
-              <a key={link.name} href={link.href}>
-                {link.name} <span aria-hidden="true">&rarr;</span>
+              <a key={link.title} href={link.href}>
+                {link.title} <span aria-hidden="true">&rarr;</span>
               </a>
             ))}
           </div>
