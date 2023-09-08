@@ -44,7 +44,7 @@ jobs:
         if: steps.cache-yarn.outputs.cache-hit != 'true'
         run: yarn info
 
-      - name: Intall dependencies.
+      - name: Install dependencies.
         run: yarn install
 
       - name: Rebuild the .next/ directory
