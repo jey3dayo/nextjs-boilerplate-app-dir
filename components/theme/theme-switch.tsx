@@ -15,6 +15,6 @@ export function ThemeSwitch({ size = 'sm' }: { size?: Size }) {
   return resolvedTheme === 'dark' ? (
     <DarkIconBtn />
   ) : (
-    <LightIconButton className="mx-1 bg-transparent" size={size} onClick={toggleTheme} />
+    <LightIconButton className="mx-1 bg-mauve-3/80" size={size} onClick={toggleTheme} />
   );
 }
