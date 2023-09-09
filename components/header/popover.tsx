@@ -42,7 +42,7 @@ export function Popover(): JSX.Element {
                     'hover:bg-dark/50 hover:text-light dark:hover:bg-light/50 dark:hover:text-light',
                   )}
                 >
-                  <span className="ml-3 text-base font-medium">{v.title}</span>
+                  <span className="ml-3 select-none text-base font-medium">{v.title}</span>
                 </Link>
               ))}
             </nav>
@@ -56,7 +56,7 @@ export function Popover(): JSX.Element {
                 'border border-transparent bg-dark shadow-sm hover:bg-dark dark:bg-light',
               )}
             >
-              <span className="font-medium text-light dark:text-dark">
+              <span className="select-none font-medium text-light dark:text-dark">
                 {status === 'authenticated' ? (
                   <span onClick={() => void signOut()}>{titles.signOut}</span>
                 ) : (
