@@ -21,13 +21,13 @@ export function DocsPager({ doc }: { doc: Doc }) {
   return (
     <div className="flex flex-row items-center justify-between">
       {pager?.prev && (
-        <Link href={pager.prev.href} className={cx(buttonVariants({ variant: 'ghost' }))}>
+        <Link href={pager.prev.href} className={cx(buttonVariants({ variant: 'ghost' }), 'py-1 pl-1 pr-2')}>
           <Icons.chevronLeft className="mr-2 h-4 w-4" />
           {pager.prev.title}
         </Link>
       )}
       {pager?.next && (
-        <Link href={pager.next.href} className={cx(buttonVariants({ variant: 'ghost' }), 'ml-auto')}>
+        <Link href={pager.next.href} className={cx(buttonVariants({ variant: 'ghost' }), 'ml-auto py-1 pl-1 pr-2')}>
           {pager.next.title}
           <Icons.chevronRight className="ml-2 h-4 w-4" />
         </Link>
