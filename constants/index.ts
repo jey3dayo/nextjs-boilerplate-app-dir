@@ -10,6 +10,7 @@ export const titles = {
   users: 'ユーザ管理',
   docs: 'ドキュメント',
   errorPage: 'エラーページ',
+  me: 'プロフィール',
 };
 
 type Navigation = {
