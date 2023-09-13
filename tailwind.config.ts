@@ -1,6 +1,7 @@
 import containerQueries from '@tailwindcss/container-queries';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
+import { Config } from 'tailwindcss';
 import animate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import windyRadixPalette from 'windy-radix-palette';
@@ -8,8 +9,7 @@ import { toRadixVars } from 'windy-radix-palette/vars';
 import windyRadixTypography from 'windy-radix-typography';
 import { accentColor, color, primaryColor, radixGrayColor } from './styles/colors';
 
-/** @type {import('tailwindcss').Config} */
-const config = {
+const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -91,12 +91,12 @@ const config = {
       },
       keyframes: {
         'accordion-down': {
-          from: { height: 0 },
+          from: { height: '0' },
           to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          to: { height: 0 },
+          to: { height: '0' },
         },
       },
       animation: {
