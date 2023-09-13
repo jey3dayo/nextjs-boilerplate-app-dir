@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useMounted } from '@/hooks/use-mounted';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 import { TableOfContents } from '@/lib/toc';
 
 interface TocProps {
@@ -87,13 +87,13 @@ interface TreeProps {
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
   return tree?.items?.length && level < 3 ? (
-    <ul className={cx('m-0 list-none', { 'pl-4': level !== 1 })}>
+    <ul className={cn('m-0 list-none', { 'pl-4': level !== 1 })}>
       {tree.items.map((item, index) => {
         return (
-          <li key={index} className={cx('mt-0 pt-2')}>
+          <li key={index} className={cn('mt-0 pt-2')}>
             <a
               href={item.url}
-              className={cx(
+              className={cn(
                 'inline-block no-underline',
                 item.url === `#${activeItem}` ? 'font-medium text-primary' : 'text-sm text-muted-foreground',
               )}

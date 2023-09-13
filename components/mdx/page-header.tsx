@@ -1,4 +1,4 @@
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   heading: string;
@@ -8,7 +8,7 @@ interface DocsPageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
 export function DocsPageHeader({ heading, text, className, ...props }: DocsPageHeaderProps) {
   return (
     <>
-      <div className={cx('space-y-4', className)} {...props}>
+      <div className={cn('space-y-4', className)} {...props}>
         <h1 className="inline-block text-4xl lg:text-5xl">{heading}</h1>
         {text && <p className="text-xl text-muted-foreground">{text}</p>}
       </div>

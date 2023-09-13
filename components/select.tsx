@@ -17,7 +17,7 @@ import {
   SelectViewport,
 } from '@/components/ui/select';
 import { toast } from '@/components/ui/use-toast';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 export type SelectGroupValue = {
   label: string;
@@ -55,7 +55,7 @@ export function Select(props: {
 
   return (
     <SelectRoot value={value} onValueChange={onSelect} disabled={props.disabled}>
-      <SelectTrigger className={cx(props.className)} aria-label={props['aria-label']}>
+      <SelectTrigger className={cn(props.className)} aria-label={props['aria-label']}>
         <SelectValue aria-label={value} placeholder={props?.placeholder ?? ''} />
       </SelectTrigger>
       <SelectPortal>

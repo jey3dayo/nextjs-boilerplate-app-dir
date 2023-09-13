@@ -4,7 +4,7 @@ import { env } from '@/env.mjs';
 import { Provider } from '@/components/provider';
 import { nextFont } from '@/lib/next-font';
 import '@/styles/globals.css';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -24,8 +24,8 @@ export const metadata = {
 
 export default function RootLayout(props: RootLayoutProps) {
   return (
-    <html lang="ja" className={cx('antialiased', nextFont.className)} suppressHydrationWarning>
-      <body className={cx('font-sans antialiased', fontSans.variable, fontHeading.variable)}>
+    <html lang="ja" className={cn('antialiased', nextFont.className)} suppressHydrationWarning>
+      <body className={cn('font-sans antialiased', fontSans.variable, fontHeading.variable)}>
         <Provider>{props.children}</Provider>
       </body>
     </html>

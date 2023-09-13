@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 const styles = {
   layout: 'relative inline-flex items-center justify-center',
@@ -58,7 +58,7 @@ const Button = React.forwardRef<HTMLButtonElement, Props>(
       shadow = 'icon';
     }
 
-    return <button className={cx(variants({ variant, size, shadow, duration, className }))} ref={ref} {...props} />;
+    return <button className={cn(variants({ variant, size, shadow, duration, className }))} ref={ref} {...props} />;
   },
 );
 Button.displayName = 'Button';

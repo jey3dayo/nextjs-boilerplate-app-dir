@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ToastPrimitives from '@radix-ui/react-toast';
 import { cva, VariantProps } from 'class-variance-authority';
 import { Icons } from '@/components/ui/icon';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 const ToastProvider = ToastPrimitives.Provider;
 
@@ -12,7 +12,7 @@ const ToastViewport = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Viewport
     ref={ref}
-    className={cx(
+    className={cn(
       'fixed z-[2147483647] flex flex-col-reverse sm:flex-col',
       'bottom-0 right-0 m-0 w-[390px] max-w-full gap-2 p-[var(--viewport-padding)] [--viewport-padding:_25px]',
       'list-none outline-none',
@@ -24,7 +24,7 @@ const ToastViewport = React.forwardRef<
 ToastViewport.displayName = ToastPrimitives.Viewport.displayName;
 
 const toastVariants = cva(
-  cx(
+  cn(
     'grid grid-cols-[auto_max-content] items-center gap-x-[15px] rounded-md p-[15px]',
     "[grid-template-areas:_'title_action'_'description_action']",
     'pointer-events-auto overflow-hidden transition-all',
@@ -40,7 +40,7 @@ const toastVariants = cva(
         none: '',
       },
       animation: {
-        default: cx(
+        default: cn(
           'data-[state=open]:animate-in data-[state=closed]:animate-out',
           'data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full',
           'data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full',
@@ -66,7 +66,7 @@ const Toast = React.forwardRef<
   return (
     <ToastPrimitives.Root
       ref={ref}
-      className={cx(toastVariants({ variant, shadow, animation }), className)}
+      className={cn(toastVariants({ variant, shadow, animation }), className)}
       {...props}
     />
   );
@@ -77,7 +77,7 @@ const ToastAction = React.forwardRef<
   React.ElementRef<typeof ToastPrimitives.Action>,
   React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action>
 >(({ className, ...props }, ref) => (
-  <ToastPrimitives.Action ref={ref} className={cx('[grid-area:_action]', className)} {...props} />
+  <ToastPrimitives.Action ref={ref} className={cn('[grid-area:_action]', className)} {...props} />
 ));
 ToastAction.displayName = ToastPrimitives.Action.displayName;
 
@@ -87,7 +87,7 @@ const ToastClose = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Close
     ref={ref}
-    className={cx(
+    className={cn(
       'absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600',
       className,
     )}
@@ -105,7 +105,7 @@ const ToastTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Title
     ref={ref}
-    className={cx('mb-1 text-sm font-medium text-foreground [grid-area:_title]', className)}
+    className={cn('mb-1 text-sm font-medium text-foreground [grid-area:_title]', className)}
     {...props}
   />
 ));
@@ -117,7 +117,7 @@ const ToastDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <ToastPrimitives.Description
     ref={ref}
-    className={cx('m-0 text-xs leading-[1.3] text-foreground opacity-60 [grid-area:_description]', className)}
+    className={cn('m-0 text-xs leading-[1.3] text-foreground opacity-60 [grid-area:_description]', className)}
     {...props}
   />
 ));

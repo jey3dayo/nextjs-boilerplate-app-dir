@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 const variants = cva('', {
   variants: {
@@ -20,7 +20,7 @@ interface Props extends React.LinkHTMLAttributes<HTMLLinkElement>, Variants {}
 
 const Link = React.forwardRef<HTMLLinkElement, Props>(({ className, variant, children, ...props }, ref) => {
   return (
-    <Link className={cx(variants({ variant, className }))} ref={ref} {...props}>
+    <Link className={cn(variants({ variant, className }))} ref={ref} {...props}>
       {children}
     </Link>
   );

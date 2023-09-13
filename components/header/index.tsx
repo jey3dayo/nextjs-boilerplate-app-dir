@@ -5,7 +5,7 @@ import { Logo } from '@/components/logo';
 import { ThemeSwitch } from '@/components/theme/theme-switch';
 import { UserMenu } from '@/components/user-menu';
 import { subTitle } from '@/config';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 import { getNavigationByRole } from '@/lib/navigation';
 import { getCurrentUser } from '@/lib/next-auth/session';
 
@@ -18,7 +18,7 @@ export async function Header() {
 
   return (
     <header className="sticky z-20 border-b bg-background/80 px-0 md:left-0 md:top-0 md:w-full">
-      <nav className={cx('flex h-16 flex-wrap items-center justify-between px-3 md:space-x-0 md:px-4', height)}>
+      <nav className={cn('flex h-16 flex-wrap items-center justify-between px-3 md:space-x-0 md:px-4', height)}>
         <Link href="/" className="mr-6 flex shrink-0 items-center rounded-sm px-1 text-foreground">
           <div className="mx-auto h-auto w-12 sm:h-auto sm:w-16">
             <Logo />

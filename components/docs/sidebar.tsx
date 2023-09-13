@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { docsConfig, NavItem } from '@/constants/docs';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 export default function Sidebar() {
   const pathname = usePathname();
@@ -28,7 +28,7 @@ export function Item({ item, pathname }: { item: NavItem; pathname: string | nul
   return !item.disabled && item.href ? (
     <Link
       href={item.href}
-      className={cx('flex w-full items-center rounded-md p-2 hover:underline', {
+      className={cn('flex w-full items-center rounded-md p-2 hover:underline', {
         'bg-muted': pathname === item.href,
       })}
       target={item.external ? '_blank' : ''}

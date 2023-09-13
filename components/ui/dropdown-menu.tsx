@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 const DropdownMenuRoot = DropdownMenuPrimitive.Root;
 
@@ -16,7 +16,7 @@ const DropdownMenuArrow = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.DropdownMenuArrow>,
   DropdownMenuPrimitive.DropdownMenuArrowProps
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.DropdownMenuArrow ref={ref} className={cx('fill-border', className)} {...props} />
+  <DropdownMenuPrimitive.DropdownMenuArrow ref={ref} className={cn('fill-border', className)} {...props} />
 ));
 DropdownMenuArrow.displayName = DropdownMenuPrimitive.DropdownMenuArrow.displayName;
 
@@ -24,7 +24,7 @@ const DropdownMenuSeparator = React.forwardRef<
   React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
   DropdownMenuPrimitive.DropdownMenuSeparatorProps
 >(({ className, ...props }, ref) => (
-  <DropdownMenuPrimitive.Separator ref={ref} className={cx('m-1 h-px bg-border', className)} {...props} />
+  <DropdownMenuPrimitive.Separator ref={ref} className={cn('m-1 h-px bg-border', className)} {...props} />
 ));
 DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
 
@@ -36,7 +36,7 @@ const DropdownMenuLabel = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Label
     ref={ref}
-    className={cx('px-2 pt-1 leading-5', 'select-none text-xs font-semibold text-primary', inset && 'pl-8', className)}
+    className={cn('px-2 pt-1 leading-5', 'select-none text-xs font-semibold text-primary', inset && 'pl-8', className)}
     {...props}
   />
 ));
@@ -49,7 +49,7 @@ const DropdownMenuContent = React.forwardRef<
   <DropdownMenuPrimitive.Content
     ref={ref}
     sideOffset={sideOffset}
-    className={cx(
+    className={cn(
       'min-w-8 z-50 mr-1 p-1',
       'rounded-md border bg-popover text-popover-foreground shadow-md',
       'will-change-[transform] animate-in',
@@ -69,7 +69,7 @@ const DropdownMenuItem = React.forwardRef<
 >(({ className, inset, ...props }, ref) => (
   <DropdownMenuPrimitive.Item
     ref={ref}
-    className={cx(
+    className={cn(
       'item-center group relative mx-1 flex px-2 py-1 text-sm',
       'cursor-default select-none rounded-sm outline-none transition-colors',
       'data-[highlighted]:bg-weak data-[highlighted]:text-background',

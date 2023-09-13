@@ -1,4 +1,4 @@
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 interface CalloutProps {
   icon?: string;
@@ -9,7 +9,7 @@ interface CalloutProps {
 export function Callout({ children, icon, type = 'default', ...props }: CalloutProps) {
   return (
     <div
-      className={cx('my-6 flex items-start rounded-md border border-l-4 p-4', {
+      className={cn('my-6 flex items-start rounded-md border border-l-4 p-4', {
         'border-red-11 bg-red-1': type === 'danger',
         'border-yellow-10 bg-yellow-1': type === 'warning',
       })}

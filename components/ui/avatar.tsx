@@ -1,13 +1,13 @@
 import * as React from 'react';
 import * as Avatar from '@radix-ui/react-avatar';
 import type { AvatarFallbackProps, AvatarImageProps, AvatarProps } from '@radix-ui/react-avatar';
-import { cx } from '@/lib/class-names';
+import { cn } from '@/lib/class-names';
 
 const AvatarRoot = React.forwardRef<React.ElementRef<typeof Avatar.Root>, AvatarProps>(
   ({ className, ...props }, ref) => (
     <Avatar.Root
       ref={ref}
-      className={cx(
+      className={cn(
         'inline-flex h-9 w-9 select-none items-center justify-center overflow-hidden rounded-full bg-dark align-middle',
         className,
       )}
@@ -23,7 +23,7 @@ const AvatarImage = React.forwardRef<React.ElementRef<typeof Avatar.Image>, Avat
       ref={ref}
       alt={alt ?? undefined}
       src={src ?? undefined}
-      className={cx('h-full w-full rounded-[inherit] object-cover', className)}
+      className={cn('h-full w-full rounded-[inherit] object-cover', className)}
       {...props}
     />
   ),
@@ -35,7 +35,7 @@ const AvatarFallback = React.forwardRef<React.ElementRef<typeof Avatar.Fallback>
     <Avatar.Fallback
       ref={ref}
       delayMs={delayMs ?? 600}
-      className={cx('flex h-full w-full items-center justify-center bg-light', className)}
+      className={cn('flex h-full w-full items-center justify-center bg-light', className)}
       {...props}
     />
   ),
