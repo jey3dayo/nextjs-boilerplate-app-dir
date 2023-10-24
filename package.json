@@ -33,7 +33,7 @@
     "lint:fix": "next lint --fix",
     "prettier": "prettier --write --cache --ignore-path .prettierignore './**/*.{js,jsx,ts,tsx,json,css}'",
     "prettier:check": "prettier --cache --check --ignore-path .prettierignore './**/*.{js,jsx,ts,tsx,json,css}'",
-    "format": "yarn lint:fix && yarn prettier",
+    "format": "run-s lint:fix prettier",
     "depcruise": "depcruise -v .dependency-cruiser.js ./{app,components,config,hooks,lib,prisma,styles}",
     "jest": "env-cmd -f ./.env.test jest",
     "jest:watch": "env-cmd -f ./.env.test jest --watchAll",
