@@ -20,12 +20,13 @@ describe('getOptions', () => {
   });
 });
 
+let jwt = '';
 describe('signJwt', () => {
   const options = getOptions(env.NEXTAUTH_SECRET, env.NEXT_PUBLIC_APP_NAME);
 
   it('should return jwt', async () => {
     const input: Payload = { id: userId };
-    const jwt = await signJwt(input, options);
+    jwt = await signJwt(input, options);
     expect(typeof jwt).toEqual('string');
   });
 });
@@ -33,17 +34,12 @@ describe('signJwt', () => {
 describe('verifyJwt', () => {
   const options = getOptions(env.NEXTAUTH_SECRET, env.NEXT_PUBLIC_APP_NAME);
 
-  // FIXME: TypeError: Cannot read property 'secret instanceof' of undefined
-  it.skip('should return payload', async () => {
-    const input =
-      'eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImNsajN1dG9hYzAwMDBoOWc2MXYwb3c0Z3UiLCJpYXQiOjE2OTIwNzIyODMsImlzcyI6InVybjpBd2Vzb21lIEFwcDppc3N1ZXIiLCJhdWQiOiJ1cm46QXdlc29tZSBBcHA6Y2xpZW50X2lkIiwiZXhwIjoxNjk0NjY0MjgzfQ.kWleR61Qae-VwEhaLIoXoFUd_geq7zhdVmxKxRk9wHM';
-    const payload = await verifyJwt(input, options);
+  it('should return payload', async () => {
+    const payload = await verifyJwt(jwt, options);
     expect(payload).toMatchObject({
       id: userId,
-      iat: 1692072283,
       iss: 'urn:Awesome App:issuer',
       aud: 'urn:Awesome App:client_id',
-      exp: 1694664283,
     });
   });
 

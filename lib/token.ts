@@ -25,9 +25,10 @@ export function getOptions(authSecret: string, appName: string): Options {
 }
 
 export async function signJwt(payload: Payload, options: Options) {
-  const { secret, alg, ...opts } = options;
+  const { secret, ...opts } = options;
+
   const jwt = await new jose.SignJWT(payload)
-    .setProtectedHeader({ alg: alg })
+    .setProtectedHeader({ alg: opts.alg })
     .setIssuedAt()
     .setIssuer(opts.issuer)
     .setAudience(opts.audience)
@@ -46,6 +47,7 @@ export async function verifyJwt(jwt: string, options: Options): Promise<jose.JWT
 
     return payload;
   } catch (e) {
+    console.log(e);
     return undefined;
   }
 }
