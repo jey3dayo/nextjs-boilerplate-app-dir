@@ -4,7 +4,7 @@ import * as React from 'react';
 import { User } from '@prisma/client';
 import { AvatarFallback, AvatarImage, AvatarProps, AvatarRoot } from '@/components/ui/avatar';
 import { Icons } from '@/components/ui/icon';
-import { color } from '@/styles/colors';
+import { palette } from '@/styles/colors';
 
 export const Avatar = React.forwardRef<React.ElementRef<typeof AvatarRoot>, AvatarProps & Pick<User, 'name' | 'image'>>(
   ({ name, image, className, ...props }, ref) => {
@@ -12,7 +12,7 @@ export const Avatar = React.forwardRef<React.ElementRef<typeof AvatarRoot>, Avat
       <AvatarRoot ref={ref} className={className} {...props}>
         <AvatarImage alt={name ?? undefined} src={image ?? undefined} />
         <AvatarFallback>
-          <Icons.user color={color.dark} className={className} />
+          <Icons.user color={palette.dark} className={className} />
         </AvatarFallback>
       </AvatarRoot>
     );

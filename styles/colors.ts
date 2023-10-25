@@ -5,7 +5,7 @@ export const radixGrayColor = 'mauve';
 export const primaryColor = 'violet';
 export const accentColor = 'teal';
 
-export const color = {
+export const palette = {
   black: tailwindColors[grayColor]['950'],
   dark: tailwindColors[grayColor]['800'],
   medium: tailwindColors[grayColor]['500'],

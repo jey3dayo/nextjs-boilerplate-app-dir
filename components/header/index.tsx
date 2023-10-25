@@ -45,7 +45,7 @@ export async function Header() {
               <Link
                 key={v.href}
                 href={v.href}
-                className="mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium hover:bg-background/90"
+                className="hover:bg-background/90 mx-3 mt-0 inline-block rounded-md px-3 py-2 font-medium"
                 aria-current="page"
               >
                 <span className="select-none">{v.title}</span>

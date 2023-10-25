@@ -1,3 +1,3 @@
-const { colors } = require('styles/colors');
+const colors = require('styles/colors');
 
-export const palette = colors;
+export const palette = colors.palette;

@@ -7,7 +7,9 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 import windyRadixPalette from 'windy-radix-palette';
 import { toRadixVars } from 'windy-radix-palette/vars';
 import windyRadixTypography from 'windy-radix-typography';
-import { accentColor, color, primaryColor, radixGrayColor } from './styles/colors';
+import { accentColor, palette, primaryColor, radixGrayColor } from './styles/colors';
+
+const windyRadixPalette = createPlugin();
 
 const config: Config = {
   content: [
