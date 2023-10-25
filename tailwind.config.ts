@@ -1,11 +1,11 @@
+import radixUiColors from '@radix-ui/colors';
 import containerQueries from '@tailwindcss/container-queries';
 import forms from '@tailwindcss/forms';
 import typography from '@tailwindcss/typography';
 import { Config } from 'tailwindcss';
 import animate from 'tailwindcss-animate';
 import { fontFamily } from 'tailwindcss/defaultTheme';
-import windyRadixPalette from 'windy-radix-palette';
-import { toRadixVars } from 'windy-radix-palette/vars';
+import { createPlugin } from 'windy-radix-palette';
 import windyRadixTypography from 'windy-radix-typography';
 import { accentColor, palette, primaryColor, radixGrayColor } from './styles/colors';
 
@@ -42,52 +42,53 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'primary-color': toRadixVars(primaryColor),
-        'gray-color': toRadixVars(radixGrayColor),
-        'accent-color': toRadixVars(accentColor),
-        ...color,
+        'primary-color': windyRadixPalette.alias(primaryColor),
+        'gray-color': windyRadixPalette.alias(radixGrayColor),
+        'accent-color': windyRadixPalette.alias(accentColor),
+        ...radixUiColors,
+        ...palette,
 
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        border: 'var(--border)',
+        input: 'var(--input)',
+        ring: 'var(--ring)',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: 'var(--primary)',
+          foreground: 'var(--primary-foreground)',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          DEFAULT: 'var(--secondary)',
+          foreground: 'var(--secondary-foreground)',
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
-          foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)',
+          DEFAULT: 'var(--destructive / <alpha-value>)',
+          foreground: 'var(--destructive-foreground / <alpha-value>)',
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+          DEFAULT: 'var(--muted)',
+          foreground: 'var(--muted-foreground)',
         },
         weak: {
-          DEFAULT: 'hsl(var(--weak))',
-          foreground: 'hsl(var(--weak-foreground))',
+          DEFAULT: 'var(--weak)',
+          foreground: 'var(--weak-foreground)',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          DEFAULT: 'var(--accent)',
+          foreground: 'var(--accent-foreground)',
         },
         popover: {
-          DEFAULT: 'hsl(var(--popover))',
-          foreground: 'hsl(var(--popover-foreground))',
+          DEFAULT: 'var(--popover)',
+          foreground: 'var(--popover-foreground)',
         },
         card: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          DEFAULT: 'var(--card)',
+          foreground: 'var(--card-foreground)',
         },
       },
       borderRadius: {
-        lg: `var(--radius)`,
-        md: `calc(var(--radius) - 2px)`,
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
@@ -110,7 +111,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [containerQueries, animate, typography, forms, windyRadixPalette, windyRadixTypography],
+  plugins: [containerQueries, animate, forms, windyRadixPalette.plugin, typography],
+  presets: [windyRadixTypography],
 };
 
 export default config;
