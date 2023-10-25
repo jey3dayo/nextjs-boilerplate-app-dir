@@ -1,7 +1,7 @@
 {
   "name": "nextjs-boilerplate-app-dir",
   "version": "0.1.0",
-  "packageManager": "yarn@3.6.3",
+  "packageManager": "yarn@4.0.0",
   "private": true,
   "engines": {
     "node": ">=16.0.0 <=18.x.x"

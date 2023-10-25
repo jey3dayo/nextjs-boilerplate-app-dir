@@ -26,7 +26,7 @@ jobs:
         with:
           node-version-file: 'package.json'
 
-      - name: Install Yarn v3
+      - name: Install Yarn v4
         run: |
           yarn set version berry
 
