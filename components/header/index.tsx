@@ -19,8 +19,8 @@ export async function Header() {
 
   return (
     <OffsetAdaptiveView
-      className="sticky z-20 border-b bg-transparent px-0 md:left-0 md:top-0 md:w-full"
-      offsetClass="bg-background/80  backdrop-blur-sm"
+      className="sticky z-20 bg-inherit px-0 md:left-0 md:top-0 md:w-full"
+      offsetClass="backdrop-blur-sm bg-background/90 border-b"
       offset={20}
     >
       <nav className={cn('flex h-16 flex-wrap items-center justify-between px-3 md:space-x-0 md:px-4', height)}>
