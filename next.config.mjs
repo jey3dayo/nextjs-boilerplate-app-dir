@@ -5,7 +5,6 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'mjs', 'md', 'mdx'],
   experimental: {
     serverActions: true,
-    appDir: true,
   },
   reactStrictMode: true,
   swcMinify: true,
