@@ -119,7 +119,7 @@ export async function GET(req: Request) {
           },
         ],
       },
-    );
+    ) as Response;
   } catch (error) {
     return new Response(`Failed to generate image`, {
       status: 500,
