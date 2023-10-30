@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Image from 'next/image';
+import NextImage, { ImageProps } from 'next/image';
 import type { MDXComponents } from 'mdx/types';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import { Callout } from '@/components/mdx/callout';
@@ -72,7 +72,7 @@ const components: MDXComponents = {
   code: ({ className, ...props }) => (
     <code className={cn('relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm', className)} {...props} />
   ),
-  Image,
+  Image: (props: ImageProps) => <NextImage {...props} />,
   Callout,
   Card: MdxCard,
 };
