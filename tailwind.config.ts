@@ -47,8 +47,10 @@ const config: Config = {
         'accent-color': windyRadixPalette.alias(accentColor),
         ...radixUiColors,
         ...palette,
-
-        border: 'var(--border)',
+        border: {
+          DEFAULT: 'var(--border)',
+          weak: 'var(--border-weak)',
+        },
         input: 'var(--input)',
         ring: 'var(--ring)',
         background: 'var(--background)',
@@ -84,6 +86,12 @@ const config: Config = {
         card: {
           DEFAULT: 'var(--card)',
           foreground: 'var(--card-foreground)',
+        },
+        ui: {
+          DEFAULT: 'var(--ui)',
+          weak: 'var(--ui-weak)',
+          strong: 'var(--ui-strong)',
+          foreground: 'var(--ui-forground)',
         },
       },
       borderRadius: {

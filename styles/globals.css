@@ -25,9 +25,14 @@
     --destructive: var(--red9);
     --destructive-foreground: var(--mauve12);
     --border: var(--mauve8);
+    --border-weak: var(--mauve4);
     --input: var(--mauve5);
     --ring: var(--mauve8);
     --radius: 0.5rem;
+    --ui: var(--mauve4);
+    --ui-weak: var(--mauve3);
+    --ui-strong: var(--mauve5);
+    --ui-foreground: var(--mauve10);
   }
 }
 
